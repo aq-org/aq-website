@@ -6,6 +6,7 @@ author: AQ ORG
 language: en
 timezone: ''
 url: https://blog.axa6.com
+theme: icarus
 permalink: ':year/:month/:day/:title/'
 permalink_defaults: null
 pretty_urls:
