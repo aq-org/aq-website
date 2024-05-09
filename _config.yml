@@ -1,11 +1,11 @@
-title: Hexo
-subtitle: ''
+title: AQ BLOG
+subtitle: AQ Official Blog.
 description: ''
 keywords: null
-author: John Doe
+author: AQ ORG
 language: en
 timezone: ''
-url: http://example.com
+url: https://blog.axa6.com
 permalink: ':year/:month/:day/:title/'
 permalink_defaults: null
 pretty_urls:
