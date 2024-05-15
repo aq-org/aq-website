@@ -11,6 +11,10 @@ import BlogLatestPosts from "~/components/widgets/BlogLatestPosts.astro";
 import FAQs from "~/components/widgets/FAQs.astro";
 import Stats from "~/components/widgets/Stats.astro";
 import CallToAction from "~/components/widgets/CallToAction.astro";
+import codeimg from "../../public/code.png";
+import workimg from "../../public/work.jpg";
+import netimg from "../../public/net.jpg";
+import developimg from "../../public/develop.jpg";
 
 const metadata = {
   title: "AQ — The Simple, Fast, and Secure Programming Language",
@@ -125,7 +129,7 @@ const metadata = {
       },
     ]}
     image={{
-      src: "../../public/code.png",
+      src: {codeimg},
       alt: "Code with AQ",
     }}
   >
@@ -171,7 +175,7 @@ const metadata = {
       },
     ]}
     image={{
-      src: "../../public/work.jpg",
+      src: {workimg},
       alt: "Work with AQ",
     }}
   >
@@ -213,7 +217,7 @@ const metadata = {
       },
     ]}
     image={{
-      src: "../../public/net.jpg",
+      src: {netimg},
       alt: "AQ NET",
     }}
   >
@@ -255,7 +259,7 @@ const metadata = {
       },
     ]}
     image={{
-      src: "../../public/develop.jpg",
+      src: {developimg},
       alt: "Develop with AQ",
     }}
   />
