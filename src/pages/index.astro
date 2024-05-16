@@ -12,6 +12,10 @@ import FAQs from "~/components/widgets/FAQs.astro";
 import Stats from "~/components/widgets/Stats.astro";
 import CallToAction from "~/components/widgets/CallToAction.astro";
 
+import CodeImg from '../assets/images/code.png';
+import DevelopImg from '../assets/images/develop.jpg';
+import NetImg from '../assets/images/net.jpg';
+import WorkImg from '../assets/images/work.jpg';
 const metadata = {
   title: "AQ — The Simple, Fast, and Secure Programming Language",
   ignoreTitleTemplate: true,
@@ -125,7 +129,7 @@ const metadata = {
       },
     ]}
     image={{
-      src: "/code.png",
+      src: {CodeImg},
       alt: "Code with AQ",
     }}
   >
@@ -171,7 +175,7 @@ const metadata = {
       },
     ]}
     image={{
-      src: "/work.jpg",
+      src: {WorkImg},
       alt: "Work with AQ",
     }}
   >
@@ -213,7 +217,7 @@ const metadata = {
       },
     ]}
     image={{
-      src: "/net.jpg",
+      src: {NetImg},
       alt: "AQ NET",
     }}
   >
@@ -255,7 +259,7 @@ const metadata = {
       },
     ]}
     image={{
-      src: "/develop.jpg",
+      src: DevelopImg,
       alt: "AQ Work Environment",
     }}
   />
