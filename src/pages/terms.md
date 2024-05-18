@@ -3,118 +3,42 @@ title: 'Terms and Conditions'
 layout: '~/layouts/MarkdownLayout.astro'
 ---
 
-_Last updated_: January 06, 2023
+# AQ Terms and Conditions
 
-Please read these terms and conditions carefully before using Our Service.
+You should comply with the AQ license and privacy policy.
 
-## Interpretation and Definitions
+## AQ License
+*Version 2, May 18, 2024*</br>
+*Copyright 2024 AQ author, All Rights Reserved.*</br>
 
-### Interpretation
+### Definition
+- "This License" means version 2 of the AQ License.</br>
+- "AQ Author" refers to the first author of AQ (the creator of AQ).</br>
+- "Program" or "Work" means any legally protected work licensed under this License.</br>
+- "Copyright" applies to all types of works for which copyright is recognized by law.</br>
+- "You" and "your" refer to (a) the company or organization receiving the license (the "Entity") on whose behalf the license is accepted; (b) the individual receiving the license (the "individual") who does not accept the license on behalf of the Entity.</br>
+- To "modify" a work means to copy or adapt all or part of the work in a manner that requires copyright permission, rather than making an exact copy. The resulting work is called a "modified version" of an earlier work or a work "based on" an earlier work.</br>
+- A "covered work" means an unmodified copy of the Program or a work based on the Program (including any work based on covered work or any work based on a "modified version" of an earlier work).</br>
+- "Propagating" a work means doing anything to the work without permission that would subject you directly or secondarily to liability for infringement under applicable copyright law, other than executing it on a computer or modifying a private copy. Propagation includes reproduction, distribution (with or without modification), making available to the public, and other activities in certain countries.</br>
+- "Development Use" means your internal use of the Program to develop, test, prototype and demonstrate your Application.</br>
+- "Personal Use" means an individual's use of the Program solely on a desktop or laptop computer under his/her control solely for the purpose of running personal applications.</br>
 
-The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.
+### Licensed content
+- This License grants you, during the term of this License, a non-exclusive, non-exclusive, revocable, non-transferable, non-sublicensable, non-sublicensable, limited license, subject to the restrictions set forth in this License and related documentation, for: (i) personal use only, (ii) Development and use, (iii) Other legal purposes. This license recognizes your rights of fair use or other equivalent rights under copyright law.</br>
+- All rights not expressly granted in this License are reserved by the AQ Author. If you wish to use the Program for any purpose other than as expressly permitted by this License, you must obtain a valid license for the Program from the AQ author or under a separate license agreement permitting such use.</br>
+- The license term of this License begins on the date this License is published and ends on the date the next version of the License is published.
+- If you have special needs, you can negotiate a special AQ license agreement with the AQ author (which is equivalent to this license and can exercise rights in lieu of this license). Different license agreements can be used simultaneously.</br>
 
-### Definitions
+### Terms and Conditions
+- The AQ author retain all ownership and intellectual property rights in the Program.</br>
+- You should prominently add AQ-related information (the Program name, author, license, version, etc.) to all copies of the Program, "modified versions" of earlier works, and "covered works". At the same time, you shall require (in the license conditions or related terms) that all developers, users and licensees of the Program, as well as any person or entity associated with the Program, own the License and comply with the relevant terms of the License, and in the event of failure to do so, suspend the use and incur possible other liabilities in accordance with the relevant requirements of the License. And in the event of any conflict with your license terms, this License shall take precedence, otherwise your license will be invalid.</br>
+- If you participate in the creation of an AQ program (any kind of work), you hereby grant the AQ author a perpetual, worldwide, exclusive, royalty-free, irrevocable copyright license to reproduce, prepare derivative works of, publicly display, Public performance and reproduction license and distribution of your Contributions and such derivative works. You also hereby grant to the AQ author a perpetual, worldwide, exclusive, free, royalty-free, irrevocable patent. You represent that you have the legal right to grant the above license. If your employer has rights to intellectual property you create, including your Contributions, you represent that you have the authority to make the Contributions on behalf of that employer. You represent that each of your Contributions is your original work. Otherwise you should not participate in the creation.</br>
+- If conditions are imposed on you (whether by court order, legal regulation or otherwise) that conflict with anything in this License, and they do not exempt you from the terms and conditions of this License. If you cannot satisfy both the other conditions and the terms and conditions of this License, you should not use the Program or acquire this License.</br>
+- If you fail to comply with this license and related terms, your license will be suspended at the same time, and the AQ author has the right to prosecute you for the violation (including but not limited to compensation for damages, elimination of effects, or suspension of use). If you fail to comply with this license and related terms, you will be fully responsible for all consequences (including but not limited to economic losses).</br>
+- If your License is suspended or expires, you shall delete the Program, "modified versions" of the earlier work, and all of its "covered works." and cease all activities related to the Program, "modified versions" of earlier works, and "covered works". If the AQ author does not make special requirements for your infringement, you can obtain permission again 30 days after your infringement ceases.</br>
+- THE PROGRAM IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. AQ Author further disclaims all warranties, express and implied, including, without limitation, any implied warranties of merchantability, fitness for a particular purpose, or non-infringement. In no event shall AQ Author be liable to you or any third party for any indirect, incidental, special, punitive or consequential damages, or damages for loss of profits, revenue, data or data use, whether in an action of contract or tort, is not responsible, even if the AQ author has been advised of the possibility of such damages.</br>
+- In addition, if the program has additional licensing requirements (such as agreements, terms), they will also be regarded as the licensing conditions of this license, and you should also comply with these provisions, otherwise the license will become invalid.
+- The AQ Terms and Conditions are also considered part of this License and serve as additional terms to this License. You are also subject to the AQ Terms and Conditions.</br>
 
-For the purposes of these Terms and Conditions:
-
-- **Affiliate** means an entity that controls, is controlled by or is under common control with a party, where "control" means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.
-
-- **Country** refers to: California, United States
-
-- **Company** (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to AstroWind LLC, 1 Cupertino, CA 95014.
-
-- **Device** means any device that can access the Service such as a computer, a cellphone or a digital tablet.
-
-- **Service** refers to the Website.
-
-- **Terms and Conditions** (also referred as "Terms") mean these Terms and Conditions that form the entire agreement between You and the Company regarding the use of the Service. This Terms and Conditions agreement is a Demo.
-
-- **Third-party Social Media Service** means any services or content (including data, information, products or services) provided by a third-party that may be displayed, included or made available by the Service.
-
-- **Website** refers to AstroWind, accessible from [https://astrowind.vercel.app](https://astrowind.vercel.app)
-
-- **You** means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.
-
-## Acknowledgment
-
-These are the Terms and Conditions governing the use of this Service and the agreement that operates between You and the Company. These Terms and Conditions set out the rights and obligations of all users regarding the use of the Service.
-
-Your access to and use of the Service is conditioned on Your acceptance of and compliance with these Terms and Conditions. These Terms and Conditions apply to all visitors, users and others who access or use the Service.
-
-By accessing or using the Service You agree to be bound by these Terms and Conditions. If You disagree with any part of these Terms and Conditions then You may not access the Service.
-
-You represent that you are over the age of 18\. The Company does not permit those under 18 to use the Service.
-
-Your access to and use of the Service is also conditioned on Your acceptance of and compliance with the Privacy Policy of the Company. Our Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your personal information when You use the Application or the Website and tells You about Your privacy rights and how the law protects You. Please read Our Privacy Policy carefully before using Our Service.
-
-## Links to Other Websites
-
-Our Service may contain links to third-party web sites or services that are not owned or controlled by the Company.
-
-The Company has no control over, and assumes no responsibility for, the content, privacy policies, or practices of any third party web sites or services. You further acknowledge and agree that the Company shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with the use of or reliance on any such content, goods or services available on or through any such web sites or services.
-
-We strongly advise You to read the terms and conditions and privacy policies of any third-party web sites or services that You visit.
-
-## Termination
-
-We may terminate or suspend Your access immediately, without prior notice or liability, for any reason whatsoever, including without limitation if You breach these Terms and Conditions.
-
-Upon termination, Your right to use the Service will cease immediately.
-
-## Limitation of Liability
-
-Notwithstanding any damages that You might incur, the entire liability of the Company and any of its suppliers under any provision of this Terms and Your exclusive remedy for all of the foregoing shall be limited to the amount actually paid by You through the Service or 100 USD if You haven't purchased anything through the Service.
-
-To the maximum extent permitted by applicable law, in no event shall the Company or its suppliers be liable for any special, incidental, indirect, or consequential damages whatsoever (including, but not limited to, damages for loss of profits, loss of data or other information, for business interruption, for personal injury, loss of privacy arising out of or in any way related to the use of or inability to use the Service, third-party software and/or third-party hardware used with the Service, or otherwise in connection with any provision of this Terms), even if the Company or any supplier has been advised of the possibility of such damages and even if the remedy fails of its essential purpose.
-
-Some states do not allow the exclusion of implied warranties or limitation of liability for incidental or consequential damages, which means that some of the above limitations may not apply. In these states, each party's liability will be limited to the greatest extent permitted by law.
-
-## "AS IS" and "AS AVAILABLE" Disclaimer
-
-The Service is provided to You "AS IS" and "AS AVAILABLE" and with all faults and defects without warranty of any kind. To the maximum extent permitted under applicable law, the Company, on its own behalf and on behalf of its Affiliates and its and their respective licensors and service providers, expressly disclaims all warranties, whether express, implied, statutory or otherwise, with respect to the Service, including all implied warranties of merchantability, fitness for a particular purpose, title and non-infringement, and warranties that may arise out of course of dealing, course of performance, usage or trade practice. Without limitation to the foregoing, the Company provides no warranty or undertaking, and makes no representation of any kind that the Service will meet Your requirements, achieve any intended results, be compatible or work with any other software, applications, systems or services, operate without interruption, meet any performance or reliability standards or be error free or that any errors or defects can or will be corrected.
-
-Without limiting the foregoing, neither the Company nor any of the company's provider makes any representation or warranty of any kind, express or implied: (i) as to the operation or availability of the Service, or the information, content, and materials or products included thereon; (ii) that the Service will be uninterrupted or error-free; (iii) as to the accuracy, reliability, or currency of any information or content provided through the Service; or (iv) that the Service, its servers, the content, or e-mails sent from or on behalf of the Company are free of viruses, scripts, trojan horses, worms, malware, timebombs or other harmful components.
-
-Some jurisdictions do not allow the exclusion of certain types of warranties or limitations on applicable statutory rights of a consumer, so some or all of the above exclusions and limitations may not apply to You. But in such a case the exclusions and limitations set forth in this section shall be applied to the greatest extent enforceable under applicable law.
-
-## Governing Law
-
-The laws of the Country, excluding its conflicts of law rules, shall govern this Terms and Your use of the Service. Your use of the Application may also be subject to other local, state, national, or international laws.
-
-## Disputes Resolution
-
-If You have any concern or dispute about the Service, You agree to first try to resolve the dispute informally by contacting the Company.
-
-## For European Union (EU) Users
-
-If You are a European Union consumer, you will benefit from any mandatory provisions of the law of the country in which you are resident in.
-
-## United States Legal Compliance
-
-You represent and warrant that (i) You are not located in a country that is subject to the United States government embargo, or that has been designated by the United States government as a "terrorist supporting" country, and (ii) You are not listed on any United States government list of prohibited or restricted parties.
-
-## Severability and Waiver
-
-### Severability
-
-If any provision of these Terms is held to be unenforceable or invalid, such provision will be changed and interpreted to accomplish the objectives of such provision to the greatest extent possible under applicable law and the remaining provisions will continue in full force and effect.
-
-### Waiver
-
-Except as provided herein, the failure to exercise a right or to require performance of an obligation under these Terms shall not effect a party's ability to exercise such right or require such performance at any time thereafter nor shall the waiver of a breach constitute a waiver of any subsequent breach.
-
-## Translation Interpretation
-
-These Terms and Conditions may have been translated if We have made them available to You on our Service. You agree that the original English text shall prevail in the case of a dispute.
-
-## Changes to These Terms and Conditions
-
-We reserve the right, at Our sole discretion, to modify or replace these Terms at any time. If a revision is material We will make reasonable efforts to provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at Our sole discretion.
-
-By continuing to access or use Our Service after those revisions become effective, You agree to be bound by the revised terms. If You do not agree to the new terms, in whole or in part, please stop using the website and the Service.
-
-## Contact Us
-
-If you have any questions about these Terms and Conditions, You can contact us:
-
-- By email: somecoolemail@domain.com
+### Equivalent License
+- If you are using it for development purposes, you may use the GNU AFFERO GENERAL PUBLIC LICENSE Version 3 instead of this License. However, if you do not use it for development (such as using the Program), you cannot use this License and you should still comply with the requirements of this License, unless there is another equivalent license.</br>

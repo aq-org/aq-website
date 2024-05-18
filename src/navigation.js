@@ -46,7 +46,7 @@ export const headerData = {
 export const footerData = {
   links: [
     {
-      title: 'Product',
+      title: 'Resources',
       links: [
         { text: 'Features', href: '#' },
         { text: 'Security', href: '#' },
@@ -58,7 +58,7 @@ export const footerData = {
       ],
     },
     {
-      title: 'Platform',
+      title: 'About',
       links: [
         { text: 'Developer API', href: '#' },
         { text: 'Partners', href: '#' },
@@ -78,7 +78,7 @@ export const footerData = {
       ],
     },
     {
-      title: 'Company',
+      title: 'Blog',
       links: [
         { text: 'About', href: '#' },
         { text: 'Blog', href: '#' },
