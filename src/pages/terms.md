@@ -3,8 +3,6 @@ title: 'Terms and Conditions'
 layout: '~/layouts/MarkdownLayout.astro'
 ---
 
-# AQ Terms and Conditions
-
 You should comply with the AQ license and privacy policy.
 
 ## AQ License
