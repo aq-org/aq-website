@@ -6,7 +6,7 @@ export const headerData = {
       text: 'Home',
           href: getPermalink('/index'),
     },{
-      title: 'Resources',
+      text: 'Resources',
       links: [
         { text: 'Docs', href: getPermalink('/docs') },
         { text: 'Blog', href: getBlogPermalink() },
@@ -17,7 +17,7 @@ export const headerData = {
       ],
     },
     {
-      title: 'About',
+      text: 'About',
       links: [
         { text: 'About', href: getPermalink('/about') },
         { text: 'Team', href: getPermalink('/team') },
@@ -28,7 +28,7 @@ export const headerData = {
       ],
     },
     {
-      title: 'Support',
+      text: 'Support',
       links: [
         { text: 'Community Forum', href: getPermalink('/community') },
         { text: 'FAQ', href: 'https://www.axa6.com/#faq' },
@@ -38,7 +38,7 @@ export const headerData = {
       ],
     },
     {
-      title: 'Blog',
+      text: 'Blog',
       links: [
         {
           text: 'Blog List',

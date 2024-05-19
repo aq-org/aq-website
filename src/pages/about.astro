@@ -1,9 +1,13 @@
 ---
+import Layout from "~/layouts/PageLayout.astro";
+import Content from "~/components/widgets/Content.astro";
+
 const metadata = {
   title: "About us",
 };
 ---
 
+<Layout metadata={metadata}>
 <div style="text-align: center;">
   <img
     width="100px"
@@ -310,3 +314,4 @@ make
       <br />
       This program is licensed under the AQ License. You can find the AQ license in the root directory.
     </p></pre>
+  </Layout>
