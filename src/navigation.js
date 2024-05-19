@@ -6,17 +6,39 @@ export const headerData = {
       text: 'Home',
           href: getPermalink('/index'),
     },{
-      text: 'Resources',
-      href: getPermalink('/about'),
-    },{
-      text: 'About',
-      href: getPermalink('/about'),
-    },{
-      text: 'Support',
-      href: getPermalink('/about'),
+      title: 'Resources',
+      links: [
+        { text: 'Docs', href: getPermalink('/docs') },
+        { text: 'Blog', href: getBlogPermalink() },
+        { text: 'Download', href: 'https://github.com/aq-org/AQ' },
+        { text: 'Partners', href: getPermalink('/partners') },
+        { text: 'License', href: 'https://github.com/aq-org/AQ/blob/main/LICENSE' },
+        { text: 'Sources Code', href: 'https://github.com/aq-org/AQ' },
+      ],
     },
     {
-      text: 'Blog',
+      title: 'About',
+      links: [
+        { text: 'About', href: getPermalink('/about') },
+        { text: 'Team', href: getPermalink('/team') },
+        { text: 'Careers', href: 'https://github.com/aq-org/AQ' },
+        { text: 'Contact Us', href: getPermalink('/contact') },
+        { text: 'X', href: 'https://x.com/aq_organization' },
+        { text: 'Github', href: 'https://github.com/aq-org/AQ' },
+      ],
+    },
+    {
+      title: 'Support',
+      links: [
+        { text: 'Community Forum', href: getPermalink('/community') },
+        { text: 'FAQ', href: 'https://www.axa6.com/#faq' },
+        { text: 'Docs', href: getPermalink('/docs') },
+        { text: 'Discord', href: 'https://discord.gg/JCKzxavG' },
+        { text: 'Mail', href: 'mailto:admin@axa6.com' },
+      ],
+    },
+    {
+      title: 'Blog',
       links: [
         {
           text: 'Blog List',
@@ -24,15 +46,15 @@ export const headerData = {
         },
         {
           text: 'Article',
-          href: getPermalink('get-started-website-with-astro-tailwind-css', 'post'),
+          href: getPermalink('post'),
         },
         {
           text: 'Category Page',
-          href: getPermalink('tutorials', 'category'),
+          href: getPermalink('category'),
         },
         {
           text: 'Tag Page',
-          href: getPermalink('astro', 'tag'),
+          href: getPermalink('tag'),
         },
       ],
     },
@@ -50,29 +72,33 @@ export const footerData = {
     {
       title: 'Resources',
       links: [
-        { text: 'Docs', href: 'https://example.com/documentation' },
-        { text: 'Blog', href: 'https://example.com/api-reference' },
-        { text: 'Download', href: 'https://example.com/code-samples' },
-        { text: 'Partners', href: 'https://example.com/code-samples' },
-        { text: 'License', href: 'https://example.com/code-samples' },
-        { text: 'Sources Code', href: 'https://example.com/tutorials' },
+        { text: 'Docs', href: getPermalink('/docs') },
+        { text: 'Blog', href: getBlogPermalink() },
+        { text: 'Download', href: 'https://github.com/aq-org/AQ' },
+        { text: 'Partners', href: getPermalink('/partners') },
+        { text: 'License', href: 'https://github.com/aq-org/AQ/blob/main/LICENSE' },
+        { text: 'Sources Code', href: 'https://github.com/aq-org/AQ' },
       ],
     },
     {
       title: 'About',
       links: [
-        { text: 'Team', href: 'https://example.com/team' },
-        { text: 'Careers', href: 'https://example.com/careers' },
-        { text: 'Contact Us', href: 'https://example.com/contact' },
+        { text: 'About', href: getPermalink('/about') },
+        { text: 'Team', href: getPermalink('/team') },
+        { text: 'Careers', href: 'https://github.com/aq-org/AQ' },
+        { text: 'Contact Us', href: getPermalink('/contact') },
+        { text: 'X', href: 'https://x.com/aq_organization' },
+        { text: 'Github', href: 'https://github.com/aq-org/AQ' },
       ],
     },
     {
       title: 'Support',
       links: [
-        { text: 'Help Center', href: 'https://example.com/help-center' },
-        { text: 'Community Forum', href: 'https://example.com/community-forum' },
-        { text: 'FAQ', href: 'https://example.com/faq' },
-        { text: 'Live Chat', href: 'https://example.com/live-chat' },
+        { text: 'Community Forum', href: getPermalink('/community') },
+        { text: 'FAQ', href: 'https://www.axa6.com/#faq' },
+        { text: 'Docs', href: getPermalink('/docs') },
+        { text: 'Discord', href: 'https://discord.gg/JCKzxavG' },
+        { text: 'Mail', href: 'mailto:admin@axa6.com' },
       ],
     },
     {
@@ -84,15 +110,15 @@ export const footerData = {
         },
         {
           text: 'Article',
-          href: getPermalink('get-started-website-with-astro-tailwind-css', 'post'),
+          href: getPermalink('post'),
         },
         {
           text: 'Category Page',
-          href: getPermalink('tutorials', 'category'),
+          href: getPermalink('category'),
         },
         {
           text: 'Tag Page',
-          href: getPermalink('astro', 'tag'),
+          href: getPermalink('tag'),
         },
       ],
     },
