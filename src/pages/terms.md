@@ -3,6 +3,8 @@ title: 'Terms and Conditions'
 layout: '~/layouts/MarkdownLayout.astro'
 ---
 
+__Update Time: May 19th,2024__
+
 You should comply with the AQ license and privacy policy.
 
 ## AQ License
