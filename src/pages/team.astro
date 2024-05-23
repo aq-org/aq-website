@@ -1,7 +1,133 @@
 ---
+import Layout from "~/layouts/PageLayout.astro";
+
+import Hero from "~/components/widgets/Hero.astro";
+import Note from "~/components/widgets/Note.astro";
+import Content from "~/components/widgets/Content.astro";
+import BlogLatestPosts from "~/components/widgets/BlogLatestPosts.astro";
+import FAQs from "~/components/widgets/FAQs.astro";
+import CallToAction from "~/components/widgets/CallToAction.astro";
+
 const metadata = {
   title: "Team",
+  ignoreTitleTemplate: true,
 };
 ---
 
-Coming soon.
+<Layout metadata={metadata}>
+  <Hero
+    tagline="Meet Our Team"
+    actions={[
+      {
+        variant: "primary",
+        text: "View on Github",
+        href: "https://github.com/aq-org/AQ",
+        target: "_blank",
+        icon: "tabler:github",
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      <span class="text-accent dark:text-white highlight"> AQ </span> Team
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        Our team is driven by innovation and collaboration, making AQ a standout choice for developers around the globe.
+      </span>
+    </Fragment>
+  </Hero>
+
+  <Content
+    items={[
+      {
+        title: "Our Mission",
+        description:
+          "At AQ, our mission is to create a fast, simple, and secure programming language that meets the needs of modern developers.",
+      },
+      {
+        title: "Our Vision",
+        description:
+          "We envision a world where programming is accessible, efficient, and enjoyable for everyone, thanks to the power of AQ.",
+      },
+    ]}
+    image={{
+      src: "../assets/images/team.jpg",
+      alt: "AQ Team",
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Our Team
+      </h3>
+      Our dedicated team of developers, designers, and community managers work tirelessly to enhance AQ and support our growing user community.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Note>
+    Our team currently mainly works on Github. You can find more information about our contributors on Github.
+  </Note>
+
+  <BlogLatestPosts
+    title="Team Insights"
+    information={`Experience the inner workings of AQ through our team's blog posts. Learn about our development processes, community engagement, and future plans.`}
+  />
+
+  <FAQs
+    title="Frequently Asked Questions"
+    subtitle="Learn more about our team and the work we do"
+    tagline="FAQs"
+    classes={{ container: "max-w-6xl" }}
+    items={[
+      {
+        title: "Who are the core members of the AQ team?",
+        description:
+          "Our core team consists of experienced developers passionate about creating a simple and fast programming language that everyone can use.",
+      },
+      {
+        title: "How can I join the AQ community?",
+        description:
+          "You can join our community by contributing to our GitHub repository, joining discussions in our forums, or participating in our open-source projects.",
+      },
+      {
+        title: "Where is the AQ team based?",
+        description:
+          "Our team is distributed across the globe, working remotely to bring AQ to developers everywhere.",
+      },
+      {
+        title: "How can I contribute to AQ?",
+        description:
+          "You can contribute to AQ by submitting code, reporting issues, or helping improve our documentation on GitHub.",
+      },
+      {
+        title: "What are the future plans for AQ?",
+        description:
+          "We aim to continuously improve AQ by adding new features, optimizing performance, and expanding our community.",
+      },
+    ]}
+  />
+
+  <CallToAction
+    actions={[
+      {
+        variant: "primary",
+        text: "Explore AQ",
+        href: "https://github.com/aq-org/AQ",
+        target: "_blank",
+        icon: "tabler:github",
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Join the&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">AQ Community</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Collaborate with like-minded developers and help shape the future of fast, simple, and secure programming with AQ.
+    </Fragment>
+  </CallToAction>
+</Layout>

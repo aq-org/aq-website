@@ -1,11 +1,51 @@
 ---
-import Layout from '~/layouts/PageLayout.astro';
+import Layout from "~/layouts/PageLayout.astro";
+import Note from "~/components/widgets/Note.astro";
 
 const metadata = {
-  title: 'Contact',
+  title: "Contact Us",
+  ignoreTitleTemplate: true,
 };
 ---
 
 <Layout metadata={metadata}>
-Coming soon.
+  <!-- Note Widget ******************* -->
+
+  <Note />
+
+  <!-- Contact Us Content ************ -->
+
+  <section class="py-16 bg-white dark:bg-gray-900">
+    <div class="container mx-auto px-6 text-center">
+      <h1 class="text-3xl font-semibold text-gray-800 dark:text-white lg:text-4xl">
+        Contact Us
+      </h1>
+      <p class="text-gray-600 dark:text-gray-400 mt-6">
+        If you have any questions about AQ or any other concerns, even if they are not related to AQ, feel free to contact us. We are happy to engage with you on any issue.
+      </p>
+      <p class="text-gray-600 dark:text-gray-400 mt-2">
+        You can reach us via GitHub, X, Discord, and Email. We recommend using GitHub and Email for a quicker response.
+      </p>
+
+      <div class="flex justify-center mt-8">
+        <a href="https://github.com/aq-org/AQ" class="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-200 focus:text-gray-700 dark:focus:text-gray-200">
+          <span class="sr-only">GitHub</span>
+          <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .5a12.5 12.5 0 00-4 24c.6.1.8-.3.8-.6v-2c-3.2.7-4-1.3-4-1.3a3.15 3.15 0 00-1.3-1.8c-1.1-.8 0-.8 0-.8a2.5 2.5 0 011.8 1.2A2.72 2.72 0 009.4 21c.9-1.4.7-2.9.6-3.3-.5-1-1.7-1.7-3-2-.1-.4-.4-1.1 0-2.3 0 0 .8-.2 2.5 1a8.7 8.7 0 015 0c1.7-1.2 2.5-1 2.5-1 .5 1.1.2 1.9 0 2.3-.2.4-.8 1-1.5 1.2C14.3 18.4 14 21 14 21v2c0 .3.2.7.8.6A12.5 12.5 0 0012 .5z"></path></svg>
+        </a>
+        <a href="https://x.com/aq_organization" class="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-200 focus:text-gray-700 dark:focus:text-gray-200">
+          <span class="sr-only">X</span>
+          <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.1 4.6c-.8.4-1.6.6-2.5.8.9-.6 1.5-1.4 1.8-2.5-.8.5-1.7.9-2.7 1.1a4.5 4.5 0 00-7.7 4.1 12.8 12.8 0 01-9.3-4.7c-.8 1.4-.3 3.2 1.2 4a4.5 4.5 0 01-2.1-.6c0 1.4 1 2.6 2.3 2.9-.8.1-1.5.3-2.2 0 0 1.8 1.3 3.3 3.2 3.6a9.1 9.1 0 01-5.7 1.6 12.8 12.8 0 006.9 2h9.7c12 0 15.5-10 15.5-18.7v-.9C22 7 23 5.8 23.1 4.6z"></path></svg>
+        </a>
+        <a href="https://discord.gg/JCKzxavG" class="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-200 focus:text-gray-700 dark:focus:text-gray-200">
+          <span class="sr-only">Discord</span>
+          <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20.3 3a15.4 15.4 0 00-4.6-.7 13.6 13.6 0 00-7.1 0A14.6 14.6 0 003 5c-3.2 5.6-3.5 11.1-3.1 13.6a15.2 15.2 0 004.6 1.4 13 13 0 003.2-4.8 5.4 5.4 0 01-3-1.6l.7-1.5a6 6 0 003.3 1.5c.1.9.4 1.9 1 2.6a2.7 2.7 0 002.2 1.1 3.4 3.4 0 002.2-1.1 5.9 5.9 0 001-2.5 6 6 0 003.3-1.5l.6 1.5a5 5 0 01-2.9 1.5c1 1.8 2.3 3.7 3.9 4.8 5.8-2 8.7-15.9 3-18.2 0 0-.2 0-.6.4z"></path></svg>
+        </a>
+        <a href="mailto:admin@axa6.com" class="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-200 focus:text-gray-700 dark:focus:text-gray-200">
+          <span class="sr-only">Email</span>
+          <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19.5 4H4.6c-1 0-1.6.8-1.6 1.5V18c0 1 .8 1.5 1.6 1.5H19.5c1 0 1.5-.8 1.5-1.6V5.5c0-1-.8-1.5-1.5-1.5zM19 7.3l-7 4.1c-.2.1-.5.2-.7.2s-.5-.1-.6-.2l-7-4.1v-1.7l7 4.1 7-4.1v1.7z"></path></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
 </Layout>

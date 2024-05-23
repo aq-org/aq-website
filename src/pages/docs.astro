@@ -1,10 +1,28 @@
 ---
 import Layout from "~/layouts/PageLayout.astro";
-import Content from "~/components/widgets/Content.astro";
+import Note from "~/components/widgets/Note.astro";
+import BlogLatestPosts from "~/components/widgets/BlogLatestPosts.astro";
 
 const metadata = {
   title: "Docs",
+  ignoreTitleTemplate: true,
 };
 ---
+
 <Layout metadata={metadata}>
-Coming soon.</Layout>
+  <!-- Note Widget ******************* -->
+  <Note>
+    <Fragment slot="content">
+      <h2 class="text-2xl font-bold tracking-tight mb-4">Unorganized AQ Documentation</h2>
+      <p>
+        As AQ is currently under development, the documentation has not been organized yet. You can learn all about AQ through the AQ blog, including the latest development updates and related unpublished standards.
+      </p>
+    </Fragment>
+  </Note>
+
+  <!-- BlogLatestPosts Widget ******* -->
+  <BlogLatestPosts
+    title="Check Out the Latest AQ Blog"
+    information={`Browse our curated blog posts to learn all about the AQ language. Every article is a step towards mastering the art of AQ, uncovering its unique allure in development projects.`}
+  />
+</Layout>
