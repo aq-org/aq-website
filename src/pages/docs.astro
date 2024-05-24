@@ -1,7 +1,8 @@
 ---
 import Layout from "~/layouts/PageLayout.astro";
-import Note from "~/components/widgets/Note.astro";
 import BlogLatestPosts from "~/components/widgets/BlogLatestPosts.astro";
+import Hero from "~/components/widgets/Hero.astro";
+import { getPermalink, getBlogPermalink, getAsset } from '../utils/permalinks';
 
 const metadata = {
   title: "Docs",
@@ -10,12 +11,29 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-    <Note>
-      <h1 class="text-2xl font-bold tracking-tight mb-4">AQ Documentation</h1>
-      <p>
-        As AQ is currently under development, the documentation has not been organized yet. You can learn all about AQ through the AQ blog, including the latest development updates and related unpublished standards.
-      </p>
-    </Note>
+  <Hero
+  tagline="Start Learning AQ"
+  actions={[
+    {
+      variant: "primary",
+      text: "Get Started",
+      href: getBlogPermalink(),
+      target: "_blank",
+      icon: "tabler:download",
+    },
+    { text: "Learn more", href: "#features" },
+  ]}
+>
+  <Fragment slot="title">
+    <span class="text-accent dark:text-white highlight"> AQ </span>Documentation
+  </Fragment>
+
+  <Fragment slot="subtitle">
+    <span class="hidden sm:inline">
+      <span class="font-semibold">AQ</span> As AQ is currently under development, the documentation has not been organized yet. You can learn all about AQ through the AQ blog, including the latest development updates and related unpublished standards.</span
+    >
+  </Fragment>
+</Hero>
   <!-- BlogLatestPosts Widget ******* -->
   <BlogLatestPosts
     title="Check Out the Latest AQ Blog"
