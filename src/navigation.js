@@ -31,7 +31,7 @@ export const headerData = {
       text: 'Support',
       links: [
         { text: 'Community Forum', href: getPermalink('/community') },
-        { text: 'FAQ', href: 'https://www.axa6.com/#faq' },
+        { text: 'FAQ', href: 'https://github.com/aq-org/AQ/issues' },
         { text: 'Docs', href: getPermalink('/docs') },
         { text: 'Discord', href: 'https://discord.gg/JCKzxavG' },
         { text: 'Mail', href: 'mailto:admin@axa6.com' },
@@ -95,7 +95,7 @@ export const footerData = {
       title: 'Support',
       links: [
         { text: 'Community Forum', href: getPermalink('/community') },
-        { text: 'FAQ', href: 'https://www.axa6.com/#faq' },
+        { text: 'FAQ', href: 'https://github.com/aq-org/AQ/issues' },
         { text: 'Docs', href: getPermalink('/docs') },
         { text: 'Discord', href: 'https://discord.gg/JCKzxavG' },
         { text: 'Mail', href: 'mailto:admin@axa6.com' },
