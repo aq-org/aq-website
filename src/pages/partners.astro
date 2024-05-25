@@ -8,6 +8,10 @@ import Content from "~/components/widgets/Content.astro";
 import FAQs from "~/components/widgets/FAQs.astro";
 import CallToAction from "~/components/widgets/CallToAction.astro";
 
+import DevelopImg from "../assets/images/develop.jpg";
+import NetImg from "../assets/images/net.jpg";
+import WorkImg from "../assets/images/work.jpg";
+
 const metadata = {
   title: "Partners",
   ignoreTitleTemplate: true,
@@ -34,7 +38,8 @@ const metadata = {
     </Fragment>
     <Fragment slot="subtitle">
       <span class="hidden sm:inline">
-        Our mission is to create lasting partnerships that contribute to mutual growth and success.
+        Our mission is to create lasting partnerships that contribute to mutual
+        growth and success.
       </span>
     </Fragment>
   </Hero>
@@ -110,6 +115,10 @@ const metadata = {
           "We believe in building lasting relationships with our partners.",
       },
     ]}
+    image={{
+      src: DevelopImg,
+      alt: "Develop with AQ",
+    }}
   >
     <Fragment slot="content">
       <h3
@@ -117,7 +126,8 @@ const metadata = {
       >
         Achieve More Together
       </h3>
-      Experience the benefits of strategic partnerships that drive innovation and expansion.
+      Experience the benefits of strategic partnerships that drive innovation and
+      expansion.
     </Fragment>
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-green-50 dark:bg-transparent"></div>
@@ -140,10 +150,13 @@ const metadata = {
       },
       {
         title: "Global Reach",
-        description:
-          "Leveraging global networks to maximize impact and reach.",
+        description: "Leveraging global networks to maximize impact and reach.",
       },
     ]}
+    image={{
+      src: WorkImg,
+      alt: "Work with AQ",
+    }}
   >
     <Fragment slot="content">
       Partner with us to explore new horizons and achieve unprecedented success.
@@ -174,42 +187,13 @@ const metadata = {
           "Be part of a community of like-minded organizations committed to excellence.",
       },
     ]}
+    image={{
+      src: NetImg,
+      alt: "AQ Net",
+    }}
   >
     <Fragment slot="content">
       Join a thriving community of partners dedicated to achieving excellence.
-    </Fragment>
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-green-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- Content Widget **************** -->
-  <Content
-    isReversed
-    items={[
-      {
-        title: "Our Sponsors",
-        description: "We are grateful for the support of our amazing sponsors who help make our initiatives possible.",
-      },
-      {
-        title: "Platinum Sponsors",
-        description: "Our top-tier sponsors who provide unparalleled support and collaboration."
-      },
-      {
-        title: "Gold Sponsors",
-        description: "A special thanks to our gold sponsors for their invaluable contributions."
-      },
-      {
-        title: "Silver Sponsors",
-        description: "Acknowledging our silver sponsors for their essential support."
-      },
-    ]}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        Meet Our Sponsors
-      </h3>
-      Together with our sponsors, we're driving change and achieving new heights.
     </Fragment>
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-green-50 dark:bg-transparent"></div>
@@ -268,7 +252,8 @@ const metadata = {
       >
     </Fragment>
     <Fragment slot="subtitle">
-      Become part of a thriving network that values innovation, growth, and mutual success.
+      Become part of a thriving network that values innovation, growth, and
+      mutual success.
     </Fragment>
   </CallToAction>
 </Layout>
