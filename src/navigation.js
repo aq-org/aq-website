@@ -41,20 +41,13 @@ export const headerData = {
       text: 'Blog',
       links: [
         {
-          text: 'Blog List',
+          text: 'All Article',
           href: getBlogPermalink(),
         },
+        { text: 'X', href: 'https://x.com/aq_organization' },
         {
-          text: 'Article',
-          href: getPermalink('post'),
-        },
-        {
-          text: 'Category Page',
-          href: getPermalink('category'),
-        },
-        {
-          text: 'Tag Page',
-          href: getPermalink('tag'),
+          text: 'RSS',
+          href: getAsset('/rss.xml'),
         },
       ],
     },
@@ -105,20 +98,13 @@ export const footerData = {
       title: 'Blog',
       links: [
         {
-          text: 'Blog List',
+          text: 'All Article',
           href: getBlogPermalink(),
         },
+        { text: 'X', href: 'https://x.com/aq_organization' },
         {
-          text: 'Article',
-          href: getPermalink('post'),
-        },
-        {
-          text: 'Category Page',
-          href: getPermalink('category'),
-        },
-        {
-          text: 'Tag Page',
-          href: getPermalink('tag'),
+          text: 'RSS',
+          href: getAsset('/rss.xml'),
         },
       ],
     },
