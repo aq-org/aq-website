@@ -1,5 +1,5 @@
 ---
-publishDate: 2024-05-26T21:50:20+08:00
+publishDate: 2024-05-28T23:05:54+08:00
 title: How to write a programming language from scratch? - AQ
 excerpt: How to write a programming language from scratch? AQ is a fast, small, simple and safe interpreted programming language.
 image: https://www.axa6.com/aq.png
