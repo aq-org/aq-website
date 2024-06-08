@@ -2,7 +2,7 @@
 publishDate: 2024-06-08T19:32:08+08:00
 title: Research on ChatGPT Servers - AQ
 excerpt: In today's development using ChatGPT, we discovered information related to ChatGPT servers. Next, we will introduce the relevant research on ChatGPT servers.
-image: https://www.axa6.com/openai.jpg
+image: https://www.axa6.com/aq.png
 category: Blog
 tags:
   - AQ
