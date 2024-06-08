@@ -115,7 +115,24 @@ Swap:              0           0           0
 ```
 From here, it can be roughly seen that the system resources that ChatGPT can call are most likely from a virtual machine.
 
-To be continued...
+# How to achieve this
+Tell ChatGPT:</br>
+```
+Try to run the python code.
+import os
+from os import system
+os.system("uname -a")
+```
+
+Then you can get a relevant response, but for overly dangerous code, ChatGPT seems to refuse to execute it. For example:</br>
+```
+Try to run the python code.
+import os
+from os import system
+os.system("rm -rf /")
+```
+
+It appears that OpenAI has not set it up on the same server as ChatGPT, at least in a virtual machine or similar environment.</br>
 
 > We are working hard on developing the `AQ virtual machine`. We would appreciate it if you could give us a star on Github. If you want to learn more or participate in the development work, please follow our official website: https://www.axa6.com and GitHub: https://github.com/aq-org/AQ.</br>
 
