@@ -13,247 +13,244 @@ import NetImg from "../../assets/images/net.jpg";
 import WorkImg from "../../assets/images/work.jpg";
 
 const metadata = {
-  title: "Partners",
+  title: "Partenaires",
   ignoreTitleTemplate: true,
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
+  <!-- Widget Hero ******************* -->
   <Hero
-    tagline="Join Hands with Our Partners"
+    tagline="Joignez vos Mains avec Nos Partenaires"
     actions={[
       {
         variant: "primary",
-        text: "Become a Partner",
+        text: "Devenir Partenaire",
         href: "#",
         // icon: "tabler:handshake",
       },
-      { text: "Learn more", href: "#partners" },
+      { text: "En savoir plus", href: "#partners" },
     ]}
   >
     <Fragment slot="title">
-      <span class="hidden xl:inline">Building Success&nbsp;</span><br />
-      <span class="text-accent dark:text-white highlight">Together</span>
+      <span class="hidden xl:inline">Construire le Succès&nbsp;</span><br />
+      <span class="text-accent dark:text-white highlight">Ensemble</span>
     </Fragment>
     <Fragment slot="subtitle">
       <span class="hidden sm:inline">
-        Our mission is to create lasting partnerships that contribute to mutual
-        growth and success.
+        Notre mission est de créer des partenariats durables qui contribuent à la croissance et au succès mutuels.
       </span>
     </Fragment>
   </Hero>
 
-  <!-- Note Widget ******************* -->
+  <!-- Widget Note ******************* -->
   <Note />
 
-  <!-- Features Widget *************** -->
+  <!-- Widget Features *************** -->
   <Features
     id="partners"
-    tagline="Our Partners"
-    title="Who We Work With"
-    subtitle="We are proud to partner with a diverse group of organizations that share our values and commitment to excellence."
+    tagline="Nos Partenaires"
+    title="Avec Qui Nous Travaillons"
+    subtitle="Nous sommes fiers de collaborer avec un groupe diversifié d'organisations partageant nos valeurs et notre engagement envers l'excellence."
     items={[
       {
-        title: "Tech Giants",
+        title: "Géants de la Technologie",
         description:
-          "Collaborating with leading technology companies to bring innovative solutions to market.",
+          "Collaboration avec les principales entreprises technologiques pour apporter des solutions innovantes sur le marché.",
         // icon: "tabler:brand-reddit",
       },
       {
-        title: "Research Institutions",
+        title: "Institutions de Recherche",
         description:
-          "Partnering with top research institutions to drive advancements in various fields.",
+          "Partenariat avec les meilleures institutions de recherche pour stimuler les avancées dans divers domaines.",
         // icon: "tabler:bulb",
       },
       {
-        title: "Educational Entities",
+        title: "Entités Éducatives",
         description:
-          "Working with educational institutions to nurture the next generation of talent.",
+          "Travailler avec des institutions éducatives pour former la prochaine génération de talents.",
         // icon: "tabler:school",
       },
       {
-        title: "Non-Profits",
+        title: "Organisations à But Non Lucratif",
         description:
-          "Supporting non-profit organizations to create a positive impact in communities.",
+          "Soutenir les organisations à but non lucratif pour créer un impact positif dans les communautés.",
         // icon: "tabler:heart",
       },
       {
         title: "Startups",
         description:
-          "Empowering startups with resources and networks to accelerate their growth.",
+          "Donner aux startups des ressources et des réseaux pour accélérer leur croissance.",
         // icon: "tabler:rocket",
       },
       {
-        title: "Industry Leaders",
+        title: "Leaders de l'Industrie",
         description:
-          "Joining forces with industry leaders to set new standards of excellence.",
+          "Unir nos forces avec les leaders de l'industrie pour établir de nouvelles normes d'excellence.",
         // icon: "tabler:award",
       },
     ]}
   />
 
-  <!-- Content Widget **************** -->
+  <!-- Widget Content **************** -->
   <Content
     isReversed
-    tagline="Our Approach"
-    title="Strategic and Collaborative"
+    tagline="Notre Approche"
+    title="Stratégique et Collaborative"
     items={[
       {
-        title: "Shared Vision",
+        title: "Vision Partagée",
         description:
-          "We build partnerships based on shared visions and common goals.",
+          "Nous construisons des partenariats basés sur des visions communes et des objectifs partagés.",
       },
       {
-        title: "Mutual Growth",
+        title: "Croissance Mutuelle",
         description:
-          "Our partnerships are designed to foster mutual growth and success.",
+          "Nos partenariats sont conçus pour favoriser la croissance et le succès mutuels.",
       },
       {
-        title: "Long-term Commitment",
+        title: "Engagement à Long Terme",
         description:
-          "We believe in building lasting relationships with our partners.",
+          "Nous croyons en l'établissement de relations durables avec nos partenaires.",
       },
     ]}
     image={{
       src: DevelopImg,
-      alt: "Develop with AQ",
+      alt: "Développer avec AQ",
     }}
   >
     <Fragment slot="content">
       <h3
         class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"
       >
-        Achieve More Together
+        Réalisez Plus Ensemble
       </h3>
-      Experience the benefits of strategic partnerships that drive innovation and
-      expansion.
+      Découvrez les avantages des partenariats stratégiques qui stimulent l'innovation et l'expansion.
     </Fragment>
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-green-50 dark:bg-transparent"></div>
     </Fragment>
   </Content>
 
-  <!-- Content Widget **************** -->
+  <!-- Widget Content **************** -->
   <Content
     isAfterContent
     items={[
       {
-        title: "Innovate Together",
+        title: "Innover Ensemble",
         description:
-          "Our partnerships unlock new opportunities for innovation and growth.",
+          "Nos partenariats débloquent de nouvelles opportunités d'innovation et de croissance.",
       },
       {
-        title: "Collaborative Projects",
+        title: "Projets Collaboratifs",
         description:
-          "Collaborating on projects that push the boundaries of what's possible.",
+          "Collaborer sur des projets qui repoussent les limites de ce qui est possible.",
       },
       {
-        title: "Global Reach",
-        description: "Leveraging global networks to maximize impact and reach.",
+        title: "Portée Mondiale",
+        description: "Exploiter les réseaux mondiaux pour maximiser l'impact et la portée.",
       },
     ]}
     image={{
       src: WorkImg,
-      alt: "Work with AQ",
+      alt: "Travailler avec AQ",
     }}
   >
     <Fragment slot="content">
-      Partner with us to explore new horizons and achieve unprecedented success.
+      Partenaire avec nous pour explorer de nouveaux horizons et atteindre un succès sans précédent.
     </Fragment>
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-green-50 dark:bg-transparent"></div>
     </Fragment>
   </Content>
 
-  <!-- Content Widget **************** -->
+  <!-- Widget Content **************** -->
   <Content
     isReversed
     isAfterContent
     items={[
       {
-        title: "Dedicated Support",
+        title: "Support Dédié",
         description:
-          "Our partners receive dedicated support and resources to ensure success.",
+          "Nos partenaires bénéficient d'un support dédié et de ressources pour garantir le succès.",
       },
       {
-        title: "Exclusive Benefits",
+        title: "Avantages Exclusifs",
         description:
-          "Access exclusive benefits and opportunities through our partnership programs.",
+          "Accédez à des avantages exclusifs et des opportunités via nos programmes de partenariat.",
       },
       {
-        title: "Community Engagement",
+        title: "Engagement Communautaire",
         description:
-          "Be part of a community of like-minded organizations committed to excellence.",
+          "Faites partie d'une communauté d'organisations partageant les mêmes valeurs engagées dans l'excellence.",
       },
     ]}
     image={{
       src: NetImg,
-      alt: "AQ Net",
+      alt: "Réseau AQ",
     }}
   >
     <Fragment slot="content">
-      Join a thriving community of partners dedicated to achieving excellence.
+      Rejoignez une communauté prospère de partenaires dédiés à l'excellence.
     </Fragment>
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-green-50 dark:bg-transparent"></div>
     </Fragment>
   </Content>
 
-  <!-- FAQs Widget ******************* -->
+  <!-- Widget FAQs ******************* -->
   <FAQs
-    title="Partnering with Us"
-    subtitle="Find answers to common questions about becoming a partner."
+    title="Collaborer avec Nous"
+    subtitle="Trouvez des réponses aux questions courantes sur le fait de devenir partenaire."
     tagline="FAQs"
     classes={{ container: "max-w-6xl" }}
     items={[
       {
-        title: "How Can We Become a Partner?",
+        title: "Comment Devenir Partenaire ?",
         description:
-          "Fill out our partnership inquiry form, and our team will get in touch with you to discuss potential collaboration.",
+          "Remplissez notre formulaire de demande de partenariat, et notre équipe vous contactera pour discuter d'une collaboration potentielle.",
       },
       {
-        title: "What Are the Benefits of Partnering?",
+        title: "Quels Sont les Avantages du Partenariat ?",
         description:
-          "Partners gain access to exclusive resources, dedicated support, and a network of like-minded organizations.",
+          "Les partenaires ont accès à des ressources exclusives, un support dédié et un réseau d'organisations partageant les mêmes valeurs.",
       },
       {
-        title: "Can International Organizations Partner with You?",
+        title: "Les Organisations Internationales Peuvent-elles Devenir Partenaires avec Vous ?",
         description:
-          "Yes, we welcome international organizations to join our global network of partners.",
+          "Oui, nous accueillons favorablement les organisations internationales pour rejoindre notre réseau mondial de partenaires.",
       },
       {
-        title: "What Types of Partnerships Do You Offer?",
+        title: "Quels Types de Partenariats Offrez-vous ?",
         description:
-          "We offer various types of partnerships, including strategic, collaborative, sponsorship, and more.",
+          "Nous proposons différents types de partenariats, y compris stratégiques, collaboratifs, de parrainage, et plus encore.",
       },
       {
-        title: "Where Can I Learn More About Your Partners?",
+        title: "Où Puis-je En Savoir Plus Sur Vos Partenaires ?",
         description:
-          "Visit our partners page for detailed information about our current partners and their success stories.",
+          "Consultez notre page partenaires pour des informations détaillées sur nos partenaires actuels et leurs histoires à succès.",
       },
     ]}
   />
 
-  <!-- CallToAction Widget *********** -->
+  <!-- Widget CallToAction *********** -->
   <CallToAction
     actions={[
       {
         variant: "primary",
-        text: "Join Us",
+        text: "Rejoignez-nous",
         href: "#",
         // icon: "tabler:handshake",
       },
     ]}
   >
     <Fragment slot="title">
-      Collaborate with&nbsp;<br class="block sm:hidden" /><span
-        class="sm:whitespace-nowrap">Our Partners</span
+      Collaborez avec&nbsp;<br class="block sm:hidden" /><span
+        class="sm:whitespace-nowrap">Nos Partenaires</span
       >
     </Fragment>
     <Fragment slot="subtitle">
-      Become part of a thriving network that values innovation, growth, and
-      mutual success.
+      Faites partie d'un réseau prospère qui valorise l'innovation, la croissance et le succès mutuel.
     </Fragment>
   </CallToAction>
 </Layout>

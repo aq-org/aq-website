@@ -11,18 +11,18 @@ import CallToAction from "~/components/widgets/CallToAction.astro";
 import WorkImg from '../../assets/images/work.jpg';
 
 const metadata = {
-  title: "Team",
+  title: "Équipe",
   ignoreTitleTemplate: true,
 };
 ---
 
 <Layout metadata={metadata}>
   <Hero
-    tagline="Meet Our Team"
+    tagline="Rencontrez Notre Équipe"
     actions={[
       {
         variant: "primary",
-        text: "View on Github",
+        text: "Voir sur Github",
         href: "https://github.com/aq-org/AQ",
         target: "_blank",
         // icon: "tabler:github",
@@ -30,12 +30,12 @@ const metadata = {
     ]}
   >
     <Fragment slot="title">
-      <span class="text-accent dark:text-white highlight"> AQ </span> Team
+      <span class="text-accent dark:text-white highlight"> Équipe </span> AQ
     </Fragment>
 
     <Fragment slot="subtitle">
       <span class="hidden sm:inline">
-        Our team is driven by innovation and collaboration, making AQ a standout choice for developers around the globe.
+        Notre équipe est animée par l'innovation et la collaboration, faisant d'AQ un choix remarquable pour les développeurs du monde entier.
       </span>
     </Fragment>
   </Hero>
@@ -43,26 +43,26 @@ const metadata = {
   <Content
     items={[
       {
-        title: "Our Mission",
+        title: "Notre Mission",
         description:
-          "At AQ, our mission is to create a fast, simple, and secure programming language that meets the needs of modern developers.",
+          "Chez AQ, notre mission est de créer un langage de programmation rapide, simple et sécurisé qui répond aux besoins des développeurs modernes.",
       },
       {
-        title: "Our Vision",
+        title: "Notre Vision",
         description:
-          "We envision a world where programming is accessible, efficient, and enjoyable for everyone, thanks to the power of AQ.",
+          "Nous envisageons un monde où la programmation est accessible, efficace et agréable pour tous, grâce à la puissance d'AQ.",
       },
     ]}
     image={{
       src: WorkImg,
-      alt: "AQ Team",
+      alt: "Équipe AQ",
     }}
   >
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        Our Team
+        Notre Équipe
       </h3>
-      Our dedicated team of developers, designers, and community managers work tirelessly to enhance AQ and support our growing user community.
+      Notre équipe dévouée de développeurs, designers et gestionnaires de communauté travaille sans relâche pour améliorer AQ et soutenir notre communauté d'utilisateurs en pleine croissance.
     </Fragment>
 
     <Fragment slot="bg">
@@ -71,44 +71,44 @@ const metadata = {
   </Content>
 
   <Note>
-    Our team currently mainly works on Github. You can find more information about our contributors on Github.
+    Notre équipe travaille principalement sur Github actuellement. Vous pouvez trouver plus d'informations sur nos contributeurs sur Github.
   </Note>
 
   <BlogLatestPosts
-    title="Team Insights"
-    information={`Experience the inner workings of AQ through our team's blog posts. Learn about our development processes, community engagement, and future plans.`}
+    title="Aperçu de l'Équipe"
+    information={`Découvrez les coulisses d'AQ à travers les articles de blog de notre équipe. Apprenez-en davantage sur nos processus de développement, l'engagement communautaire et les projets futurs.`}
   />
 
   <FAQs
-    title="Frequently Asked Questions"
-    subtitle="Learn more about our team and the work we do"
+    title="Questions Fréquemment Posées"
+    subtitle="En savoir plus sur notre équipe et notre travail"
     tagline="FAQs"
     classes={{ container: "max-w-6xl" }}
     items={[
       {
-        title: "Who are the core members of the AQ team?",
+        title: "Qui sont les membres principaux de l'équipe AQ ?",
         description:
-          "Our core team consists of experienced developers passionate about creating a simple and fast programming language that everyone can use.",
+          "Notre équipe principale se compose de développeurs expérimentés passionnés par la création d'un langage de programmation simple et rapide que tout le monde peut utiliser.",
       },
       {
-        title: "How can I join the AQ community?",
+        title: "Comment puis-je rejoindre la communauté AQ ?",
         description:
-          "You can join our community by contributing to our GitHub repository, joining discussions in our forums, or participating in our open-source projects.",
+          "Vous pouvez rejoindre notre communauté en contribuant à notre dépôt GitHub, en participant aux discussions dans nos forums, ou en participant à nos projets open source.",
       },
       {
-        title: "Where is the AQ team based?",
+        title: "Où est basée l'équipe AQ ?",
         description:
-          "Our team is distributed across the globe, working remotely to bring AQ to developers everywhere.",
+          "Notre équipe est répartie à travers le monde, travaillant à distance pour rendre AQ accessible aux développeurs partout.",
       },
       {
-        title: "How can I contribute to AQ?",
+        title: "Comment puis-je contribuer à AQ ?",
         description:
-          "You can contribute to AQ by submitting code, reporting issues, or helping improve our documentation on GitHub.",
+          "Vous pouvez contribuer à AQ en soumettant du code, en signalant des problèmes, ou en aidant à améliorer notre documentation sur GitHub.",
       },
       {
-        title: "What are the future plans for AQ?",
+        title: "Quels sont les projets futurs pour AQ ?",
         description:
-          "We aim to continuously improve AQ by adding new features, optimizing performance, and expanding our community.",
+          "Nous visons à améliorer continuellement AQ en ajoutant de nouvelles fonctionnalités, en optimisant les performances, et en élargissant notre communauté.",
       },
     ]}
   />
@@ -117,19 +117,10 @@ const metadata = {
     actions={[
       {
         variant: "primary",
-        text: "Explore AQ",
+        text: "Explorer AQ",
         href: "https://github.com/aq-org/AQ",
         target: "_blank",
         // icon: "tabler:github",
       },
     ]}
   >
-    <Fragment slot="title">
-      Join the&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">AQ Community</span>
-    </Fragment>
-
-    <Fragment slot="subtitle">
-      Collaborate with like-minded developers and help shape the future of fast, simple, and secure programming with AQ.
-    </Fragment>
-  </CallToAction>
-</Layout>
