@@ -3,7 +3,7 @@ import Layout from '~/layouts/PageLayout.astro';
 import { getHomePermalink } from '~/utils/permalinks';
 
 const metadata = {
-  title: "404 Not Found - AQ",
+  title: "404 Non Trouvé - AQ",
   ignoreTitleTemplate: true,
 };
 ---
@@ -13,14 +13,14 @@ const metadata = {
     <div class="container flex flex-col items-center justify-center px-5 mx-auto my-8">
       <div class="max-w-md text-center">
         <h2 class="mb-8 font-bold text-9xl">
-          <span class="sr-only">Error</span>
+          <span class="sr-only">Erreur</span>
           <span class="text-primary">404</span>
         </h2>
-        <p class="text-3xl font-semibold md:text-3xl">Sorry, we couldn't find this page.</p>
+        <p class="text-3xl font-semibold md:text-3xl">Désolé, nous n'avons pas pu trouver cette page.</p>
         <p class="mt-4 mb-8 text-lg text-muted dark:text-slate-400">
-          But dont worry, you can find plenty of other things on our homepage.
+          Mais ne vous inquiétez pas, vous pouvez trouver plein d'autres choses sur notre page d'accueil.
         </p>
-        <a rel="noopener noreferrer" href={getHomePermalink()} class="btn ml-4">Back to homepage</a>
+        <a rel="noopener noreferrer" href={getHomePermalink()} class="btn ml-4">Retour à la page d'accueil</a>
       </div>
     </div>
   </section>
