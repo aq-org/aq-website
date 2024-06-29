@@ -13,7 +13,7 @@ import NetImg from "../../assets/images/net.jpg";
 import WorkImg from "../../assets/images/work.jpg";
 
 const metadata = {
-  title: "Partners",
+  title: "Socios",
   ignoreTitleTemplate: true,
 };
 ---
@@ -21,25 +21,24 @@ const metadata = {
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
   <Hero
-    tagline="Join Hands with Our Partners"
+    tagline="Únete a Nuestros Socios"
     actions={[
       {
         variant: "primary",
-        text: "Become a Partner",
+        text: "Conviértete en Socio",
         href: "#",
         // icon: "tabler:handshake",
       },
-      { text: "Learn more", href: "#partners" },
+      { text: "Aprende más", href: "#partners" },
     ]}
   >
     <Fragment slot="title">
-      <span class="hidden xl:inline">Building Success&nbsp;</span><br />
-      <span class="text-accent dark:text-white highlight">Together</span>
+      <span class="hidden xl:inline">Construyendo Éxito&nbsp;</span><br />
+      <span class="text-accent dark:text-white highlight">Juntos</span>
     </Fragment>
     <Fragment slot="subtitle">
       <span class="hidden sm:inline">
-        Our mission is to create lasting partnerships that contribute to mutual
-        growth and success.
+        Nuestra misión es crear asociaciones duraderas que contribuyan al crecimiento y éxito mutuo.
       </span>
     </Fragment>
   </Hero>
@@ -50,44 +49,44 @@ const metadata = {
   <!-- Features Widget *************** -->
   <Features
     id="partners"
-    tagline="Our Partners"
-    title="Who We Work With"
-    subtitle="We are proud to partner with a diverse group of organizations that share our values and commitment to excellence."
+    tagline="Nuestros Socios"
+    title="Con Quién Trabajamos"
+    subtitle="Nos enorgullece asociarnos con un grupo diverso de organizaciones que comparten nuestros valores y compromiso con la excelencia."
     items={[
       {
-        title: "Tech Giants",
+        title: "Gigantes Tecnológicos",
         description:
-          "Collaborating with leading technology companies to bring innovative solutions to market.",
+          "Colaborando con las principales empresas de tecnología para llevar soluciones innovadoras al mercado.",
         // icon: "tabler:brand-reddit",
       },
       {
-        title: "Research Institutions",
+        title: "Instituciones de Investigación",
         description:
-          "Partnering with top research institutions to drive advancements in various fields.",
+          "Asociándonos con las principales instituciones de investigación para impulsar avances en diversos campos.",
         // icon: "tabler:bulb",
       },
       {
-        title: "Educational Entities",
+        title: "Entidades Educativas",
         description:
-          "Working with educational institutions to nurture the next generation of talent.",
+          "Trabajando con instituciones educativas para nutrir a la próxima generación de talentos.",
         // icon: "tabler:school",
       },
       {
-        title: "Non-Profits",
+        title: "Organizaciones Sin Fines de Lucro",
         description:
-          "Supporting non-profit organizations to create a positive impact in communities.",
+          "Apoyando a organizaciones sin fines de lucro para crear un impacto positivo en las comunidades.",
         // icon: "tabler:heart",
       },
       {
         title: "Startups",
         description:
-          "Empowering startups with resources and networks to accelerate their growth.",
+          "Empoderando a startups con recursos y redes para acelerar su crecimiento.",
         // icon: "tabler:rocket",
       },
       {
-        title: "Industry Leaders",
+        title: "Líderes de la Industria",
         description:
-          "Joining forces with industry leaders to set new standards of excellence.",
+          "Uniéndonos con líderes de la industria para establecer nuevos estándares de excelencia.",
         // icon: "tabler:award",
       },
     ]}
@@ -96,38 +95,37 @@ const metadata = {
   <!-- Content Widget **************** -->
   <Content
     isReversed
-    tagline="Our Approach"
-    title="Strategic and Collaborative"
+    tagline="Nuestro Enfoque"
+    title="Estratégico y Colaborativo"
     items={[
       {
-        title: "Shared Vision",
+        title: "Visión Compartida",
         description:
-          "We build partnerships based on shared visions and common goals.",
+          "Construimos asociaciones basadas en visiones compartidas y objetivos comunes.",
       },
       {
-        title: "Mutual Growth",
+        title: "Crecimiento Mutuo",
         description:
-          "Our partnerships are designed to foster mutual growth and success.",
+          "Nuestras asociaciones están diseñadas para fomentar el crecimiento y éxito mutuo.",
       },
       {
-        title: "Long-term Commitment",
+        title: "Compromiso a Largo Plazo",
         description:
-          "We believe in building lasting relationships with our partners.",
+          "Creemos en construir relaciones duraderas con nuestros socios.",
       },
     ]}
     image={{
       src: DevelopImg,
-      alt: "Develop with AQ",
+      alt: "Desarrolla con AQ",
     }}
   >
     <Fragment slot="content">
       <h3
         class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"
       >
-        Achieve More Together
+        Logra Más Juntos
       </h3>
-      Experience the benefits of strategic partnerships that drive innovation and
-      expansion.
+      Experimenta los beneficios de asociaciones estratégicas que impulsan la innovación y la expansión.
     </Fragment>
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-green-50 dark:bg-transparent"></div>
@@ -139,27 +137,27 @@ const metadata = {
     isAfterContent
     items={[
       {
-        title: "Innovate Together",
+        title: "Innovar Juntos",
         description:
-          "Our partnerships unlock new opportunities for innovation and growth.",
+          "Nuestras asociaciones desbloquean nuevas oportunidades para la innovación y el crecimiento.",
       },
       {
-        title: "Collaborative Projects",
+        title: "Proyectos Colaborativos",
         description:
-          "Collaborating on projects that push the boundaries of what's possible.",
+          "Colaborando en proyectos que empujan los límites de lo que es posible.",
       },
       {
-        title: "Global Reach",
-        description: "Leveraging global networks to maximize impact and reach.",
+        title: "Alcance Global",
+        description: "Aprovechando redes globales para maximizar el impacto y el alcance.",
       },
     ]}
     image={{
       src: WorkImg,
-      alt: "Work with AQ",
+      alt: "Trabaja con AQ",
     }}
   >
     <Fragment slot="content">
-      Partner with us to explore new horizons and achieve unprecedented success.
+      Asóciate con nosotros para explorar nuevos horizontes y lograr un éxito sin precedentes.
     </Fragment>
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-green-50 dark:bg-transparent"></div>
@@ -172,19 +170,19 @@ const metadata = {
     isAfterContent
     items={[
       {
-        title: "Dedicated Support",
+        title: "Soporte Dedicado",
         description:
-          "Our partners receive dedicated support and resources to ensure success.",
+          "Nuestros socios reciben soporte y recursos dedicados para asegurar el éxito.",
       },
       {
-        title: "Exclusive Benefits",
+        title: "Beneficios Exclusivos",
         description:
-          "Access exclusive benefits and opportunities through our partnership programs.",
+          "Accede a beneficios y oportunidades exclusivas a través de nuestros programas de asociación.",
       },
       {
-        title: "Community Engagement",
+        title: "Participación Comunitaria",
         description:
-          "Be part of a community of like-minded organizations committed to excellence.",
+          "Sé parte de una comunidad de organizaciones afines comprometidas con la excelencia.",
       },
     ]}
     image={{
@@ -193,7 +191,7 @@ const metadata = {
     }}
   >
     <Fragment slot="content">
-      Join a thriving community of partners dedicated to achieving excellence.
+      Únete a una comunidad próspera de socios dedicados a lograr la excelencia.
     </Fragment>
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-green-50 dark:bg-transparent"></div>
@@ -202,35 +200,35 @@ const metadata = {
 
   <!-- FAQs Widget ******************* -->
   <FAQs
-    title="Partnering with Us"
-    subtitle="Find answers to common questions about becoming a partner."
+    title="Asociarse con Nosotros"
+    subtitle="Encuentra respuestas a preguntas comunes sobre cómo convertirse en socio."
     tagline="FAQs"
     classes={{ container: "max-w-6xl" }}
     items={[
       {
-        title: "How Can We Become a Partner?",
+        title: "¿Cómo podemos convertirnos en socios?",
         description:
-          "Fill out our partnership inquiry form, and our team will get in touch with you to discuss potential collaboration.",
+          "Llena nuestro formulario de consulta de asociación y nuestro equipo se pondrá en contacto contigo para discutir una posible colaboración.",
       },
       {
-        title: "What Are the Benefits of Partnering?",
+        title: "¿Cuáles son los beneficios de asociarse?",
         description:
-          "Partners gain access to exclusive resources, dedicated support, and a network of like-minded organizations.",
+          "Los socios obtienen acceso a recursos exclusivos, soporte dedicado y una red de organizaciones afines.",
       },
       {
-        title: "Can International Organizations Partner with You?",
+        title: "¿Pueden las organizaciones internacionales asociarse con ustedes?",
         description:
-          "Yes, we welcome international organizations to join our global network of partners.",
+          "Sí, damos la bienvenida a organizaciones internacionales a unirse a nuestra red global de socios.",
       },
       {
-        title: "What Types of Partnerships Do You Offer?",
+        title: "¿Qué tipos de asociaciones ofrecen?",
         description:
-          "We offer various types of partnerships, including strategic, collaborative, sponsorship, and more.",
+          "Ofrecemos varios tipos de asociaciones, incluyendo estratégicas, colaborativas, de patrocinio y más.",
       },
       {
-        title: "Where Can I Learn More About Your Partners?",
+        title: "¿Dónde puedo aprender más sobre sus socios?",
         description:
-          "Visit our partners page for detailed information about our current partners and their success stories.",
+          "Visita nuestra página de socios para obtener información detallada sobre nuestros socios actuales y sus historias de éxito.",
       },
     ]}
   />
@@ -240,20 +238,20 @@ const metadata = {
     actions={[
       {
         variant: "primary",
-        text: "Join Us",
+        text: "Únete a Nosotros",
         href: "#",
         // icon: "tabler:handshake",
       },
     ]}
   >
     <Fragment slot="title">
-      Collaborate with&nbsp;<br class="block sm:hidden" /><span
-        class="sm:whitespace-nowrap">Our Partners</span
+      Colabora con&nbsp;<br class="block sm:hidden" /><span
+        class="sm:whitespace-nowrap">Nuestros Socios</span
       >
     </Fragment>
     <Fragment slot="subtitle">
-      Become part of a thriving network that values innovation, growth, and
-      mutual success.
+      Sé parte de una red próspera que valora la innovación, el crecimiento y
+      el éxito mutuo.
     </Fragment>
   </CallToAction>
 </Layout>
