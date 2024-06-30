@@ -1,6 +1,6 @@
 ---
 title: 'Privacy Policy'
-layout: '~/layouts/MarkdownLayout.astro'
+layout: '~/layouts/zh/MarkdownLayout.astro'
 ---
 
 __Update Time: May 19th,2024__
