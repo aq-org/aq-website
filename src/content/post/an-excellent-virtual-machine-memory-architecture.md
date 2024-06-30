@@ -39,7 +39,7 @@ Although `virtual machine` architectures in different languages may differ, they
 During the development of `AQ`, this architecture was used, but tests showed significant memory usage.  
 Below is the `register.h` code previously used by `AQ`:
 ```C
-// Copyright 2024 AQ authors, All Rights Reserved.
+// Copyright 2024 AQ author, All Rights Reserved.
 // This program is licensed under the AQ License. You can find the AQ license in
 // the root directory.
 
@@ -243,7 +243,7 @@ There are `6` basic types with specific definitions:
 6. bool - 8 bits (1 byte)
 
 ```C
-// Copyright 2024 AQ authors, All Rights Reserved.
+// Copyright 2024 AQ author, All Rights Reserved.
 // This program is licensed under the AQ License. You can find the AQ license in
 // the root directory.
 
@@ -274,7 +274,7 @@ typedef bool aqbool;
 ## `memory.h`
 
 ```C
-// Copyright 2024 AQ authors, All Rights Reserved.
+// Copyright 2024 AQ author, All Rights Reserved.
 // This program is licensed under the AQ License. You can find the AQ license in
 // the root directory.
 
@@ -408,7 +408,7 @@ int AqvmMemory_WriteData(struct AqvmMemory_Memory* memory, size_t index, void* d
 Below are the specific function implementations:
 
 ```C
-// Copyright 2024 AQ authors, All Rights Reserved.
+// Copyright 2024 AQ author, All Rights Reserved.
 // This program is licensed under the AQ License. You can find the AQ license in
 // the root directory.
 

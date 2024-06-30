@@ -13,7 +13,7 @@ You should comply with the AQ license and privacy policy.
 
 ### Definition
 - "This License" means version 2 of the AQ License.</br>
-- "AQ Author" refers to the first author of AQ (the creator of AQ).</br>
+- "AQ author" refers to the first author of AQ (the creator of AQ).</br>
 - "Program" or "Work" means any legally protected work licensed under this License.</br>
 - "Copyright" applies to all types of works for which copyright is recognized by law.</br>
 - "You" and "your" refer to (a) the company or organization receiving the license (the "Entity") on whose behalf the license is accepted; (b) the individual receiving the license (the "individual") who does not accept the license on behalf of the Entity.</br>
