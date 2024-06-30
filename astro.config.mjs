@@ -91,4 +91,9 @@ export default defineConfig({
       },
     },
   },
+
+  i18n: {
+    defaultLocale: "en",
+    locales: ["ar", "zh", "en", "fr", "ru", "es"],
+  },
 });
