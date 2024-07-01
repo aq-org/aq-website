@@ -26,6 +26,7 @@ const whenExternalScripts = (items = []) =>
 
 export default defineConfig({
   output: 'static',
+  base: '/ar',
   outDir: '../dist/ar',
   buildOptions: {
     site: 'https:/www.axa6.com/ar',
