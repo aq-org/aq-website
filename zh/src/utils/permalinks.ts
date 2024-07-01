@@ -1,11 +1,9 @@
 import slugify from 'limax';
-
 import { SITE, APP_BLOG } from 'astrowind:config';
-
 import { trim } from '~/utils/utils';
 
-export const trimSlash = (s: string) => trim(trim(s, '/'));
-const createPath = (...params: string[]) => {
+export const trimSlash = (s) => trim(trim(s, '/'));
+const createPath = (...params) => {
   const paths = params
     .map((el) => trimSlash(el))
     .filter((el) => !!el)
@@ -28,7 +26,7 @@ export const TAG_BASE = cleanSlug(APP_BLOG?.tag?.pathname) || 'tag';
 export const POST_PERMALINK_PATTERN = trimSlash(APP_BLOG?.post?.permalink || `${BLOG_BASE}/%slug%`);
 
 /** */
-export const getCanonical = (path = ''): string | URL => {
+export const getCanonical = (path = '') => {
   const url = String(new URL(path, SITE.site));
   if (SITE.trailingSlash == false && path && url.endsWith('/')) {
     return url.slice(0, -1);
@@ -39,8 +37,8 @@ export const getCanonical = (path = ''): string | URL => {
 };
 
 /** */
-export const getPermalink = (slug = '', type = 'page'): string => {
-  let permalink: string;
+export const getPermalink = (slug = '', type = 'page') => {
+  let permalink;
 
   if (
     slug.startsWith('https://') ||
@@ -87,13 +85,13 @@ export const getPermalink = (slug = '', type = 'page'): string => {
 };
 
 /** */
-export const getHomePermalink = (): string => getPermalink('/');
+export const getHomePermalink = () => getPermalink('/');
 
 /** */
-export const getBlogPermalink = (): string => getPermalink(BLOG_BASE);
+export const getBlogPermalink = () => getPermalink(BLOG_BASE);
 
 /** */
-export const getAsset = (path: string): string =>
+export const getAsset = (path) =>
   '/' +
   [BASE_PATHNAME, path]
     .map((el) => trimSlash(el))
@@ -101,10 +99,10 @@ export const getAsset = (path: string): string =>
     .join('/');
 
 /** */
-const definitivePermalink = (permalink: string): string => createPath(BASE_PATHNAME, permalink);
+const definitivePermalink = (permalink) => createPath(BASE_PATHNAME, permalink);
 
 /** */
-export const applyGetPermalinks = (menu: object = {}) => {
+export const applyGetPermalinks = (menu = {}) => {
   if (Array.isArray(menu)) {
     return menu.map((item) => applyGetPermalinks(item));
   } else if (typeof menu === 'object' && menu !== null) {
