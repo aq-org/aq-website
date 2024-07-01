@@ -1,5 +1,5 @@
 ---
-import Layout from "~/layouts/PageLayout.astro";
+import Layout from "~/layouts/ar/PageLayout.astro";
 
 import Hero from "~/components/widgets/Hero.astro";
 import Note from "~/components/widgets/Note.astro";
@@ -8,21 +8,21 @@ import BlogLatestPosts from "~/components/widgets/BlogLatestPosts.astro";
 import FAQs from "~/components/widgets/FAQs.astro";
 import CallToAction from "~/components/widgets/CallToAction.astro";
 
-import WorkImg from '../assets/images/work.jpg';
+import WorkImg from '../../assets/images/work.jpg';
 
 const metadata = {
-  title: "Team",
+  title: "الفريق",
   ignoreTitleTemplate: true,
 };
 ---
 
 <Layout metadata={metadata}>
   <Hero
-    tagline="Meet Our Team"
+    tagline="تعرف على فريقنا"
     actions={[
       {
         variant: "primary",
-        text: "View on Github",
+        text: "عرض على Github",
         href: "https://github.com/aq-org/AQ",
         target: "_blank",
         // icon: "tabler:github",
@@ -30,12 +30,12 @@ const metadata = {
     ]}
   >
     <Fragment slot="title">
-      <span class="text-accent dark:text-white highlight"> AQ </span> Team
+      <span class="text-accent dark:text-white highlight"> AQ </span> الفريق
     </Fragment>
 
     <Fragment slot="subtitle">
       <span class="hidden sm:inline">
-        Our team is driven by innovation and collaboration, making AQ a standout choice for developers around the globe.
+        فريقنا مدفوع بالابتكار والتعاون، مما يجعل AQ اختياراً بارزاً للمطورين حول العالم.
       </span>
     </Fragment>
   </Hero>
@@ -43,26 +43,26 @@ const metadata = {
   <Content
     items={[
       {
-        title: "Our Mission",
+        title: "مهمتنا",
         description:
-          "At AQ, our mission is to create a fast, simple, and secure programming language that meets the needs of modern developers.",
+          "في AQ، مهمتنا هي إنشاء لغة برمجة سريعة وبسيطة وآمنة تلبي احتياجات المطورين العصريين.",
       },
       {
-        title: "Our Vision",
+        title: "رؤيتنا",
         description:
-          "We envision a world where programming is accessible, efficient, and enjoyable for everyone, thanks to the power of AQ.",
+          "نحن نتخيل عالماً حيث تكون البرمجة متاحة وفعالة وممتعة للجميع، بفضل قوة AQ.",
       },
     ]}
     image={{
       src: WorkImg,
-      alt: "AQ Team",
+      alt: "فريق AQ",
     }}
   >
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        Our Team
+        فريقنا
       </h3>
-      Our dedicated team of developers, designers, and community managers work tirelessly to enhance AQ and support our growing user community.
+      فريقنا المتفاني من المطورين والمصممين ومديري المجتمع يعملون بلا كلل لتعزيز AQ ودعم مجتمع المستخدمين المتزايد.
     </Fragment>
 
     <Fragment slot="bg">
@@ -71,44 +71,44 @@ const metadata = {
   </Content>
 
   <Note>
-    Our team currently mainly works on Github. You can find more information about our contributors on Github.
+    فريقنا يعمل حالياً بشكل رئيسي على Github. يمكنك العثور على مزيد من المعلومات حول مساهمينا على Github.
   </Note>
 
   <BlogLatestPosts
-    title="Team Insights"
-    information={`Experience the inner workings of AQ through our team's blog posts. Learn about our development processes, community engagement, and future plans.`}
+    title="رؤى الفريق"
+    information={`اختبر الأعمال الداخلية لـ AQ من خلال منشورات مدونة فريقنا. تعرف على عمليات التطوير، التفاعل مع المجتمع، وخططنا المستقبلية.`}
   />
 
   <FAQs
-    title="Frequently Asked Questions"
-    subtitle="Learn more about our team and the work we do"
-    tagline="FAQs"
+    title="الأسئلة الشائعة"
+    subtitle="تعرف على المزيد حول فريقنا والعمل الذي نقوم به"
+    tagline="الأسئلة الشائعة"
     classes={{ container: "max-w-6xl" }}
     items={[
       {
-        title: "Who are the core members of the AQ team?",
+        title: "من هم الأعضاء الرئيسيون في فريق AQ؟",
         description:
-          "Our core team consists of experienced developers passionate about creating a simple and fast programming language that everyone can use.",
+          "يتكون فريقنا الأساسي من مطورين ذوي خبرة وشغف بإنشاء لغة برمجة بسيطة وسريعة يمكن للجميع استخدامها.",
       },
       {
-        title: "How can I join the AQ community?",
+        title: "كيف يمكنني الانضمام إلى مجتمع AQ؟",
         description:
-          "You can join our community by contributing to our GitHub repository, joining discussions in our forums, or participating in our open-source projects.",
+          "يمكنك الانضمام إلى مجتمعنا من خلال المساهمة في مستودعنا على GitHub، والانضمام إلى المناقشات في منتدياتنا، أو المشاركة في مشاريعنا مفتوحة المصدر.",
       },
       {
-        title: "Where is the AQ team based?",
+        title: "أين يوجد فريق AQ؟",
         description:
-          "Our team is distributed across the globe, working remotely to bring AQ to developers everywhere.",
+          "فريقنا موزع في جميع أنحاء العالم، يعمل عن بعد لجعل AQ متاحة للمطورين في كل مكان.",
       },
       {
-        title: "How can I contribute to AQ?",
+        title: "كيف يمكنني المساهمة في AQ؟",
         description:
-          "You can contribute to AQ by submitting code, reporting issues, or helping improve our documentation on GitHub.",
+          "يمكنك المساهمة في AQ من خلال تقديم الكود، الإبلاغ عن المشاكل، أو المساعدة في تحسين وثائقنا على GitHub.",
       },
       {
-        title: "What are the future plans for AQ?",
+        title: "ما هي خطط AQ المستقبلية؟",
         description:
-          "We aim to continuously improve AQ by adding new features, optimizing performance, and expanding our community.",
+          "نهدف إلى تحسين AQ باستمرار عن طريق إضافة ميزات جديدة، وتحسين الأداء، وتوسيع مجتمعنا.",
       },
     ]}
   />
@@ -117,7 +117,7 @@ const metadata = {
     actions={[
       {
         variant: "primary",
-        text: "Explore AQ",
+        text: "استكشاف AQ",
         href: "https://github.com/aq-org/AQ",
         target: "_blank",
         // icon: "tabler:github",
@@ -125,11 +125,11 @@ const metadata = {
     ]}
   >
     <Fragment slot="title">
-      Join the&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">AQ Community</span>
+      انضم إلى&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">مجتمع AQ</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      Collaborate with like-minded developers and help shape the future of fast, simple, and secure programming with AQ.
+      تعاون مع المطورين الذين يشبهونك وساعد في تشكيل مستقبل البرمجة السريعة والبسيطة والآمنة مع AQ.
     </Fragment>
   </CallToAction>
 </Layout>

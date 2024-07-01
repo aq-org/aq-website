@@ -1,22 +1,22 @@
 ---
-import Layout from "~/layouts/PageLayout.astro";
+import Layout from "~/layouts/fr/PageLayout.astro";
 import BlogLatestPosts from "~/components/widgets/BlogLatestPosts.astro";
 import Hero from "~/components/widgets/Hero.astro";
-import { getPermalink, getBlogPermalink, getAsset } from '../utils/permalinks';
+import { getPermalink, getBlogPermalink, getAsset } from '../../utils/permalinks';
 
 const metadata = {
-  title: "Docs",
+  title: "Documentation",
   ignoreTitleTemplate: true,
 };
 ---
 
 <Layout metadata={metadata}>
   <Hero
-  tagline="Start Learning AQ"
+  tagline="Commencez à Apprendre AQ"
   actions={[
     {
       variant: "primary",
-      text: "Get Started",
+      text: "Commencer",
       href: getBlogPermalink(),
       target: "_blank",
       icon: "tabler:download",
@@ -24,18 +24,18 @@ const metadata = {
   ]}
 >
   <Fragment slot="title">
-    <span class="text-accent dark:text-white highlight"> AQ </span>Documentation
+    <span class="text-accent dark:text-white highlight"> Documentation </span> AQ
   </Fragment>
 
   <Fragment slot="subtitle">
     <span class="hidden sm:inline">
-      <span class="font-semibold">AQ</span> As AQ is currently under development, the documentation has not been organized yet. You can learn all about AQ through the AQ blog, including the latest development updates and related unpublished standards.</span
+      <span class="font-semibold">AQ</span> Comme AQ est actuellement en développement, la documentation n'a pas encore été organisée. Vous pouvez tout apprendre sur AQ à travers le blog AQ, y compris les dernières mises à jour de développement et les normes non publiées associées.</span
     >
   </Fragment>
 </Hero>
-  <!-- BlogLatestPosts Widget ******* -->
+  <!-- Widget Derniers Articles de Blog ******* -->
   <BlogLatestPosts
-    title="Check Out the Latest AQ Blog"
-    information={`Browse our curated blog posts to learn all about the AQ language. Every article is a step towards mastering the art of AQ, uncovering its unique allure in development projects.`}
+    title="Découvrez les Derniers Articles du Blog AQ"
+    information={`Parcourez nos articles de blog sélectionnés pour tout savoir sur le langage AQ. Chaque article est un pas vers la maîtrise de l'art d'AQ, découvrant son attrait unique dans les projets de développement.`}
   />
 </Layout>

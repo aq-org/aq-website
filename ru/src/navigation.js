@@ -1,47 +1,47 @@
-import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
+import { getPermalink, getBlogPermalink, getAsset } from '../../utils/permalinks';
 
 export const headerData = {
   links: [
     {
-      text: 'Home',
+      text: 'Главная',
           href: getPermalink('/index'),
     },{
-      text: 'Resources',
+      text: 'Ресурсы',
       links: [
-        { text: 'Docs', href: getPermalink('/docs') },
-        { text: 'Blog', href: getBlogPermalink() },
-        { text: 'Download', href: 'https://github.com/aq-org/AQ' },
-        { text: 'Partners', href: getPermalink('/partners') },
-        { text: 'License', href: 'https://github.com/aq-org/AQ/blob/main/LICENSE' },
-        { text: 'Sources Code', href: 'https://github.com/aq-org/AQ' },
+        { text: 'Документы', href: getPermalink('/docs') },
+        { text: 'Блог', href: getBlogPermalink() },
+        { text: 'Скачать', href: 'https://github.com/aq-org/AQ' },
+        { text: 'Партнеры', href: getPermalink('/partners') },
+        { text: 'Лицензия', href: 'https://github.com/aq-org/AQ/blob/main/LICENSE' },
+        { text: 'Исходный Код', href: 'https://github.com/aq-org/AQ' },
       ],
     },
     {
-      text: 'About',
+      text: 'О Нас',
       links: [
-        { text: 'About', href: getPermalink('/about') },
-        { text: 'Team', href: getPermalink('/team') },
-        { text: 'Careers', href: 'https://github.com/aq-org/AQ' },
-        { text: 'Contact Us', href: getPermalink('/contact') },
+        { text: 'О Нас', href: getPermalink('/about') },
+        { text: 'Команда', href: getPermalink('/team') },
+        { text: 'Карьера', href: 'https://github.com/aq-org/AQ' },
+        { text: 'Свяжитесь с Нами', href: getPermalink('/contact') },
         { text: 'X', href: 'https://x.com/aq_organization' },
         { text: 'Github', href: 'https://github.com/aq-org/AQ' },
       ],
     },
     {
-      text: 'Support',
+      text: 'Поддержка',
       links: [
-        { text: 'Community Forum', href: getPermalink('/community') },
-        { text: 'FAQ', href: 'https://github.com/aq-org/AQ/issues' },
-        { text: 'Docs', href: getPermalink('/docs') },
+        { text: 'Форум Сообщества', href: getPermalink('/community') },
+        { text: 'Часто Задаваемые Вопросы', href: 'https://github.com/aq-org/AQ/issues' },
+        { text: 'Документы', href: getPermalink('/docs') },
         { text: 'Discord', href: 'https://discord.gg/JCKzxavG' },
-        { text: 'Mail', href: 'mailto:admin@axa6.com' },
+        { text: 'Почта', href: 'mailto:admin@axa6.com' },
       ],
     },
     {
-      text: 'Blog',
+      text: 'Блог',
       links: [
         {
-          text: 'All Article',
+          text: 'Все Статьи',
           href: getBlogPermalink(),
         },
         { text: 'X', href: 'https://x.com/aq_organization' },
@@ -52,53 +52,53 @@ export const headerData = {
       ],
     },
     {
-      text: 'Download',
+      text: 'Скачать',
       href: 'https://github.com/aq-org/AQ',
         
     },
   ],
-  actions: [{ text: 'Download', href: 'https://github.com/aq-org/AQ', target: '_blank' }],
+  actions: [{ text: 'Скачать', href: 'https://github.com/aq-org/AQ', target: '_blank' }],
 };
 
 export const footerData = {
   links: [
     {
-      title: 'Resources',
+      title: 'Ресурсы',
       links: [
-        { text: 'Docs', href: getPermalink('/docs') },
-        { text: 'Blog', href: getBlogPermalink() },
-        { text: 'Download', href: 'https://github.com/aq-org/AQ' },
-        { text: 'Partners', href: getPermalink('/partners') },
-        { text: 'License', href: 'https://github.com/aq-org/AQ/blob/main/LICENSE' },
-        { text: 'Sources Code', href: 'https://github.com/aq-org/AQ' },
+        { text: 'Документы', href: getPermalink('/docs') },
+        { text: 'Блог', href: getBlogPermalink() },
+        { text: 'Скачать', href: 'https://github.com/aq-org/AQ' },
+        { text: 'Партнеры', href: getPermalink('/partners') },
+        { text: 'Лицензия', href: 'https://github.com/aq-org/AQ/blob/main/LICENSE' },
+        { text: 'Исходный Код', href: 'https://github.com/aq-org/AQ' },
       ],
     },
     {
-      title: 'About',
+      title: 'О Нас',
       links: [
-        { text: 'About', href: getPermalink('/about') },
-        { text: 'Team', href: getPermalink('/team') },
-        { text: 'Careers', href: 'https://github.com/aq-org/AQ' },
-        { text: 'Contact Us', href: getPermalink('/contact') },
+        { text: 'О Нас', href: getPermalink('/about') },
+        { text: 'Команда', href: getPermalink('/team') },
+        { text: 'Карьера', href: 'https://github.com/aq-org/AQ' },
+        { text: 'Свяжитесь с Нами', href: getPermalink('/contact') },
         { text: 'X', href: 'https://x.com/aq_organization' },
         { text: 'Github', href: 'https://github.com/aq-org/AQ' },
       ],
     },
     {
-      title: 'Support',
+      title: 'Поддержка',
       links: [
-        { text: 'Community Forum', href: getPermalink('/community') },
-        { text: 'FAQ', href: 'https://github.com/aq-org/AQ/issues' },
-        { text: 'Docs', href: getPermalink('/docs') },
+        { text: 'Форум Сообщества', href: getPermalink('/community') },
+        { text: 'Часто Задаваемые Вопросы', href: 'https://github.com/aq-org/AQ/issues' },
+        { text: 'Документы', href: getPermalink('/docs') },
         { text: 'Discord', href: 'https://discord.gg/JCKzxavG' },
-        { text: 'Mail', href: 'mailto:admin@axa6.com' },
+        { text: 'Почта', href: 'mailto:admin@axa6.com' },
       ],
     },
     {
-      title: 'Blog',
+      title: 'Блог',
       links: [
         {
-          text: 'All Article',
+          text: 'Все Статьи',
           href: getBlogPermalink(),
         },
         { text: 'X', href: 'https://x.com/aq_organization' },
@@ -111,17 +111,17 @@ export const footerData = {
     
   ],
   secondaryLinks: [
-    { text: 'Terms', href: getPermalink('/terms') },
-    { text: 'Privacy Policy', href: getPermalink('/privacy') },
+    { text: 'Условия', href: getPermalink('/terms') },
+    { text: 'Политика Конфиденциальности', href: getPermalink('/privacy') },
   ],
   socialLinks: [
     { ariaLabel: 'X', icon: 'tabler:brand-x', href: 'https://x.com/aq_organization' },
-    { ariaLabel: 'Mail', icon: 'tabler:mail', href: 'mailto:admin@axa6.com' },
+    { ariaLabel: 'Почта', icon: 'tabler:mail', href: 'mailto:admin@axa6.com' },
     { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
     { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/aq-org/AQ' },
   ],
   footNote: `
-    <img class="w-5 h-5 md:w-6 md:h-6 md:-mt-0.5 bg-cover mr-1.5 rtl:mr-0 rtl:ml-1.5 float-left rtl:float-right rounded-sm" src="https://www.axa6.com/aq.png" alt="AQ logo" loading="lazy"></img>
-    Copyright 2024 <a class="text-blue-600 underline dark:text-muted" href="https://www.axa6.com/">AQ ORG</a>, All rights reserved.
+    <img class="w-5 h-5 md:w-6 md:h-6 md:-mt-0.5 bg-cover mr-1.5 rtl:mr-0 rtl:ml-1.5 float-left rtl:float-right rounded-sm" src="https://www.axa6.com/aq.png" alt="Логотип AQ" loading="lazy"></img>
+    Авторские права 2024 <a class="text-blue-600 underline dark:text-muted" href="https://www.axa6.com/">AQ ORG</a>, Все права защищены.
   `,
 };

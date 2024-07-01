@@ -1,41 +1,41 @@
 ---
-import Layout from "~/layouts/PageLayout.astro";
+import Layout from "~/layouts/ar/PageLayout.astro";
 import BlogLatestPosts from "~/components/widgets/BlogLatestPosts.astro";
 import Hero from "~/components/widgets/Hero.astro";
-import { getPermalink, getBlogPermalink, getAsset } from '../utils/permalinks';
+import { getPermalink, getBlogPermalink, getAsset } from '../../utils/permalinks';
 
 const metadata = {
-  title: "Docs",
+  title: "التوثيق",
   ignoreTitleTemplate: true,
 };
 ---
 
 <Layout metadata={metadata}>
   <Hero
-  tagline="Start Learning AQ"
-  actions={[
-    {
-      variant: "primary",
-      text: "Get Started",
-      href: getBlogPermalink(),
-      target: "_blank",
-      icon: "tabler:download",
-    },
-  ]}
->
-  <Fragment slot="title">
-    <span class="text-accent dark:text-white highlight"> AQ </span>Documentation
-  </Fragment>
+    tagline="ابدأ تعلم AQ"
+    actions={[
+      {
+        variant: "primary",
+        text: "ابدأ الآن",
+        href: getBlogPermalink(),
+        target: "_blank",
+        icon: "tabler:download",
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      <span class="text-accent dark:text-white highlight"> توثيق </span>AQ
+    </Fragment>
 
-  <Fragment slot="subtitle">
-    <span class="hidden sm:inline">
-      <span class="font-semibold">AQ</span> As AQ is currently under development, the documentation has not been organized yet. You can learn all about AQ through the AQ blog, including the latest development updates and related unpublished standards.</span
-    >
-  </Fragment>
-</Hero>
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        <span class="font-semibold">AQ</span> نظرًا لأن AQ لا تزال قيد التطوير، لم يتم تنظيم التوثيق بعد. يمكنك تعلم كل شيء عن AQ من خلال مدونة AQ، بما في ذلك آخر تحديثات التطوير والمعايير غير المنشورة ذات الصلة.</span
+      >
+    </Fragment>
+  </Hero>
   <!-- BlogLatestPosts Widget ******* -->
   <BlogLatestPosts
-    title="Check Out the Latest AQ Blog"
-    information={`Browse our curated blog posts to learn all about the AQ language. Every article is a step towards mastering the art of AQ, uncovering its unique allure in development projects.`}
+    title="تحقق من أحدث مدونة AQ"
+    information={`تصفح مقالات مدونتنا المنسقة لتتعلم كل شيء عن لغة AQ. كل مقال هو خطوة نحو إتقان فن AQ، واكتشاف جاذبيتها الفريدة في مشاريع التطوير.`}
   />
 </Layout>

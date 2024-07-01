@@ -1,5 +1,5 @@
 ---
-import Layout from "~/layouts/PageLayout.astro";
+import Layout from "~/layouts/ru/PageLayout.astro";
 
 import Hero from "~/components/widgets/Hero.astro";
 import Note from "~/components/widgets/Note.astro";
@@ -8,9 +8,9 @@ import Content from "~/components/widgets/Content.astro";
 import FAQs from "~/components/widgets/FAQs.astro";
 import CallToAction from "~/components/widgets/CallToAction.astro";
 
-import DevelopImg from "../assets/images/develop.jpg";
-import NetImg from "../assets/images/net.jpg";
-import WorkImg from "../assets/images/work.jpg";
+import DevelopImg from "../../assets/images/develop.jpg";
+import NetImg from "../../assets/images/net.jpg";
+import WorkImg from "../../assets/images/work.jpg";
 
 const metadata = {
   title: "Partners",
@@ -21,25 +21,25 @@ const metadata = {
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
   <Hero
-    tagline="Join Hands with Our Partners"
+    tagline="Присоединяйтесь к нашим партнерам"
     actions={[
       {
         variant: "primary",
-        text: "Become a Partner",
+        text: "Стать партнером",
         href: "#",
         // icon: "tabler:handshake",
       },
-      { text: "Learn more", href: "#partners" },
+      { text: "Узнать больше", href: "#partners" },
     ]}
   >
     <Fragment slot="title">
-      <span class="hidden xl:inline">Building Success&nbsp;</span><br />
-      <span class="text-accent dark:text-white highlight">Together</span>
+      <span class="hidden xl:inline">Строим успех&nbsp;</span><br />
+      <span class="text-accent dark:text-white highlight">Вместе</span>
     </Fragment>
     <Fragment slot="subtitle">
       <span class="hidden sm:inline">
-        Our mission is to create lasting partnerships that contribute to mutual
-        growth and success.
+        Наша миссия - создавать долгосрочные партнерства, способствующие взаимному
+        росту и успеху.
       </span>
     </Fragment>
   </Hero>
@@ -50,44 +50,44 @@ const metadata = {
   <!-- Features Widget *************** -->
   <Features
     id="partners"
-    tagline="Our Partners"
-    title="Who We Work With"
-    subtitle="We are proud to partner with a diverse group of organizations that share our values and commitment to excellence."
+    tagline="Наши партнеры"
+    title="С кем мы работаем"
+    subtitle="Мы гордимся партнерством с разнообразной группой организаций, разделяющих наши ценности и приверженность к превосходству."
     items={[
       {
-        title: "Tech Giants",
+        title: "Технологические гиганты",
         description:
-          "Collaborating with leading technology companies to bring innovative solutions to market.",
+          "Сотрудничество с ведущими технологическими компаниями для вывода инновационных решений на рынок.",
         // icon: "tabler:brand-reddit",
       },
       {
-        title: "Research Institutions",
+        title: "Исследовательские учреждения",
         description:
-          "Partnering with top research institutions to drive advancements in various fields.",
+          "Партнерство с ведущими исследовательскими учреждениями для продвижения в различных областях.",
         // icon: "tabler:bulb",
       },
       {
-        title: "Educational Entities",
+        title: "Образовательные учреждения",
         description:
-          "Working with educational institutions to nurture the next generation of talent.",
+          "Сотрудничество с образовательными учреждениями для воспитания следующего поколения талантов.",
         // icon: "tabler:school",
       },
       {
-        title: "Non-Profits",
+        title: "Некоммерческие организации",
         description:
-          "Supporting non-profit organizations to create a positive impact in communities.",
+          "Поддержка некоммерческих организаций для создания положительного влияния в сообществах.",
         // icon: "tabler:heart",
       },
       {
-        title: "Startups",
+        title: "Стартапы",
         description:
-          "Empowering startups with resources and networks to accelerate their growth.",
+          "Поддержка стартапов ресурсами и сетями для ускорения их роста.",
         // icon: "tabler:rocket",
       },
       {
-        title: "Industry Leaders",
+        title: "Лидеры отрасли",
         description:
-          "Joining forces with industry leaders to set new standards of excellence.",
+          "Объединение усилий с лидерами отрасли для установления новых стандартов превосходства.",
         // icon: "tabler:award",
       },
     ]}
@@ -96,23 +96,23 @@ const metadata = {
   <!-- Content Widget **************** -->
   <Content
     isReversed
-    tagline="Our Approach"
-    title="Strategic and Collaborative"
+    tagline="Наш подход"
+    title="Стратегический и совместный"
     items={[
       {
-        title: "Shared Vision",
+        title: "Общее видение",
         description:
-          "We build partnerships based on shared visions and common goals.",
+          "Мы строим партнерства на основе общих видений и общих целей.",
       },
       {
-        title: "Mutual Growth",
+        title: "Взаимный рост",
         description:
-          "Our partnerships are designed to foster mutual growth and success.",
+          "Наши партнерства разработаны для содействия взаимному росту и успеху.",
       },
       {
-        title: "Long-term Commitment",
+        title: "Долгосрочное обязательство",
         description:
-          "We believe in building lasting relationships with our partners.",
+          "Мы верим в создание долгосрочных отношений с нашими партнерами.",
       },
     ]}
     image={{
@@ -124,10 +124,9 @@ const metadata = {
       <h3
         class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"
       >
-        Achieve More Together
+        Достигайте большего вместе
       </h3>
-      Experience the benefits of strategic partnerships that drive innovation and
-      expansion.
+      Ощутите преимущества стратегических партнерств, которые способствуют инновациям и расширению.
     </Fragment>
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-green-50 dark:bg-transparent"></div>
@@ -139,18 +138,19 @@ const metadata = {
     isAfterContent
     items={[
       {
-        title: "Innovate Together",
+        title: "Инновации вместе",
         description:
-          "Our partnerships unlock new opportunities for innovation and growth.",
+          "Наши партнерства открывают новые возможности для инноваций и роста.",
       },
       {
-        title: "Collaborative Projects",
+        title: "Совместные проекты",
         description:
-          "Collaborating on projects that push the boundaries of what's possible.",
+          "Сотрудничество над проектами, которые расширяют границы возможного.",
       },
       {
-        title: "Global Reach",
-        description: "Leveraging global networks to maximize impact and reach.",
+        title: "Глобальное воздействие",
+        description:
+          "Использование глобальных сетей для максимизации воздействия и охвата.",
       },
     ]}
     image={{
@@ -159,7 +159,7 @@ const metadata = {
     }}
   >
     <Fragment slot="content">
-      Partner with us to explore new horizons and achieve unprecedented success.
+      Сотрудничайте с нами, чтобы исследовать новые горизонты и добиться невиданных успехов.
     </Fragment>
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-green-50 dark:bg-transparent"></div>
@@ -172,19 +172,19 @@ const metadata = {
     isAfterContent
     items={[
       {
-        title: "Dedicated Support",
+        title: "Посвященная поддержка",
         description:
-          "Our partners receive dedicated support and resources to ensure success.",
+          "Наши партнеры получают посвященную поддержку и ресурсы для обеспечения успеха.",
       },
       {
-        title: "Exclusive Benefits",
+        title: "Эксклюзивные преимущества",
         description:
-          "Access exclusive benefits and opportunities through our partnership programs.",
+          "Доступ к эксклюзивным преимуществам и возможностям через наши партнерские программы.",
       },
       {
-        title: "Community Engagement",
+        title: "Участие в сообществе",
         description:
-          "Be part of a community of like-minded organizations committed to excellence.",
+          "Станьте частью сообщества организаций с похожими ценностями, приверженных превосходству.",
       },
     ]}
     image={{
@@ -193,7 +193,7 @@ const metadata = {
     }}
   >
     <Fragment slot="content">
-      Join a thriving community of partners dedicated to achieving excellence.
+      Присоединяйтесь к процветающему сообществу партнеров, нацеленных на достижение превосходства.
     </Fragment>
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-green-50 dark:bg-transparent"></div>
@@ -202,35 +202,35 @@ const metadata = {
 
   <!-- FAQs Widget ******************* -->
   <FAQs
-    title="Partnering with Us"
-    subtitle="Find answers to common questions about becoming a partner."
+    title="Сотрудничество с нами"
+    subtitle="Найдите ответы на распространенные вопросы о становлении партнером."
     tagline="FAQs"
     classes={{ container: "max-w-6xl" }}
     items={[
       {
-        title: "How Can We Become a Partner?",
+        title: "Как стать партнером?",
         description:
-          "Fill out our partnership inquiry form, and our team will get in touch with you to discuss potential collaboration.",
+          "Заполните нашу форму запроса партнерства, и наша команда свяжется с вами для обсуждения потенциального сотрудничества.",
       },
       {
-        title: "What Are the Benefits of Partnering?",
+        title: "Какие преимущества от сотрудничества?",
         description:
-          "Partners gain access to exclusive resources, dedicated support, and a network of like-minded organizations.",
+          "Партнеры получают доступ к эксклюзивным ресурсам, посвященной поддержке и сети организаций с похожими целями.",
       },
       {
-        title: "Can International Organizations Partner with You?",
+        title: "Могут ли международные организации стать вашими партнерами?",
         description:
-          "Yes, we welcome international organizations to join our global network of partners.",
+          "Да, мы приветствуем международные организации для присоединения к нашей глобальной сети партнеров.",
       },
       {
-        title: "What Types of Partnerships Do You Offer?",
+        title: "Какие типы партнерств вы предлагаете?",
         description:
-          "We offer various types of partnerships, including strategic, collaborative, sponsorship, and more.",
+          "Мы предлагаем различные типы партнерств, включая стратегические, совместные, спонсорские и другие.",
       },
       {
-        title: "Where Can I Learn More About Your Partners?",
+        title: "Где я могу узнать больше о ваших партнерах?",
         description:
-          "Visit our partners page for detailed information about our current partners and their success stories.",
+          "Посетите нашу страницу партнеров для подробной информации о наших текущих партнерах и их историях успеха.",
       },
     ]}
   />
@@ -240,20 +240,19 @@ const metadata = {
     actions={[
       {
         variant: "primary",
-        text: "Join Us",
+        text: "Присоединиться к нам",
         href: "#",
         // icon: "tabler:handshake",
       },
     ]}
   >
     <Fragment slot="title">
-      Collaborate with&nbsp;<br class="block sm:hidden" /><span
-        class="sm:whitespace-nowrap">Our Partners</span
+      Сотрудничайте с&nbsp;<br class="block sm:hidden" /><span
+        class="sm:whitespace-nowrap">нашими партнерами</span
       >
     </Fragment>
     <Fragment slot="subtitle">
-      Become part of a thriving network that values innovation, growth, and
-      mutual success.
+      Станьте частью процветающей сети, которая ценит инновации, рост и взаимный успех.
     </Fragment>
   </CallToAction>
 </Layout>

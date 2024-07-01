@@ -1,5 +1,5 @@
 ---
-import Layout from "~/layouts/PageLayout.astro";
+import Layout from "~/layouts/es/PageLayout.astro";
 
 import Hero from "~/components/widgets/Hero.astro";
 import Note from "~/components/widgets/Note.astro";
@@ -12,12 +12,12 @@ import FAQs from "~/components/widgets/FAQs.astro";
 import Stats from "~/components/widgets/Stats.astro";
 import CallToAction from "~/components/widgets/CallToAction.astro";
 
-import CodeImg from '../assets/images/code.png';
-import DevelopImg from '../assets/images/develop.jpg';
-import NetImg from '../assets/images/net.jpg';
-import WorkImg from '../assets/images/work.jpg';
+import CodeImg from '../../assets/images/code.png';
+import DevelopImg from '../../assets/images/develop.jpg';
+import NetImg from '../../assets/images/net.jpg';
+import WorkImg from '../../assets/images/work.jpg';
 const metadata = {
-  title: "AQ — The Simple, Fast, and Secure Programming Language",
+  title: "AQ — El Lenguaje de Programación Simple, Rápido y Seguro",
   ignoreTitleTemplate: true,
 };
 ---
@@ -26,31 +26,31 @@ const metadata = {
   <!-- Hero Widget ******************* -->
 
   <Hero
-    tagline="Start Developing with AQ"
+    tagline="Empieza a Desarrollar con AQ"
     actions={[
       {
         variant: "primary",
-        text: "Get Started",
+        text: "Comenzar",
         href: "https://github.com/aq-org/AQ",
         target: "_blank",
         // icon: "tabler:download",
       },
-      { text: "Learn more", href: "#features" },
+      { text: "Aprende más", href: "#features" },
     ]}
   >
     <Fragment slot="title">
-      <span class="hidden xl:inline">The fast, small, and simple</span><br />
+      <span class="hidden xl:inline">El rápido, pequeño y simple</span><br />
       <span class="text-accent dark:text-white highlight"> AQ </span>
-      Programming Language
+      Lenguaje de Programación
     </Fragment>
 
     <Fragment slot="subtitle">
       <span class="hidden sm:inline">
-        <span class="font-semibold">AQ</span> AQ is an interpreted programming language.
-        It is fast, small, simple and safe. At the same time, programs written in
-        AQ can also be compiled.</span
+        <span class="font-semibold">AQ</span> es un lenguaje de programación interpretado.
+        Es rápido, pequeño, simple y seguro. Al mismo tiempo, los programas escritos en
+        AQ también pueden ser compilados.</span
       >
-      Maybe a great piece of work.
+      Puede ser una gran obra.
     </Fragment>
   </Hero>
 
@@ -62,44 +62,44 @@ const metadata = {
 
   <Features
     id="features"
-    tagline="Features"
-    title="Experience AQ Language"
-    subtitle="A modern interpreted programming language designed for simplicity and safety. AQ has quickly become a standout choice for developers."
+    tagline="Características"
+    title="Experimenta el Lenguaje AQ"
+    subtitle="Un lenguaje de programación interpretado moderno diseñado para la simplicidad y la seguridad. AQ se ha convertido rápidamente en una opción destacada para los desarrolladores."
     items={[
       {
-        title: "Fast & Interpreted",
+        title: "Rápido e Interpretado",
         description:
-          "The speed of AQ is notable, making it a swift choice for development. It can be both interpreted for ease of use or compiled for efficiency.",
+          "La velocidad de AQ es notable, lo que lo convierte en una opción rápida para el desarrollo. Puede ser interpretado para facilidad de uso o compilado para eficiencia.",
         // icon: "tabler:speedboat",
       },
       {
-        title: "Small & Simple",
+        title: "Pequeño y Simple",
         description:
-          "AQ keeps things small and simple, with a focus on delivering functionality without overcomplicating the development process.",
+          "AQ mantiene las cosas pequeñas y simples, con un enfoque en ofrecer funcionalidad sin complicar demasiado el proceso de desarrollo.",
         // icon: "tabler:layout-kanban",
       },
       {
-        title: "Safety & Security",
+        title: "Seguridad y Protección",
         description:
-          "With a commitment to secure coding standards, AQ provides robust memory management and safeguards against common vulnerabilities.",
+          "Con un compromiso con los estándares de codificación segura, AQ proporciona una gestión robusta de la memoria y salvaguardas contra vulnerabilidades comunes.",
         // icon: "tabler:shield-lock",
       },
       {
-        title: "Cross-platform Compatibility",
+        title: "Compatibilidad Multiplataforma",
         description:
-          "AQ is versatile and supports multiple platforms, including Windows, Linux, and MacOS, making it accessible for any developer.",
+          "AQ es versátil y compatible con múltiples plataformas, incluyendo Windows, Linux y MacOS, haciéndolo accesible para cualquier desarrollador.",
         // icon: "tabler:device-desktop",
       },
       {
-        title: "Open Source Community",
+        title: "Comunidad de Código Abierto",
         description:
-          "An active open-source community drives AQ forward, fostering collaboration, innovation, and continuous improvement.",
+          "Una comunidad activa de código abierto impulsa AQ hacia adelante, fomentando la colaboración, la innovación y la mejora continua.",
         // icon: "tabler:users",
       },
       {
-        title: "Versatile Syntax",
+        title: "Sintaxis Versátil",
         description:
-          "Embracing a syntax style akin to C++, AQ makes it easy for developers to master and leverage in various programming scenarios.",
+          "Adoptando un estilo de sintaxis similar a C++, AQ facilita a los desarrolladores dominarlo y aprovecharlo en varios escenarios de programación.",
         // icon: "tabler:code",
       },
     ]}
@@ -109,38 +109,38 @@ const metadata = {
 
   <Content
     isReversed
-    tagline="Inspired by AQ"
-    title="AQ's Innovation: Where Speed Meets Simplicity"
+    tagline="Inspirado por AQ"
+    title="La Innovación de AQ: Donde la Velocidad se Encuentra con la Simplicidad"
     items={[
       {
-        title: "Fast and Efficient",
+        title: "Rápido y Eficiente",
         description:
-          "Engineered for performance, AQ offers impressive speed for both development and runtime execution.",
+          "Diseñado para el rendimiento, AQ ofrece una velocidad impresionante tanto para el desarrollo como para la ejecución en tiempo de ejecución.",
       },
       {
-        title: "Simple and Small",
+        title: "Simple y Pequeño",
         description:
-          "True to its design principles, AQ is straightforward and lightweight, facilitating an easier learning curve and simpler codebases.",
+          "Fiel a sus principios de diseño, AQ es directo y ligero, facilitando una curva de aprendizaje más fácil y bases de código más simples.",
       },
       {
-        title: "Safe and Secure",
+        title: "Seguro y Protegido",
         description:
-          "Safety is a core feature of AQ, ensuring programs are not just fast and easy to write but also secure from the ground up.",
+          "La seguridad es una característica central de AQ, asegurando que los programas no solo sean rápidos y fáciles de escribir, sino también seguros desde el principio.",
       },
     ]}
     image={{
       src: CodeImg,
-      alt: "Code with AQ",
+      alt: "Código con AQ",
     }}
   >
     <Fragment slot="content">
       <h3
         class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"
       >
-        Embrace the Power of AQ
+        Aprovecha el Poder de AQ
       </h3>
-      Take your development to the next level by harnessing the simplicity and performance
-      of AQ.
+      Lleva tu desarrollo al siguiente nivel aprovechando la simplicidad y el rendimiento
+      de AQ.
     </Fragment>
 
     <Fragment slot="bg">
@@ -154,34 +154,34 @@ const metadata = {
     isAfterContent
     items={[
       {
-        title: "Effortless Language Adaptability",
+        title: "Adaptabilidad del Lenguaje sin Esfuerzo",
         description:
-          "AQ's simple syntax and small footprint make it incredibly adaptable to a variety of programming needs, enhancing developer efficiency.",
+          "La sintaxis simple y la huella pequeña de AQ lo hacen increíblemente adaptable a una variedad de necesidades de programación, mejorando la eficiencia del desarrollador.",
       },
       {
-        title: "Interpreted or Compiled",
+        title: "Interpretado o Compilado",
         description:
-          "With AQ, enjoy the flexibility of choosing between interpreted or compiled execution to suit your project and performance requirements.",
+          "Con AQ, disfruta de la flexibilidad de elegir entre ejecución interpretada o compilada para adecuarse a los requisitos de tu proyecto y rendimiento.",
       },
       {
-        title: "Impeccable Safety Standards",
+        title: "Estándares de Seguridad Impecables",
         description:
-          "AQ places a strong emphasis on security, providing peace of mind with safe memory management and proactive code inspection to prevent vulnerabilities.",
+          "AQ pone un fuerte énfasis en la seguridad, proporcionando tranquilidad con una gestión segura de la memoria y una inspección proactiva del código para prevenir vulnerabilidades.",
       },
       {
-        title: "Extensive Platform Support",
+        title: "Soporte Extensivo de Plataformas",
         description:
-          "AQ's cross-platform capabilities ensure that your projects remain versatile, running smoothly on Windows, Linux, MacOS, and more.",
+          "Las capacidades multiplataforma de AQ aseguran que tus proyectos permanezcan versátiles, funcionando sin problemas en Windows, Linux, MacOS y más.",
       },
     ]}
     image={{
       src: WorkImg,
-      alt: "Work with AQ",
+      alt: "Trabaja con AQ",
     }}
   >
     <Fragment slot="content">
-      Make your development process stand out with AQ's unique blend of speed,
-      simplicity, and security.
+      Haz que tu proceso de desarrollo se destaque con la combinación única de velocidad,
+      simplicidad y seguridad de AQ.
     </Fragment>
 
     <Fragment slot="bg">
@@ -196,24 +196,24 @@ const metadata = {
     isAfterContent
     items={[
       {
-        title: "Enhanced user engagement",
+        title: "Mayor compromiso del usuario",
         description:
-          "Engage your audience with a programming language designed for rapid development and performance. AQ's simplicity and speed create captivating user interactions.",
+          "Involucra a tu audiencia con un lenguaje de programación diseñado para el desarrollo rápido y el rendimiento. La simplicidad y rapidez de AQ crean interacciones de usuario cautivadoras.",
       },
       {
-        title: "Continuous improvement",
+        title: "Mejora continua",
         description:
-          "AQ is continually evolving with the programming community's needs, ensuring your projects stay current with the latest practices in software safety and efficiency.",
+          "AQ está en constante evolución con las necesidades de la comunidad de programación, asegurando que tus proyectos se mantengan actualizados con las últimas prácticas en seguridad y eficiencia del software.",
       },
       {
-        title: "Time and resource efficiency",
+        title: "Eficiencia en tiempo y recursos",
         description:
-          "With the ease of use of the AQ programming language, save valuable time and resources. Its straightforward syntax and compiled efficiency streamline development workflows.",
+          "Con la facilidad de uso del lenguaje de programación AQ, ahorra tiempo y recursos valiosos. Su sintaxis directa y eficiencia compilada simplifican los flujos de trabajo de desarrollo.",
       },
       {
-        title: "Community support",
+        title: "Soporte comunitario",
         description:
-          "Become a part of the vibrant AQ community for support, insights, and collaborative opportunities that enrich your programming knowledge and productivity.",
+          "Sé parte de la vibrante comunidad de AQ para obtener soporte, ideas y oportunidades de colaboración que enriquezcan tu conocimiento y productividad en programación.",
       },
     ]}
     image={{
@@ -222,7 +222,7 @@ const metadata = {
     }}
   >
     <Fragment slot="content"
-      >Empower your development with AQ's streamlined efficiency.</Fragment
+      >Empodera tu desarrollo con la eficiencia simplificada de AQ.</Fragment
     >
 
     <Fragment slot="bg">
@@ -233,96 +233,97 @@ const metadata = {
   <!-- Steps Widget ****************** -->
 
   <Steps
-    title="Enhance your development efficiency with AQ."
+    title="Mejora la eficiencia de tu desarrollo con AQ."
     items={[
       {
-        title: 'Step 1: <span class="font-medium">Download AQ</span>',
+        title: 'Paso 1: <span class="font-medium">Descarga AQ</span>',
         description:
-          "Begin with AQ's easy setup. Run the installation, and you're ready to start coding with a language designed for clarity and efficiency.",
+          "Comienza con la fácil configuración de AQ. Ejecuta la instalación y estarás listo para empezar a programar con un lenguaje diseñado para la claridad y eficiencia.",
         // icon: "tabler:download",
       },
       {
-        title: 'Step 2: <span class="font-medium">Write Code</em>',
+        title: 'Paso 2: <span class="font-medium">Escribe Código</em>',
         description:
-          "Dive into AQ. Its simple, C++-like syntax makes it easy to learn and start translating your logic into functional code swiftly.",
+          "Sumérgete en AQ. Su sintaxis simple, similar a C++, facilita el aprendizaje y la traducción rápida de tu lógica en código funcional.",
         // icon: "tabler:code",
       },
       {
-        title: 'Step 3: <span class="font-medium">Optimize and Compile</span>',
+        title: 'Paso 3: <span class="font-medium">Optimiza y Compila</span>',
         description:
-          "Leverage AQ's fast compilation and execution to fine-tune performance. Enjoy the flexibility of interpreted or compiled execution to match your deployment needs.",
+          "Aprovecha la rápida compilación y ejecución de AQ para afinar el rendimiento. Disfruta de la flexibilidad de la ejecución interpretada o compilada para adecuarse a tus necesidades de despliegue.",
         // icon: "tabler:adjustments",
       },
       {
-        title: "Deploy!",
+        title: "¡Despliega!",
         // icon: "tabler:rocket",
       },
     ]}
     image={{
       src: DevelopImg,
-      alt: "AQ Work Environment",
+      alt: "Entorno de Trabajo AQ",
     }}
   />
 
   <!-- Features2 Widget ************** -->
 
   <Features2
-    title="Most used AQ development components"
-    subtitle="Essential building blocks for developing applications with AQ language"
-    tagline="Components"
+    title="Componentes de desarrollo AQ más utilizados"
+    subtitle="Bloques de construcción esenciales para desarrollar aplicaciones con el lenguaje AQ"
+    tagline="Componentes"
     items={[
       {
-        title: "Rapid Compiler",
+        title: "Compilador Rápido",
         description:
-          "Just like an efficient GPS system, the AQ compiler guides the code swiftly to its optimized state.",
-        // icon: "flat-color-// icons:template",
+          "Al igual que un sistema GPS eficiente, el compilador AQ guía el código rápidamente a su estado optimizado.",
+        // icon: "flat-color-icons:template",
       },
       {
-        title: "Integrated Editor",
+        title: "Editor Integrado",
         description:
-          "The core workspace where the magic happens; an editor fine-tuned for AQ brings your code to life, superheroes style!",
-        // icon: "flat-color-// icons:gallery",
+          "El espacio de trabajo principal donde ocurre la magia; un editor ajustado para AQ da vida a tu código, ¡al estilo de los superhéroes!",
+        // icon: "flat-color-icons:gallery",
       },
       {
-        title: "Debugging Tools",        description:
-          "Where your AQ code shows off its robustness. Time to iron out the kinks and stand tall, no bragging spared!",
-        // icon: "flat-color-// icons:approval",
+        title: "Herramientas de Depuración",
+        description:
+          "Donde tu código AQ muestra su robustez. Es hora de eliminar los errores y destacarse, ¡sin jactarse!",
+        // icon: "flat-color-icons:approval",
       },
       {
-        title: "Library Management",
+        title: "Gestión de Bibliotecas",
         description:
-          "The meat of AQ development; it's where you integrate powerful libraries and go beyond window-shopping to full-on creating!",
-        // icon: "flat-color-// icons:document",
+          "El núcleo del desarrollo AQ; es donde integras poderosas bibliotecas y pasas de la mera observación a la creación plena.",
+        // icon: "flat-color-icons:document",
       },
       {
-        title: "Cross-platform Kits",
+        title: "Kits Multiplataforma",
         description:
-          "This toolkit is your enthusiastic guide, pushing your AQ code to run on platforms galore—go on, embrace that adventure!",
-        // icon: "flat-color-// icons:advertising",
+          "Este conjunto de herramientas es tu guía entusiasta, empujando tu código AQ a ejecutarse en múltiples plataformas. ¡Adelante, abraza esa aventura!",
+        // icon: "flat-color-icons:advertising",
       },
       {
-        title: "Performance Metrics",
+        title: "Métricas de Rendimiento",
         description:
-          "A look at the dessert menu, revealing the performance treats and optimization delicacies that await.",
-        // icon: "flat-color-// icons:currency-exchange",
+          "Una mirada al menú de postres, revelando las delicias de rendimiento y optimización que te esperan.",
+        // icon: "flat-color-icons:currency-exchange",
       },
       {
-        title: "Community Feedback",
+        title: "Retroalimentación Comunitaria",
         description:
-          "Enter the gossip corner of AQ, where testimonials validate the language's prowess through shared success stories.",
-        // icon: "flat-color-// icons:voice-presentation",
+          "Entra en el rincón de chismes de AQ, donde los testimonios validan el poder del lenguaje a través de historias de éxito compartidas.",
+        // icon: "flat-color-icons:voice-presentation",
       },
       {
-        title: "Developer Support",
+        title: "Soporte para Desarrolladores",
         description:
-          "Your digital mailbox for AQ queries; reach out, get answers, or celebrate wins—our community responds swiftly!",
-        // icon: "flat-color-// icons:business-contact",
+          "Tu buzón digital para consultas sobre AQ; contacta, obtén respuestas o celebra éxitos. ¡Nuestra comunidad responde rápidamente!",
+        // icon: "flat-color-icons:business-contact",
       },
       {
-        title: "Documentation Footnotes",
+        title: "Notas al Pie de Documentación",
         description:
-          "Don't miss the credits scrolling down; the AQ documentation footnotes are peppered with hidden treasures!",
-        // icon: "flat-color-// icons:database",
+          "No te pierdas los créditos que se desplazan hacia abajo; las notas al pie de la documentación de AQ están llenas de tesoros ocultos.",
+        // icon: "flat-color-icons:database",
       },
     ]}
   >
@@ -334,47 +335,47 @@ const metadata = {
   <!-- HighlightedPosts Widget ******* -->
 
   <BlogLatestPosts
-    title="Dive Deeper Into AQ"
-    information={`Browse through our curated blog posts for comprehensive guides on AQ language. Each article is a step towards mastering the artistry of this simple and secure programming language. Discover the nuances that make AQ a compelling option for your development projects.`}
+    title="Profundiza en AQ"
+    information={`Explora nuestras publicaciones de blog seleccionadas para obtener guías completas sobre el lenguaje AQ. Cada artículo es un paso hacia el dominio del arte de este lenguaje de programación simple y seguro. Descubre los matices que hacen de AQ una opción atractiva para tus proyectos de desarrollo.`}
   />
 
   <!-- FAQs Widget ******************* -->
 
   <FAQs
-    title="AQ Language Queries Answered"
-    subtitle="Have questions about AQ? Here are some of the most common inquiries answered to help you understand the language's approach to simple and secure programming."
+    title="Preguntas Frecuentes sobre el Lenguaje AQ"
+    subtitle="¿Tienes preguntas sobre AQ? Aquí tienes algunas de las consultas más comunes respondidas para ayudarte a entender el enfoque del lenguaje hacia la programación simple y segura."
     tagline="FAQs"
     classes={{ container: "max-w-6xl" }}
     items={[
       {
-        title: "What Makes AQ Stand Out?",
+        title: "¿Qué hace que AQ se destaque?",
         description:
-          "AQ's straightforward syntax and efficient execution model make it stand out from the crowd. It's designed to be learned quickly while providing robust security features for modern software development.",
+          "La sintaxis directa y el modelo de ejecución eficiente de AQ lo hacen destacar entre la multitud. Está diseñado para aprenderse rápidamente mientras proporciona características de seguridad robustas para el desarrollo de software moderno.",
       },
       {
-        title: "How Can I Get Started with AQ?",
+        title: "¿Cómo puedo comenzar con AQ?",
         description:
-          "Starting with AQ is as simple as its syntax. All you need is to visit the official AQ GitHub repository, clone it, and follow the instructions provided in the readme file to set up your development environment.",
+          "Comenzar con AQ es tan simple como su sintaxis. Todo lo que necesitas es visitar el repositorio oficial de AQ en GitHub, clonarlo y seguir las instrucciones proporcionadas en el archivo readme para configurar tu entorno de desarrollo.",
       },
       {
-        title: "What Are the System Requirements for AQ?",
+        title: "¿Cuáles son los requisitos del sistema para AQ?",
         description:
-          "AQ doesn't demand much—just a system that can run the interpreter or compiler. Whether you're on Windows, Linux, or MacOS, you can get started with AQ right away.",
+          "AQ no exige mucho, solo un sistema que pueda ejecutar el intérprete o el compilador. Ya sea que estés en Windows, Linux o MacOS, puedes comenzar con AQ de inmediato.",
       },
       {
-        title: "Is AQ Suitable for My First Programming Language?",
+        title: "¿Es AQ adecuado como mi primer lenguaje de programación?",
         description:
-          "Absolutely! AQ's simplicity and resemblance to C++ make it a great starting point for novices. Plus, the community is ready to help if you ever find yourself in a bind.",
+          "¡Absolutamente! La simplicidad de AQ y su semejanza con C++ lo hacen un excelente punto de partida para los principiantes. Además, la comunidad está lista para ayudar si alguna vez te encuentras en un aprieto.",
       },
       {
-        title: "Can I Contribute to the AQ Project?",
+        title: "¿Puedo contribuir al proyecto AQ?",
         description:
-          "Yes, contributors are welcome! AQ is an open-source project, and we encourage contributions whether it's coding, documentation, or community support.",
+          "Sí, ¡los contribuyentes son bienvenidos! AQ es un proyecto de código abierto y alentamos las contribuciones, ya sea en codificación, documentación o soporte comunitario.",
       },
       {
-        title: "Where Can I Find More Information About AQ?",
+        title: "¿Dónde puedo encontrar más información sobre AQ?",
         description:
-          "You can head to AQ's official documentation for detailed guides, visit the repository for source code, or participate in the community forums for any personal queries you might have.",
+          "Puedes dirigirte a la documentación oficial de AQ para guías detalladas, visitar el repositorio para el código fuente o participar en los foros comunitarios para cualquier consulta personal que puedas tener.",
       },
     ]}
   />
@@ -384,13 +385,13 @@ const metadata = {
   <section class="py-16 bg-white dark:bg-gray-900">
     <div class="container mx-auto px-6 text-center">
       <h1 class="text-3xl font-semibold text-gray-800 dark:text-white lg:text-4xl">
-        Contact Us
+        Contáctanos
       </h1>
       <p class="text-gray-600 dark:text-gray-400 mt-6">
-        If you have any questions about AQ or any other concerns, even if they are not related to AQ, feel free to contact us. We are happy to engage with you on any issue.
+        Si tienes alguna pregunta sobre AQ o cualquier otra preocupación, incluso si no están relacionadas con AQ, no dudes en contactarnos. Estamos encantados de interactuar contigo en cualquier tema.
       </p>
       <p class="text-gray-600 dark:text-gray-400 mt-2">
-        You can reach us via GitHub, Twitter, Discord, and Email. We recommend using GitHub and Email for a quicker response.
+        Puedes contactarnos a través de GitHub, Twitter, Discord y Email. Recomendamos usar GitHub y Email para una respuesta más rápida.
       </p>
 
       <div class="flex justify-center mt-8">
@@ -400,7 +401,7 @@ const metadata = {
         </a>
         <a href="https://x.com/aq_organization" class="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-200 focus:text-gray-700 dark:focus:text-gray-200">
           <span class="sr-only">X</span>
-          <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.1 4.6c-.8.4-1.6.6-2.5.8.9-.6 1.5-1.4 1.8-2.5-.8.5-1.7.9-2.7 1.1a4.5 4.5 0 00-7.7 4.1 12.8 12.8 0 01-9.3-4.7c-.8 1.4-.3 3.2 1.2 4a4.5 4.5 0 01-2.1-.6c0 1.4 1 2.6 2.3 2.9-.8.1-1.5.3-2.2 0 0 1.8 1.3 3.3 3.2 3.6a9.1 9.1 0 01-5.7 1.6 12.8 12.8 0 006.9 2h9.7c12 0 15.5-10 15.5-18.7v-.9C22 7 23 5.8 23.1 4.6z"></path></svg>
+          <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.1 4.6c-.8.4-1.6.6-2.5.8.9-.6 1.5-1.4 1.8-2.5-.8.5-1.7.9-2.7 1.1a4.5 4.5 0  00-7.7 4.1 12.8 12.8 0 01-9.3-4.7c-.8 1.4-.3 3.2 1.2 4a4.5 4.5 0 01-2.1-.6c0 1.4 1 2.6 2.3 2.9-.8.1-1.5.3-2.2 0 0 1.8 1.3 3.3 3.2 3.6a9.1 9.1 0 01-5.7 1.6 12.8 12.8 0 006.9 2h9.7c12 0 15.5-10 15.5-18.7v-.9C22 7 23 5.8 23.1 4.6z"></path></svg>
         </a>
         <a href="https://discord.gg/JCKzxavG" class="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-200 focus:text-gray-700 dark:focus:text-gray-200">
           <span class="sr-only">Discord</span>
@@ -422,7 +423,7 @@ const metadata = {
     actions={[
       {
         variant: "primary",
-        text: "Explore AQ",
+        text: "Explora AQ",
         href: "https://github.com/aq-org/AQ",
         target: "_blank",
         // icon: "tabler:download",
@@ -430,15 +431,15 @@ const metadata = {
     ]}
   >
     <Fragment slot="title">
-      Accelerate with&nbsp;<br class="block sm:hidden" /><span
-        class="sm:whitespace-nowrap">AQ Programming</span
+      Acelera con&nbsp;<br class="block sm:hidden" /><span
+        class="sm:whitespace-nowrap">Programación AQ</span
       >
     </Fragment>
 
     <Fragment slot="subtitle">
-      Unleash the potential of fast, simple, and secure coding with AQ. <br
+      Desata el potencial de una codificación rápida, simple y segura con AQ. <br
         class="hidden md:inline"
-      />Get started on your development journey today!
+      />¡Comienza tu viaje de desarrollo hoy mismo!
     </Fragment>
   </CallToAction>
 </Layout>

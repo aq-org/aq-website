@@ -1,5 +1,5 @@
 ---
-import Layout from "~/layouts/PageLayout.astro";
+import Layout from "~/layouts/ar/PageLayout.astro";
 
 import Hero from "~/components/widgets/Hero.astro";
 import Note from "~/components/widgets/Note.astro";
@@ -8,12 +8,12 @@ import Content from "~/components/widgets/Content.astro";
 import FAQs from "~/components/widgets/FAQs.astro";
 import CallToAction from "~/components/widgets/CallToAction.astro";
 
-import DevelopImg from "../assets/images/develop.jpg";
-import NetImg from "../assets/images/net.jpg";
-import WorkImg from "../assets/images/work.jpg";
+import DevelopImg from "../../assets/images/develop.jpg";
+import NetImg from "../../assets/images/net.jpg";
+import WorkImg from "../../assets/images/work.jpg";
 
 const metadata = {
-  title: "Partners",
+  title: "الشركاء",
   ignoreTitleTemplate: true,
 };
 ---
@@ -21,25 +21,24 @@ const metadata = {
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
   <Hero
-    tagline="Join Hands with Our Partners"
+    tagline="انضم إلى شركائنا"
     actions={[
       {
         variant: "primary",
-        text: "Become a Partner",
+        text: "كن شريكًا",
         href: "#",
         // icon: "tabler:handshake",
       },
-      { text: "Learn more", href: "#partners" },
+      { text: "تعرف على المزيد", href: "#partners" },
     ]}
   >
     <Fragment slot="title">
-      <span class="hidden xl:inline">Building Success&nbsp;</span><br />
-      <span class="text-accent dark:text-white highlight">Together</span>
+      <span class="hidden xl:inline">بناء النجاح&nbsp;</span><br />
+      <span class="text-accent dark:text-white highlight">معًا</span>
     </Fragment>
     <Fragment slot="subtitle">
       <span class="hidden sm:inline">
-        Our mission is to create lasting partnerships that contribute to mutual
-        growth and success.
+        مهمتنا هي إنشاء شراكات دائمة تساهم في النمو والنجاح المتبادل.
       </span>
     </Fragment>
   </Hero>
@@ -50,44 +49,44 @@ const metadata = {
   <!-- Features Widget *************** -->
   <Features
     id="partners"
-    tagline="Our Partners"
-    title="Who We Work With"
-    subtitle="We are proud to partner with a diverse group of organizations that share our values and commitment to excellence."
+    tagline="شركاؤنا"
+    title="من نعمل معهم"
+    subtitle="نحن فخورون بالشراكة مع مجموعة متنوعة من المنظمات التي تشاركنا قيمنا والالتزام بالتميز."
     items={[
       {
-        title: "Tech Giants",
+        title: "عمالقة التكنولوجيا",
         description:
-          "Collaborating with leading technology companies to bring innovative solutions to market.",
+          "التعاون مع شركات التكنولوجيا الرائدة لجلب حلول مبتكرة إلى السوق.",
         // icon: "tabler:brand-reddit",
       },
       {
-        title: "Research Institutions",
+        title: "المؤسسات البحثية",
         description:
-          "Partnering with top research institutions to drive advancements in various fields.",
+          "الشراكة مع المؤسسات البحثية الكبرى لدفع التقدم في مختلف المجالات.",
         // icon: "tabler:bulb",
       },
       {
-        title: "Educational Entities",
+        title: "الكيانات التعليمية",
         description:
-          "Working with educational institutions to nurture the next generation of talent.",
+          "التعاون مع المؤسسات التعليمية لتنمية الجيل القادم من المواهب.",
         // icon: "tabler:school",
       },
       {
-        title: "Non-Profits",
+        title: "المنظمات غير الربحية",
         description:
-          "Supporting non-profit organizations to create a positive impact in communities.",
+          "دعم المنظمات غير الربحية لإحداث تأثير إيجابي في المجتمعات.",
         // icon: "tabler:heart",
       },
       {
-        title: "Startups",
+        title: "الشركات الناشئة",
         description:
-          "Empowering startups with resources and networks to accelerate their growth.",
+          "تمكين الشركات الناشئة بالموارد والشبكات لتسريع نموها.",
         // icon: "tabler:rocket",
       },
       {
-        title: "Industry Leaders",
+        title: "رواد الصناعة",
         description:
-          "Joining forces with industry leaders to set new standards of excellence.",
+          "الانضمام إلى رواد الصناعة لوضع معايير جديدة للتميز.",
         // icon: "tabler:award",
       },
     ]}
@@ -96,38 +95,37 @@ const metadata = {
   <!-- Content Widget **************** -->
   <Content
     isReversed
-    tagline="Our Approach"
-    title="Strategic and Collaborative"
+    tagline="نهجنا"
+    title="استراتيجي وتعاوني"
     items={[
       {
-        title: "Shared Vision",
+        title: "رؤية مشتركة",
         description:
-          "We build partnerships based on shared visions and common goals.",
+          "نبني الشراكات على أساس الرؤى المشتركة والأهداف المتوافقة.",
       },
       {
-        title: "Mutual Growth",
+        title: "النمو المتبادل",
         description:
-          "Our partnerships are designed to foster mutual growth and success.",
+          "تم تصميم شراكاتنا لتعزيز النمو والنجاح المتبادل.",
       },
       {
-        title: "Long-term Commitment",
+        title: "التزام طويل الأجل",
         description:
-          "We believe in building lasting relationships with our partners.",
+          "نؤمن ببناء علاقات دائمة مع شركائنا.",
       },
     ]}
     image={{
       src: DevelopImg,
-      alt: "Develop with AQ",
+      alt: "التطوير مع AQ",
     }}
   >
     <Fragment slot="content">
       <h3
         class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"
       >
-        Achieve More Together
+        تحقيق المزيد معًا
       </h3>
-      Experience the benefits of strategic partnerships that drive innovation and
-      expansion.
+      استمتع بفوائد الشراكات الاستراتيجية التي تدفع الابتكار والتوسع.
     </Fragment>
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-green-50 dark:bg-transparent"></div>
@@ -139,27 +137,27 @@ const metadata = {
     isAfterContent
     items={[
       {
-        title: "Innovate Together",
+        title: "الابتكار معًا",
         description:
-          "Our partnerships unlock new opportunities for innovation and growth.",
+          "شراكاتنا تفتح فرصًا جديدة للابتكار والنمو.",
       },
       {
-        title: "Collaborative Projects",
+        title: "مشاريع تعاونية",
         description:
-          "Collaborating on projects that push the boundaries of what's possible.",
+          "التعاون في مشاريع تدفع حدود الممكن.",
       },
       {
-        title: "Global Reach",
-        description: "Leveraging global networks to maximize impact and reach.",
+        title: "الوصول العالمي",
+        description: "الاستفادة من الشبكات العالمية لتحقيق أقصى تأثير وانتشار.",
       },
     ]}
     image={{
       src: WorkImg,
-      alt: "Work with AQ",
+      alt: "العمل مع AQ",
     }}
   >
     <Fragment slot="content">
-      Partner with us to explore new horizons and achieve unprecedented success.
+      الشراكة معنا لاستكشاف آفاق جديدة وتحقيق نجاح غير مسبوق.
     </Fragment>
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-green-50 dark:bg-transparent"></div>
@@ -172,19 +170,19 @@ const metadata = {
     isAfterContent
     items={[
       {
-        title: "Dedicated Support",
+        title: "الدعم المخصص",
         description:
-          "Our partners receive dedicated support and resources to ensure success.",
+          "يحصل شركاؤنا على دعم وموارد مخصصة لضمان النجاح.",
       },
       {
-        title: "Exclusive Benefits",
+        title: "فوائد حصرية",
         description:
-          "Access exclusive benefits and opportunities through our partnership programs.",
+          "الوصول إلى فوائد وفرص حصرية من خلال برامج الشراكة لدينا.",
       },
       {
-        title: "Community Engagement",
+        title: "مشاركة المجتمع",
         description:
-          "Be part of a community of like-minded organizations committed to excellence.",
+          "كن جزءًا من مجتمع من المنظمات المتشابهة في التفكير الملتزمة بالتميز.",
       },
     ]}
     image={{
@@ -193,7 +191,7 @@ const metadata = {
     }}
   >
     <Fragment slot="content">
-      Join a thriving community of partners dedicated to achieving excellence.
+      انضم إلى مجتمع مزدهر من الشركاء المكرسين لتحقيق التميز.
     </Fragment>
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-green-50 dark:bg-transparent"></div>
@@ -202,35 +200,35 @@ const metadata = {
 
   <!-- FAQs Widget ******************* -->
   <FAQs
-    title="Partnering with Us"
-    subtitle="Find answers to common questions about becoming a partner."
-    tagline="FAQs"
+    title="الشراكة معنا"
+    subtitle="ابحث عن إجابات للأسئلة الشائعة حول كيفية أن تصبح شريكًا."
+    tagline="الأسئلة الشائعة"
     classes={{ container: "max-w-6xl" }}
     items={[
       {
-        title: "How Can We Become a Partner?",
+        title: "كيف يمكننا أن نصبح شريكًا؟",
         description:
-          "Fill out our partnership inquiry form, and our team will get in touch with you to discuss potential collaboration.",
+          "املأ نموذج استفسار الشراكة الخاص بنا، وسيتواصل فريقنا معك لمناقشة التعاون المحتمل.",
       },
       {
-        title: "What Are the Benefits of Partnering?",
+        title: "ما هي فوائد الشراكة؟",
         description:
-          "Partners gain access to exclusive resources, dedicated support, and a network of like-minded organizations.",
+          "يحصل الشركاء على موارد حصرية، دعم مخصص، وشبكة من المنظمات المتشابهة في التفكير.",
       },
       {
-        title: "Can International Organizations Partner with You?",
+        title: "هل يمكن للمنظمات الدولية الشراكة معكم؟",
         description:
-          "Yes, we welcome international organizations to join our global network of partners.",
+          "نعم، نرحب بالمنظمات الدولية للانضمام إلى شبكتنا العالمية من الشركاء.",
       },
       {
-        title: "What Types of Partnerships Do You Offer?",
+        title: "ما هي أنواع الشراكات التي تقدمونها؟",
         description:
-          "We offer various types of partnerships, including strategic, collaborative, sponsorship, and more.",
+          "نحن نقدم أنواعًا مختلفة من الشراكات، بما في ذلك الاستراتيجية، التعاونية، الرعاية، وأكثر.",
       },
       {
-        title: "Where Can I Learn More About Your Partners?",
+        title: "أين يمكنني معرفة المزيد عن شركائكم؟",
         description:
-          "Visit our partners page for detailed information about our current partners and their success stories.",
+          "قم بزيارة صفحة شركائنا للحصول على معلومات مفصلة عن شركائنا الحاليين وقصص نجاحهم.",
       },
     ]}
   />
@@ -240,20 +238,19 @@ const metadata = {
     actions={[
       {
         variant: "primary",
-        text: "Join Us",
+        text: "انضم إلينا",
         href: "#",
         // icon: "tabler:handshake",
       },
     ]}
   >
     <Fragment slot="title">
-      Collaborate with&nbsp;<br class="block sm:hidden" /><span
-        class="sm:whitespace-nowrap">Our Partners</span
+      التعاون مع&nbsp;<br class="block sm:hidden" /><span
+        class="sm:whitespace-nowrap">شركائنا</span
       >
     </Fragment>
     <Fragment slot="subtitle">
-      Become part of a thriving network that values innovation, growth, and
-      mutual success.
+      كن جزءًا من شبكة مزدهرة تقدر الابتكار، والنمو، والنجاح المتبادل.
     </Fragment>
   </CallToAction>
 </Layout>

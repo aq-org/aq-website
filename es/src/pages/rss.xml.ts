@@ -8,14 +8,14 @@ export const GET = async () => {
   if (!APP_BLOG.isEnabled) {
     return new Response(null, {
       status: 404,
-      statusText: 'Not found',
+      statusText: 'No encontrado',
     });
   }
 
   const posts = await fetchPosts();
 
   const rss = await getRssString({
-    title: `${SITE.name}’s Blog`,
+    title: `Blog de ${SITE.name}`,
     description: METADATA?.description || '',
     site: import.meta.env.SITE,
 

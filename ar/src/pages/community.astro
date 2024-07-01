@@ -1,5 +1,5 @@
 ---
-import Layout from "~/layouts/PageLayout.astro";
+import Layout from "~/layouts/ar/PageLayout.astro";
 
 import Hero from "~/components/widgets/Hero.astro";
 import Note from "~/components/widgets/Note.astro";
@@ -12,12 +12,12 @@ import FAQs from "~/components/widgets/FAQs.astro";
 import Stats from "~/components/widgets/Stats.astro";
 import CallToAction from "~/components/widgets/CallToAction.astro";
 
-import CodeImg from '../assets/images/code.png';
-import DevelopImg from '../assets/images/develop.jpg';
-import NetImg from '../assets/images/net.jpg';
-import WorkImg from '../assets/images/work.jpg';
+import CodeImg from '../../assets/images/code.png';
+import DevelopImg from '../../assets/images/develop.jpg';
+import NetImg from '../../assets/images/net.jpg';
+import WorkImg from '../../assets/images/work.jpg';
 const metadata = {
-  title: "AQ Community — Connecting Developers Around The Globe",
+  title: "مجتمع AQ — ربط المطورين حول العالم",
   ignoreTitleTemplate: true,
 };
 ---
@@ -26,11 +26,11 @@ const metadata = {
   <!-- Hero Widget ******************* -->
 
   <Hero
-    tagline="Join the AQ Community"
+    tagline="انضم إلى مجتمع AQ"
     actions={[
       {
         variant: "primary",
-        text: "Get Started",
+        text: "ابدأ الآن",
         href: "https://github.com/aq-org/AQ",
         target: "_blank",
         // icon: "tabler:download",
@@ -39,64 +39,64 @@ const metadata = {
     ]}
   >
     <Fragment slot="title">
-      <span class="hidden xl:inline">Connecting and Supporting</span><br />
-      <span class="text-accent dark:text-white highlight"> AQ </span>
-      Community
+      <span class="hidden xl:inline">ربط ودعم</span><br />
+      <span class="text-accent dark:text-white highlight"> مجتمع </span>
+      AQ
     </Fragment>
 
     <Fragment slot="subtitle">
       <span class="hidden sm:inline">
-        Join the vibrant AQ community, share your ideas, and collaborate with developers worldwide. The temporary AQ community is available on Discord and Github while we finalize the official community platform.
+        انضم إلى مجتمع AQ النابض بالحياة، شارك أفكارك وتعاون مع المطورين حول العالم. المجتمع المؤقت لـ AQ متاح على Discord و GitHub بينما نقوم بإكمال منصة المجتمع الرسمية.
         </span>
     </Fragment>
   </Hero>
 
   <!-- Note Widget ******************* -->
 
-  <Note content="Although the official AQ community platform is still under construction, you can connect and communicate with fellow AQ developers on Discord and GitHub." />, 
+  <Note content="على الرغم من أن منصة مجتمع AQ الرسمية لا تزال قيد الإنشاء، يمكنك التواصل والتواصل مع مطوري AQ الآخرين على Discord و GitHub." />, 
 
   <!-- Features Widget *************** -->
 
   <Features
     id="features"
-    tagline="Community Benefits"
-    title="Why Join the AQ Community"
-    subtitle="The AQ community is a thriving ecosystem where developers come together to innovate, share knowledge, and support each other. Here's what you can expect:"
+    tagline="فوائد المجتمع"
+    title="لماذا تنضم إلى مجتمع AQ"
+    subtitle="مجتمع AQ هو نظام بيئي مزدهر حيث يجتمع المطورون للابتكار ومشاركة المعرفة ودعم بعضهم البعض. إليك ما يمكنك توقعه:"
     items={[
       {
-        title: "Active Collaboration",
+        title: "التعاون النشط",
         description:
-          "Engage with other developers, share your projects, and collaborate on innovative ideas.",
+          "تفاعل مع المطورين الآخرين، شارك مشاريعك وتعاون على الأفكار المبتكرة.",
         // icon: "tabler:users",
       },
       {
-        title: "Instant Support",
+        title: "الدعم الفوري",
         description:
-          "Receive timely help from experienced developers and community members.",
+          "احصل على المساعدة في الوقت المناسب من المطورين ذوي الخبرة وأعضاء المجتمع.",
         // icon: "tabler:help",
       },
       {
-        title: "Knowledge Sharing",
+        title: "مشاركة المعرفة",
         description:
-          "Access a wealth of information through shared resources, tutorials, and discussion threads.",
+          "الوصول إلى ثروة من المعلومات من خلال الموارد المشتركة، الدروس، وخيوط النقاش.",
         // icon: "tabler:book",
       },
       {
-        title: "Open Source Development",
+        title: "تطوير مفتوح المصدر",
         description:
-          "Contribute to AQ's open-source projects and help drive the language forward.",
+          "ساهم في مشاريع AQ المفتوحة المصدر وساعد في دفع اللغة إلى الأمام.",
         // icon: "tabler:code",
       },
       {
-        title: "Networking Opportunities",
+        title: "فرص التواصل",
         description:
-          "Build professional connections with other developers and industry experts.",
+          "بناء علاقات مهنية مع مطورين آخرين وخبراء الصناعة.",
         // icon: "tabler:network",
       },
       {
-        title: "Community Events",
+        title: "فعاليات المجتمع",
         description:
-          "Participate in events, hackathons, and meetups organized by the AQ community.",
+          "المشاركة في الفعاليات، الهاكاثونات، والاجتماعات التي ينظمها مجتمع AQ.",
         // icon: "tabler:calendar",
       },
     ]}
@@ -106,32 +106,32 @@ const metadata = {
 
   <Content
     isReversed
-    tagline="Get Involved"
-    title="Join AQ's Temporary Community Platforms"
+    tagline="كن جزءًا"
+    title="انضم إلى منصات مجتمع AQ المؤقتة"
     items={[
       {
         title: "Discord",
         description:
-          "Connect with the AQ community in real-time, share your progress, and get instant feedback.",
+          "تواصل مع مجتمع AQ في الوقت الفعلي، شارك تقدمك واحصل على ملاحظات فورية.",
       },
       {
-        title: "Github",
+        title: "GitHub",
         description:
-          "Collaborate on code, raise issues, and contribute to AQ's development on GitHub.",
+          "تعاون على الشيفرة، ارفع المشكلات وساهم في تطوير AQ على GitHub.",
       },
     ]}
     image={{
       src: CodeImg,
-      alt: "Code with AQ",
+      alt: "البرمجة باستخدام AQ",
     }}
   >
     <Fragment slot="content">
       <h3
         class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"
       >
-        Where Developers Connect
+        حيث يتواصل المطورون
       </h3>
-      Become an active member of the AQ community today by joining us on Discord and GitHub.
+      كن عضوًا نشطًا في مجتمع AQ اليوم من خلال الانضمام إلينا على Discord و GitHub.
     </Fragment>
 
     <Fragment slot="bg">
@@ -142,75 +142,75 @@ const metadata = {
   <!-- Steps Widget ****************** -->
 
   <Steps
-    title="Join the AQ Community in Three Simple Steps"
+    title="انضم إلى مجتمع AQ في ثلاث خطوات بسيطة"
     items={[
       {
-        title: 'Step 1: <span class="font-medium">Join Discord</span>',
+        title: 'الخطوة 1: <span class="font-medium">انضم إلى Discord</span>',
         description:
-          "Sign up for our Discord server and start participating in discussions.",
+          "اشترك في خادم Discord الخاص بنا وابدأ المشاركة في النقاشات.",
         // icon: "tabler:message-circle",
       },
       {
-        title: 'Step 2: <span class="font-medium">Follow Us on GitHub</span>',
+        title: 'الخطوة 2: <span class="font-medium">تابعنا على GitHub</span>',
         description:
-          "Fork our repo, contribute code, and stay updated with the latest developments.",
+          "استنسخ مستودعنا، ساهم في الشيفرة وابق على اطلاع على أحدث التطورات.",
         // icon: "tabler:git-merge",
       },
       {
-        title: 'Step 3: <span class="font-medium">Engage and Contribute</span>',
+        title: 'الخطوة 3: <span class="font-medium">تفاعل وساهم</span>',
         description:
-          "Share your ideas, provide feedback, and help others in the community.",
-        // icon: "flat-color-// icons:data-configuration",
+          "شارك أفكارك، قدم ملاحظاتك وساعد الآخرين في المجتمع.",
+        // icon: "flat-color-icons:data-configuration",
       },
     ]}
     image={{
       src: DevelopImg,
-      alt: "Join AQ Community",
+      alt: "انضم إلى مجتمع AQ",
     }}
   />
 
   <!-- Features2 Widget ************** -->
 
   <Features2
-    title="Why the AQ Community Stands Out"
-    subtitle="Key Advantages of Being Part of the AQ Community"
-    tagline="Community Highlights"
+    title="لماذا يبرز مجتمع AQ"
+    subtitle="المزايا الرئيسية لكونك جزءًا من مجتمع AQ"
+    tagline="أبرز المجتمع"
     items={[
       {
-        title: "Inclusive Environment",
+        title: "بيئة شاملة",
         description:
-          "We foster an inclusive environment where all developers, regardless of skill level, are welcome.",
-        // icon: "flat-color-// icons:approval",
+          "نحن نروج لبيئة شاملة حيث يتم الترحيب بجميع المطورين بغض النظر عن مستوى مهاراتهم.",
+        // icon: "flat-color-icons:approval",
       },
       {
-        title: "Continuous Learning",
+        title: "التعلم المستمر",
         description:
-          "Stay ahead of the curve with continuous learning opportunities and resources.",
-        // icon: "flat-color-// icons:education",
+          "ابق في الطليعة مع فرص التعلم المستمرة والموارد.",
+        // icon: "flat-color-icons:education",
       },
       {
-        title: "Collaborative Projects",
+        title: "مشاريع تعاونية",
         description:
-          "Work on open-source projects, gain practical experience, and expand your portfolio.",
-        // icon: "flat-color-// icons:data-configuration",
+          "اعمل على مشاريع مفتوحة المصدر، احصل على خبرة عملية ووسع محفظتك.",
+        // icon: "flat-color-icons:data-configuration",
       },
       {
-        title: "Mentorship Opportunities",
+        title: "فرص الإرشاد",
         description:
-          "Find mentors to guide you through your learning journey and career development.",
-        // icon: "flat-color-// icons:support",
+          "اعثر على مرشدين ليوجهوك خلال رحلتك التعليمية وتطوير حياتك المهنية.",
+        // icon: "flat-color-icons:support",
       },
       {
-        title: "Global Community",
+        title: "مجتمع عالمي",
         description:
-          "Join a global community of developers who share your passion for coding and innovation.",
-        // icon: "flat-color-// icons:group",
+          "انضم إلى مجتمع عالمي من المطورين الذين يشاركونك شغفك بالبرمجة والابتكار.",
+        // icon: "flat-color-icons:group",
       },
       {
-        title: "Resource Sharing",
+        title: "مشاركة الموارد",
         description:
-          "Access and share valuable resources such as code snippets, tutorials, and development tools.",
-        // icon: "flat-color-// icons:digital-nomad",
+          "الوصول إلى ومشاركة الموارد القيمة مثل مقتطفات الشيفرة، الدروس، وأدوات التطوير.",
+        // icon: "flat-color-icons:digital-nomad",
       },
     ]}
   >
@@ -222,47 +222,47 @@ const metadata = {
   <!-- HighlightedPosts Widget ******* -->
 
   <BlogLatestPosts
-    title="Explore More About AQ"
-    information={`Dive into our curated blog posts for in-depth guides and articles on AQ language. Discover the strategies, tips, and updates that make AQ a standout choice for developers.`}
+    title="استكشف المزيد حول AQ"
+    information={`تعمق في مقالات مدونتنا المنسقة للحصول على أدلة ومقالات متعمقة حول لغة AQ. اكتشف الاستراتيجيات والنصائح والتحديثات التي تجعل AQ خيارًا بارزًا للمطورين.`}
   />
 
   <!-- FAQs Widget ******************* -->
 
   <FAQs
-    title="AQ Community FAQs"
-    subtitle="Common questions about AQ and our community."
-    tagline="FAQs"
+    title="الأسئلة الشائعة حول مجتمع AQ"
+    subtitle="أسئلة شائعة حول AQ ومجتمعنا."
+    tagline="الأسئلة الشائعة"
     classes={{ container: "max-w-6xl" }}
     items={[
       {
-        title: "Why should I join the AQ community?",
+        title: "لماذا يجب أن أنضم إلى مجتمع AQ؟",
         description:
-          "Joining the AQ community provides you with a support network of developers, access to shared resources, and opportunities to contribute to open-source projects.",
+          "الانضمام إلى مجتمع AQ يوفر لك شبكة دعم من المطورين، الوصول إلى الموارد المشتركة وفرص المساهمة في مشاريع مفتوحة المصدر.",
       },
       {
-        title: "How can I participate in the AQ community?",
+        title: "كيف يمكنني المشاركة في مجتمع AQ؟",
         description:
-          "You can participate by joining our Discord, following us on GitHub, contributing code, and participating in discussions and events.",
+          "يمكنك المشاركة من خلال الانضمام إلى Discord، متابعة GitHub، المساهمة في الشيفرة والمشاركة في النقاشات والفعاليات.",
       },
       {
-        title: "Is the AQ community suitable for beginners?",
+        title: "هل مجتمع AQ مناسب للمبتدئين؟",
         description:
-          "Absolutely! The AQ community welcomes developers of all skill levels and provides resources and support for beginners.",
+          "بالتأكيد! يرحب مجتمع AQ بالمطورين من جميع المستويات ويوفر الموارد والدعم للمبتدئين.",
       },
       {
-        title: "Can I contribute to AQ's development?",
+        title: "هل يمكنني المساهمة في تطوير AQ؟",
         description:
-          "Yes, we encourage contributions! Visit our GitHub repository, fork it, and start contributing to AQ projects.",
+          "نعم، نشجع المساهمات! قمبزيارة مستودع GitHub الخاص بنا، استنسخه وابدأ المساهمة في مشاريع AQ.",
       },
       {
-        title: "Where can I find more resources on AQ?",
+        title: "أين يمكنني العثور على المزيد من الموارد حول AQ؟",
         description:
-          "Check out our blog for the latest articles, visit our GitHub for source code, and join our Discord for community support.",
+          "تحقق من مدونتنا للحصول على أحدث المقالات، قم بزيارة GitHub للحصول على الشيفرة المصدرية وانضم إلى Discord للحصول على دعم المجتمع.",
       },
       {
-        title: "What happens when the official community platform is ready?",
+        title: "ماذا يحدث عندما تكون منصة المجتمع الرسمية جاهزة؟",
         description:
-          "Once the official platform is ready, we will transition from Discord and GitHub to the new platform, ensuring a seamless move for all members.",
+          "بمجرد أن تكون المنصة الرسمية جاهزة، سننتقل من Discord و GitHub إلى المنصة الجديدة، مما يضمن انتقالًا سلسًا لجميع الأعضاء.",
       },
     ]}
   />
@@ -273,7 +273,7 @@ const metadata = {
     actions={[
       {
         variant: "primary",
-        text: "Join the AQ Community",
+        text: "انضم إلى مجتمع AQ",
         href: "https://github.com/aq-org/AQ",
         target: "_blank",
         // icon: "tabler:download",
@@ -281,14 +281,14 @@ const metadata = {
     ]}
   >
     <Fragment slot="title">
-      Engage with&nbsp;<br class="block sm:hidden" /><span
-        class="sm:whitespace-nowrap">the AQ Community      </span>
-      </Fragment>
-  
-      <Fragment slot="subtitle">
-        <span class="hidden sm:inline">
-          Become an active member today and build connections with developers worldwide.
-        </span>
-      </Fragment>
-    </CallToAction>
-  </Layout>
+      تفاعل مع&nbsp;<br class="block sm:hidden" /><span
+        class="sm:whitespace-nowrap">مجتمع AQ</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        كن عضوًا نشطًا اليوم وابنِ علاقات مع المطورين حول العالم.
+      </span>
+    </Fragment>
+  </CallToAction>
+</Layout>
