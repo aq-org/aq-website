@@ -2,7 +2,7 @@
 publishDate: 2024-06-01T19:55:05+08:00
 title: An Excellent Virtual Machine Memory Architecture - AQ
 excerpt: The memory architecture of a virtual machine directly affects its performance and usage. Designing an excellent architecture can effectively enhance performance and efficiency. This article will introduce the memory architecture used by the AQ virtual machine.
-image: https://www.axa6.com/aq.png
+image: https://www.axa6.com/es/aq.png
 category: Blog
 tags:
   - AQ
