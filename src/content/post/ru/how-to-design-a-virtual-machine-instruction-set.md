@@ -2,7 +2,7 @@
 publishDate: 2024-05-29T21:20:43+08:00
 title: How to design a virtual machine instruction set? - AQ
 excerpt: How to design a virtual machine instruction set? This article is a design proposal for the AQ virtual machine instruction set.
-image: ../../../assets/images/aq.png
+image: https://www.axa6.com/aq.png
 category: Blog
 tags:
   - AQ
