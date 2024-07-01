@@ -1,0 +1,41 @@
+---
+import Layout from "~/layouts/ar/PageLayout.astro";
+import BlogLatestPosts from "~/components/widgets/BlogLatestPosts.astro";
+import Hero from "~/components/widgets/Hero.astro";
+import { getPermalink, getBlogPermalink, getAsset } from '../../utils/permalinks';
+
+const metadata = {
+  title: "التوثيق",
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    tagline="ابدأ تعلم AQ"
+    actions={[
+      {
+        variant: "primary",
+        text: "ابدأ الآن",
+        href: getBlogPermalink(),
+        target: "_blank",
+        icon: "tabler:download",
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      <span class="text-accent dark:text-white highlight"> توثيق </span>AQ
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        <span class="font-semibold">AQ</span> نظرًا لأن AQ لا تزال قيد التطوير، لم يتم تنظيم التوثيق بعد. يمكنك تعلم كل شيء عن AQ من خلال مدونة AQ، بما في ذلك آخر تحديثات التطوير والمعايير غير المنشورة ذات الصلة.</span
+      >
+    </Fragment>
+  </Hero>
+  <!-- BlogLatestPosts Widget ******* -->
+  <BlogLatestPosts
+    title="تحقق من أحدث مدونة AQ"
+    information={`تصفح مقالات مدونتنا المنسقة لتتعلم كل شيء عن لغة AQ. كل مقال هو خطوة نحو إتقان فن AQ، واكتشاف جاذبيتها الفريدة في مشاريع التطوير.`}
+  />
+</Layout>

@@ -1,0 +1,406 @@
+---
+import Layout from "~/layouts/ar/PageLayout.astro";
+
+import Hero from "~/components/widgets/Hero.astro";
+import Note from "~/components/widgets/Note.astro";
+import Features from "~/components/widgets/Features.astro";
+import Features2 from "~/components/widgets/Features2.astro";
+import Steps from "~/components/widgets/Steps.astro";
+import Content from "~/components/widgets/Content.astro";
+import BlogLatestPosts from "~/components/widgets/BlogLatestPosts.astro";
+import FAQs from "~/components/widgets/FAQs.astro";
+import Stats from "~/components/widgets/Stats.astro";
+import CallToAction from "~/components/widgets/CallToAction.astro";
+
+import CodeImg from '../../assets/images/code.png';
+import DevelopImg from '../../assets/images/develop.jpg';
+import NetImg from '../../assets/images/net.jpg';
+import WorkImg from '../../assets/images/work.jpg';
+const metadata = {
+  title: "AQ — لغة البرمجة البسيطة، السريعة، والآمنة",
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="ابدأ التطوير باستخدام AQ"
+    actions={[
+      {
+        variant: "primary",
+        text: "ابدأ الآن",
+        href: "https://github.com/aq-org/AQ",
+        target: "_blank",
+        icon: "tabler:download",
+      },
+      { text: "تعرف على المزيد", href: "#features" },
+    ]}
+  >
+    <Fragment slot="title">
+      <span class="hidden xl:inline">السريعة، الصغيرة، والبسيطة</span><br />
+      <span class="text-accent dark:text-white highlight"> AQ </span>
+      لغة البرمجة
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        <span class="font-semibold">AQ</span> AQ هي لغة برمجة مفسرة.
+        إنها سريعة، صغيرة، بسيطة وآمنة. في نفس الوقت، يمكن أيضًا تجميع البرامج المكتوبة
+        بـ AQ.</span
+      >
+      قد تكون قطعة عمل رائعة.
+    </Fragment>
+  </Hero>
+
+  <!-- Note Widget ******************* -->
+
+  <Note />
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="features"
+    tagline="الميزات"
+    title="تجربة لغة AQ"
+    subtitle="لغة برمجة مفسرة حديثة مصممة للبساطة والأمان. أصبحت AQ بسرعة خيارًا بارزًا للمطورين."
+    items={[
+      {
+        title: "سريعة ومفسرة",
+        description:
+          "سرعة AQ ملحوظة، مما يجعلها خيارًا سريعًا للتطوير. يمكن أن تكون مفسرة لسهولة الاستخدام أو مجمعة للكفاءة.",
+        icon: "tabler:speedboat",
+      },
+      {
+        title: "صغيرة وبسيطة",
+        description:
+          "تحافظ AQ على الأمور صغيرة وبسيطة، مع التركيز على تقديم الوظائف دون تعقيد عملية التطوير.",
+        icon: "tabler:layout-kanban",
+      },
+      {
+        title: "الأمان والحماية",
+        description:
+          "مع الالتزام بمعايير البرمجة الآمنة، توفر AQ إدارة قوية للذاكرة وحماية ضد الثغرات الشائعة.",
+        icon: "tabler:shield-lock",
+      },
+      {
+        title: "التوافق عبر الأنظمة",
+        description:
+          "AQ متعددة الاستخدامات وتدعم منصات متعددة، بما في ذلك Windows و Linux و MacOS، مما يجعلها متاحة لأي مطور.",
+        icon: "tabler:device-desktop",
+      },
+      {
+        title: "مجتمع مفتوح المصدر",
+        description:
+          "يدفع مجتمع مفتوح المصدر نشط AQ إلى الأمام، مما يعزز التعاون والابتكار والتحسين المستمر.",
+        icon: "tabler:users",
+      },
+      {
+        title: "نحو مرونة في بناء الجمل",
+        description:
+          "بفضل نمط بناء الجمل المشابه لـ C++، تجعل AQ من السهل على المطورين إتقانها واستخدامها في مختلف سيناريوهات البرمجة.",
+        icon: "tabler:code",
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    tagline="مستوحاة من AQ"
+    title="ابتكار AQ: حيث تلتقي السرعة بالبساطة"
+    items={[
+      {
+        title: "سريعة وفعالة",
+        description:
+          "مصممة للأداء، توفر AQ سرعة مذهلة لكل من التطوير وتنفيذ وقت التشغيل.",
+      },
+      {
+        title: "بسيطة وصغيرة",
+        description:
+          "وفاءً لمبادئ تصميمها، تعتبر AQ مباشرة وخفيفة الوزن، مما يسهل منحنى التعلم وقواعد الشيفرة البسيطة.",
+      },
+      {
+        title: "آمنة ومحمية",
+        description:
+          "الأمان هو ميزة أساسية في AQ، مما يضمن أن البرامج ليست فقط سريعة وسهلة الكتابة بل أيضًا آمنة من الأساس.",
+      },
+    ]}
+    image={{
+      src: CodeImg,
+      alt: "البرمجة باستخدام AQ",
+    }}
+  >
+    <Fragment slot="content">
+      <h3
+        class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"
+      >
+        تبنى قوة AQ
+      </h3>
+      ارتق بتطويرك إلى المستوى التالي من خلال الاستفادة من بساطة وأداء AQ
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: "قابلية التكيف السهلة للغة",
+        description:
+          "بفضل بناء الجمل البسيط والبصمة الصغيرة لـ AQ، تصبح قابلة للتكيف بشكل كبير مع مجموعة متنوعة من احتياجات البرمجة، مما يعزز كفاءة المطور.",
+      },
+      {
+        title: "مفسرة أو مجمعة",
+        description:
+          "مع AQ، استمتع بمرونة الاختيار بين التنفيذ المفسر أو المجمعة لتناسب احتياجات مشروعك ومتطلبات الأداء.",
+      },
+      {
+        title: "معايير الأمان المثالية",
+        description:
+          "تركز AQ بشكل كبير على الأمان، مما يوفر راحة البال من خلال إدارة الذاكرة الآمنة وفحص الشيفرة الاستباقي لمنع الثغرات.",
+      },
+      {
+        title: "دعم واسع للمنصات",
+        description:
+          "تضمن قدرات AQ عبر الأنظمة أن تظل مشاريعك متعددة الاستخدامات، حيث تعمل بسلاسة على Windows و Linux و MacOS والمزيد.",
+      },
+    ]}
+    image={{
+      src: WorkImg,
+      alt: "العمل باستخدام AQ",
+    }}
+  >
+    <Fragment slot="content">
+      اجعل عملية التطوير الخاصة بك تبرز من خلال مزيج AQ الفريد من السرعة،
+      البساطة، والأمان.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    isAfterContent
+    items={[
+      {
+        title: "تعزيز تفاعل المستخدم",
+        description:
+          "اجذب جمهورك بلغة برمجة مصممة للتطوير السريع والأداء. تخلق بساطة وسرعة AQ تفاعلات مستخدم جذابة.",
+      },
+      {
+        title: "التحسين المستمر",
+        description:
+          "تتطور AQ باستمرار مع احتياجات مجتمع البرمجة، مما يضمن بقاء مشاريعك محدثة مع أحدث الممارسات في أمان وكفاءة البرمجيات.",
+      },
+      {
+        title: "كفاءة الوقت والموارد",
+        description:
+          "مع سهولة استخدام لغة البرمجة AQ، وفر وقتًا وموارد قيمة. تبسط بناء الجمل البسيط والكفاءة المجمعة سير عمل التطوير.",
+      },
+      {
+        title: "دعم المجتمع",
+        description:
+          "كن جزءًا من مجتمع AQ النابض بالحياة للحصول على الدعم والرؤى وفرص التعاون التي تثري معرفتك البرمجية وإنتاجيتك.",
+      },
+    ]}
+    image={{
+      src: NetImg,
+      alt: "AQ NET",
+    }}
+  >
+    <Fragment slot="content"
+      >قم بتمكين تطويرك من خلال كفاءة AQ المبسطة.</Fragment
+    >
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    title="عزز كفاءة تطويرك باستخدام AQ."
+    items={[
+      {
+        title: 'الخطوة 1: <span class="font-medium">قم بتنزيل AQ</span>',
+        description:
+          "ابدأ بإعداد AQ السهل. قم بتشغيل التثبيت، وستكون جاهزًا لبدء البرمجة بلغة مصممة للوضوح والكفاءة.",
+        icon: "tabler:download",
+      },
+      {
+        title: 'الخطوة 2: <span class="font-medium">اكتب الشيفرة</em>',
+        description:
+          "اغمر نفسك في AQ. يجعل بناء الجمل البسيط المشابه لـ C++ من السهل التعلم وبدء ترجمة منطقك إلى شيفرة وظيفية بسرعة.",icon: "tabler:code",
+      },
+      {
+        title: 'الخطوة 3: <span class="font-medium">تحسين وتجميع</span>',
+        description:
+          "استفد من التجميع والتنفيذ السريع لـ AQ لضبط الأداء. استمتع بمرونة التنفيذ المفسر أو المجمعة لتناسب احتياجات النشر الخاصة بك.",
+        icon: "tabler:adjustments",
+      },
+      {
+        title: "نشر!",
+        icon: "tabler:rocket",
+      },
+    ]}
+    image={{
+      src: DevelopImg,
+      alt: "بيئة عمل AQ",
+    }}
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="أكثر مكونات تطوير AQ استخدامًا"
+    subtitle="عناصر البناء الأساسية لتطوير التطبيقات باستخدام لغة AQ"
+    tagline="المكونات"
+    items={[
+      {
+        title: "المجمع السريع",
+        description:
+          "مثل نظام GPS الفعال، يرشد مجمع AQ الشيفرة بسرعة إلى حالتها المحسنة.",
+        icon: "flat-color-icons:template",
+      },
+      {
+        title: "المحرر المتكامل",
+        description:
+          "المساحة الأساسية حيث يحدث السحر؛ محرر مضبوط بدقة لـ AQ يجلب شيفرتك إلى الحياة بأسلوب الأبطال الخارقين!",
+        icon: "flat-color-icons:gallery",
+      },
+      {
+        title: "أدوات التصحيح",
+        description:
+          "حيث تظهر شيفرة AQ قوتها. حان الوقت لتسوية العيوب والوقوف بثبات، دون التفاخر!",
+        icon: "flat-color-icons:approval",
+      },
+      {
+        title: "إدارة المكتبات",
+        description:
+          "جوهر تطوير AQ؛ هنا تدمج المكتبات القوية وتنتقل من استعراض النوافذ إلى الإبداع الكامل!",
+        icon: "flat-color-icons:document",
+      },
+      {
+        title: "أدوات متعددة الأنظمة",
+        description:
+          "هذه المجموعة من الأدوات هي دليلك المتحمس، تدفع شيفرة AQ الخاصة بك للتشغيل على العديد من المنصات - انطلق، واحتضن تلك المغامرة!",
+        icon: "flat-color-icons:advertising",
+      },
+      {
+        title: "مقاييس الأداء",
+        description:
+          "نظرة على قائمة الحلويات، تكشف عن مكافآت الأداء وأطباق التحسين التي تنتظرك.",
+        icon: "flat-color-icons:currency-exchange",
+      },
+      {
+        title: "ملاحظات المجتمع",
+        description:
+          "ادخل إلى ركن الشائعات في AQ، حيث تؤكد الشهادات قوة اللغة من خلال قصص النجاح المشتركة.",
+        icon: "flat-color-icons:voice-presentation",
+      },
+      {
+        title: "دعم المطورين",
+        description:
+          "صندوق بريدك الرقمي لاستفسارات AQ؛ تواصل، احصل على إجابات، أو احتفل بالانتصارات - يستجيب مجتمعنا بسرعة!",
+        icon: "flat-color-icons:business-contact",
+      },
+      {
+        title: "ملاحظات الوثائق",
+        description:
+          "لا تفوت تتابع الاعتمادات؛ ملاحظات وثائق AQ مليئة بالكنوز المخفية!",
+        icon: "flat-color-icons:database",
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <!-- HighlightedPosts Widget ******* -->
+
+  <BlogLatestPosts
+    title="تعمق أكثر في AQ"
+    information={`تصفح مقالات مدونتنا المختارة للحصول على أدلة شاملة حول لغة AQ. كل مقالة هي خطوة نحو إتقان فن AQ، واكتشاف جاذبيتها الفريدة في مشاريع التطوير.`}
+  />
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="أسئلة حول لغة AQ مجاب عليها"
+    subtitle="هل لديك أسئلة حول AQ؟ هنا بعض الاستفسارات الشائعة مجاب عليها لمساعدتك على فهم نهج اللغة في البرمجة البسيطة والآمنة."
+    tagline="الأسئلة الشائعة"
+    classes={{ container: "max-w-6xl" }}
+    items={[
+      {
+        title: "ما الذي يجعل AQ تبرز؟",
+        description:
+          "بناء الجمل البسيط ونموذج التنفيذ الفعال لـ AQ يجعلها تبرز من بين الحشود. تم تصميمها لتتعلم بسرعة مع توفير ميزات أمان قوية لتطوير البرمجيات الحديثة.",
+      },
+      {
+        title: "كيف يمكنني البدء مع AQ؟",
+        description:
+          "البدء مع AQ بسيط مثل بناء جملها. كل ما تحتاجه هو زيارة مستودع GitHub الرسمي لـ AQ، استنساخه، واتباع التعليمات المقدمة في ملف readme لإعداد بيئة التطوير الخاصة بك.",
+      },
+      {
+        title: "ما هي متطلبات النظام لـ AQ؟",
+        description:
+          "AQ لا تتطلب الكثير - فقط نظام يمكنه تشغيل المفسر أو المجمع. سواء كنت على Windows أو Linux أو MacOS، يمكنك البدء مع AQ على الفور.",
+      },
+      {
+        title: "هل AQ مناسبة كلغة برمجة أولى لي؟",
+        description:
+          "بالتأكيد! بساطة AQ وتشابهها مع C++ تجعلها نقطة انطلاق رائعة للمبتدئين. بالإضافة إلى ذلك، المجتمع جاهز للمساعدة إذا وجدت نفسك في مأزق.",
+      },
+      {
+        title: "هل يمكنني المساهمة في مشروع AQ؟",
+        description:
+          "نعم، مرحب بالمساهمين! AQ هو مشروع مفتوح المصدر، ونشجع المساهمات سواء كانت في البرمجة أو التوثيق أو دعم المجتمع.",
+      },
+      {
+        title: "أين يمكنني العثور على مزيد من المعلومات حول AQ؟",
+        description:
+          "يمكنك التوجه إلى وثائق AQ الرسمية للحصول على أدلة مفصلة، زيارة المستودع للحصول على الشيفرة المصدرية، أو المشاركة في المنتديات المجتمعية لأي استفسارات شخصية قد تكون لديك.",
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: "primary",
+        text: "استكشف AQ",
+        href: "https://github.com/aq-org/AQ",
+        target: "_blank",
+        icon: "tabler:download",
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      تسريع مع&nbsp;<br class="block sm:hidden" /><span
+        class="sm:whitespace-nowrap">برمجة AQ</span
+      >
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      أطلق العنان لإمكانات البرمجة السريعة والبسيطة والآمنة مع AQ. <br
+        class="hidden md:inline"
+      />ابدأ رحلة التطوير الخاصة بك اليوم!
+    </Fragment>
+  </CallToAction>
+</Layout>

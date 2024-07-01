@@ -1,0 +1,27 @@
+---
+import Layout from '~/layouts/ar/PageLayout.astro';
+import { getHomePermalink } from '~/utils/permalinks';
+
+const metadata = {
+  title: "404 لم يتم العثور على - AQ",
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="flex items-center h-full p-16">
+    <div class="container flex flex-col items-center justify-center px-5 mx-auto my-8">
+      <div class="max-w-md text-center">
+        <h2 class="mb-8 font-bold text-9xl">
+          <span class="sr-only">خطأ</span>
+          <span class="text-primary">404</span>
+        </h2>
+        <p class="text-3xl font-semibold md:text-3xl">عذرًا، لم نتمكن من العثور على هذه الصفحة.</p>
+        <p class="mt-4 mb-8 text-lg text-muted dark:text-slate-400">
+          لكن لا تقلق، يمكنك العثور على الكثير من الأشياء الأخرى على صفحتنا الرئيسية.
+        </p>
+        <a rel="noopener noreferrer" href={getHomePermalink()} class="btn ml-4">العودة إلى الصفحة الرئيسية</a>
+      </div>
+    </div>
+  </section>
+</Layout>

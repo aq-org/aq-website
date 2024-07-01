@@ -1,0 +1,135 @@
+---
+import Layout from "~/layouts/ar/PageLayout.astro";
+
+import Hero from "~/components/widgets/Hero.astro";
+import Note from "~/components/widgets/Note.astro";
+import Content from "~/components/widgets/Content.astro";
+import BlogLatestPosts from "~/components/widgets/BlogLatestPosts.astro";
+import FAQs from "~/components/widgets/FAQs.astro";
+import CallToAction from "~/components/widgets/CallToAction.astro";
+
+import WorkImg from '../../assets/images/work.jpg';
+
+const metadata = {
+  title: "الفريق",
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    tagline="تعرف على فريقنا"
+    actions={[
+      {
+        variant: "primary",
+        text: "عرض على Github",
+        href: "https://github.com/aq-org/AQ",
+        target: "_blank",
+        // icon: "tabler:github",
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      <span class="text-accent dark:text-white highlight"> AQ </span> الفريق
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        فريقنا مدفوع بالابتكار والتعاون، مما يجعل AQ اختياراً بارزاً للمطورين حول العالم.
+      </span>
+    </Fragment>
+  </Hero>
+
+  <Content
+    items={[
+      {
+        title: "مهمتنا",
+        description:
+          "في AQ، مهمتنا هي إنشاء لغة برمجة سريعة وبسيطة وآمنة تلبي احتياجات المطورين العصريين.",
+      },
+      {
+        title: "رؤيتنا",
+        description:
+          "نحن نتخيل عالماً حيث تكون البرمجة متاحة وفعالة وممتعة للجميع، بفضل قوة AQ.",
+      },
+    ]}
+    image={{
+      src: WorkImg,
+      alt: "فريق AQ",
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        فريقنا
+      </h3>
+      فريقنا المتفاني من المطورين والمصممين ومديري المجتمع يعملون بلا كلل لتعزيز AQ ودعم مجتمع المستخدمين المتزايد.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Note>
+    فريقنا يعمل حالياً بشكل رئيسي على Github. يمكنك العثور على مزيد من المعلومات حول مساهمينا على Github.
+  </Note>
+
+  <BlogLatestPosts
+    title="رؤى الفريق"
+    information={`اختبر الأعمال الداخلية لـ AQ من خلال منشورات مدونة فريقنا. تعرف على عمليات التطوير، التفاعل مع المجتمع، وخططنا المستقبلية.`}
+  />
+
+  <FAQs
+    title="الأسئلة الشائعة"
+    subtitle="تعرف على المزيد حول فريقنا والعمل الذي نقوم به"
+    tagline="الأسئلة الشائعة"
+    classes={{ container: "max-w-6xl" }}
+    items={[
+      {
+        title: "من هم الأعضاء الرئيسيون في فريق AQ؟",
+        description:
+          "يتكون فريقنا الأساسي من مطورين ذوي خبرة وشغف بإنشاء لغة برمجة بسيطة وسريعة يمكن للجميع استخدامها.",
+      },
+      {
+        title: "كيف يمكنني الانضمام إلى مجتمع AQ؟",
+        description:
+          "يمكنك الانضمام إلى مجتمعنا من خلال المساهمة في مستودعنا على GitHub، والانضمام إلى المناقشات في منتدياتنا، أو المشاركة في مشاريعنا مفتوحة المصدر.",
+      },
+      {
+        title: "أين يوجد فريق AQ؟",
+        description:
+          "فريقنا موزع في جميع أنحاء العالم، يعمل عن بعد لجعل AQ متاحة للمطورين في كل مكان.",
+      },
+      {
+        title: "كيف يمكنني المساهمة في AQ؟",
+        description:
+          "يمكنك المساهمة في AQ من خلال تقديم الكود، الإبلاغ عن المشاكل، أو المساعدة في تحسين وثائقنا على GitHub.",
+      },
+      {
+        title: "ما هي خطط AQ المستقبلية؟",
+        description:
+          "نهدف إلى تحسين AQ باستمرار عن طريق إضافة ميزات جديدة، وتحسين الأداء، وتوسيع مجتمعنا.",
+      },
+    ]}
+  />
+
+  <CallToAction
+    actions={[
+      {
+        variant: "primary",
+        text: "استكشاف AQ",
+        href: "https://github.com/aq-org/AQ",
+        target: "_blank",
+        // icon: "tabler:github",
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      انضم إلى&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">مجتمع AQ</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      تعاون مع المطورين الذين يشبهونك وساعد في تشكيل مستقبل البرمجة السريعة والبسيطة والآمنة مع AQ.
+    </Fragment>
+  </CallToAction>
+</Layout>

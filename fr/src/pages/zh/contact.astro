@@ -1,0 +1,51 @@
+---
+import Layout from "~/layouts/zh/PageLayout.astro";
+import Note from "~/components/widgets/Note.astro";
+
+const metadata = {
+  title: "联系我们",
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Note Widget ******************* -->
+
+  <Note />
+
+  <!-- 联系我们内容 ************ -->
+
+  <section class="py-16 bg-white dark:bg-gray-900">
+    <div class="container mx-auto px-6 text-center">
+      <h1 class="text-3xl font-semibold text-gray-800 dark:text-white lg:text-4xl">
+        联系我们
+      </h1>
+      <p class="text-gray-600 dark:text-gray-400 mt-6">
+        如果您有关于 AQ 或其他问题的任何疑问，即使与 AQ 无关，都请随时与我们联系。我们很乐意就任何问题与您交流。
+      </p>
+      <p class="text-gray-600 dark:text-gray-400 mt-2">
+        您可以通过 GitHub、X、Discord 和电子邮件联系我们。我们建议使用 GitHub 和电子邮件以获得更快的回复。
+      </p>
+
+      <div class="flex justify-center mt-8">
+        <a href="https://github.com/aq-org/AQ" class="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-200 focus:text-gray-700 dark:focus:text-gray-200">
+          <span class="sr-only">GitHub</span>
+          <p>Github</p>
+        </a>
+        <a href="https://x.com/aq_organization" class="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-200 focus:text-gray-700 dark:focus:text-gray-200">
+          <span class="sr-only">X</span>
+          <p>X</p>
+        </a>
+        <a href="https://discord.gg/JCKzxavG" class="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-200 focus:text-gray-700 dark:focus:text-gray-200">
+          <span class="sr-only">Discord</span>
+          <p>Discord</p>
+        </a>
+        <a href="mailto:admin@axa6.com" class="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-200 focus:text-gray-700 dark:focus:text-gray-200">
+          <span class="sr-only">Email</span>
+          <p>Mail</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

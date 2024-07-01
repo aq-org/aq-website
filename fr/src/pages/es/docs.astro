@@ -1,0 +1,41 @@
+---
+import Layout from "~/layouts/es/PageLayout.astro";
+import BlogLatestPosts from "~/components/widgets/BlogLatestPosts.astro";
+import Hero from "~/components/widgets/Hero.astro";
+import { getPermalink, getBlogPermalink, getAsset } from '../../utils/permalinks';
+
+const metadata = {
+  title: "Documentación",
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    tagline="Empieza a Aprender AQ"
+    actions={[
+      {
+        variant: "primary",
+        text: "Comenzar",
+        href: getBlogPermalink(),
+        target: "_blank",
+        icon: "tabler:download",
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      <span class="text-accent dark:text-white highlight"> Documentación </span>AQ
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        <span class="font-semibold">AQ</span> Como AQ está actualmente en desarrollo, la documentación aún no ha sido organizada. Puedes aprender todo sobre AQ a través del blog de AQ, incluyendo las últimas actualizaciones de desarrollo y estándares no publicados relacionados.</span
+      >
+    </Fragment>
+  </Hero>
+  <!-- BlogLatestPosts Widget ******* -->
+  <BlogLatestPosts
+    title="Consulta el Último Blog de AQ"
+    information={`Navega por nuestras publicaciones de blog seleccionadas para aprender todo sobre el lenguaje AQ. Cada artículo es un paso hacia el dominio del arte de AQ, descubriendo su atractivo único en proyectos de desarrollo.`}
+  />
+</Layout>

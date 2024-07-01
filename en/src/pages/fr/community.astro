@@ -1,0 +1,294 @@
+---
+import Layout from "~/layouts/fr/PageLayout.astro";
+
+import Hero from "~/components/widgets/Hero.astro";
+import Note from "~/components/widgets/Note.astro";
+import Features from "~/components/widgets/Features.astro";
+import Features2 from "~/components/widgets/Features2.astro";
+import Steps from "~/components/widgets/Steps.astro";
+import Content from "~/components/widgets/Content.astro";
+import BlogLatestPosts from "~/components/widgets/BlogLatestPosts.astro";
+import FAQs from "~/components/widgets/FAQs.astro";
+import Stats from "~/components/widgets/Stats.astro";
+import CallToAction from "~/components/widgets/CallToAction.astro";
+
+import CodeImg from '../../assets/images/code.png';
+import DevelopImg from '../../assets/images/develop.jpg';
+import NetImg from '../../assets/images/net.jpg';
+import WorkImg from '../../assets/images/work.jpg';
+const metadata = {
+  title: "Communauté AQ — Connecter les Développeurs du Monde Entier",
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Widget Héro ******************* -->
+
+  <Hero
+    tagline="Rejoignez la Communauté AQ"
+    actions={[
+      {
+        variant: "primary",
+        text: "Commencer",
+        href: "https://github.com/aq-org/AQ",
+        target: "_blank",
+        // icon: "tabler:download",
+      },
+      
+    ]}
+  >
+    <Fragment slot="title">
+      <span class="hidden xl:inline">Connecter et Soutenir</span><br />
+      <span class="text-accent dark:text-white highlight"> Communauté </span>
+      AQ
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        Rejoignez la vibrante communauté AQ, partagez vos idées et collaborez avec des développeurs du monde entier. La communauté AQ temporaire est disponible sur Discord et GitHub en attendant la finalisation de la plateforme communautaire officielle.
+        </span>
+    </Fragment>
+  </Hero>
+
+  <!-- Widget Note ******************* -->
+
+  <Note content="Bien que la plateforme communautaire officielle AQ soit encore en construction, vous pouvez vous connecter et communiquer avec d'autres développeurs AQ sur Discord et GitHub." />, 
+
+  <!-- Widget Caractéristiques *************** -->
+
+  <Features
+    id="features"
+    tagline="Avantages de la Communauté"
+    title="Pourquoi Rejoindre la Communauté AQ"
+    subtitle="La communauté AQ est un écosystème florissant où les développeurs se réunissent pour innover, partager des connaissances et se soutenir mutuellement. Voici ce à quoi vous pouvez vous attendre :"
+    items={[
+      {
+        title: "Collaboration Active",
+        description:
+          "Engagez-vous avec d'autres développeurs, partagez vos projets et collaborez sur des idées innovantes.",
+        // icon: "tabler:users",
+      },
+      {
+        title: "Support Instantané",
+        description:
+          "Recevez une aide rapide de développeurs expérimentés et de membres de la communauté.",
+        // icon: "tabler:help",
+      },
+      {
+        title: "Partage de Connaissances",
+        description:
+          "Accédez à une mine d'informations à travers des ressources partagées, des tutoriels et des fils de discussion.",
+        // icon: "tabler:book",
+      },
+      {
+        title: "Développement Open Source",
+        description:
+          "Contribuez aux projets open source d'AQ et aidez à faire avancer le langage.",
+        // icon: "tabler:code",
+      },
+      {
+        title: "Opportunités de Réseautage",
+        description:
+          "Établissez des liens professionnels avec d'autres développeurs et des experts de l'industrie.",
+        // icon: "tabler:network",
+      },
+      {
+        title: "Événements Communautaires",
+        description:
+          "Participez à des événements, des hackathons et des rencontres organisés par la communauté AQ.",
+        // icon: "tabler:calendar",
+      },
+    ]}
+  />
+
+  <!-- Widget Contenu **************** -->
+
+  <Content
+    isReversed
+    tagline="Impliquez-vous"
+    title="Rejoignez les Plateformes Communautaires Temporaires d'AQ"
+    items={[
+      {
+        title: "Discord",
+        description:
+          "Connectez-vous avec la communauté AQ en temps réel, partagez vos progrès et obtenez des retours instantanés.",
+      },
+      {
+        title: "GitHub",
+        description:
+          "Collaborez sur du code, soulevez des problèmes et contribuez au développement d'AQ sur GitHub.",
+      },
+    ]}
+    image={{
+      src: CodeImg,
+      alt: "Code avec AQ",
+    }}
+  >
+    <Fragment slot="content">
+      <h3
+        class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"
+      >
+        Où les Développeurs se Connectent
+      </h3>
+      Devenez un membre actif de la communauté AQ dès aujourd'hui en nous rejoignant sur Discord et GitHub.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Widget Étapes ****************** -->
+
+  <Steps
+    title="Rejoignez la Communauté AQ en Trois Étapes Simples"
+    items={[
+      {
+        title: 'Étape 1: <span class="font-medium">Rejoindre Discord</span>',
+        description:
+          "Inscrivez-vous sur notre serveur Discord et participez aux discussions.",
+        // icon: "tabler:message-circle",
+      },
+      {
+        title: 'Étape 2: <span class="font-medium">Suivez-nous sur GitHub</span>',
+        description:
+          "Faites un fork de notre dépôt, contribuez du code et restez informé des derniers développements.",
+        // icon: "tabler:git-merge",
+      },
+      {
+        title: 'Étape 3: <span class="font-medium">Engagez-vous et Contribuez</span>',
+        description:
+          "Partagez vos idées, donnez votre avis et aidez les autres membres de la communauté.",
+        // icon: "flat-color-// icons:data-configuration",
+      },
+    ]}
+    image={{
+      src: DevelopImg,
+      alt: "Rejoindre la Communauté AQ",
+    }}
+  />
+
+  <!-- Widget Caractéristiques2 ************** -->
+
+  <Features2
+    title="Pourquoi la Communauté AQ se Démarque"
+    subtitle="Avantages Clés de Faire Partie de la Communauté AQ"
+    tagline="Points Forts de la Communauté"
+    items={[
+      {
+        title: "Environnement Inclusif",
+        description:
+          "Nous favorisons un environnement inclusif où tous les développeurs, quel que soit leur niveau de compétence, sont les bienvenus.",
+        // icon: "flat-color-// icons:approval",
+      },
+      {
+        title: "Apprentissage Continu",
+        description:
+          "Restez en avance sur la courbe avec des opportunités d'apprentissage continu et des ressources.",
+        // icon: "flat-color-// icons:education",
+      },
+      {
+        title: "Projets Collaboratifs",
+        description:
+          "Travaillez sur des projets open source, acquérez une expérience pratique et élargissez votre portfolio.",
+        // icon: "flat-color-// icons:data-configuration",
+      },
+      {
+        title: "Opportunités de Mentorat",
+        description:
+          "Trouvez des mentors pour vous guider dans votre parcours d'apprentissage et de développement professionnel.",
+        // icon: "flat-color-// icons:support",
+      },
+      {
+        title: "Communauté Mondiale",
+        description:
+          "Rejoignez une communauté mondiale de développeurs qui partagent votre passion pour la programmation et l'innovation.",
+        // icon: "flat-color-// icons:group",
+      },
+      {
+        title: "Partage de Ressources",
+        description:
+          "Accédez et partagez des ressources précieuses telles que des extraits de code, des tutoriels et des outils de développement.",
+        // icon: "flat-color-// icons:digital-nomad",
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <!-- Widget Derniers Articles de Blog ******* -->
+
+  <BlogLatestPosts
+    title="Explorez Plus sur AQ"
+    information={`Plongez dans nos articles de blog sélectionnés pour des guides approfondis et des articles sur le langage AQ. Découvrez les stratégies, astuces et mises à jour qui font d'AQ un choix exceptionnel pour les développeurs.`}
+  />
+
+  <!-- Widget FAQ ******************* -->
+
+  <FAQs
+    title="FAQs de la Communauté AQ"
+    subtitle="Questions Fréquentes sur AQ et notre communauté."
+    tagline="FAQs"
+    classes={{ container: "max-w-6xl" }}
+    items={[
+      {
+        title: "Pourquoi devrais-je rejoindre la communauté AQ ?",
+        description:
+          "Rejoindre la communauté AQ vous offre un réseau de soutien de développeurs, un accès à des ressources partagées et des opportunités de contribuer à des projets open source.",
+      },
+      {
+        title: "Comment puis-je participer à la communauté AQ ?",
+        description:
+          "Vous pouvez participer en rejoignant notre Discord, en nous suivant sur GitHub, en contribuant du code et en participant aux discussions et événements.",
+      },
+      {
+        title: "La communauté AQ convient-elle aux débutants ?",
+        description:
+          "Absolument ! La communauté AQ accueille les développeurs de tous niveaux de compétence et fournit des ressources et un soutien aux débutants.",
+      },
+      {
+        title: "Puis-je contribuer au développement d'AQ ?",
+        description:
+          "Oui, nous encourageons les contributions ! Rendez-vous sur notre dépôt GitHub, faites-en un fork et commencez à contribuer aux projets AQ.",
+      },
+      {
+        title: "Où puis-je trouver plus de ressources sur AQ ?",
+        description:
+          "Consultez notre blog pour les derniers articles, visitez notre GitHub pour le code source et rejoignez notre Discord pour un soutien communautaire.",
+      },
+      {
+        title: "Que se passera-t-il lorsque la plateforme communautaire officielle sera prête ?",
+        description:
+          "Une fois que la plateforme officielle sera prête, nous passerons de Discord et GitHub à la nouvelle plateforme, assurant une transition sans heurts pour tous les membres.",
+      },
+    ]}
+  />
+
+  <!-- Widget Appel à l'Action *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: "primary",
+        text: "Rejoindre la Communauté AQ",
+        href: "https://github.com/aq-org/AQ",
+        target: "_blank",
+        // icon: "tabler:download",
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Engagez-vous avec&nbsp;<br class="block sm:hidden" /><span
+        class="sm:whitespace-nowrap">la Communauté AQ      </span>
+      </Fragment>
+  
+      <Fragment slot="subtitle">
+        <span class="hidden sm:inline">
+          Devenez un membre actif dès aujourd'hui et créez des liens avec des développeurs du monde entier.
+        </span>
+      </Fragment>
+    </CallToAction>
+  </Layout>

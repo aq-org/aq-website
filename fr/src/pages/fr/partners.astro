@@ -1,0 +1,256 @@
+---
+import Layout from "~/layouts/fr/PageLayout.astro";
+
+import Hero from "~/components/widgets/Hero.astro";
+import Note from "~/components/widgets/Note.astro";
+import Features from "~/components/widgets/Features.astro";
+import Content from "~/components/widgets/Content.astro";
+import FAQs from "~/components/widgets/FAQs.astro";
+import CallToAction from "~/components/widgets/CallToAction.astro";
+
+import DevelopImg from "../../assets/images/develop.jpg";
+import NetImg from "../../assets/images/net.jpg";
+import WorkImg from "../../assets/images/work.jpg";
+
+const metadata = {
+  title: "Partenaires",
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Widget Hero ******************* -->
+  <Hero
+    tagline="Joignez vos Mains avec Nos Partenaires"
+    actions={[
+      {
+        variant: "primary",
+        text: "Devenir Partenaire",
+        href: "#",
+        // icon: "tabler:handshake",
+      },
+      { text: "En savoir plus", href: "#partners" },
+    ]}
+  >
+    <Fragment slot="title">
+      <span class="hidden xl:inline">Construire le Succès&nbsp;</span><br />
+      <span class="text-accent dark:text-white highlight">Ensemble</span>
+    </Fragment>
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        Notre mission est de créer des partenariats durables qui contribuent à la croissance et au succès mutuels.
+      </span>
+    </Fragment>
+  </Hero>
+
+  <!-- Widget Note ******************* -->
+  <Note />
+
+  <!-- Widget Features *************** -->
+  <Features
+    id="partners"
+    tagline="Nos Partenaires"
+    title="Avec Qui Nous Travaillons"
+    subtitle="Nous sommes fiers de collaborer avec un groupe diversifié d'organisations partageant nos valeurs et notre engagement envers l'excellence."
+    items={[
+      {
+        title: "Géants de la Technologie",
+        description:
+          "Collaboration avec les principales entreprises technologiques pour apporter des solutions innovantes sur le marché.",
+        // icon: "tabler:brand-reddit",
+      },
+      {
+        title: "Institutions de Recherche",
+        description:
+          "Partenariat avec les meilleures institutions de recherche pour stimuler les avancées dans divers domaines.",
+        // icon: "tabler:bulb",
+      },
+      {
+        title: "Entités Éducatives",
+        description:
+          "Travailler avec des institutions éducatives pour former la prochaine génération de talents.",
+        // icon: "tabler:school",
+      },
+      {
+        title: "Organisations à But Non Lucratif",
+        description:
+          "Soutenir les organisations à but non lucratif pour créer un impact positif dans les communautés.",
+        // icon: "tabler:heart",
+      },
+      {
+        title: "Startups",
+        description:
+          "Donner aux startups des ressources et des réseaux pour accélérer leur croissance.",
+        // icon: "tabler:rocket",
+      },
+      {
+        title: "Leaders de l'Industrie",
+        description:
+          "Unir nos forces avec les leaders de l'industrie pour établir de nouvelles normes d'excellence.",
+        // icon: "tabler:award",
+      },
+    ]}
+  />
+
+  <!-- Widget Content **************** -->
+  <Content
+    isReversed
+    tagline="Notre Approche"
+    title="Stratégique et Collaborative"
+    items={[
+      {
+        title: "Vision Partagée",
+        description:
+          "Nous construisons des partenariats basés sur des visions communes et des objectifs partagés.",
+      },
+      {
+        title: "Croissance Mutuelle",
+        description:
+          "Nos partenariats sont conçus pour favoriser la croissance et le succès mutuels.",
+      },
+      {
+        title: "Engagement à Long Terme",
+        description:
+          "Nous croyons en l'établissement de relations durables avec nos partenaires.",
+      },
+    ]}
+    image={{
+      src: DevelopImg,
+      alt: "Développer avec AQ",
+    }}
+  >
+    <Fragment slot="content">
+      <h3
+        class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"
+      >
+        Réalisez Plus Ensemble
+      </h3>
+      Découvrez les avantages des partenariats stratégiques qui stimulent l'innovation et l'expansion.
+    </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-green-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Widget Content **************** -->
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: "Innover Ensemble",
+        description:
+          "Nos partenariats débloquent de nouvelles opportunités d'innovation et de croissance.",
+      },
+      {
+        title: "Projets Collaboratifs",
+        description:
+          "Collaborer sur des projets qui repoussent les limites de ce qui est possible.",
+      },
+      {
+        title: "Portée Mondiale",
+        description: "Exploiter les réseaux mondiaux pour maximiser l'impact et la portée.",
+      },
+    ]}
+    image={{
+      src: WorkImg,
+      alt: "Travailler avec AQ",
+    }}
+  >
+    <Fragment slot="content">
+      Partenaire avec nous pour explorer de nouveaux horizons et atteindre un succès sans précédent.
+    </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-green-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Widget Content **************** -->
+  <Content
+    isReversed
+    isAfterContent
+    items={[
+      {
+        title: "Support Dédié",
+        description:
+          "Nos partenaires bénéficient d'un support dédié et de ressources pour garantir le succès.",
+      },
+      {
+        title: "Avantages Exclusifs",
+        description:
+          "Accédez à des avantages exclusifs et des opportunités via nos programmes de partenariat.",
+      },
+      {
+        title: "Engagement Communautaire",
+        description:
+          "Faites partie d'une communauté d'organisations partageant les mêmes valeurs engagées dans l'excellence.",
+      },
+    ]}
+    image={{
+      src: NetImg,
+      alt: "Réseau AQ",
+    }}
+  >
+    <Fragment slot="content">
+      Rejoignez une communauté prospère de partenaires dédiés à l'excellence.
+    </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-green-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Widget FAQs ******************* -->
+  <FAQs
+    title="Collaborer avec Nous"
+    subtitle="Trouvez des réponses aux questions courantes sur le fait de devenir partenaire."
+    tagline="FAQs"
+    classes={{ container: "max-w-6xl" }}
+    items={[
+      {
+        title: "Comment Devenir Partenaire ?",
+        description:
+          "Remplissez notre formulaire de demande de partenariat, et notre équipe vous contactera pour discuter d'une collaboration potentielle.",
+      },
+      {
+        title: "Quels Sont les Avantages du Partenariat ?",
+        description:
+          "Les partenaires ont accès à des ressources exclusives, un support dédié et un réseau d'organisations partageant les mêmes valeurs.",
+      },
+      {
+        title: "Les Organisations Internationales Peuvent-elles Devenir Partenaires avec Vous ?",
+        description:
+          "Oui, nous accueillons favorablement les organisations internationales pour rejoindre notre réseau mondial de partenaires.",
+      },
+      {
+        title: "Quels Types de Partenariats Offrez-vous ?",
+        description:
+          "Nous proposons différents types de partenariats, y compris stratégiques, collaboratifs, de parrainage, et plus encore.",
+      },
+      {
+        title: "Où Puis-je En Savoir Plus Sur Vos Partenaires ?",
+        description:
+          "Consultez notre page partenaires pour des informations détaillées sur nos partenaires actuels et leurs histoires à succès.",
+      },
+    ]}
+  />
+
+  <!-- Widget CallToAction *********** -->
+  <CallToAction
+    actions={[
+      {
+        variant: "primary",
+        text: "Rejoignez-nous",
+        href: "#",
+        // icon: "tabler:handshake",
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Collaborez avec&nbsp;<br class="block sm:hidden" /><span
+        class="sm:whitespace-nowrap">Nos Partenaires</span
+      >
+    </Fragment>
+    <Fragment slot="subtitle">
+      Faites partie d'un réseau prospère qui valorise l'innovation, la croissance et le succès mutuel.
+    </Fragment>
+  </CallToAction>
+</Layout>

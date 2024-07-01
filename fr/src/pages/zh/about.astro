@@ -1,0 +1,441 @@
+---
+import Layout from "~/layouts/zh/PageLayout.astro";
+
+import Hero from "~/components/widgets/Hero.astro";
+import Note from "~/components/widgets/Note.astro";
+import Features from "~/components/widgets/Features.astro";
+import Features2 from "~/components/widgets/Features2.astro";
+import Steps from "~/components/widgets/Steps.astro";
+import Content from "~/components/widgets/Content.astro";
+import BlogLatestPosts from "~/components/widgets/BlogLatestPosts.astro";
+import FAQs from "~/components/widgets/FAQs.astro";
+import Stats from "~/components/widgets/Stats.astro";
+import CallToAction from "~/components/widgets/CallToAction.astro";
+
+import CodeImg from '../../assets/images/code.png';
+import DevelopImg from '../../assets/images/develop.jpg';
+import NetImg from '../../assets/images/net.jpg';
+import WorkImg from '../../assets/images/work.jpg';
+const metadata = {
+  title: "AQ — The Simple, Fast, and Secure Programming Language",
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="开始使用 AQ 进行开发"
+    actions={[
+      {
+        variant: "primary",
+        text: "开始",
+        href: "https://github.com/aq-org/AQ",
+        target: "_blank",
+        // icon: "tabler:download",
+      },
+      { text: "了解更多", href: "#features" },
+    ]}
+  >
+    <Fragment slot="title">
+      <span class="hidden xl:inline">快速、小巧、简单</span><br />
+      <span class="text-accent dark:text-white highlight"> AQ </span>
+      编程语言
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        <span class="font-semibold">AQ</span> AQ 是一种解释型编程语言。
+        它快速、小巧、简单且安全。同时，使用 AQ 编写的程序也可以被编译。</span
+      >
+      也许是一项伟大的工作。
+    </Fragment>
+  </Hero>
+
+  <!-- Note Widget ******************* -->
+
+  <Note />
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="features"
+    tagline="特性"
+    title="体验 AQ 语言"
+    subtitle="一种现代解释型编程语言，旨在简单和安全。AQ 迅速成为开发者的明星选择。"
+    items={[
+      {
+        title: "快速 & 解释型",
+        description:
+          "AQ 的速度引人注目，使其成为开发的迅速选择。它可以被解释以方便使用，也可以被编译以提高效率。",
+        // icon: "tabler:speedboat",
+      },
+      {
+        title: "小巧 & 简单",
+        description:
+          "AQ 保持小巧简单，专注于提供功能而不使开发过程过于复杂化。",
+        // icon: "tabler:layout-kanban",
+      },
+      {
+        title: "安全 & 可靠",
+        description:
+          "秉承安全编码标准，AQ 提供强大的内存管理和防范常见漏洞的保护措施。",
+        // icon: "tabler:shield-lock",
+      },
+      {
+        title: "跨平台兼容性",
+        description:
+          "AQ 具有多平台支持，包括 Windows、Linux 和 MacOS，使其适用于任何开发者。",
+        // icon: "tabler:device-desktop",
+      },
+      {
+        title: "开源社区",
+        description:
+          "活跃的开源社区推动 AQ 不断发展，促进合作、创新和持续改进。",
+        // icon: "tabler:users",
+      },
+      {
+        title: "多功能语法",
+        description:
+          "采用类似于 C++ 的语法风格，AQ 让开发者能够轻松掌握并在各种编程场景中利用。",
+        // icon: "tabler:code",
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    tagline="AQ 的灵感"
+    title="AQ 的创新：速度与简单的完美结合"
+    items={[
+      {
+        title: "快速高效",
+        description:
+          "为性能而设计，AQ 在开发和运行时执行方面提供了令人印象深刻的速度。",
+      },
+      {
+        title: "简单轻便",
+        description:
+          "忠实于其设计原则，AQ 简单直接、轻便，有助于更容易地学习和编写简单的代码库。",
+      },
+      {
+        title: "安全可靠",
+        description:
+          "安全是 AQ 的核心特点，确保程序不仅快速且易于编写，还从根本上保证安全。",
+      },
+    ]}
+    image={{
+      src: CodeImg,
+      alt: "使用 AQ 编写代码",
+    }}
+  >
+    <Fragment slot="content">
+      <h3
+        class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"
+      >
+        拥抱 AQ 的力量
+      </h3>
+      通过利用 AQ 的简单性和性能，将您的开发提升到新的水平。
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: "轻松的语言适应性",
+        description:
+          "AQ 的简单语法和小巧体积使其非常适应各种编程需求，提高开发效率。",
+      },
+      {
+        title: "解释型或编译型",
+        description:
+          "使用 AQ，您可以灵活选择解释型或编译型执行，以满足项目和性能需求。",
+      },
+      {
+        title: "卓越的安全标准",
+        description:
+          "AQ 强调安全性，提供强大的内存管理和积极的代码检查，以防止漏洞。",
+      },
+      {
+        title: "广泛的平台支持",
+        description:
+          "AQ 的跨平台能力确保您的项目具有多样性，在 Windows、Linux、MacOS 等平台上平稳运行。",
+      },
+    ]}
+    image={{
+      src: WorkImg,
+      alt: "使用 AQ 进行工作",
+    }}
+  >
+    <Fragment slot="content">
+      利用 AQ 独特的速度、简单性和安全性使您的开发过程脱颖而出。
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    isAfterContent
+    items={[
+      {
+        title: "增强用户参与度",
+        description:
+          "使用为快速开发和性能而设计的编程语言吸引您的受众。AQ 的简单和速度创造了引人入胜的用户互动。",
+      },
+      {
+        title: "持续改进",
+        description:
+          "AQ 不断与编程社区的需求同步发展，确保您的项目始终与软件安全和效率的最新实践保持一致。",
+      },
+      {
+        title: "时间和资源效率",
+        description:
+          "借助 AQ 编程语言的易用性，节省宝贵的时间和资源。其简单的语法和编译效率简化了开发工作流程。",
+      },
+      {
+        title: "社区支持",
+        description:
+          "成为充满活力的 AQ 社区的一员，获得支持、见解和合作机会，丰富您的编程知识和生产力。",
+      },
+    ]}
+    image={{
+      src: NetImg,
+      alt: "AQ NET",
+    }}
+  >
+    <Fragment slot="content"
+      >通过 AQ 的高效流程提升您的开发效率。</Fragment
+    >
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    title="通过 AQ 提高您的开发效率。"
+    items={[
+      {
+        title: '步骤 1: <span class="font-medium">下载 AQ</span>',
+        description:
+          "从 AQ 的简便设置开始。运行安装程序，您就可以开始使用设计清晰且高效的语言编写代码。",
+        // icon: "tabler:download",
+      },
+      {
+        title: '步骤 2: <span class="font-medium">编写代码</em>',
+        description:
+          "深入了解 AQ。其简单、类似于 C++ 的语法使您能够轻松学习并将逻辑转化为功能代码。",
+        // icon: "tabler:code",
+      },
+      {
+        title: '步骤 3: <span class="font-medium">优化和编译</span>',
+        description:
+          "利用 AQ 的快速编译和执行来调整性能。享受选择解释型或编译型执行以满足部署需求的灵活性。",
+        // icon: "tabler:adjustments",
+      },
+      {
+        title: "部署！",
+        // icon: "tabler:rocket",
+      },
+    ]}
+    image={{
+      src: DevelopImg,
+      alt: "AQ 工作环境",
+    }}
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="最常用的 AQ 开发组件"
+    subtitle="用于使用 AQ 语言开发应用程序的基本构建块"
+    tagline="组件"
+    items={[
+      {
+        title: "快速编译器",
+        description:
+          "就像高效的 GPS 系统一样，AQ 编译器将代码迅速引导到其优化状态。",
+        // icon: "flat-color-// icons:template",
+      },
+      {
+        title: "集成编辑器",
+        description:
+          "核心工作区，魔法发生的地方；专为 AQ 调整的编辑器将您的代码栩栩如生，超级英雄风格！",
+        // icon: "flat-color-// icons:gallery",
+      },
+      {
+        title: "调试工具",        description:
+          "您的 AQ 代码展示其健壮性的地方。是时候消除问题，挺身而出，毫不保留地展示！",
+        // icon: "flat-color-// icons:approval",
+      },
+      {
+        title: "库管理",
+        description:
+          "AQ 开发的精髓；在这里，您可以集成强大的库，从而不仅仅停留在看橱窗货物的阶段，而是全面创造！",
+        // icon: "flat-color-// icons:document",
+      },
+      {
+        title: "跨平台套件",
+        description:
+          "这个工具包是您的热情向导，将您的 AQ 代码推向各种平台——勇敢地拥抱这场冒险！",
+        // icon: "flat-color-// icons:advertising",
+      },
+      {
+        title: "性能指标",
+        description:
+          "查看甜点菜单，揭示等待的性能糖果和优化美食。",
+        // icon: "flat-color-// icons:currency-exchange",
+      },
+      {
+        title: "社区反馈",
+        description:
+          "进入 AQ 的八卦角，见证证明语言实力的见证通过共享成功故事。",
+        // icon: "flat-color-// icons:voice-presentation",
+      },
+      {
+        title: "开发者支持",
+        description:
+          "AQ 问题的数字邮箱；联系、获取答案或庆祝胜利—我们的社区会迅速回应！",
+        // icon: "flat-color-// icons:business-contact",
+      },
+      {
+        title: "文档脚注",
+        description:
+          "不要错过向下滚动的制作人员名单；AQ 文档脚注中隐藏着宝藏！",
+        // icon: "flat-color-// icons:database",
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <!-- HighlightedPosts Widget ******* -->
+
+  <BlogLatestPosts
+    title="深入了解 AQ"
+    information={`浏览我们精选的博客文章，了解 AQ 语言的全面指南。每一篇文章都是掌握这种简单而安全的编程语言艺术的一步。发现使 AQ 成为您开发项目的引人注目选择的微妙之处。`}
+  />
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="AQ 语言问题解答"
+    subtitle="对 AQ 有疑问吗？以下是一些常见问题的答案，帮助您了解这种简单而安全的编程语言的方法。"
+    tagline="常见问题"
+    classes={{ container: "max-w-6xl" }}
+    items={[
+      {
+        title: "AQ 有何特点？",
+        description:
+          "AQ 直接的语法和高效的执行模型使其脱颖而出。它旨在快速学习，同时为现代软件开发提供强大的安全功能。",
+      },
+      {
+        title: "如何开始使用 AQ？",
+        description:
+          "开始使用 AQ 就像其语法一样简单。您只需访问官方 AQ GitHub 存储库，克隆它，并按照自述文件中提供的说明设置开发环境。",
+      },
+      {
+        title: "AQ 的系统要求是什么？",
+        description:
+          "AQ 并不要求太多——只需能运行解释器或编译器的系统。无论您使用 Windows、Linux 还是 MacOS，您都可以立即开始使用 AQ。",
+      },
+      {
+        title: "AQ 适合我作为第一种编程语言吗？",
+        description:
+          "绝对适合！AQ 的简单性和与 C++ 的相似性使其成为新手的绝佳起点。此外，如果您遇到困难，社区随时为您提供帮助。",
+      },
+      {
+        title: "我可以为 AQ 项目做出贡献吗？",
+        description:
+          "可以，欢迎贡献者！AQ 是一个开源项目，无论是编码、文档还是社区支持，我们都鼓励贡献。",
+      },
+      {
+        title: "我在哪里可以找到关于 AQ 的更多信息？",
+        description:
+          "您可以查看 AQ 的官方文档以获取详细指南，访问存储库获取源代码，或参与社区论坛以获取任何个人疑问。",
+      },
+    ]}
+  />
+
+  <!-- Contact Us Widget ************* -->
+
+  <section class="py-16 bg-white dark:bg-gray-900">
+    <div class="container mx-auto px-6 text-center">
+      <h1 class="text-3xl font-semibold text-gray-800 dark:text-white lg:text-4xl">
+        联系我们
+      </h1>
+      <p class="text-gray-600 dark:text-gray-400 mt-6">
+        如果您对 AQ 或其他问题有任何疑问，即使与 AQ 无关，都请随时与我们联系。我们很乐意就任何问题与您交流。
+      </p>
+      <p class="text-gray-600 dark:text-gray-400 mt-2">
+        您可以通过 GitHub、Twitter、Discord 和电子邮件与我们联系。我们建议使用 GitHub 和电子邮件以获得更快的回复。
+      </p>
+
+      <div class="flex justify-center mt-8">
+        <a href="https://github.com/aq-org/AQ" class="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-200 focus:text-gray-700 dark:text-gray-200">
+          <span class="sr-only">GitHub</span>
+          <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .5a12.5 12.5 0 00-4 24c.6.1.8-.3.8-.6v-2c-3.2.7-4-1.3-4-1.3a3.15 3.15 0 00-1.3-1.8c-1.1-.8 0-.8 0-.8a2.5 2.5 0 011.8 1.2A2.72 2.72 0 009.4 21c.9-1.4.7-2.9.6-3.3-.5-1-1.7-1.7-3-2-.1-.4-.4-1.1 0-2.3 0 0 .8-.2 2.5 1a8.7 8.7 0 015 0c1.7-1.2 2.5-1 2.5-1 .5 1.1.2 1.9 0 2.3-.2.4-.8 1-1.5 1.2C14.3 18.4 14 21 14 21v2c0 .3.2.7.8.6A12.5 12.5 0 0012 .5z"></path></svg>
+        </a>
+        <a href="https://x.com/aq_organization" class="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-200 focus:text-gray-700 dark:focus:text-gray-200">
+          <span class="sr-only">X</span>
+          <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.1 4.6c-.8.4-1.6.6-2.5.8.9-.6 1.5-1.4 1.8-2.5-.8.5-1.7.9-2.7 1.1a4.5 4.5 0 00-7.7 4.1 12.8 12.8 0 01-9.3-4.7c-.8 1.4-.3 3.2 1.2 4a4.5 4.5 0 01-2.1-.6c0 1.4 1 2.6 2.3 2.9-.8.1-1.5.3-2.2 0 0 1.8 1.3 3.3 3.2 3.6a9.1 9.1 0 01-5.7 1.6 12.8 12.8 0 006.9 2h9.7c12 0 15.5-10 15.5-18.7v-.9C22 7 23 5.8 23.1 4.6z"></path></svg>
+        </a>
+        <a href="https://discord.gg/JCKzxavG" class="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-200 focus:text-gray-700 dark:focus:text-gray-200">
+          <span class="sr-only">Discord</span>
+          <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20.3 3a15.4 15.4 0 00-4.6-.7 13.6 13.6 0 00-7.1 0A14.6 14.6 0 003 5c-3.2 5.6-3.5 11.1-3.1 13.6a15.2 15.2 0 004.6 1.4 13 13 0 003.2-4        .8a5.37 5.37 0 01-3-1.6l.7-1.5a6.03 6.03 0 003.3 1.5c.1.9.4 1.9 1 2.6a2.7 2.7 0 002.2 1.1 3.38 3.38 0 002.2-1.1 5.94 5.94 0 001-2.5 6.05 6.05 0 003.3-1.5l.6 1.5a5.02 5.02 0 01-2.9 1.5c1 1.8 2.3 3.7 3.9 4.8A13.53 13.53 0 0021 5c0-.1-.2 0-.4.3z"></path></svg>
+        </a>
+        <a href="mailto:admin@axa6.com" class="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-200 focus:text-gray-700 dark:focus:text-gray-200">
+          <span class="sr-only">Email</span>
+          <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M19.5 4h-15c-1 0-1.5.7-1.5 1.3V18c0 1.3 1 1.5 1.5 1.6h15c1.4 0 1.5-1 1.6-1.6V5.3c0-1-.7-1.3-1.5-1.3zM19 7l-7 4c-.3.1-.6.1-.9 0L4 7v1l7.5 4.4c.3.2.6.2.9.1L19 8v-1z"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: "primary",
+        text: "探索 AQ",
+        href: "https://github.com/aq-org/AQ",
+        target: "_blank",
+        // icon: "tabler:download",
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      加速与&nbsp;<br class="block sm:hidden" /><span
+        class="sm:whitespace-nowrap">AQ 编程</span
+      >
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      发挥 AQ 快速、简单和安全编码的潜力。 <br
+        class="hidden md:inline"
+      />立即开始您的开发之旅！
+    </Fragment>
+  </CallToAction>
+</Layout>

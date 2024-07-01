@@ -1,0 +1,444 @@
+---
+import Layout from "~/layouts/PageLayout.astro";
+
+import Hero from "~/components/widgets/Hero.astro";
+import Note from "~/components/widgets/Note.astro";
+import Features from "~/components/widgets/Features.astro";
+import Features2 from "~/components/widgets/Features2.astro";
+import Steps from "~/components/widgets/Steps.astro";
+import Content from "~/components/widgets/Content.astro";
+import BlogLatestPosts from "~/components/widgets/BlogLatestPosts.astro";
+import FAQs from "~/components/widgets/FAQs.astro";
+import Stats from "~/components/widgets/Stats.astro";
+import CallToAction from "~/components/widgets/CallToAction.astro";
+
+import CodeImg from '../assets/images/code.png';
+import DevelopImg from '../assets/images/develop.jpg';
+import NetImg from '../assets/images/net.jpg';
+import WorkImg from '../assets/images/work.jpg';
+const metadata = {
+  title: "AQ — The Simple, Fast, and Secure Programming Language",
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="Start Developing with AQ"
+    actions={[
+      {
+        variant: "primary",
+        text: "Get Started",
+        href: "https://github.com/aq-org/AQ",
+        target: "_blank",
+        // icon: "tabler:download",
+      },
+      { text: "Learn more", href: "#features" },
+    ]}
+  >
+    <Fragment slot="title">
+      <span class="hidden xl:inline">The fast, small, and simple</span><br />
+      <span class="text-accent dark:text-white highlight"> AQ </span>
+      Programming Language
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        <span class="font-semibold">AQ</span> AQ is an interpreted programming language.
+        It is fast, small, simple and safe. At the same time, programs written in
+        AQ can also be compiled.</span
+      >
+      Maybe a great piece of work.
+    </Fragment>
+  </Hero>
+
+  <!-- Note Widget ******************* -->
+
+  <Note />
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="features"
+    tagline="Features"
+    title="Experience AQ Language"
+    subtitle="A modern interpreted programming language designed for simplicity and safety. AQ has quickly become a standout choice for developers."
+    items={[
+      {
+        title: "Fast & Interpreted",
+        description:
+          "The speed of AQ is notable, making it a swift choice for development. It can be both interpreted for ease of use or compiled for efficiency.",
+        // icon: "tabler:speedboat",
+      },
+      {
+        title: "Small & Simple",
+        description:
+          "AQ keeps things small and simple, with a focus on delivering functionality without overcomplicating the development process.",
+        // icon: "tabler:layout-kanban",
+      },
+      {
+        title: "Safety & Security",
+        description:
+          "With a commitment to secure coding standards, AQ provides robust memory management and safeguards against common vulnerabilities.",
+        // icon: "tabler:shield-lock",
+      },
+      {
+        title: "Cross-platform Compatibility",
+        description:
+          "AQ is versatile and supports multiple platforms, including Windows, Linux, and MacOS, making it accessible for any developer.",
+        // icon: "tabler:device-desktop",
+      },
+      {
+        title: "Open Source Community",
+        description:
+          "An active open-source community drives AQ forward, fostering collaboration, innovation, and continuous improvement.",
+        // icon: "tabler:users",
+      },
+      {
+        title: "Versatile Syntax",
+        description:
+          "Embracing a syntax style akin to C++, AQ makes it easy for developers to master and leverage in various programming scenarios.",
+        // icon: "tabler:code",
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    tagline="Inspired by AQ"
+    title="AQ's Innovation: Where Speed Meets Simplicity"
+    items={[
+      {
+        title: "Fast and Efficient",
+        description:
+          "Engineered for performance, AQ offers impressive speed for both development and runtime execution.",
+      },
+      {
+        title: "Simple and Small",
+        description:
+          "True to its design principles, AQ is straightforward and lightweight, facilitating an easier learning curve and simpler codebases.",
+      },
+      {
+        title: "Safe and Secure",
+        description:
+          "Safety is a core feature of AQ, ensuring programs are not just fast and easy to write but also secure from the ground up.",
+      },
+    ]}
+    image={{
+      src: CodeImg,
+      alt: "Code with AQ",
+    }}
+  >
+    <Fragment slot="content">
+      <h3
+        class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"
+      >
+        Embrace the Power of AQ
+      </h3>
+      Take your development to the next level by harnessing the simplicity and performance
+      of AQ.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: "Effortless Language Adaptability",
+        description:
+          "AQ's simple syntax and small footprint make it incredibly adaptable to a variety of programming needs, enhancing developer efficiency.",
+      },
+      {
+        title: "Interpreted or Compiled",
+        description:
+          "With AQ, enjoy the flexibility of choosing between interpreted or compiled execution to suit your project and performance requirements.",
+      },
+      {
+        title: "Impeccable Safety Standards",
+        description:
+          "AQ places a strong emphasis on security, providing peace of mind with safe memory management and proactive code inspection to prevent vulnerabilities.",
+      },
+      {
+        title: "Extensive Platform Support",
+        description:
+          "AQ's cross-platform capabilities ensure that your projects remain versatile, running smoothly on Windows, Linux, MacOS, and more.",
+      },
+    ]}
+    image={{
+      src: WorkImg,
+      alt: "Work with AQ",
+    }}
+  >
+    <Fragment slot="content">
+      Make your development process stand out with AQ's unique blend of speed,
+      simplicity, and security.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    isAfterContent
+    items={[
+      {
+        title: "Enhanced user engagement",
+        description:
+          "Engage your audience with a programming language designed for rapid development and performance. AQ's simplicity and speed create captivating user interactions.",
+      },
+      {
+        title: "Continuous improvement",
+        description:
+          "AQ is continually evolving with the programming community's needs, ensuring your projects stay current with the latest practices in software safety and efficiency.",
+      },
+      {
+        title: "Time and resource efficiency",
+        description:
+          "With the ease of use of the AQ programming language, save valuable time and resources. Its straightforward syntax and compiled efficiency streamline development workflows.",
+      },
+      {
+        title: "Community support",
+        description:
+          "Become a part of the vibrant AQ community for support, insights, and collaborative opportunities that enrich your programming knowledge and productivity.",
+      },
+    ]}
+    image={{
+      src: NetImg,
+      alt: "AQ NET",
+    }}
+  >
+    <Fragment slot="content"
+      >Empower your development with AQ's streamlined efficiency.</Fragment
+    >
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    title="Enhance your development efficiency with AQ."
+    items={[
+      {
+        title: 'Step 1: <span class="font-medium">Download AQ</span>',
+        description:
+          "Begin with AQ's easy setup. Run the installation, and you're ready to start coding with a language designed for clarity and efficiency.",
+        // icon: "tabler:download",
+      },
+      {
+        title: 'Step 2: <span class="font-medium">Write Code</em>',
+        description:
+          "Dive into AQ. Its simple, C++-like syntax makes it easy to learn and start translating your logic into functional code swiftly.",
+        // icon: "tabler:code",
+      },
+      {
+        title: 'Step 3: <span class="font-medium">Optimize and Compile</span>',
+        description:
+          "Leverage AQ's fast compilation and execution to fine-tune performance. Enjoy the flexibility of interpreted or compiled execution to match your deployment needs.",
+        // icon: "tabler:adjustments",
+      },
+      {
+        title: "Deploy!",
+        // icon: "tabler:rocket",
+      },
+    ]}
+    image={{
+      src: DevelopImg,
+      alt: "AQ Work Environment",
+    }}
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="Most used AQ development components"
+    subtitle="Essential building blocks for developing applications with AQ language"
+    tagline="Components"
+    items={[
+      {
+        title: "Rapid Compiler",
+        description:
+          "Just like an efficient GPS system, the AQ compiler guides the code swiftly to its optimized state.",
+        // icon: "flat-color-// icons:template",
+      },
+      {
+        title: "Integrated Editor",
+        description:
+          "The core workspace where the magic happens; an editor fine-tuned for AQ brings your code to life, superheroes style!",
+        // icon: "flat-color-// icons:gallery",
+      },
+      {
+        title: "Debugging Tools",        description:
+          "Where your AQ code shows off its robustness. Time to iron out the kinks and stand tall, no bragging spared!",
+        // icon: "flat-color-// icons:approval",
+      },
+      {
+        title: "Library Management",
+        description:
+          "The meat of AQ development; it's where you integrate powerful libraries and go beyond window-shopping to full-on creating!",
+        // icon: "flat-color-// icons:document",
+      },
+      {
+        title: "Cross-platform Kits",
+        description:
+          "This toolkit is your enthusiastic guide, pushing your AQ code to run on platforms galore—go on, embrace that adventure!",
+        // icon: "flat-color-// icons:advertising",
+      },
+      {
+        title: "Performance Metrics",
+        description:
+          "A look at the dessert menu, revealing the performance treats and optimization delicacies that await.",
+        // icon: "flat-color-// icons:currency-exchange",
+      },
+      {
+        title: "Community Feedback",
+        description:
+          "Enter the gossip corner of AQ, where testimonials validate the language's prowess through shared success stories.",
+        // icon: "flat-color-// icons:voice-presentation",
+      },
+      {
+        title: "Developer Support",
+        description:
+          "Your digital mailbox for AQ queries; reach out, get answers, or celebrate wins—our community responds swiftly!",
+        // icon: "flat-color-// icons:business-contact",
+      },
+      {
+        title: "Documentation Footnotes",
+        description:
+          "Don't miss the credits scrolling down; the AQ documentation footnotes are peppered with hidden treasures!",
+        // icon: "flat-color-// icons:database",
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <!-- HighlightedPosts Widget ******* -->
+
+  <BlogLatestPosts
+    title="Dive Deeper Into AQ"
+    information={`Browse through our curated blog posts for comprehensive guides on AQ language. Each article is a step towards mastering the artistry of this simple and secure programming language. Discover the nuances that make AQ a compelling option for your development projects.`}
+  />
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="AQ Language Queries Answered"
+    subtitle="Have questions about AQ? Here are some of the most common inquiries answered to help you understand the language's approach to simple and secure programming."
+    tagline="FAQs"
+    classes={{ container: "max-w-6xl" }}
+    items={[
+      {
+        title: "What Makes AQ Stand Out?",
+        description:
+          "AQ's straightforward syntax and efficient execution model make it stand out from the crowd. It's designed to be learned quickly while providing robust security features for modern software development.",
+      },
+      {
+        title: "How Can I Get Started with AQ?",
+        description:
+          "Starting with AQ is as simple as its syntax. All you need is to visit the official AQ GitHub repository, clone it, and follow the instructions provided in the readme file to set up your development environment.",
+      },
+      {
+        title: "What Are the System Requirements for AQ?",
+        description:
+          "AQ doesn't demand much—just a system that can run the interpreter or compiler. Whether you're on Windows, Linux, or MacOS, you can get started with AQ right away.",
+      },
+      {
+        title: "Is AQ Suitable for My First Programming Language?",
+        description:
+          "Absolutely! AQ's simplicity and resemblance to C++ make it a great starting point for novices. Plus, the community is ready to help if you ever find yourself in a bind.",
+      },
+      {
+        title: "Can I Contribute to the AQ Project?",
+        description:
+          "Yes, contributors are welcome! AQ is an open-source project, and we encourage contributions whether it's coding, documentation, or community support.",
+      },
+      {
+        title: "Where Can I Find More Information About AQ?",
+        description:
+          "You can head to AQ's official documentation for detailed guides, visit the repository for source code, or participate in the community forums for any personal queries you might have.",
+      },
+    ]}
+  />
+
+  <!-- Contact Us Widget ************* -->
+
+  <section class="py-16 bg-white dark:bg-gray-900">
+    <div class="container mx-auto px-6 text-center">
+      <h1 class="text-3xl font-semibold text-gray-800 dark:text-white lg:text-4xl">
+        Contact Us
+      </h1>
+      <p class="text-gray-600 dark:text-gray-400 mt-6">
+        If you have any questions about AQ or any other concerns, even if they are not related to AQ, feel free to contact us. We are happy to engage with you on any issue.
+      </p>
+      <p class="text-gray-600 dark:text-gray-400 mt-2">
+        You can reach us via GitHub, Twitter, Discord, and Email. We recommend using GitHub and Email for a quicker response.
+      </p>
+
+      <div class="flex justify-center mt-8">
+        <a href="https://github.com/aq-org/AQ" class="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-200 focus:text-gray-700 dark:focus:text-gray-200">
+          <span class="sr-only">GitHub</span>
+          <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .5a12.5 12.5 0 00-4 24c.6.1.8-.3.8-.6v-2c-3.2.7-4-1.3-4-1.3a3.15 3.15 0 00-1.3-1.8c-1.1-.8 0-.8 0-.8a2.5 2.5 0 011.8 1.2A2.72 2.72 0 009.4 21c.9-1.4.7-2.9.6-3.3-.5-1-1.7-1.7-3-2-.1-.4-.4-1.1 0-2.3 0 0 .8-.2 2.5 1a8.7 8.7 0 015 0c1.7-1.2 2.5-1 2.5-1 .5 1.1.2 1.9 0 2.3-.2.4-.8 1-1.5 1.2C14.3 18.4 14 21 14 21v2c0 .3.2.7.8.6A12.5 12.5 0 0012 .5z"></path></svg>
+        </a>
+        <a href="https://x.com/aq_organization" class="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-200 focus:text-gray-700 dark:focus:text-gray-200">
+          <span class="sr-only">X</span>
+          <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.1 4.6c-.8.4-1.6.6-2.5.8.9-.6 1.5-1.4 1.8-2.5-.8.5-1.7.9-2.7 1.1a4.5 4.5 0 00-7.7 4.1 12.8 12.8 0 01-9.3-4.7c-.8 1.4-.3 3.2 1.2 4a4.5 4.5 0 01-2.1-.6c0 1.4 1 2.6 2.3 2.9-.8.1-1.5.3-2.2 0 0 1.8 1.3 3.3 3.2 3.6a9.1 9.1 0 01-5.7 1.6 12.8 12.8 0 006.9 2h9.7c12 0 15.5-10 15.5-18.7v-.9C22 7 23 5.8 23.1 4.6z"></path></svg>
+        </a>
+        <a href="https://discord.gg/JCKzxavG" class="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-200 focus:text-gray-700 dark:focus:text-gray-200">
+          <span class="sr-only">Discord</span>
+          <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20.3 3a15.4 15.4 0 00-4.6-.7 13.6 13.6 0 00-7.1 0A14.6 14.6 0 003 5c-3.2 5.6-3.5 11.1-3.1 13.6a15.2 15.2 0 004.6 1.4 13 13 0 003.2-4        .8a5.37 5.37 0 01-3-1.6l.7-1.5a6.03 6.03 0 003.3 1.5c.1.9.4 1.9 1 2.6a2.7 2.7 0 002.2 1.1 3.38 3.38 0 002.2-1.1 5.94 5.94 0 001-2.5 6.05 6.05 0 003.3-1.5l.6 1.5a5.02 5.02 0 01-2.9 1.5c1 1.8 2.3 3.7 3.9 4.8A13.53 13.53 0 0021 5c0-.1-.2 0-.4.3z"></path></svg>
+        </a>
+        <a href="mailto:admin@axa6.com" class="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-200 focus:text-gray-700 dark:focus:text-gray-200">
+          <span class="sr-only">Email</span>
+          <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M19.5 4h-15c-1 0-1.5.7-1.5 1.3V18c0 1.3 1 1.5 1.5 1.6h15c1.4 0 1.5-1 1.6-1.6V5.3c0-1-.7-1.3-1.5-1.3zM19 7l-7 4c-.3.1-.6.1-.9 0L4 7v1l7.5 4.4c.3.2.6.2.9.1L19 8v-1z"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: "primary",
+        text: "Explore AQ",
+        href: "https://github.com/aq-org/AQ",
+        target: "_blank",
+        // icon: "tabler:download",
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Accelerate with&nbsp;<br class="block sm:hidden" /><span
+        class="sm:whitespace-nowrap">AQ Programming</span
+      >
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Unleash the potential of fast, simple, and secure coding with AQ. <br
+        class="hidden md:inline"
+      />Get started on your development journey today!
+    </Fragment>
+  </CallToAction>
+</Layout>

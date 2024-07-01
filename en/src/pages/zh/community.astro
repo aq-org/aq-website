@@ -1,0 +1,294 @@
+---
+import Layout from "~/layouts/zh/PageLayout.astro";
+
+import Hero from "~/components/widgets/Hero.astro";
+import Note from "~/components/widgets/Note.astro";
+import Features from "~/components/widgets/Features.astro";
+import Features2 from "~/components/widgets/Features2.astro";
+import Steps from "~/components/widgets/Steps.astro";
+import Content from "~/components/widgets/Content.astro";
+import BlogLatestPosts from "~/components/widgets/BlogLatestPosts.astro";
+import FAQs from "~/components/widgets/FAQs.astro";
+import Stats from "~/components/widgets/Stats.astro";
+import CallToAction from "~/components/widgets/CallToAction.astro";
+
+import CodeImg from '../../assets/images/code.png';
+import DevelopImg from '../../assets/images/develop.jpg';
+import NetImg from '../../assets/images/net.jpg';
+import WorkImg from '../../assets/images/work.jpg';
+const metadata = {
+  title: "AQ Community — Connecting Developers Around The Globe",
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="加入 AQ 社区"
+    actions={[
+      {
+        variant: "primary",
+        text: "开始",
+        href: "https://github.com/aq-org/AQ",
+        target: "_blank",
+        // icon: "tabler:download",
+      },
+      
+    ]}
+  >
+    <Fragment slot="title">
+      <span class="hidden xl:inline">连接和支持</span><br />
+      <span class="text-accent dark:text-white highlight"> AQ </span>
+      社区
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        加入充满活力的 AQ 社区，分享您的想法，并与全球开发者合作。在我们完成官方社区平台之前，临时的 AQ 社区可在 Discord 和 Github 上使用。
+        </span>
+    </Fragment>
+  </Hero>
+
+  <!-- Note Widget ******************* -->
+
+  <Note content="尽管官方 AQ 社区平台仍在建设中，您可以在 Discord 和 GitHub 上与其他 AQ 开发者连接和交流。" />, 
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="features"
+    tagline="社区优势"
+    title="为什么加入 AQ 社区"
+    subtitle="AQ 社区是一个蓬勃发展的生态系统，开发者们聚集在一起创新、分享知识并相互支持。以下是您可以期待的内容:"
+    items={[
+      {
+        title: "积极合作",
+        description:
+          "与其他开发者互动，分享您的项目，并共同合作创新想法。",
+        // icon: "tabler:users",
+      },
+      {
+        title: "即时支持",
+        description:
+          "从经验丰富的开发者和社区成员那里获得及时帮助。",
+        // icon: "tabler:help",
+      },
+      {
+        title: "知识共享",
+        description:
+          "通过共享资源、教程和讨论串访问丰富的信息。",
+        // icon: "tabler:book",
+      },
+      {
+        title: "开源开发",
+        description:
+          "为 AQ 的开源项目做出贡献，推动语言发展。",
+        // icon: "tabler:code",
+      },
+      {
+        title: "社交机会",
+        description:
+          "与其他开发者和行业专家建立专业联系。",
+        // icon: "tabler:network",
+      },
+      {
+        title: "社区活动",
+        description:
+          "参与由 AQ 社区组织的活动、黑客马拉松和聚会。",
+        // icon: "tabler:calendar",
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    tagline="参与其中"
+    title="加入 AQ 临时社区平台"
+    items={[
+      {
+        title: "Discord",
+        description:
+          "实时连接 AQ 社区，分享您的进展，并获得即时反馈。",
+      },
+      {
+        title: "Github",
+        description:
+          "在 GitHub 上合作编码，提出问题，并为 AQ 的发展做出贡献。",
+      },
+    ]}
+    image={{
+      src: CodeImg,
+      alt: "使用 AQ 编码",
+    }}
+  >
+    <Fragment slot="content">
+      <h3
+        class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"
+      >
+        开发者的连接之地
+      </h3>
+      通过加入我们的 Discord 和 GitHub，今天成为 AQ 社区的活跃成员。
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    title="三个简单步骤加入 AQ 社区"
+    items={[
+      {
+        title: '步骤 1: <span class="font-medium">加入 Discord</span>',
+        description:
+          "注册我们的 Discord 服务器，开始参与讨论。",
+        // icon: "tabler:message-circle",
+      },
+      {
+        title: '步骤 2: <span class="font-medium">关注我们的 GitHub</span>',
+        description:
+          "Fork 我们的存储库，贡献代码，并了解最新进展。",
+        // icon: "tabler:git-merge",
+      },
+      {
+        title: '步骤 3: <span class="font-medium">参与和贡献</span>',
+        description:
+          "分享您的想法，提供反馈，并在社区中帮助他人。",
+        // icon: "flat-color-// icons:data-configuration",
+      },
+    ]}
+    image={{
+      src: DevelopImg,
+      alt: "加入 AQ 社区",
+    }}
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="AQ 社区的优势"
+    subtitle="成为 AQ 社区一员的关键优势"
+    tagline="社区亮点"
+    items={[
+      {
+        title: "包容性环境",
+        description:
+          "我们营造一个包容环境，欢迎所有技能水平的开发者。",
+        // icon: "flat-color-// icons:approval",
+      },
+      {
+        title: "持续学习",
+        description:
+          "通过持续学习机会和资源保持领先。",
+        // icon: "flat-color-// icons:education",
+      },
+      {
+        title: "合作项目",
+        description:
+          "参与开源项目，获得实践经验，并扩展您的作品集。",
+        // icon: "flat-color-// icons:data-configuration",
+      },
+      {
+        title: "导师机会",
+        description:
+          "找到导师指导您的学习和职业发展。",
+        // icon: "flat-color-// icons:support",
+      },
+      {
+        title: "全球社区",
+        description:
+          "加入一个全球开发者社区，分享对编码和创新的热情。",
+        // icon: "flat-color-// icons:group",
+      },
+      {
+        title: "资源共享",
+        description:
+          "访问和分享有价值的资源，如代码片段、教程和开发工具。",
+        // icon: "flat-color-// icons:digital-nomad",
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <!-- HighlightedPosts Widget ******* -->
+
+  <BlogLatestPosts
+    title="更多关于 AQ 的探索"
+    information={`深入阅读我们精选的博客文章，了解 AQ 语言的详细指南和文章。发现使 AQ 成为开发者首选的策略、技巧和更新。`}
+  />
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="AQ 社区常见问题"
+    subtitle="关于 AQ 和我们社区的常见问题。"
+    tagline="常见问题"
+    classes={{ container: "max-w-6xl" }}
+    items={[
+      {
+        title: "为什么我应该加入 AQ 社区？",
+        description:
+          "加入 AQ 社区为您提供开发者支持网络、共享资源访问以及为开源项目做出贡献的机会。",
+      },
+      {
+        title: "我如何参与 AQ 社区？",
+        description:
+          "您可以通过加入我们的 Discord、关注我们的 GitHub、贡献代码以及参与讨论和活动来参与讨论和活动。"
+      },
+      {
+        title: "AQ 社区适合初学者吗？",
+        description:
+          "绝对适合！AQ 社区欢迎各种技能水平的开发者，并为初学者提供资源和支持。",
+      },
+      {
+        title: "我可以为 AQ 的发展做出贡献吗？",
+        description:
+          "是的，我们鼓励贡献！访问我们的 GitHub 存储库，fork 它，并开始为 AQ 项目做出贡献。",
+      },
+      {
+        title: "我在哪里可以找到更多关于 AQ 的资源？",
+        description:
+          "查看我们的博客获取最新文章，访问我们的 GitHub 获取源代码，并加入我们的 Discord 获取社区支持。",
+      },
+      {
+        title: "官方社区平台准备好后会发生什么？",
+        description:
+          "一旦官方平台准备就绪，我们将从 Discord 和 GitHub 迁移到新平台，确保所有成员无缝过渡。",
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: "primary",
+        text: "加入 AQ 社区",
+        href: "https://github.com/aq-org/AQ",
+        target: "_blank",
+        // icon: "tabler:download",
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      与 AQ 社区互动&nbsp;<br class="block sm:hidden" /><span
+        class="sm:whitespace-nowrap">      </span>
+    </Fragment>
+  
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        今天成为活跃成员，并与全球开发者建立联系。
+      </span>
+    </Fragment>
+  </CallToAction>
+</Layout>

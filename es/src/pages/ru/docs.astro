@@ -1,0 +1,41 @@
+---
+import Layout from "~/layouts/ru/PageLayout.astro";
+import BlogLatestPosts from "~/components/widgets/BlogLatestPosts.astro";
+import Hero from "~/components/widgets/Hero.astro";
+import { getPermalink, getBlogPermalink, getAsset } from '../../utils/permalinks';
+
+const metadata = {
+  title: "Документация",
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+  tagline="Начните изучать AQ"
+  actions={[
+    {
+      variant: "primary",
+      text: "Начать",
+      href: getBlogPermalink(),
+      target: "_blank",
+      icon: "tabler:download",
+    },
+  ]}
+>
+  <Fragment slot="title">
+    <span class="text-accent dark:text-white highlight"> AQ </span>Документация
+  </Fragment>
+
+  <Fragment slot="subtitle">
+    <span class="hidden sm:inline">
+      <span class="font-semibold">AQ</span> Поскольку AQ в настоящее время находится в стадии разработки, документация еще не организована. Вы можете узнать все об AQ через блог AQ, включая последние обновления разработки и связанные неопубликованные стандарты.</span
+    >
+  </Fragment>
+</Hero>
+  <!-- BlogLatestPosts Widget ******* -->
+  <BlogLatestPosts
+    title="Посмотрите последний блог AQ"
+    information={`Просматривайте наши отобранные блоги, чтобы узнать все о языке AQ. Каждая статья - шаг к овладению искусством AQ, раскрывая его уникальное очарование в проектах разработки.`}
+  />
+</Layout>
