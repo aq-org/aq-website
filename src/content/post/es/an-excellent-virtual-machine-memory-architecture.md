@@ -2,7 +2,7 @@
 publishDate: 2024-06-01T19:55:05+08:00
 title: An Excellent Virtual Machine Memory Architecture - AQ
 excerpt: The memory architecture of a virtual machine directly affects its performance and usage. Designing an excellent architecture can effectively enhance performance and efficiency. This article will introduce the memory architecture used by the AQ virtual machine.
-image: https://www.axa6.com/es/aq.png
+image: ../../../assets/images/aq.png
 category: Blog
 tags:
   - AQ
@@ -205,7 +205,7 @@ The `memory` part of the code is located at `/aqvm/memory`. It contains multiple
 publishDate: 2024-06-01T19:55:05+08:00
 title: Une Excellente Architecture de Mémoire de Machine Virtuelle - AQ
 excerpt: L'architecture de la mémoire d'une machine virtuelle affecte directement ses performances et son utilisation. Concevoir une excellente architecture peut améliorer efficacement les performances et l'efficacité. Cet article présentera l'architecture de mémoire utilisée par la machine virtuelle AQ.
-image: https://www.axa6.com/aq.png
+image: ../../assets/images/aq.png
 category: Blog
 tags:
   - AQ
