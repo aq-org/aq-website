@@ -68,7 +68,7 @@ const { post, url } = Astro.props;
 
       {
         post.image ? (
-          <Image inferSize
+          <Image
             src={post.image}
             class="max-w-full lg:max-w-[900px] mx-auto mb-6 sm:rounded-md bg-gray-400 dark:bg-slate-700"
             widths={[400, 900]}

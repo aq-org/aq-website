@@ -23,7 +23,7 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
       image &&
         (link ? (
           <a href={link}>
-            <Image inferSize
+            <Image
               src={image}
               class="w-full md:h-full rounded shadow-lg bg-gray-400 dark:bg-slate-700"
               widths={[400, 900]}
@@ -37,7 +37,7 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
             />
           </a>
         ) : (
-          <Image inferSize
+          <Image
             src={image}
             class="w-full md:h-full rounded shadow-lg bg-gray-400 dark:bg-slate-700"
             widths={[400, 900]}
