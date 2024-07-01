@@ -26,7 +26,10 @@ const whenExternalScripts = (items = []) =>
 
 export default defineConfig({
   output: 'static',
-
+  outDir: '../dist/ar',
+  buildOptions: {
+    site: 'https:/www.axa6.com/ar',
+  },
   integrations: [
     tailwind({
       applyBaseStyles: false,
@@ -76,7 +79,7 @@ export default defineConfig({
 
   image: {
     service: squooshImageService(),
-    domains: ['cdn.pixabay.com'],
+    domains: ['axa6.com'],
   },
 
   markdown: {

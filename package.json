@@ -10,11 +10,18 @@
     "scripts": {
       "dev": "astro dev",
       "start": "astro dev",
-      "build": "astro build",
+      "build:main": "astro build",
       "preview": "astro preview",
       "astro": "astro",
       "format": "prettier -w .",
-      "lint:eslint": "eslint ."
+      "lint:eslint": "eslint .",
+      "build:ar": "cd ar && npm run build",
+      "build:zh": "cd zh && npm run build",
+      "build:en": "cd en && npm run build",
+      "build:fr": "cd fr && npm run build",
+      "build:ru": "cd ru && npm run build",
+      "build:es": "cd es && npm run build",
+      "build": "npm run build:main && npm run build:ar && npm run build:zh && npm run build:en && npm run build:fr && npm run build:ru && npm run build:es"
     },
     "dependencies": {
       "@astrojs/rss": "^4.0.5",

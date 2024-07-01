@@ -26,7 +26,10 @@ const whenExternalScripts = (items = []) =>
 
 export default defineConfig({
   output: 'static',
-
+  outDir: '../dist/en',
+  buildOptions: {
+    site: 'https:/www.axa6.com/en',
+  },
   integrations: [
     tailwind({
       applyBaseStyles: false,
