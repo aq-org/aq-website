@@ -3,10 +3,10 @@ import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
 export const headerData = {
   links: [
     {
-      text: '主页',
+      text: '主页 Home',
           href: getPermalink('/index'),
     },{
-      text: '资源',
+      text: '资源 Resources',
       links: [
         { text: '文档', href: getPermalink('/docs') },
         { text: '博客', href: getBlogPermalink() },
@@ -17,7 +17,7 @@ export const headerData = {
       ],
     },
     {
-      text: '关于',
+      text: '关于 About',
       links: [
         { text: '关于', href: getPermalink('/about') },
         { text: '团队', href: getPermalink('/team') },
@@ -28,7 +28,7 @@ export const headerData = {
       ],
     },
     {
-      text: '支持',
+      text: '支持 Support',
       links: [
         { text: '社区论坛', href: getPermalink('/community') },
         { text: '常见问题', href: 'https://github.com/aq-org/AQ/issues' },
@@ -38,7 +38,7 @@ export const headerData = {
       ],
     },
     {
-      text: '博客',
+      text: '博客 Blog',
       links: [
         {
           text: '所有文章',
@@ -52,7 +52,7 @@ export const headerData = {
       ],
     },
     {
-      text: '下载',
+      text: '下载 Download',
       href: 'https://github.com/aq-org/AQ',
         
     },
