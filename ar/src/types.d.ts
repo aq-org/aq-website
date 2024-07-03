@@ -240,7 +240,7 @@ export interface Testimonials extends Omit<Headline, 'classes'>, Widget {
 
 export interface Brands extends Omit<Headline, 'classes'>, Widget {
   icons?: Array<string>;
-  images?: Array<Image>;
+  images?: Array<img>;
 }
 
 export interface Features extends Omit<Headline, 'classes'>, Widget {
