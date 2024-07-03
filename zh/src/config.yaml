@@ -1,7 +1,7 @@
 site:
   name: AQ
   site: 'https://www.axa6.com'
-  base: '/'
+  base: '/zh'
   trailingSlash: false
 
   # googleSiteVerificationId: 
