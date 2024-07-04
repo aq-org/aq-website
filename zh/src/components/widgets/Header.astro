@@ -146,21 +146,8 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
           <option value="ru">Русский</option>
           <option value="es">Español</option>
         </select>
-<script>
-function changeLanguage(select) {
-  const selectedLanguage = select.value;
-  const currentUrl = window.location.href;
-  let path = currentUrl.split('/').slice(3).join('/');
+<script src="../assets/scripts/lang-select.js"></script>
 
-  if (!['ar', 'en', 'zh', 'fr', 'ru', 'es'].includes(path.substr(0, 2))) {
-    path = `/${selectedLanguage}/${path}`;
-  } else {
-    path = `/${selectedLanguage}${path.substr(2)}`;
-  }
-
-  window.location.href = path;
-}
-</script>
       </div>
       <div class="items-center flex justify-between w-full md:w-auto">
         <div class="flex">
