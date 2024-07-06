@@ -204,25 +204,38 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
       </li>
 </ul>
 <script is:inline>
-function toggleNavElements() {
-    var screenWidth = window.innerWidth;
-
-    if (screenWidth >= 768 && screenWidth <= 1260) {
-
-        document.getElementById('AllNavElements').style.display = 'none';
-        document.getElementById('MoreNavElements').style.display = 'block';
-    } else {
-
-        document.getElementById('AllNavElements').style.display = 'block';
-        document.getElementById('MoreNavElements').style.display = 'none';
-    }
-}
-
-toggleNavElements();
 
 window.addEventListener('resize', function() {
     toggleNavElements();
 });
+
+function toggleNavElements() {
+    var screenWidth = window.innerWidth;
+    var AllNavElements = document.getElementsByClassName('AllNavElements');
+    var MoreNavElements = document.getElementsByClassName('MoreNavElements');
+
+    if (AllNavElements.length > 0 && MoreNavElements.length > 0) {
+        if (screenWidth >= 768 && screenWidth <= 1260) {
+            for (var i = 0; i < AllNavElements.length; i++) {
+                AllNavElements[i].style.display = 'none';
+            }
+            for (var j = 0; j < MoreNavElements.length; j++) {
+                MoreNavElements[j].style.display = 'block';
+            }
+        } else {
+            for (var k = 0; k < AllNavElements.length; k++) {
+                AllNavElements[k].style.display = 'block';
+            }
+            for (var l = 0; l < MoreNavElements.length; l++) {
+                MoreNavElements[l].style.display = 'none';
+            }
+        }
+    }
+}
+document.addEventListener('DOMContentLoaded', function() {
+    toggleNavElements();
+});
+
 </script>
     </div>
   </div>
