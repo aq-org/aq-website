@@ -133,7 +133,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
     <div
       class:list={[
         { 'ml-auto rtl:ml-0 rtl:mr-auto': position === 'left' },
-        'hidden md:self-center md:flex items-center md:mb-0 fixed w-full md:w-auto md:static justify-end left-0 rtl:left-auto rtl:right-0 bottom-0 p-3 md:p-0 md:justify-self-end',
+        'hidden md:self-center md:flex items-center md:mb-0 fixed w-full md:w-auto md:static justify-end left-0 rtl:left-auto rtl:right-0 bottom-0 p-3 md:p-0 md:justify-self-end AllNavElements',
       ]}
     >
       <div class="items-center flex justify-between w-full md:w-auto">
@@ -164,7 +164,8 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
           )
         }
       </div>      
-<li class="flex flex-col md:flex-row font-medium md:justify-center md:self-center md:text-[0.9375rem] md:w-auto text-xl tracking-[0.01rem] w-full dropdown hidden">
+<ul class="flex flex-col md:flex-row font-medium md:justify-center md:self-center md:text-[0.9375rem] md:w-auto text-xl tracking-[0.01rem] w-full MoreNavElements hidden">
+<li class="dropdown">
         <button class="flex items-center dark:hover:text-white hover:text-link px-4 py-3" type="button">
           ・・・
         </button
@@ -202,6 +203,28 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
           </li>
         </ul>
       </li>
+</ul>
+<script is:inline>
+function toggleNavElements() {
+    var screenWidth = window.innerWidth;
+
+    if (screenWidth >= 768 && screenWidth <= 1260) {
+
+        document.getElementById('AllNavElements').style.display = 'none';
+        document.getElementById('MoreNavElements').style.display = 'block';
+    } else {
+
+        document.getElementById('AllNavElements').style.display = 'block';
+        document.getElementById('MoreNavElements').style.display = 'none';
+    }
+}
+
+toggleNavElements();
+
+window.addEventListener('resize', function() {
+    toggleNavElements();
+});
+</script>
     </div>
   </div>
 </header>
