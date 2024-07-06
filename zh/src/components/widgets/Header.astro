@@ -164,7 +164,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
           )
         }
       </div>      
-<ul class="flex flex-col md:flex-row font-medium md:justify-center md:self-center md:text-[0.9375rem] md:w-auto text-xl tracking-[0.01rem] w-full MoreNavElements hidden">
+<ul class="flex flex-col md:flex-row font-medium md:justify-center md:self-center md:text-[0.9375rem] md:w-auto text-xl tracking-[0.01rem] w-full MoreNavElements">
 <li class="dropdown">
         <button class="flex items-center dark:hover:text-white hover:text-link px-4 py-3" type="button">
           ・・・
@@ -223,7 +223,7 @@ function toggleNavElements() {
             for (var j = 0; j < MoreNavElements.length; j++) {
                 MoreNavElements[j].style.display = 'block';
             }
-        } else {
+        } else if(screenWidth > 1260) {
             for (var k = 0; k < AllNavElements.length; k++) {
                 AllNavElements[k].style.display = 'block';
             }
