@@ -135,8 +135,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
         'hidden md:self-center md:flex items-center md:mb-0 fixed w-full md:w-auto md:static justify-end left-0 rtl:left-auto rtl:right-0 bottom-0 p-3 md:p-0 md:justify-self-end',
       ]}
     >
-      <LangSelect />
-      <div class="items-center flex justify-between w-full md:w-auto">
+            <div class="items-center flex justify-between w-full md:w-auto">
         <div class="flex">
           {showToggleTheme && <ToggleTheme iconClass="w-6 h-6 md:w-5 md:h-5 md:inline-block" />}
           {
@@ -151,6 +150,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
             )
           }
         </div>
+        <LangSelect />
         {
           actions?.length ? (
             <span class="ml-4 rtl:ml-0 rtl:mr-4">
@@ -162,7 +162,45 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
             ''
           )
         }
-      </div>
+      </div>      
+<li class="flex flex-col md:flex-row font-medium md:justify-center md:self-center md:text-[0.9375rem] md:w-auto text-xl tracking-[0.01rem] w-full dropdown hidden">
+        <button class="flex items-center dark:hover:text-white hover:text-link px-4 py-3" type="button">
+          ・・・
+        </button
+        ><ul
+          class="font-medium dark:md:bg-dark drop-shadow-xl dropdown-menu md:absolute md:backdrop-blur-md md:bg-white/90 md:hidden md:min-w-[200px] md:pl-0 pl-4 rounded"
+        >
+          <li>
+                {showToggleTheme && <ToggleTheme iconClass="w-6 h-6 md:w-5 md:h-5 md:inline-block" />}
+          </li><li>
+            {
+              showRssFeed && (
+                <a
+                  class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
+                  aria-label="RSS Feed"
+                  href={getAsset('/rss.xml')}
+                >
+                  <Icon name="tabler:rss" class="w-5 h-5" />
+                </a>
+              )
+            }  
+          </li><li>
+            <LangSelect />
+          </li><li>
+            {
+              actions?.length ? (
+                <span class="ml-4 rtl:ml-0 rtl:mr-4">
+                  {actions.map((btnProps) => (
+                    <Button {...btnProps} class="ml-2 py-2.5 px-5.5 md:px-6 font-semibold shadow-none text-sm w-auto" />
+                  ))}
+                </span>
+              ) : (
+                ''
+              )
+            }
+          </li>
+        </ul>
+      </li>
     </div>
   </div>
 </header>
