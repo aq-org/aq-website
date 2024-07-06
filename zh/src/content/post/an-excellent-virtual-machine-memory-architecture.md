@@ -1,45 +1,45 @@
 ---
 publishDate: 2024-06-01T19:55:05+08:00
-title: An Excellent Virtual Machine Memory Architecture - AQ
-excerpt: The memory architecture of a virtual machine directly affects its performance and usage. Designing an excellent architecture can effectively enhance performance and efficiency. This article will introduce the memory architecture used by the AQ virtual machine.
+title: 一种优秀的虚拟机内存架构 - AQ
+excerpt: 虚拟机内存架构直接影响虚拟机的性能和占用。设计一个优秀的架构可以有效提升性能和效率。本文将介绍AQ虚拟机使用的内存架构。
 image: https://www.axa6.com/aq.png
 category: Blog
 tags:
   - AQ
   - Blog
 metadata:
-  canonical: https://www.axa6.com/an-excellent-virtual-machine-memory-architecture
+  canonical: https://www.axa6.com/一种优秀的虚拟机内存架构
 ---
 
-# Introduction
-The `virtual machine` memory architecture directly affects the performance and usage of the virtual machine. Designing an excellent architecture can effectively enhance performance and efficiency.  
-This article will introduce the memory architecture used by the `AQ virtual machine`.  
-Optimizing the `virtual machine` memory architecture helps improve the *operational efficiency* and *reduce usage* of the `virtual machine`. If possible, both should be balanced to achieve the best state for the `virtual machine`.  
-> In some cases, different developments should be carried out according to the special needs of the virtual machine.  
-> For example, in situations with *memory constraints* such as `microcontrollers`, efforts should be made to *reduce usage* as much as possible.  
-> In *performance-sensitive* situations such as `parallel computing`, the focus should be on *performance optimization*.  
+# 简介
+`虚拟机`内存架构直接影响虚拟机的性能和占用。设计一个优秀的架构可以有效提升性能和效率。</br>
+本文将介绍`AQ虚拟机`使用的内存架构。</br>
+通过对于`虚拟机`内存架构的优化，有助于`虚拟机`的*运行效率*和*减少占用*。如果可以，应该尽可能地平衡两者，使`虚拟机`达到最佳状态。</br>
+> 在某些情况下，应该根据虚拟机的特殊需求进行不同的开发。</br>
+> 例如：在`单片机`等*内存受限*情况下，需要尽可能地*减少占用*。</br>
+> 而在`并行计算`等*性能敏感*情况，则需要侧重于*性能优化*。</br>
 
-# Memory Architecture
-## Basic Memory Architecture
-`AQ` adopts a `register`-based basic memory architecture, but it differs from the standard `register` architecture with some improvements and optimizations.  
-> The `registers` mentioned here are not the `registers` in the `CPU`, but the `virtual registers` simulated in the `memory`.
-## Reasons for Choosing Registers
-Unlike mainstream language virtual machines like `JAVA` and `Python` that use stack architecture, `AQ` decided to use a `register` architecture for performance optimization and ease of understanding `bytecode`.  
-Although the `stack` architecture is generally considered easier to port and write, it incurs some performance losses in practice due to multiple accesses to `memory`, which slows down its speed. This is unavoidable and difficult to completely optimize. Therefore, to solve this *performance loss*, `AQ` adopts a `register` architecture. Meanwhile, from the perspective of `bytecode`, the `register` architecture's bytecode is *easier to understand*, with instructions similar to `function` `parameters` rather than dealing directly with the numerous operations of the `stack`.  
-## Differences in `Register` Architecture
-### Standard Register Architecture
-In a standard register architecture, `registers` include:  
-1. `Data Type` - The type of data stored in the register (e.g., int, float, double, etc.)
-2. `Data` - The value of the data stored in the register
-3. (Optional) Mark - The mark of the data stored in the register (e.g., variable, function, class, etc.)
-4. (Optional) Reference - The reference of the data stored in the register (e.g., address of an object, etc.)
+# 内存架构
+## 基础内存架构
+`AQ`采取了`寄存器`的基础内存架构，但与标准的`寄存器`架构有所不同，对`寄存器`架构进行了部分改进和优化。</br>
+> 此处的`寄存器`并非`CPU`中的`寄存器`，而是在`内存`中模拟出的`虚拟寄存器`。
+## 选择寄存器的原因
+相较与`JAVA`、`Python`等主流语言虚拟机采取堆栈架构不同，`AQ`决定采取`寄存器`架构的原因是性能的优化与`字节码`的容易理解。</br>
+虽然`堆栈`架构被普遍认为更容易移植和编写，但在实际的性能中会有一些损耗，对于`内存`的多次访问会减缓其速度，这是不可避免并且难以彻底优化的。因此，为了解决此处的*性能损耗*，`AQ`采用了`寄存器`架构。同时，从`字节码`的角度上说，`寄存器`架构的字节码*更容易理解*，其指令类似于`函数`的`参数`方式，而不是直接面对`堆栈`的众多操作。</br>
+## `寄存器`架构的区别
+### 标准的寄存器架构
+标准的寄存器架构中，`寄存器`包含：</br>
+1. `数据类型` - 寄存器将存储的数据的类型（如int、float、double等）
+2. `数据` - 寄存器将存储的数据的值
+3. （可选）标记 - 寄存器将存储的数据的标记（如变量、函数、类等）
+4. （可选）引用 - 寄存器将存储的数据的引用（如对象的地址等）
 
-Although `virtual machine` architectures in different languages may differ, they generally follow this form with slight changes.  
+尽管不同语言的`虚拟机`架构可能有所不同，但大致都是这样的形式，只是略有改变。</br>
 
-During the development of `AQ`, this architecture was used, but tests showed significant memory usage.  
-Below is the `register.h` code previously used by `AQ`:
+而在`AQ`开发过程中曾使用了该架构，但是经过测试，其存在较大的内存占用。</br>
+以下是`AQ`曾使用的`register.h`代码：
 ```C
-// Copyright 2024 AQ author, All Rights Reserved.
+// Copyright 2024 AQ authors, All Rights Reserved.
 // This program is licensed under the AQ License. You can find the AQ license in
 // the root directory.
 
@@ -87,16 +87,16 @@ struct AqvmMemoryRegister_Register {
 
 #endif
 ```
-As can be seen from the code above, even without the optional content, the `enum` type `AqvmMemoryRegister_ValueType` occupies `4` bytes, the `union` type `AqvmMemoryRegister_Value` occupies `8` bytes, and the `struct` type itself occupies `12` bytes of memory.  
+从上述代码可以看出，即使未加入可选内容，但由于`enum`类型的`AqvmMemoryRegister_ValueType`占用`4`字节，`union`类型的`AqvmMemoryRegister_Value`占用`8`字节，`struct`类型本身就会占用`12`字节内存。</br>
 
-Due to `C` compiler optimization, the `struct` type `AqvmMemoryRegister_Register` aligns the `enum` type `type` with the `union` type `value`, adding `4` bytes of padding memory. This makes the `struct` type `AqvmMemoryRegister_Register` occupy `16` bytes.
+又由于`C`编译器的优化，`struct`类型的`AqvmMemoryRegister_Register`中`enum`类型的`type`为与`union`类型的`value`进行`内存对齐`，因此加入`4`字节的`填充内存`。使`struct`类型的`AqvmMemoryRegister_Register`占用`16`字节。
 
-If `int` and other non-`8`-byte types are used, `4` bytes of padding memory will be wasted, causing memory loss. Therefore, there will be `4`-`8` bytes of memory waste in all registers.
+其中如果使用`int`等非`8`字节类型，则会有`4`字节的`填充内存`被浪费，从而造成内存损耗。因此在全部的寄存器中会有`4`-`8`字节的内存浪费。</br>
 
-### `AQ`'s Register Architecture
-To solve the memory usage problem of traditional `register` architecture, `AQ` combines the characteristics of the `local variable table` in the `stack frame` of `JVM` and optimizes the `memory`, significantly reducing memory usage.  
+### `AQ`的寄存器架构
+为了解决传统`寄存器`架构的占用问题，`AQ`结合了`JVM`的`栈帧`的`局部变量表`特点，对`内存`进行了优化，使占用问题显著减少。</br>
 
-`AQ`'s `memory` directly uses `void*` pointers to store data and `size_t` to store memory size, effectively reducing padding memory loss.  
+`AQ`的`内存`直接使用`void*`指针存储数据，`size_t`存储占用内存大小。直接有效地减少了`填充内存`的损耗。</br>
 
 ```C
 // plan 1:
@@ -120,11 +120,11 @@ struct AqvmMemoryRegister_Register {
 };
 ```
 
-Due to memory issues, `plan 1` also causes significant memory loss.
-In fact, `plan 2` has the highest memory utilization when retaining memory information, but it cannot maintain the continuity of different types of data in the same data structure, which may cause some pointer operations to fail. Therefore, for `memory safety`, `plan 2` is not used.  
-In some cases, `plan 3` can also meet memory storage needs, but due to the need for a reduced instruction set, type information is not included in the instructions, so it cannot meet the needs of the reduced instruction set.  
+由于内存的原因，`plan 1`同样会造成极大的内存损失。
+事实上，在要求保留内存信息时，内存利用率最高的是`plan 2`，但不能保存在同一数据结构中不同类型数据的`连贯性`，可能会使部分指针操作失效。因此为了`内存安全`，不使用`plan 2`。</br>
+在某些情况下，`plan 3`也可以满足内存存储的需要，但由于精简指令集的需要，没有在指令中包含类型信息，因此无法满足精简指令集的需要。</br>
 
-Therefore, we adopt the following design to ensure `memory` `utilization` while significantly improving memory usage.  
+因此我们采取如下设计，保证对于`内存`的`利用率`，同时使内存占用问题有了很大改善。</br>
 
 ```C
 // The struct stores information about the memory.
@@ -142,7 +142,7 @@ struct AqvmMemory_Memory {
 };
 ```
 
-Due to `memory` reasons, the access to `type` needs to be precisely utilized. The `uint8_t` type requires `8` bits, but this exceeds the storage needs of the type, so `4` bits can meet the storage needs of the type while reducing memory usage. However, special functions are required to maintain `type` access.  
+由于`内存`的原因，对于`type`的存取需要精确的利用。`uint8_t`类型需要`8`位，但是超过了类型的存储需要，因此`4`位既可以满足对于类型的存储需要，同时又可以减少内存占用。但是需要特殊的函数维持`type`的存取。</br>
 
 ```C
 // Sets the type of the data at |index| bytes in |memory| to |type|. |type|
@@ -158,18 +158,19 @@ int AqvmMemory_SetType(const struct AqvmMemory_Memory* memory, size_t index,
 uint8_t AqvmMemory_GetType(struct AqvmMemory_Memory* memory, size_t index);
 ```
 
-However, using this design for data `storage` has high requirements because the data may be disrupted, requiring specialized `functions` to cooperate with `memory` operations.  
+但使用该设计对于数据的`存储`有较高要求，因为数据可能会被打乱，因此需要专门的`函数`配合`内存`进行操作。</br>
 
 ```C
-// Writes the data that |data_ptr| points to of size |size| to the data of at |index| bytes in |memory|.
+// Writes the data that |data_ptr| points to of size |size| to the data of at
+// |index| bytes in |memory|.
 // Returns 0 if successful. Returns -1 if the memory is NULL. Returns -2 if the
 // index is out of memory range. Returns -3 if the data is NULL.
 int AqvmMemory_WriteData(struct AqvmMemory_Memory* memory, size_t index,
                          void* data_ptr, size_t size);
 ```
 
-In addition to reducing `memory` usage, avoiding secondary memory usage is also important. Therefore, we mix memory-related data with bytecode data, using the pre-allocated `memory` in the bytecode file (the bytecode file contains `memory` data and types), achieving efficient memory utilization.  
-However, this requires special function implementations, and attention must be paid to managing memory data and type information by the bytecode-related functions.  
+除了减少`内存`使用外，避免`内存`的二次占用同样重要。因此我们将内存的相关数据与字节码的数据混合存储，利用`字节码`文件中预先分配的`内存`（字节码文件中包含`内存`的数据和类型），实现对于`内存`的高效利用。</br>
+但因此需要特殊的函数实现，同时需要注意`内存`的数据和类型信息由字节码的相关函数进行管理。</br>
 
 ```C
 // Creates the struct AqvmMemory_Memory with |data|, |type|, and |size|.
@@ -185,7 +186,7 @@ struct AqvmMemory_Memory* AqvmMemory_CreateMemory(void* data, void* type,
 void AqvmMemory_FreeMemory(struct AqvmMemory_Memory* memory_ptr);
 ```
 
-Additionally, due to differences in type definitions between some systems and the AQ standard, related functions are designed to ensure the correct operation of the virtual machine. If there are differences, special designs should be made for these systems.  
+除此之外，由于部分系统对于类型的定义与AQ标准有所差异，因此设计了相关函数确保虚拟机的正确运行。如果存在差异，应当为这些系统进行特殊的设计。</br>
 
 ```C
 // Checks the memory conditions in the system.
@@ -195,46 +196,17 @@ Additionally, due to differences in type definitions between some systems and th
 int AqvmMemory_CheckMemoryConditions();
 ```
 
-# Detailed Design:
-## Directory Structure
-The `memory` part of the code is located at `/aqvm/memory`. It contains multiple code files.  
-1. `CMakeLists.txt` - CMake build file in this directory
-2. `memory.h` - Memory data s### French
-
----
-publishDate: 2024-06-01T19:55:05+08:00
-title: Une Excellente Architecture de Mémoire de Machine Virtuelle - AQ
-excerpt: L'architecture de la mémoire d'une machine virtuelle affecte directement ses performances et son utilisation. Concevoir une excellente architecture peut améliorer efficacement les performances et l'efficacité. Cet article présentera l'architecture de mémoire utilisée par la machine virtuelle AQ.
-image: https://www.axa6.com/aq.png
-category: Blog
-tags:
-  - AQ
-  - Blog
-metadata:
-  canonical: https://www.axa6.com/une-excellente-architecture-de-mémoire-de-machine-virtuelle
----
-
-# Introduction
-L'architecture de la mémoire de la `machine virtuelle` affecte directement les performances et l'utilisation de la machine virtuelle. Concevoir une excellente architecture peut améliorer efficacement les performances et l'efficacité.  
-Cet article présentera l'architecture de mémoire utilisée par la `machine virtuelle AQ`.  
-L'optimisation de l'architecture de la mémoire de la `machine virtuelle` aide à améliorer l'*efficacité opérationnelle* et à *réduire l'utilisation* de la `machine virtuelle`. Si possible, les deux doivent être équilibrés pour atteindre le meilleur état de la `machine virtuelle`.  
-> Dans certains cas, des développements différents doivent être réalisés en fonction des besoins spécifiques de la machine virtuelle.  
-> Par exemple, dans des situations de *contraintes de mémoire* telles que les `microcontrôleurs`, il faut s'efforcer de *réduire l'utilisation* autant que possible.  
-> Dans des situations *sensibles aux performances* telles que le `calcul parallèle`, l'accent doit être mis sur l'*optimisation des performances*.  
-
-# Architecture de Mémoire
-## Architecture de Mémoire de Base
-`AQ` adopte une architecture de mémoire de base basée sur les `registres`, mais elle diffère de l'architecture de `registres` standard avec quelques améliorations et optimisations.  
-> Les `registres` mentionnés ici ne sont pas les `registres` du `CPU`, mais les `registres virtuels` simulés dans la `mémoire`.
-## Raisons du Choix des Registres
-Contrairement aux machines virtuelles des langages principaux comme `JAVA` et `Python` qui utilisent une architecture de pile, `AQ` a décidé d'utiliser une architecture de `registre` pour l'optimisation des performances et la facilité de compréhension du `bytecode`.  
-Bien que l'architecture de `pile` soit généralement considérée comme plus facile à porter et à écrire, elle entraîne des pertes de performances en pratique en raison des multiples accès à la `mémoire`, ce qui ralentit sa vitesse. Cela est inévitable et difficile à optimiser complètement. Par conséquent, pour résoudre cette *perte de performances*, `AQ` adopte une architecture de `registre`. Par ailleurs, du point de vue du `bytecode`, le bytecode de l'architecture de `registre` est *plus facile à comprendre*, avec des instructions similaires aux `paramètres` des `fonctions` plutôt que de gérer directement les nombreuses opérations de la `pile`tructure and related functions
-3. `memory.c` - Implementation of memory-related functions
-4. `types.h` - Definition of memory types
+# 详细设计：</br>
+## 目录结构
+`memory`部分的代码位于`/aqvm/memory`。内含多个代码文件。</br>
+1. `CMakeLists.txt` - 该目录下的CMake构建文件
+2. `memory.h` - 内存的数据结构和相关函数
+3. `memory.c` - 内存的相关函数的实现
+4. `types.h` - 内存类型的定义
 
 ## `types.h`
-The types also have related code. Below is the code for `types.h`:  
-There are `6` basic types with specific definitions:  
+对于类型同样有相关代码。以下是`types.h`的代码：</br>
+因此拥有具体定义的基本类型有`6`种：</br>
 1. int - 32 bits (4 bytes)
 2. long - 64 bits (8 bytes)
 3. float - 32 bits (4 bytes)
@@ -243,7 +215,7 @@ There are `6` basic types with specific definitions:
 6. bool - 8 bits (1 byte)
 
 ```C
-// Copyright 2024 AQ author, All Rights Reserved.
+// Copyright 2024 AQ authors, All Rights Reserved.
 // This program is licensed under the AQ License. You can find the AQ license in
 // the root directory.
 
@@ -274,7 +246,7 @@ typedef bool aqbool;
 ## `memory.h`
 
 ```C
-// Copyright 2024 AQ author, All Rights Reserved.
+// Copyright 2024 AQ authors, All Rights Reserved.
 // This program is licensed under the AQ License. You can find the AQ license in
 // the root directory.
 
@@ -344,11 +316,11 @@ int AqvmMemory_WriteData(struct AqvmMemory_Memory* memory, size_t index,
 ```
 
 ### AqvmMemory_Memory
-This structure stores information about the memory.  
-|type| is a pointer to an array that stores the type of each byte in the memory. Each byte uses 4 bits to store the type. So a uint8_t variable can store 2 types. Each uint8_t variable's first 4 bits are used for the even byte's type and the next 4 bits are used for the odd byte's type. The type list is in types.h.  
-|data| is a pointer of type void* to the memory that stores the data.  
-|size| is the size of the memory.  
-NOTICE: The struct AqvmMemory_Memory only stores information of the memory. The memory is allocated by the bytecode function when storing the bytecode. The memory of |memory| and |type| is part of the bytecode memory.  
+该结构体存储有关内存的信息。</br>
+|type| 是一个指向数组的指针，该数组存储内存中每个字节的类型。每个字节使用4位来存储类型。因此，一个 uint8_t 变量可以存储2个类型。每个 uint8_t 变量的前4位用于偶数字节的类型，后4位用于奇数字节的类型。类型列表在 types.h 中。</br>
+|data| 是一个指向存储数据的内存的 void* 类型的指针。</br>
+|size| 是内存的大小。</br>
+注意：结构体 AqvmMemory_Memory 仅存储内存的信息。内存由存储字节码时的字节码函数分配。|memory| 和 |type| 的内存是字节码内存的一部分。</br>
 
 ```C
 struct AqvmMemory_Memory {
@@ -359,56 +331,57 @@ struct AqvmMemory_Memory {
 ```
 
 ### AqvmMemory_CheckMemoryConditions
-Checks the memory conditions in the system.  
-Returns 0 if successful. Returns -1 if the length requirement for the int type does not conform to the type definition, -2 for long, -3 for float, -4 for double, -5 for char, and -6 for bool.  
+检查系统中的内存条件。</br>
+成功时返回 0。如果 int 类型的长度要求不符合类型定义，则返回 -1，long 返回 -2，float 返回 -3，double 返回 -4，char 返回 -5，bool 返回 -6。</br>
 ```C
 int AqvmMemory_CheckMemoryConditions();
 ```
 
 ### AqvmMemory_CreateMemory
-Creates the struct AqvmMemory_Memory with |data|, |type|, and |size|.  
-The function will allocate a struct AqvmMemory_Memory and copy |data|, |type|, and |size| into the struct. Returns a pointer to the struct.  
+创建包含 |data|、|type| 和 |size| 的结构体 AqvmMemory_Memory。</br>
+该函数将分配一个 AqvmMemory_Memory 结构体，并将 |data|、|type| 和 |size| 复制到结构体中。返回指向该结构体的指针。</br>
 
 ```C
 struct AqvmMemory_Memory* AqvmMemory_CreateMemory(void* data, void* type, size_t size);
 ```
 
 ### AqvmMemory_FreeMemory
-Frees the memory of the |memory_ptr|. No return.  
-NOTICE: The function only frees the memory of the struct. The memory pointed to by pointers to data and type in struct is not freed. This memory is managed by bytecode related functions.  
+释放 |memory_ptr| 的内存。无返回值。</br>
+注意：该函数仅释放结构体的内存。结构体中指向数据和类型的指针所指向的内存不会被释放。这些内存由字节码相关函数管理。</br>
 
 ```C
 void AqvmMemory_FreeMemory(struct AqvmMemory_Memory* memory_ptr);
 ```
+
 ### AqvmMemory_SetType
-Sets the type of the data at |index| bytes in |memory| to |type|. |type| should be less than 4 bits.  
-Returns 0 if successful. Returns -1 if memory is NULL. Returns -2 if the index is out of range. Returns -3 if the type is out of range.  
+设置 |memory| 中 |index| 字节处的数据类型为 |type|。|type| 应小于 4 位。</br>
+成功时返回 0。如果内存为 NULL，返回 -1。如果索引超出范围，返回 -2。如果类型超出范围，返回 -3。</br>
 
 ```C
 int AqvmMemory_SetType(const struct AqvmMemory_Memory* memory, size_t index, uint8_t type);
 ```
 
 ### AqvmMemory_GetType
-Gets the type of the data at |index| bytes in |memory|.  
-Returns the type that is less than 4 bits (0X0F) if successful. Returns 0x10 if the memory is NULL. Returns 0x20 if the index is out of memory range.  
+获取 |memory| 中 |index| 字节处的数据类型。</br>
+成功时返回小于 4 位 (0X0F) 的类型。如果内存为 NULL，返回 0x10。如果索引超出内存范围，返回 0x20。</br>
 
 ```C
 uint8_t AqvmMemory_GetType(struct AqvmMemory_Memory* memory, size_t index);
 ```
 
 ### AqvmMemory_WriteData
-Writes the data that |data_ptr| points to of size |size| to the data of at |index| bytes in |memory|.  
-Returns 0 if successful. Returns -1 if the memory is NULL. Returns -2 if the index is out of memory range. Returns -3 if the data is NULL.  
+将 |data_ptr| 指向的大小为 |size| 的数据写入 |memory| 中 |index| 字节处的数据。</br>
+成功时返回 0。如果内存为 NULL，返回 -1。如果索引超出内存范围，返回 -2。如果数据为 NULL，返回 -3。</br>
 
 ```C
 int AqvmMemory_WriteData(struct AqvmMemory_Memory* memory, size_t index, void* data_ptr, size_t size);
 ```
 
 ## `memory.c`
-Below are the specific function implementations:
+以下是具体的`函数`实现：</br>
 
 ```C
-// Copyright 2024 AQ author, All Rights Reserved.
+// Copyright 2024 AQ authors, All Rights Reserved.
 // This program is licensed under the AQ License. You can find the AQ license in
 // the root directory.
 
@@ -529,8 +502,8 @@ int AqvmMemory_WriteData(struct AqvmMemory_Memory* memory, size_t index,
 }
 ```
 
-With the cooperation of these codes, a complete memory architecture of Aqvm is formed, effectively alleviating memory pressure while improving the operating efficiency of Aqvm.
+通过这些代码的配合，共同构成了完整的Aqvm的内存架构，有效缓解内存压力的同时，提高了Aqvm的运行效率。
 
-> We are working hard on developing the `AQ virtual machine`. We would appreciate it if you could give us a star on Github. If you want to learn more or participate in the development work, please follow our official website: https://www.axa6.com and GitHub: https://github.com/aq-org/AQ.  
+> We are working hard on developing the `AQ virtual machine`. We would appreciate it if you could give us a star on Github. If you want to learn more or participate in the development work, please follow our official website: https://www.axa6.com and GitHub: https://github.com/aq-org/AQ.</br>
 
 > This article is published under the AQ License: https://github.com/aq-org/AQ/blob/main/LICENSE. If needed, please adapt or reprint according to the AQ License.
