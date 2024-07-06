@@ -1,7 +1,7 @@
 ---
 publishDate: 2024-05-28T23:05:54+08:00
-title: How to write a programming language from scratch? - AQ
-excerpt: How to write a programming language from scratch? AQ is a fast, small, simple and safe interpreted programming language.
+title: 如何从零设计一门编程语言？ - AQ
+excerpt: 如何从零设计一门编程语言？新型的编程语言应该包括那些部分？本文章将通过AQ语言的设计，详述开发一个编程语言的过程，从零开始设计、开发编译器和相关基础设施，最终完成一门编程语言的构建。
 image: https://www.axa6.com/aq.png
 category: Blog
 tags:
@@ -11,48 +11,48 @@ metadata:
   canonical: https://www.axa6.com/how-to-write-a-programming-language-from-scratch
 ---
 
-# Introduction
-How to design a programming language from scratch? What parts should a new programming language include?</br>
-This article will detail the process of developing a programming language through the design of AQ, starting from scratch to designing, developing the compiler, and related infrastructure, eventually completing the construction of a programming language.</br>
+# 本文简介
+如何从零设计一门编程语言？新型的编程语言应该包括那些部分？</br>
+本文章将通过AQ语言的设计，详述开发一个编程语言的过程，从零开始设计、开发编译器和相关基础设施，最终完成一门编程语言的构建。</br>
 
-# Introduction to AQ
+# AQ简介
 
-**AQ** is an `interpreted` **programming language**. It is `fast`, `small`, `simple`, and `secure`. Programs written in AQ can also be `compiled`. Additionally, the source code of `AQ` is available on `GitHub`, open source, and follows the `AQ License`.
+**AQ** 是一种`解释性`**编程语言**。它`快速`、`小型`、`简单`且`安全`。 同时，用AQ编写的程序也可以`编译`。此外，`AQ`的源代码可从`GitHub`获取，开源并遵循`AQ 许可证`。
 
-GitHub address: https://github.com/aq-org/AQ, where you can obtain the source code of `AQ`.
+Github地址：https://github.com/aq-org/AQ ，您可以从此处获得`AQ`的源代码。
 
-## Features
+## 特点
 
-- **Fast** (`source code` compilation and `run speed`)
-- **Small** (`source code` size)
-- **Simple** (easy to learn)
-- **Secure** (safe `memory management` and `code checks`)
-- **Cross-platform** (supports `Windows`, `Linux`, and `MacOS`, etc.)
-- C++-like syntax (quick to grasp)
-- Interpreted (optional `compilation`)
-- Free (follows `AQ License`)
-- Open source (based on `AQ License`)
+- **快速**（`源代码`编译和`运行速度`）
+- **小型**（`源代码`大小）
+- **简单**（易于学习）
+- **安全**（安全的`内存管理`和`代码检查`）
+- **跨平台**（支持 `Windows`、`Linux` 和 `MacOS` 等）
+- 类似`C++`语法（快速掌握）
+- 解释性（可选`编译`）
+- 免费（遵守 `AQ 许可证`）
+- 开源（基于 `AQ 许可证`）
 
-# Design
-## Original Plan
-AQ initially began development in October 2023 and underwent restructuring on February 1, 2024, with multiple revisions forming the current framework.</br>
+# 设计
+## 原方案
+AQ最早于2023年10月开始开发，AQ于2024年2月1日进行重构，在此期间经过多次修改，至今形成大致框架。</br>
 
-The original plan was to implement the compiler in C++ and then develop the virtual machine. However, since the compiler needed to translate to the virtual machine's bytecode and due to prolonged compiler development time, the original version was abandoned. The code has been entirely deleted but can be found in the commits.</br>
+原方案通过C++实现编译器后再实现虚拟机。但由于编译器需要翻译为虚拟机的字节码，同时编译器开发时间过长，因此原版本已放弃，代码已全部删除，但可在commits中查找。</br>
 
-## New Plan
-The new plan is to develop the `AQ virtual machine` first and then implement the compiler through other means. Since it's developed in C, the `AQ virtual machine` reduces performance overhead and gains broader support. The `AQ virtual machine` is currently divided into `interpreter`, `memory`, `runtime`, and `operating system library`.</br>
+## 新方案
+新方案决定先行开发`AQ虚拟机`，后通过其它方法实现编译器。由于通过c语言开发，因此`AQ虚拟机`减少了性能开销并获得了更广的支持。`AQ虚拟机`目前大致分为`解释器`、`内存`、`运行时`、`操作系统库`。</br>
 
-1. The `interpreter` is the execution engine of the `AQ virtual machine`. Bytecode instruction execution functions are currently being developed.</br>
-2. `Memory` is the storage of the `AQ virtual machine`. For efficiency reasons, the `AQ virtual machine` is based on a register architecture. A garbage collection mechanism will be added in the future.</br>
-3. The `runtime` is the dependent environment of the `AQ virtual machine`, including error handling, standard output, and other necessary components, providing a basic runtime environment for AQ.</br>
-4. The `operating system library` is the necessary component for the `AQ virtual machine` to interact with the operating system.</br>
+1. `解释器`是`AQ虚拟机`的执行引擎。目前正在开发字节码指令的执行函数。</br>
+2. `内存`是`AQ虚拟机`的存储。由于效率原因，`AQ虚拟机`基于寄存器架构。未来将加入垃圾回收机制。</br>
+3. `运行时`是`AQ虚拟机`的依赖环境，包括错误处理，标准输出等必要组件，为AQ提供基本的运行环境。</br>
+4. `操作系统库`则是`AQ虚拟机`与操作系统交互的必要组件。</br>
 
-These four parts of the design essentially include most of the components of an interpreted language's virtual machine. As the functionality of the programming language continues to expand in the future, upgrades can be implemented by adding components.</br>
+通过这样四个部分的设计，基本上包含了绝大多数解释性语言虚拟机的组件。未来如果编程语言功能不断扩展时，可以通过增加组件实施升级。</br>
 
 
-## Reasons and Advantages
-The AQ language is designed as an interpreted language for multi-platform compatibility. In the future, further compiler development work for different operating systems can make development more efficient. Based on the register architecture, it also reduces performance loss.</br>
+## 原因和优势
+AQ语言设计为解释性语言的原因是多平台兼容性，同时在未来可以进一步对不同操作系统进行编译器的开发工作，使开发效率更高。同时基于寄存器架构则减少了性能的损失。</br>
 
-> We are working hard on developing the `AQ virtual machine`. If you want to learn more or participate in the development work, please follow our official website: https://www.axa6.com and GitHub: https://github.com/aq-org/AQ.</br>
+> 我们正在更加努力地开发`AQ虚拟机`。如果您想了解更多信息或参与开发工作，请关注我们的官网：https://www.axa6.com 和 Github：https://github.com/aq-org/AQ。</br>
 
-> This article is published under the AQ License: https://github.com/aq-org/AQ/blob/main/LICENSE. If needed, please adapt or reprint according to the AQ License.
+> 本文章基于AQ License：https://github.com/aq-org/AQ/blob/main/LICENSE 发布，如有需要，请根据AQ License进行改编或转载。
