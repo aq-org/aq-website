@@ -135,6 +135,9 @@ struct AqvmMemoryRegister_Register {
 // list is in types.h.
 // |data| is a pointer of type void* to the memory that stores the data.
 // |size| is the size of the memory.
+// NOTICE: The struct AqvmMemory_Memory only stores information of the memory.
+// The memory is allocated by the bytecode function when storing the bytecode.
+// The memory of |memory| and |type| is part of the bytecode memory.
 struct AqvmMemory_Memory {
   uint8_t* type;
   void* data;
@@ -147,14 +150,16 @@ struct AqvmMemory_Memory {
 ```C
 // Sets the type of the data at |index| bytes in |memory| to |type|. |type|
 // should be less than 4 bits.
-// Returns 0 if successful. Returns -1 if memory is NULL. Returns -2 if the
-// index is out of range. Returns -3 if the type is out of range.
+// Returns 0 if successful. Returns -1 if the memory pointer is NULL. Returns -2
+// if the type pointer is NULL. Returns -3 if the index is out of range. Returns
+// -4 if the type is out of range.
 int AqvmMemory_SetType(const struct AqvmMemory_Memory* memory, size_t index,
                        uint8_t type);
 
 // Gets the type of the data at |index| bytes in |memory|.
-// Returns the type that is less than 4 bits (0X0F) if successful. Returns 0x10
-// if the memory is NULL. Returns 0x20 if the index is out of memory range.
+// Returns the type that is less than 4 bits (0X0F) if successful. Returns 0x11
+// if the memory pointer is NULL. Returns 0x12 if the type pointer is NULL.
+// Returns 0x13 if the index is out of memory range.
 uint8_t AqvmMemory_GetType(struct AqvmMemory_Memory* memory, size_t index);
 ```
 
@@ -163,8 +168,9 @@ uint8_t AqvmMemory_GetType(struct AqvmMemory_Memory* memory, size_t index);
 ```C
 // Writes the data that |data_ptr| points to of size |size| to the data of at
 // |index| bytes in |memory|.
-// Returns 0 if successful. Returns -1 if the memory is NULL. Returns -2 if the
-// index is out of memory range. Returns -3 if the data is NULL.
+// Returns 0 if successful. Returns -1 if the memory pointer is NULL. Returns -2
+// if the type pointer is NULL. Returns -3 if the index is out of range. Returns
+// -4 if the data pointer is NULL.
 int AqvmMemory_WriteData(struct AqvmMemory_Memory* memory, size_t index,
                          void* data_ptr, size_t size);
 ```
@@ -175,7 +181,8 @@ int AqvmMemory_WriteData(struct AqvmMemory_Memory* memory, size_t index,
 ```C
 // Creates the struct AqvmMemory_Memory with |data|, |type|, and |size|.
 // The function will allocate a struct AqvmMemory_Memory and copy |data|,
-// |type|, and |size| into the struct. Returns a pointer to the struct.
+// |type|, and |size| into the struct. Returns a pointer to the struct if
+// successful. Returns NULL if creation fails.
 struct AqvmMemory_Memory* AqvmMemory_CreateMemory(void* data, void* type,
                                                   size_t size);
 
@@ -190,9 +197,7 @@ void AqvmMemory_FreeMemory(struct AqvmMemory_Memory* memory_ptr);
 
 ```C
 // Checks the memory conditions in the system.
-// Returns 0 if successful. Returns -1 if the length requirement for the int
-// type does not conform to the type definition, -2 for long, -3 for float, -4
-// for double, -5 for char, and -6 for bool.
+// Returns the number of warnings.
 int AqvmMemory_CheckMemoryConditions();
 ```
 
