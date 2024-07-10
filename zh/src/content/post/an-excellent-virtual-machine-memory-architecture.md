@@ -23,10 +23,12 @@ metadata:
 ## 内存架构
 ### 基础内存架构
 `AQ`采取了`寄存器`的基础内存架构，但与标准的`寄存器`架构有所不同，对`寄存器`架构进行了部分改进和优化。</br>
-> 此处的`寄存器`并非`CPU`中的`寄存器`，而是在`内存`中模拟出的`虚拟寄存器`。
+> 此处的`寄存器`并非`CPU`中的`寄存器`，而是在`内存`中模拟出的`虚拟寄存器`。</br>
+
 ### 选择寄存器的原因
 相较与`JAVA`、`Python`等主流语言虚拟机采取堆栈架构不同，`AQ`决定采取`寄存器`架构的原因是性能的优化与`字节码`的容易理解。</br>
 虽然`堆栈`架构被普遍认为更容易移植和编写，但在实际的性能中会有一些损耗，对于`内存`的多次访问会减缓其速度，这是不可避免并且难以彻底优化的。因此，为了解决此处的*性能损耗*，`AQ`采用了`寄存器`架构。同时，从`字节码`的角度上说，`寄存器`架构的字节码*更容易理解*，其指令类似于`函数`的`参数`方式，而不是直接面对`堆栈`的众多操作。</br>
+
 ### `寄存器`架构的区别
 #### 标准的寄存器架构
 标准的寄存器架构中，`寄存器`包含：</br>
@@ -38,7 +40,7 @@ metadata:
 尽管不同语言的`虚拟机`架构可能有所不同，但大致都是这样的形式，只是略有改变。</br>
 
 而在`AQ`开发过程中曾使用了该架构，但是经过测试，其存在较大的内存占用。</br>
-以下是`AQ`曾使用的`register.h`代码：
+以下是`AQ`曾使用的`register.h`代码：</br>
 ```C
 // Copyright 2024 AQ authors, All Rights Reserved.
 // This program is licensed under the AQ License. You can find the AQ license in
@@ -90,7 +92,7 @@ struct AqvmMemoryRegister_Register {
 ```
 从上述代码可以看出，即使未加入可选内容，但由于`enum`类型的`AqvmMemoryRegister_ValueType`占用`4`字节，`union`类型的`AqvmMemoryRegister_Value`占用`8`字节，`struct`类型本身就会占用`12`字节内存。</br>
 
-又由于`C`编译器的优化，`struct`类型的`AqvmMemoryRegister_Register`中`enum`类型的`type`为与`union`类型的`value`进行`内存对齐`，因此加入`4`字节的`填充内存`。使`struct`类型的`AqvmMemoryRegister_Register`占用`16`字节。
+又由于`C`编译器的优化，`struct`类型的`AqvmMemoryRegister_Register`中`enum`类型的`type`为与`union`类型的`value`进行`内存对齐`，因此加入`4`字节的`填充内存`。使`struct`类型的`AqvmMemoryRegister_Register`占用`16`字节。</br>
 
 其中如果使用`int`等非`8`字节类型，则会有`4`字节的`填充内存`被浪费，从而造成内存损耗。因此在全部的寄存器中会有`4`-`8`字节的内存浪费。</br>
 
@@ -121,7 +123,7 @@ struct AqvmMemoryRegister_Register {
 };
 ```
 
-由于内存的原因，`plan 1`同样会造成极大的内存损失。
+由于内存的原因，`plan 1`同样会造成极大的内存损失。</br>
 事实上，在要求保留内存信息时，内存利用率最高的是`plan 2`，但不能保存在同一数据结构中不同类型数据的`连贯性`，可能会使部分指针操作失效。因此为了`内存安全`，不使用`plan 2`。</br>
 在某些情况下，`plan 3`也可以满足内存存储的需要，但由于精简指令集的需要，没有在指令中包含类型信息，因此无法满足精简指令集的需要。</br>
 
@@ -383,7 +385,7 @@ int AqvmMemory_CheckMemoryConditions() {
 }
 ```
 
-# 详细标准：</br>
+# 详细标准：
 ## 目录结构
 `memory`部分的代码位于`/aqvm/memory`。内含多个代码文件。</br>
 1. `CMakeLists.txt` - 该目录下的CMake构建文件
