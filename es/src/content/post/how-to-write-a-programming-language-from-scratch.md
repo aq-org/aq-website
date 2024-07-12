@@ -1,58 +1,58 @@
 ---
-publishDate: 2024-05-28T23:05:54+08:00
-title: How to write a programming language from scratch? - AQ
-excerpt: How to write a programming language from scratch? AQ is a fast, small, simple and safe interpreted programming language.
+publishDate: 2024-07-12T21:10:23+08:00
+title: ¿Cómo escribir un lenguaje de programación desde cero - AQ?
+excerpt: ¿Cómo escribir un lenguaje de programación desde cero? AQ es un lenguaje de programación interpretado rápido, pequeño, sencillo y seguro.
 image: https://www.axa6.com/aq.png
 category: Blog
 tags:
   - AQ
   - Blog
 metadata:
-  canonical: https://www.axa6.com/how-to-write-a-programming-language-from-scratch
+  canonical: https://www.axa6.com/es/how-to-write-a-programming-language-from-scratch
 ---
 
-# Introduction
-How to design a programming language from scratch? What parts should a new programming language include?</br>
-This article will detail the process of developing a programming language through the design of AQ, starting from scratch to designing, developing the compiler, and related infrastructure, eventually completing the construction of a programming language.</br>
+# Introducción
+¿Cómo diseñar un lenguaje de programación desde cero? ¿Qué partes debe incluir un nuevo lenguaje de programación?</br>
+Este artículo detallará el proceso de desarrollo de un lenguaje de programación a través del diseño de AQ, comenzando desde cero hasta diseñar, desarrollar el compilador y la infraestructura relacionada, y finalmente completar la construcción de un lenguaje de programación.</br>
 
-# Introduction to AQ
+# Introducción a AQ
 
-**AQ** is an `interpreted` **programming language**. It is `fast`, `small`, `simple`, and `secure`. Programs written in AQ can also be `compiled`. Additionally, the source code of `AQ` is available on `GitHub`, open source, and follows the `AQ License`.
+**AQ** es un **lenguaje de programación** "interpretado". Es "rápido", "pequeño", "simple" y "seguro". Además, los programas escritos en AQ también se pueden "compilar". El código fuente de `AQ` está disponible en `GitHub`, es de código abierto y sigue la `Licencia AQ`.
 
-GitHub address: https://github.com/aq-org/AQ, where you can obtain the source code of `AQ`.
+Dirección de GitHub: https://github.com/aq-org/AQ, donde puede obtener el código fuente de `AQ`.
 
-## Features
+## Características
 
-- **Fast** (`source code` compilation and `run speed`)
-- **Small** (`source code` size)
-- **Simple** (easy to learn)
-- **Secure** (safe `memory management` and `code checks`)
-- **Cross-platform** (supports `Windows`, `Linux`, and `MacOS`, etc.)
-- C++-like syntax (quick to grasp)
-- Interpreted (optional `compilation`)
-- Free (follows `AQ License`)
-- Open source (based on `AQ License`)
+- **Rápido** (compilación de `código fuente` y `velocidad de ejecución`)
+- **Pequeño** (tamaño `código fuente`)
+- **Simple** (fácil de aprender)
+- **Seguro** (`gestión de memoria` y `verificaciones de código` seguras)
+- **Multiplataforma** (compatible con `Windows`, `Linux` y `MacOS`, etc.)
+- Sintaxis similar a C++ (rápida de entender)
+- Interpretado (`compilación` opcional)
+- Gratis (sigue la `Licencia AQ`)
+- Código abierto (basado en "Licencia AQ")
 
-# Design
-## Original Plan
-AQ initially began development in October 2023 and underwent restructuring on February 1, 2024, with multiple revisions forming the current framework.</br>
+#Diseño
+## Plan original
+AQ inicialmente comenzó a desarrollarse en octubre de 2023 y se reestructuró el 1 de febrero de 2024, con múltiples revisiones que conforman el marco actual.</br>
 
-The original plan was to implement the compiler in C++ and then develop the virtual machine. However, since the compiler needed to translate to the virtual machine's bytecode and due to prolonged compiler development time, the original version was abandoned. The code has been entirely deleted but can be found in the commits.</br>
+El plan original era implementar el compilador en C++ y luego desarrollar la máquina virtual. Sin embargo, dado que el compilador necesitaba traducirse al código de bytes de la máquina virtual y debido al tiempo prolongado de desarrollo del compilador, la versión original fue abandonada. pero se puede encontrar en las confirmaciones.</br>
 
-## New Plan
-The new plan is to develop the `AQ virtual machine` first and then implement the compiler through other means. Since it's developed in C, the `AQ virtual machine` reduces performance overhead and gains broader support. The `AQ virtual machine` is currently divided into `interpreter`, `memory`, `runtime`, and `operating system library`.</br>
+## Nuevo plan
+El nuevo plan es desarrollar primero la "máquina virtual AQ" y luego implementar el compilador por otros medios. Dado que está desarrollada en C, la "máquina virtual AQ" reduce la sobrecarga de rendimiento y obtiene un soporte más amplio. dividido en `intérprete`, `memoria`, `tiempo de ejecución` y `biblioteca del sistema operativo`.</br>
 
-1. The `interpreter` is the execution engine of the `AQ virtual machine`. Bytecode instruction execution functions are currently being developed.</br>
-2. `Memory` is the storage of the `AQ virtual machine`. For efficiency reasons, the `AQ virtual machine` is based on a register architecture. A garbage collection mechanism will be added in the future.</br>
-3. The `runtime` is the dependent environment of the `AQ virtual machine`, including error handling, standard output, and other necessary components, providing a basic runtime environment for AQ.</br>
-4. The `operating system library` is the necessary component for the `AQ virtual machine` to interact with the operating system.</br>
+1. El "intérprete" es el motor de ejecución de la "máquina virtual AQ". Las funciones de ejecución de instrucciones de Bytecode se están desarrollando actualmente.</br>
+2. La "memoria" es el almacenamiento de la "máquina virtual AQ". Por razones de eficiencia, la "máquina virtual AQ" se basa en una arquitectura de registro. Se agregará un mecanismo de recolección de basura en el futuro.</br>
+3. El "tiempo de ejecución" es el entorno dependiente de la "máquina virtual AQ", incluido el manejo de errores, la salida estándar y otros componentes necesarios, lo que proporciona un entorno de ejecución básico para AQ.</br>
+4. La `biblioteca del sistema operativo` es el componente necesario para que la `máquina virtual AQ` interactúe con el sistema operativo.</br>
 
-These four parts of the design essentially include most of the components of an interpreted language's virtual machine. As the functionality of the programming language continues to expand in the future, upgrades can be implemented by adding components.</br>
+Estas cuatro partes del diseño incluyen esencialmente la mayoría de los componentes de la máquina virtual de un lenguaje interpretado. A medida que la funcionalidad del lenguaje de programación continúa expandiéndose en el futuro, se pueden implementar actualizaciones agregando componentes.</br>
 
 
-## Reasons and Advantages
-The AQ language is designed as an interpreted language for multi-platform compatibility. In the future, further compiler development work for different operating systems can make development more efficient. Based on the register architecture, it also reduces performance loss.</br>
+## Razones y ventajas
+El lenguaje AQ está diseñado como un lenguaje interpretado para compatibilidad multiplataforma. En el futuro, un mayor trabajo de desarrollo del compilador para diferentes sistemas operativos puede hacer que el desarrollo sea más eficiente, lo que también reduce la pérdida de rendimiento.</br>
 
-> We are working hard on developing the `AQ virtual machine`. If you want to learn more or participate in the development work, please follow our official website: https://www.axa6.com and GitHub: https://github.com/aq-org/AQ.</br>
+> Estamos trabajando arduamente en el desarrollo de la "máquina virtual AQ". Si desea obtener más información o participar en el trabajo de desarrollo, siga nuestro sitio web oficial: https://www.axa6.com y GitHub: https://github. .com/aq-org/AQ.</br>
 
-> This article is published under the AQ License: https://github.com/aq-org/AQ/blob/main/LICENSE. If needed, please adapt or reprint according to the AQ License.
+> Este artículo está publicado bajo la licencia AQ: https://github.com/aq-org/AQ/blob/main/LICENSE Si es necesario, adáptelo o reimprima de acuerdo con la licencia AQ.

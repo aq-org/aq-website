@@ -1,45 +1,48 @@
 ---
-publishDate: 2024-06-01T19:55:05+08:00
-title: An Excellent Virtual Machine Memory Architecture - AQ
-excerpt: The memory architecture of a virtual machine directly affects its performance and usage. Designing an excellent architecture can effectively enhance performance and efficiency. This article will introduce the memory architecture used by the AQ virtual machine.
+publishDate: 2024-07-12T21:09:42+08:00
+title: Una excelente arquitectura de memoria para máquinas virtuales - AQ
+excerpt: La arquitectura de memoria de la máquina virtual afecta directamente el rendimiento y la ocupación de la máquina virtual. Diseñar una arquitectura excelente puede mejorar eficazmente el rendimiento y la eficiencia. Este artículo presentará la arquitectura de memoria utilizada por las máquinas virtuales AQ.
 image: https://www.axa6.com/aq.png
 category: Blog
 tags:
   - AQ
   - Blog
 metadata:
-  canonical: https://www.axa6.com/an-excellent-virtual-machine-memory-architecture
+  canonical: https://www.axa6.com/es/an-excellent-virtual-machine-memory-architecture
 ---
 
-# Introduction
-The `virtual machine` memory architecture directly affects the performance and usage of the virtual machine. Designing an excellent architecture can effectively enhance performance and efficiency.  
-This article will introduce the memory architecture used by the `AQ virtual machine`.  
-Optimizing the `virtual machine` memory architecture helps improve the *operational efficiency* and *reduce usage* of the `virtual machine`. If possible, both should be balanced to achieve the best state for the `virtual machine`.  
-> In some cases, different developments should be carried out according to the special needs of the virtual machine.  
-> For example, in situations with *memory constraints* such as `microcontrollers`, efforts should be made to *reduce usage* as much as possible.  
-> In *performance-sensitive* situations such as `parallel computing`, the focus should be on *performance optimization*.  
+# Introducción
+La arquitectura de memoria de la "máquina virtual" afecta directamente el rendimiento y la ocupación de la máquina virtual. Diseñar una arquitectura excelente puede mejorar eficazmente el rendimiento y la eficiencia. </br>
+Este artículo presentará la arquitectura de memoria utilizada por "AQ Virtual Machine" y los estándares detallados de la memoria de "AQ Virtual Machine". </br>
+Al optimizar la arquitectura de memoria de la "máquina virtual", ayudará a la "máquina virtual" a *eficiencia operativa* y *reducirá la ocupación*. Si es posible, debes equilibrar los dos tanto como sea posible para que la "máquina virtual" alcance su estado óptimo. </br>
+> En algunos casos, se debe realizar un desarrollo diferente según las necesidades especiales de la máquina virtual. </br>
+> Por ejemplo: En situaciones de *memoria limitada* como `microcontrolador`, es necesario *reducir la ocupación* tanto como sea posible. </br>
+> En situaciones *sensibles al rendimiento* como la "computación paralela", es necesario centrarse en la *optimización del rendimiento*. </br>
 
-# Memory Architecture
-## Basic Memory Architecture
-`AQ` adopts a `register`-based basic memory architecture, but it differs from the standard `register` architecture with some improvements and optimizations.  
-> The `registers` mentioned here are not the `registers` in the `CPU`, but the `virtual registers` simulated in the `memory`.
-## Reasons for Choosing Registers
-Unlike mainstream language virtual machines like `JAVA` and `Python` that use stack architecture, `AQ` decided to use a `register` architecture for performance optimization and ease of understanding `bytecode`.  
-Although the `stack` architecture is generally considered easier to port and write, it incurs some performance losses in practice due to multiple accesses to `memory`, which slows down its speed. This is unavoidable and difficult to completely optimize. Therefore, to solve this *performance loss*, `AQ` adopts a `register` architecture. Meanwhile, from the perspective of `bytecode`, the `register` architecture's bytecode is *easier to understand*, with instructions similar to `function` `parameters` rather than dealing directly with the numerous operations of the `stack`.  
-## Differences in `Register` Architecture
-### Standard Register Architecture
-In a standard register architecture, `registers` include:  
-1. `Data Type` - The type of data stored in the register (e.g., int, float, double, etc.)
-2. `Data` - The value of the data stored in the register
-3. (Optional) Mark - The mark of the data stored in the register (e.g., variable, function, class, etc.)
-4. (Optional) Reference - The reference of the data stored in the register (e.g., address of an object, etc.)
+# Ideas de diseño
+## Arquitectura de memoria
+### Arquitectura de memoria básica
+"AQ" adopta la arquitectura de memoria básica de "registro", pero es diferente de la arquitectura de "registro" estándar. Ha realizado algunas mejoras y optimizaciones en la arquitectura de "registro". </br>
+> El `registro` aquí no es el `registro` en `CPU`, sino el `registro virtual` simulado en la `memoria`. </br>
 
-Although `virtual machine` architectures in different languages may differ, they generally follow this form with slight changes.  
+### Razón para seleccionar el registro
+En comparación con la arquitectura de pila adoptada por las máquinas virtuales de lenguajes convencionales como "JAVA" y "Python", la razón por la que "AQ" decidió adoptar la arquitectura de "registro" es la optimización del rendimiento y la facilidad de comprensión del "código de bytes". </br>
+Aunque generalmente se considera que la arquitectura "stack" es más fácil de portar y escribir, habrá algunas pérdidas en el rendimiento real. Los accesos múltiples a la "memoria" la ralentizarán, lo cual es inevitable y difícil de optimizar por completo. Por lo tanto, para resolver la *pérdida de rendimiento* aquí, "AQ" adopta una arquitectura de "registro". Al mismo tiempo, desde la perspectiva del "código de bytes", el código de bytes de la arquitectura "registro" es *más fácil de entender*. Sus instrucciones son similares al método de "parámetros" de la "función", en lugar de enfrentarse directamente a los numerosos ". operación de pila. </br>
 
-During the development of `AQ`, this architecture was used, but tests showed significant memory usage.  
-Below is the `register.h` code previously used by `AQ`:
+### La diferencia entre la arquitectura de "registro"
+#### Arquitectura de registro estándar
+En la arquitectura de registro estándar, los "registros" incluyen:</br>
+1. `Tipo de datos`: el tipo de datos que almacenará el registro (como int, float, double, etc.)
+2. `datos`: el valor de los datos que almacenará el registro
+3. Etiqueta (opcional): etiqueta de los datos que almacenará el registro (como variable, función, clase, etc.)
+4. Referencia (opcional): una referencia a los datos que almacenará el registro (como la dirección de un objeto, etc.)
+
+Aunque la arquitectura de "máquina virtual" de diferentes lenguajes puede ser diferente, generalmente tienen esta forma, con ligeros cambios. </br>
+
+Esta arquitectura se utilizó durante el desarrollo de "AQ", pero después de las pruebas, consumió una gran cantidad de memoria. </br>
+El siguiente es el código `register.h` utilizado por `AQ`:</br>
 ```C
-// Copyright 2024 AQ author, All Rights Reserved.
+// Copyright 2024 AQ authors, All Rights Reserved.
 // This program is licensed under the AQ License. You can find the AQ license in
 // the root directory.
 
@@ -87,16 +90,16 @@ struct AqvmMemoryRegister_Register {
 
 #endif
 ```
-As can be seen from the code above, even without the optional content, the `enum` type `AqvmMemoryRegister_ValueType` occupies `4` bytes, the `union` type `AqvmMemoryRegister_Value` occupies `8` bytes, and the `struct` type itself occupies `12` bytes of memory.  
+Como se puede ver en el código anterior, incluso si no se agrega contenido opcional, debido a que el `AqvmMemoryRegister_ValueType` del tipo `enum` ocupa `4` bytes, el `AqvmMemoryRegister_Value` del tipo `union` ocupa `8` bytes. y el tipo `struct` ocupará `12` bytes de memoria. </br>
 
-Due to `C` compiler optimization, the `struct` type `AqvmMemoryRegister_Register` aligns the `enum` type `type` with the `union` type `value`, adding `4` bytes of padding memory. This makes the `struct` type `AqvmMemoryRegister_Register` occupy `16` bytes.
+Debido a la optimización del compilador `C`, el `tipo` del tipo `enum` en el `AqvmMemoryRegister_Register` del tipo `struct` está alineado en memoria con el `valor` del tipo `union`, por lo que `4 `se añaden bytes `llenar memoria`. Haga que `AqvmMemoryRegister_Register` de tipo `struct` ocupe `16` bytes. </br>
 
-If `int` and other non-`8`-byte types are used, `4` bytes of padding memory will be wasted, causing memory loss. Therefore, there will be `4`-`8` bytes of memory waste in all registers.
+Si utiliza `int` y otros tipos de bytes que no sean 8`, se desperdiciarán `4` bytes de `memoria de relleno`, lo que provocará una pérdida de memoria. Por lo tanto, se desperdiciarán entre "4" y "8" bytes de memoria en todos los registros. </br>
 
-### `AQ`'s Register Architecture
-To solve the memory usage problem of traditional `register` architecture, `AQ` combines the characteristics of the `local variable table` in the `stack frame` of `JVM` and optimizes the `memory`, significantly reducing memory usage.  
+### Estructura de registro de `AQ`
+Para resolver el problema de ocupación de la arquitectura tradicional de "registro", "AQ" combina las características de "tabla de variables locales" del "marco de pila" de "JVM" y optimiza la "memoria", reduciendo significativamente el problema de ocupación. </br>
 
-`AQ`'s `memory` directly uses `void*` pointers to store data and `size_t` to store memory size, effectively reducing padding memory loss.  
+La `memoria` de `AQ` usa directamente punteros `void*` para almacenar datos, y `size_t` almacena el tamaño de la memoria ocupada. Reduce directa y eficazmente la pérdida de "memoria de llenado". </br>
 
 ```C
 // plan 1:
@@ -120,11 +123,11 @@ struct AqvmMemoryRegister_Register {
 };
 ```
 
-Due to memory issues, `plan 1` also causes significant memory loss.
-In fact, `plan 2` has the highest memory utilization when retaining memory information, but it cannot maintain the continuity of different types of data in the same data structure, which may cause some pointer operations to fail. Therefore, for `memory safety`, `plan 2` is not used.  
-In some cases, `plan 3` can also meet memory storage needs, but due to the need for a reduced instruction set, type information is not included in the instructions, so it cannot meet the needs of the reduced instruction set.  
+Por motivos de memoria, el "plan 1" también provocará una gran pérdida de memoria. </br>
+De hecho, cuando se requiere retener información de la memoria, la utilización de memoria más alta es el "plan 2", pero no puede guardar la "coherencia" de diferentes tipos de datos en la misma estructura de datos, lo que puede invalidar algunas operaciones de puntero. Por lo tanto, para la "seguridad de la memoria", no se utiliza el "plan 2". </br>
+En algunos casos, el "plan 3" también puede satisfacer las necesidades de almacenamiento de memoria, pero debido a las necesidades del conjunto de instrucciones reducido, no se incluye información de tipo en las instrucciones, por lo que no puede satisfacer las necesidades del conjunto de instrucciones reducido. </br>
 
-Therefore, we adopt the following design to ensure `memory` `utilization` while significantly improving memory usage.  
+Por lo tanto, adoptamos el siguiente diseño para garantizar la "tasa de utilización" de la "memoria" y al mismo tiempo mejorar en gran medida el problema de uso de la memoria. </br>
 
 ```C
 // The struct stores information about the memory.
@@ -135,6 +138,9 @@ Therefore, we adopt the following design to ensure `memory` `utilization` while 
 // list is in types.h.
 // |data| is a pointer of type void* to the memory that stores the data.
 // |size| is the size of the memory.
+// NOTICE: The struct AqvmMemory_Memory only stores information of the memory.
+// The memory is allocated by the bytecode function when storing the bytecode.
+// The memory of |memory| and |type| is part of the bytecode memory.
 struct AqvmMemory_Memory {
   uint8_t* type;
   void* data;
@@ -142,137 +148,499 @@ struct AqvmMemory_Memory {
 };
 ```
 
-Due to `memory` reasons, the access to `type` needs to be precisely utilized. The `uint8_t` type requires `8` bits, but this exceeds the storage needs of the type, so `4` bits can meet the storage needs of the type while reducing memory usage. However, special functions are required to maintain `type` access.  
+Por razones de "memoria", el acceso al "tipo" requiere una utilización precisa. El tipo `uint8_t` requiere `8` bits, pero excede las necesidades de almacenamiento del tipo, por lo que `4` bits no solo pueden satisfacer las necesidades de almacenamiento del tipo, sino también reducir el uso de memoria. Pero se requieren funciones especiales para mantener el acceso al "tipo". </br>
 
 ```C
 // Sets the type of the data at |index| bytes in |memory| to |type|. |type|
 // should be less than 4 bits.
-// Returns 0 if successful. Returns -1 if memory is NULL. Returns -2 if the
-// index is out of range. Returns -3 if the type is out of range.
+// Returns 0 if successful. Returns -1 if the memory pointer is NULL. Returns -2
+// if the type pointer is NULL. Returns -3 if the index is out of range. Returns
+// -4 if the type is out of range.
 int AqvmMemory_SetType(const struct AqvmMemory_Memory* memory, size_t index,
-                       uint8_t type);
+                       uint8_t type) {
+  if (memory == NULL) {
+    AqvmRuntimeDebugger_OutputReport("\"ERROR\"",
+                                     "\"AqvmMemory_SetType_NullMemoryPointer\"",
+                                     "\"The memory pointer is NULL.\"", NULL);
+    return -1;
+  }
+  if (memory->type == NULL) {
+    AqvmRuntimeDebugger_OutputReport("\"ERROR\"",
+                                     "\"AqvmMemory_SetType_NullTypePointer\"",
+                                     "\"The type pointer is NULL.\"", NULL);
+    return -2;
+  }
+  if (index > memory->size) {
+    AqvmRuntimeDebugger_OutputReport(
+        "\"ERROR\"", "\"AqvmMemory_SetType_OutOfMemoryRange\"",
+        "\"The index is out of memory range.\"", NULL);
+    return -3;
+  }
+  if (type > 0x0F) {
+    AqvmRuntimeDebugger_OutputReport("\"ERROR\"",
+                                     "\"AqvmMemory_SetType_OutOfTypeRange\"",
+                                     "\"The type is out of range.\"", NULL);
+    return -4;
+  }
+
+  // Sets the type of the data at |index| bytes in memory.
+  // Since Aqvm stores type data occupying 4 bits and uint8_t occupying 8 bits,
+  // each uint8_t type location stores two type data. The storage locations
+  // (high 4 bits, low 4 bits) are set according to the parity of |index|. Even
+  // numbers are stored in the high bits of (|index| / 2) and odd numbers are
+  // stored in the low bits of (|index| / 2).
+  if (index % 2 != 0) {
+    memory->type[index / 2] = (memory->type[index / 2] & 0xF0) | type;
+  } else {
+    memory->type[index / 2] = (memory->type[index / 2] & 0x0F) | (type << 4);
+  }
+
+  return 0;
+}
 
 // Gets the type of the data at |index| bytes in |memory|.
-// Returns the type that is less than 4 bits (0X0F) if successful. Returns 0x10
-// if the memory is NULL. Returns 0x20 if the index is out of memory range.
-uint8_t AqvmMemory_GetType(struct AqvmMemory_Memory* memory, size_t index);
+// Returns the type that is less than 4 bits (0X0F) if successful. Returns 0x11
+// if the memory pointer is NULL. Returns 0x12 if the type pointer is NULL.
+// Returns 0x13 if the index is out of memory range.
+uint8_t AqvmMemory_GetType(struct AqvmMemory_Memory* memory, size_t index) {
+  if (memory == NULL) {
+    AqvmRuntimeDebugger_OutputReport("\"ERROR\"",
+                                     "\"AqvmMemory_GetType_NullMemoryPointer\"",
+                                     "\"The memory pointer is NULL.\"", NULL);
+    return 0x11;
+  }
+  if (memory->type == NULL) {
+    AqvmRuntimeDebugger_OutputReport("\"ERROR\"",
+                                     "\"AqvmMemory_GetType_NullTypePointer\"",
+                                     "\"The type pointer is NULL.\"", NULL);
+    return 0x12;
+  }
+  if (index > memory->size) {
+    AqvmRuntimeDebugger_OutputReport(
+        "\"ERROR\"", "\"AqvmMemory_GetType_OutOfMemoryRange\"",
+        "\"The index is out of memory range.\"", NULL);
+    return 0x13;
+  }
+
+  // Gets the type of the data at |index| bytes in memory.
+  // Since Aqvm stores type data occupying 4 bits and uint8_t occupying 8 bits,
+  // each uint8_t type location stores two type data. The storage locations
+  // (high 4 bits, low 4 bits) are set according to the parity of |index|. Even
+  // numbers are stored in the high bits of (|index| / 2) and odd numbers are
+  // stored in the low bits of (|index| / 2).
+  if (index % 2 != 0) {
+    return memory->type[index / 2] & 0x0F;
+  } else {
+    return (memory->type[index / 2] & 0xF0) >> 4;
+  }
+}
 ```
 
-However, using this design for data `storage` has high requirements because the data may be disrupted, requiring specialized `functions` to cooperate with `memory` operations.  
+Sin embargo, el uso de este diseño tiene requisitos más altos para el almacenamiento de datos, ya que los datos pueden interrumpirse, por lo que se requieren funciones especiales para operar junto con la memoria. </br>
 
 ```C
-// Writes the data that |data_ptr| points to of size |size| to the data of at |index| bytes in |memory|.
-// Returns 0 if successful. Returns -1 if the memory is NULL. Returns -2 if the
-// index is out of memory range. Returns -3 if the data is NULL.
+// Writes the data that |data_ptr| points to of size |size| to the data of at
+// |index| bytes in |memory|.
+// Returns 0 if successful. Returns -1 if the memory pointer is NULL. Returns -2
+// if the type pointer is NULL. Returns -3 if the index is out of range. Returns
+// -4 if the data pointer is NULL.
 int AqvmMemory_WriteData(struct AqvmMemory_Memory* memory, size_t index,
-                         void* data_ptr, size_t size);
+                         void* data_ptr, size_t size) {
+  if (memory == NULL) {
+    AqvmRuntimeDebugger_OutputReport(
+        "\"ERROR\"", "\"AqvmMemory_WriteData_NullMemoryPointer\"",
+        "\"The memory pointer is NULL.\"", NULL);
+    return -1;
+  }
+  if (memory->type == NULL) {
+    AqvmRuntimeDebugger_OutputReport("\"ERROR\"",
+                                     "\"AqvmMemory_WriteData_NullTypePointer\"",
+                                     "\"The type pointer is NULL.\"", NULL);
+    return -2;
+  }
+  if (index > memory->size) {
+    AqvmRuntimeDebugger_OutputReport(
+        "\"ERROR\"", "\"AqvmMemory_WriteData_OutOfMemoryRange\"",
+        "\"The index is out of memory range.\"", NULL);
+    return -3;
+  }
+  if (data_ptr == NULL) {
+    AqvmRuntimeDebugger_OutputReport("\"ERROR\"",
+                                     "\"AqvmMemory_WriteData_NullDataPointer\"",
+                                     "\"The data pointer is NULL.\"", NULL);
+    return -4;
+  }
+
+  // Since void* does not have a specific size, pointer moves need to be
+  // converted before moving.
+  memcpy((void*)((uintptr_t)memory->data + index), data_ptr, size);
+
+  return 0;
+}
 ```
 
-In addition to reducing `memory` usage, avoiding secondary memory usage is also important. Therefore, we mix memory-related data with bytecode data, using the pre-allocated `memory` in the bytecode file (the bytecode file contains `memory` data and types), achieving efficient memory utilization.  
-However, this requires special function implementations, and attention must be paid to managing memory data and type information by the bytecode-related functions.  
+Además de reducir el uso de la memoria, es igualmente importante evitar la ocupación secundaria de la memoria. Por lo tanto, almacenamos datos relacionados con la memoria mezclados con datos de código de bytes y utilizamos la "memoria" preasignada en el archivo "código de bytes" (el archivo de código de bytes contiene los datos y el tipo de "memoria") para lograr la "memoria" "eficiente". utilización. </br>
+Sin embargo, se requiere la implementación de funciones especiales. Al mismo tiempo, cabe señalar que los datos y la información de tipo de la "memoria" son administrados por las funciones relacionadas del código de bytes. </br>
 
 ```C
 // Creates the struct AqvmMemory_Memory with |data|, |type|, and |size|.
 // The function will allocate a struct AqvmMemory_Memory and copy |data|,
-// |type|, and |size| into the struct. Returns a pointer to the struct.
+// |type|, and |size| into the struct. Returns a pointer to the struct if
+// successful. Returns NULL if creation fails.
 struct AqvmMemory_Memory* AqvmMemory_CreateMemory(void* data, void* type,
-                                                  size_t size);
+                                                  size_t size) {
+  struct AqvmMemory_Memory* memory_ptr =
+      (struct AqvmMemory_Memory*)malloc(sizeof(struct AqvmMemory_Memory));
+  if (memory_ptr == NULL) {
+    AqvmRuntimeDebugger_OutputReport(
+        "\"ERROR\"", "\"AqvmMemory_CreateMemory_MemoryAllocationFailure\"",
+        "\"Failed to allocate memory.\"", NULL);
+    return NULL;
+  }
+
+  memory_ptr->data = data;
+  memory_ptr->type = type;
+  memory_ptr->size = size;
+
+  return memory_ptr;
+}
 
 // Free the memory of the |memory_ptr|. No return.
 // NOTICE: The function only free the memory of the struct. The memory pointed
 // to by pointers to data and type in struct is not freed. This memory is
 // managed by bytecode related functions.
-void AqvmMemory_FreeMemory(struct AqvmMemory_Memory* memory_ptr);
+void AqvmMemory_FreeMemory(struct AqvmMemory_Memory* memory_ptr) {
+  free(memory_ptr);
+}
 ```
 
-Additionally, due to differences in type definitions between some systems and the AQ standard, related functions are designed to ensure the correct operation of the virtual machine. If there are differences, special designs should be made for these systems.  
+Además, debido a que la definición de tipos en algunos sistemas es diferente del estándar AQ, se diseñan funciones relevantes para garantizar que la máquina virtual cumpla con el estándar. Si los sistemas difieren del estándar, se deben realizar diseños especiales para estos sistemas. </br>
 
 ```C
 // Checks the memory conditions in the system.
-// Returns 0 if successful. Returns -1 if the length requirement for the int
-// type does not conform to the type definition, -2 for long, -3 for float, -4
-// for double, -5 for char, and -6 for bool.
-int AqvmMemory_CheckMemoryConditions();
+// Returns the number of warnings.
+int AqvmMemory_CheckMemoryConditions() {
+  int warning_count = 0;
+  if (sizeof(aqint) != 4) {
+    AqvmRuntimeDebugger_OutputReport(
+        "\"WARNING\"", "\"AqvmMemory_CheckMemoryConditions_IntLengthWarning\"",
+        "\"The length requirement for the int type does not conform to the "
+        "type "
+        "definition.\"",
+        NULL);
+    ++warning_count;
+  }
+  if (sizeof(aqlong) != 8) {
+    AqvmRuntimeDebugger_OutputReport(
+        "\"WARNING\"", "\"AqvmMemory_CheckMemoryConditions_LongLengthWarning\"",
+        "\"The length requirement for the long type does not conform to the "
+        "type "
+        "definition.\"",
+        NULL);
+    ++warning_count;
+  }
+  if (sizeof(aqfloat) != 4) {
+    AqvmRuntimeDebugger_OutputReport(
+        "\"WARNING\"",
+        "\"AqvmMemory_CheckMemoryConditions_FloatLengthWarning\"",
+        "\"The length requirement for the float type does not conform to the "
+        "type definition.\"",
+        NULL);
+    ++warning_count;
+  }
+  if (sizeof(aqdouble) != 4) {
+    AqvmRuntimeDebugger_OutputReport(
+        "\"WARNING\"",
+        "\"AqvmMemory_CheckMemoryConditions_DoubleLengthWarning\"",
+        "\"The length requirement for the double type does not conform to the "
+        "type definition.\"",
+        NULL);
+    ++warning_count;
+  }
+  if (sizeof(aqchar) != 1) {
+    AqvmRuntimeDebugger_OutputReport(
+        "\"WARNING\"", "\"AqvmMemory_CheckMemoryConditions_CharLengthWarning\"",
+        "\"The length requirement for the char type does not conform to the "
+        "type "
+        "definition.\"",
+        NULL);
+    ++warning_count;
+  }
+  if (sizeof(aqbool) != 1) {
+    AqvmRuntimeDebugger_OutputReport(
+        "\"WARNING\"", "\"AqvmMemory_CheckMemoryConditions_BoolLengthWarning\"",
+        "The length requirement for the bool type does not conform to the type "
+        "definition.",
+        NULL);
+    ++warning_count;
+  }
+
+  if (warning_count == 0) {
+    AqvmRuntimeDebugger_OutputReport("\"INFO\"",
+                                     "\"AqvmMemory_CheckMemoryConditions_CheckNormal\"",
+                                     "\"No memory conditions warning.\"", NULL);
+  }
+
+  return warning_count;
+}
 ```
 
-# Detailed Design:
-## Directory Structure
-The `memory` part of the code is located at `/aqvm/memory`. It contains multiple code files.  
-1. `CMakeLists.txt` - CMake build file in this directory
-2. `memory.h` - Memory data s### French
+# Estándares detallados:
+## Estructura de directorios
+El código para la parte `memoria` se encuentra en `/aqvm/memory`. Contiene varios archivos de código. </br>
+1. `CMakeLists.txt`: archivo de compilación de CMake en este directorio
+2. `memory.h`: estructura de datos de la memoria y funciones relacionadas
+3. `memory.c`: implementación de funciones relacionadas con la memoria
+4. `types.h` - definición de tipos de memoria
 
----
-publishDate: 2024-06-01T19:55:05+08:00
-title: Une Excellente Architecture de Mémoire de Machine Virtuelle - AQ
-excerpt: L'architecture de la mémoire d'une machine virtuelle affecte directement ses performances et son utilisation. Concevoir une excellente architecture peut améliorer efficacement les performances et l'efficacité. Cet article présentera l'architecture de mémoire utilisée par la machine virtuelle AQ.
-image: https://www.axa6.com/aq.png
-category: Blog
-tags:
-  - AQ
-  - Blog
-metadata:
-  canonical: https://www.axa6.com/une-excellente-architecture-de-mémoire-de-machine-virtuelle
----
-
-# Introduction
-L'architecture de la mémoire de la `machine virtuelle` affecte directement les performances et l'utilisation de la machine virtuelle. Concevoir une excellente architecture peut améliorer efficacement les performances et l'efficacité.  
-Cet article présentera l'architecture de mémoire utilisée par la `machine virtuelle AQ`.  
-L'optimisation de l'architecture de la mémoire de la `machine virtuelle` aide à améliorer l'*efficacité opérationnelle* et à *réduire l'utilisation* de la `machine virtuelle`. Si possible, les deux doivent être équilibrés pour atteindre le meilleur état de la `machine virtuelle`.  
-> Dans certains cas, des développements différents doivent être réalisés en fonction des besoins spécifiques de la machine virtuelle.  
-> Par exemple, dans des situations de *contraintes de mémoire* telles que les `microcontrôleurs`, il faut s'efforcer de *réduire l'utilisation* autant que possible.  
-> Dans des situations *sensibles aux performances* telles que le `calcul parallèle`, l'accent doit être mis sur l'*optimisation des performances*.  
-
-# Architecture de Mémoire
-## Architecture de Mémoire de Base
-`AQ` adopte une architecture de mémoire de base basée sur les `registres`, mais elle diffère de l'architecture de `registres` standard avec quelques améliorations et optimisations.  
-> Les `registres` mentionnés ici ne sont pas les `registres` du `CPU`, mais les `registres virtuels` simulés dans la `mémoire`.
-## Raisons du Choix des Registres
-Contrairement aux machines virtuelles des langages principaux comme `JAVA` et `Python` qui utilisent une architecture de pile, `AQ` a décidé d'utiliser une architecture de `registre` pour l'optimisation des performances et la facilité de compréhension du `bytecode`.  
-Bien que l'architecture de `pile` soit généralement considérée comme plus facile à porter et à écrire, elle entraîne des pertes de performances en pratique en raison des multiples accès à la `mémoire`, ce qui ralentit sa vitesse. Cela est inévitable et difficile à optimiser complètement. Par conséquent, pour résoudre cette *perte de performances*, `AQ` adopte une architecture de `registre`. Par ailleurs, du point de vue du `bytecode`, le bytecode de l'architecture de `registre` est *plus facile à comprendre*, avec des instructions similaires aux `paramètres` des `fonctions` plutôt que de gérer directement les nombreuses opérations de la `pile`tructure and related functions
-3. `memory.c` - Implementation of memory-related functions
-4. `types.h` - Definition of memory types
-
-## `types.h`
-The types also have related code. Below is the code for `types.h`:  
-There are `6` basic types with specific definitions:  
-1. int - 32 bits (4 bytes)
-2. long - 64 bits (8 bytes)
-3. float - 32 bits (4 bytes)
-4. double - 64 bits (8 bytes)
-5. char - 8 bits (1 byte)
-6. bool - 8 bits (1 byte)
+## memoria.h
+### AqvmMemory_Memoria
+Esta estructura almacena información sobre la memoria. </br>
+|tipo| es un puntero a una matriz que almacena el tipo de cada byte en la memoria. Cada byte utiliza 4 bits para almacenar el tipo. Por tanto, una variable uint8_t puede almacenar 2 tipos. Los primeros 4 bits de cada variable uint8_t se utilizan para el tipo de bytes pares y los últimos 4 bits se utilizan para el tipo de bytes impares. La lista de tipos está en tipos.h. </br>
+|datos| es un puntero de tipo void* a la memoria donde se almacenan los datos. </br>
+|tamaño| es el tamaño de la memoria. </br>
+Nota: La estructura AqvmMemory_Memory solo almacena información de la memoria. La memoria es asignada por la función de código de bytes al almacenar el código de bytes. La memoria para |memoria| y |tipo| es parte de la memoria de código de bytes. </br>
 
 ```C
-// Copyright 2024 AQ author, All Rights Reserved.
-// This program is licensed under the AQ License. You can find the AQ license in
-// the root directory.
-
-#ifndef AQ_AQVM_MEMORY_TYPES_H_
-#define AQ_AQVM_MEMORY_TYPES_H_
-
-#include <stdint.h>
-#include <stdbool.h>
-
-// 0x00 is NULL type.
-
-// 0x01
-typedef int32_t aqint;
-// 0x02
-typedef int64_t aqlong;
-// 0x03
-typedef float aqfloat;
-// 0x04
-typedef double aqdouble;
-// 0x05
-typedef uint8_t aqchar;
-// 0x06
-typedef bool aqbool;
-
-#endif
+struct AqvmMemory_Memory {
+  uint8_t* type;
+  void* data;
+  size_t size;
+};
 ```
 
-## `memory.h`
+### AqvmMemory_CheckMemoryConditions
+Verifique las condiciones de la memoria en el sistema. </br>
+Devuelve el número de advertencias. </br>
+```C
+int AqvmMemory_CheckMemoryConditions() {
+  int warning_count = 0;
+  if (sizeof(aqint) != 4) {
+    AqvmRuntimeDebugger_OutputReport(
+        "\"WARNING\"", "\"AqvmMemory_CheckMemoryConditions_IntLengthWarning\"",
+        "\"The length requirement for the int type does not conform to the "
+        "type "
+        "definition.\"",
+        NULL);
+    ++warning_count;
+  }
+  if (sizeof(aqlong) != 8) {
+    AqvmRuntimeDebugger_OutputReport(
+        "\"WARNING\"", "\"AqvmMemory_CheckMemoryConditions_LongLengthWarning\"",
+        "\"The length requirement for the long type does not conform to the "
+        "type "
+        "definition.\"",
+        NULL);
+    ++warning_count;
+  }
+  if (sizeof(aqfloat) != 4) {
+    AqvmRuntimeDebugger_OutputReport(
+        "\"WARNING\"",
+        "\"AqvmMemory_CheckMemoryConditions_FloatLengthWarning\"",
+        "\"The length requirement for the float type does not conform to the "
+        "type definition.\"",
+        NULL);
+    ++warning_count;
+  }
+  if (sizeof(aqdouble) != 4) {
+    AqvmRuntimeDebugger_OutputReport(
+        "\"WARNING\"",
+        "\"AqvmMemory_CheckMemoryConditions_DoubleLengthWarning\"",
+        "\"The length requirement for the double type does not conform to the "
+        "type definition.\"",
+        NULL);
+    ++warning_count;
+  }
+  if (sizeof(aqchar) != 1) {
+    AqvmRuntimeDebugger_OutputReport(
+        "\"WARNING\"", "\"AqvmMemory_CheckMemoryConditions_CharLengthWarning\"",
+        "\"The length requirement for the char type does not conform to the "
+        "type "
+        "definition.\"",
+        NULL);
+    ++warning_count;
+  }
+  if (sizeof(aqbool) != 1) {
+    AqvmRuntimeDebugger_OutputReport(
+        "\"WARNING\"", "\"AqvmMemory_CheckMemoryConditions_BoolLengthWarning\"",
+        "The length requirement for the bool type does not conform to the type "
+        "definition.",
+        NULL);
+    ++warning_count;
+  }
 
+  if (warning_count == 0) {
+    AqvmRuntimeDebugger_OutputReport("\"INFO\"",
+                                     "\"AqvmMemory_CheckMemoryConditions_CheckNormal\"",
+                                     "\"No memory conditions warning.\"", NULL);
+  }
+
+  return warning_count;
+}
+```
+
+### AqvmMemory_CreateMemory
+Crea una estructura AqvmMemory_Memory que contiene |datos|, |tipo| y |tamaño|. </br>
+Esta función asigna una estructura AqvmMemory_Memory y copia |datos|, |tipo| y |tamaño| en la estructura. Devuelve un puntero a esta estructura. Devuelve NULL si falla la creación. </br>
+
+```C
+struct AqvmMemory_Memory* AqvmMemory_CreateMemory(void* data, void* type,
+                                                  size_t size) {
+  struct AqvmMemory_Memory* memory_ptr =
+      (struct AqvmMemory_Memory*)malloc(sizeof(struct AqvmMemory_Memory));
+  if (memory_ptr == NULL) {
+    AqvmRuntimeDebugger_OutputReport(
+        "\"ERROR\"", "\"AqvmMemory_CreateMemory_MemoryAllocationFailure\"",
+        "\"Failed to allocate memory.\"", NULL);
+    return NULL;
+  }
+
+  memory_ptr->data = data;
+  memory_ptr->type = type;
+  memory_ptr->size = size;
+
+  return memory_ptr;
+}
+```
+
+### AqvmMemory_FreeMemory
+Libere la memoria de |memory_ptr|. Sin valor de retorno. </br>
+Nota: Esta función solo libera la memoria de la estructura. La memoria a la que apuntan los punteros a datos y tipos en la estructura no se liberará. Estas memorias se gestionan mediante funciones relacionadas con el código de bytes. </br>
+
+```C
+void AqvmMemory_FreeMemory(struct AqvmMemory_Memory* memory_ptr) {
+  free(memory_ptr);
+}
+```
+
+### AqvmMemory_SetType
+Establezca el tipo de datos en |índice| bytes en |memoria| en |tipo|. |tipo| debe tener menos de 4 dígitos. </br>
+Devuelve 0 en caso de éxito. Si el puntero de memoria es NULL, se devuelve -1. Si el puntero de índice es NULL, se devuelve -2. Si el índice está fuera de rango, se devuelve -3. Si el tipo está fuera de rango, se devuelve -4. </br>
+
+```C
+int AqvmMemory_SetType(const struct AqvmMemory_Memory* memory, size_t index,
+                       uint8_t type) {
+  if (memory == NULL) {
+    AqvmRuntimeDebugger_OutputReport("\"ERROR\"",
+                                     "\"AqvmMemory_SetType_NullMemoryPointer\"",
+                                     "\"The memory pointer is NULL.\"", NULL);
+    return -1;
+  }
+  if (memory->type == NULL) {
+    AqvmRuntimeDebugger_OutputReport("\"ERROR\"",
+                                     "\"AqvmMemory_SetType_NullTypePointer\"",
+                                     "\"The type pointer is NULL.\"", NULL);
+    return -2;
+  }
+  if (index > memory->size) {
+    AqvmRuntimeDebugger_OutputReport(
+        "\"ERROR\"", "\"AqvmMemory_SetType_OutOfMemoryRange\"",
+        "\"The index is out of memory range.\"", NULL);
+    return -3;
+  }
+  if (type > 0x0F) {
+    AqvmRuntimeDebugger_OutputReport("\"ERROR\"",
+                                     "\"AqvmMemory_SetType_OutOfTypeRange\"",
+                                     "\"The type is out of range.\"", NULL);
+    return -4;
+  }
+
+  // Sets the type of the data at |index| bytes in memory.
+  // Since Aqvm stores type data occupying 4 bits and uint8_t occupying 8 bits,
+  // each uint8_t type location stores two type data. The storage locations
+  // (high 4 bits, low 4 bits) are set according to the parity of |index|. Even
+  // numbers are stored in the high bits of (|index| / 2) and odd numbers are
+  // stored in the low bits of (|index| / 2).
+  if (index % 2 != 0) {
+    memory->type[index / 2] = (memory->type[index / 2] & 0xF0) | type;
+  } else {
+    memory->type[index / 2] = (memory->type[index / 2] & 0x0F) | (type << 4);
+  }
+
+  return 0;
+}
+```
+
+### AqvmMemory_GetType
+Obtiene el tipo de datos en |índice| bytes en |memoria|. </br>
+Devuelve un tipo de menos de 4 bits (0X0F) en caso de éxito. Si el puntero de memoria es NULL, se devuelve 0x11. Si el puntero de índice es NULL, se devuelve 0x12. Si el índice no tiene memoria, se devuelve 0x13. </br>
+
+```C
+uint8_t AqvmMemory_GetType(struct AqvmMemory_Memory* memory, size_t index) {
+  if (memory == NULL) {
+    AqvmRuntimeDebugger_OutputReport("\"ERROR\"",
+                                     "\"AqvmMemory_GetType_NullMemoryPointer\"",
+                                     "\"The memory pointer is NULL.\"", NULL);
+    return 0x11;
+  }
+  if (memory->type == NULL) {
+    AqvmRuntimeDebugger_OutputReport("\"ERROR\"",
+                                     "\"AqvmMemory_GetType_NullTypePointer\"",
+                                     "\"The type pointer is NULL.\"", NULL);
+    return 0x12;
+  }
+  if (index > memory->size) {
+    AqvmRuntimeDebugger_OutputReport(
+        "\"ERROR\"", "\"AqvmMemory_GetType_OutOfMemoryRange\"",
+        "\"The index is out of memory range.\"", NULL);
+    return 0x13;
+  }
+
+  // Gets the type of the data at |index| bytes in memory.
+  // Since Aqvm stores type data occupying 4 bits and uint8_t occupying 8 bits,
+  // each uint8_t type location stores two type data. The storage locations
+  // (high 4 bits, low 4 bits) are set according to the parity of |index|. Even
+  // numbers are stored in the high bits of (|index| / 2) and odd numbers are
+  // stored in the low bits of (|index| / 2).
+  if (index % 2 != 0) {
+    return memory->type[index / 2] & 0x0F;
+  } else {
+    return (memory->type[index / 2] & 0xF0) >> 4;
+  }
+}
+```
+
+### AqvmMemory_WriteData
+Escribe los datos de tamaño |tamaño| señalados por |data_ptr| en los datos en |índice| </br>
+Devuelve 0 en caso de éxito. Si el puntero de memoria es NULL, se devuelve -1. Si el puntero de índice es NULL, se devuelve -2. Si el índice no tiene memoria, se devuelve -3. Si el puntero de datos es NULL, se devuelve -4. </br>
+
+```C
+int AqvmMemory_WriteData(struct AqvmMemory_Memory* memory, size_t index,
+                         void* data_ptr, size_t size) {
+  if (memory == NULL) {
+    AqvmRuntimeDebugger_OutputReport(
+        "\"ERROR\"", "\"AqvmMemory_WriteData_NullMemoryPointer\"",
+        "\"The memory pointer is NULL.\"", NULL);
+    return -1;
+  }
+  if (memory->type == NULL) {
+    AqvmRuntimeDebugger_OutputReport("\"ERROR\"",
+                                     "\"AqvmMemory_WriteData_NullTypePointer\"",
+                                     "\"The type pointer is NULL.\"", NULL);
+    return -2;
+  }
+  if (index > memory->size) {
+    AqvmRuntimeDebugger_OutputReport(
+        "\"ERROR\"", "\"AqvmMemory_WriteData_OutOfMemoryRange\"",
+        "\"The index is out of memory range.\"", NULL);
+    return -3;
+  }
+  if (data_ptr == NULL) {
+    AqvmRuntimeDebugger_OutputReport("\"ERROR\"",
+                                     "\"AqvmMemory_WriteData_NullDataPointer\"",
+                                     "\"The data pointer is NULL.\"", NULL);
+    return -4;
+  }
+
+  // Since void* does not have a specific size, pointer moves need to be
+  // converted before moving.
+  memcpy((void*)((uintptr_t)memory->data + index), data_ptr, size);
+
+  return 0;
+}
+```
+
+### `memory.h`Código completo:
 ```C
 // Copyright 2024 AQ author, All Rights Reserved.
 // This program is licensed under the AQ License. You can find the AQ license in
@@ -304,14 +672,13 @@ struct AqvmMemory_Memory {
 };
 
 // Checks the memory conditions in the system.
-// Returns 0 if successful. Returns -1 if the length requirement for the int
-// type does not conform to the type definition, -2 for long, -3 for float, -4
-// for double, -5 for char, and -6 for bool.
+// Returns the number of warnings.
 int AqvmMemory_CheckMemoryConditions();
 
 // Creates the struct AqvmMemory_Memory with |data|, |type|, and |size|.
 // The function will allocate a struct AqvmMemory_Memory and copy |data|,
-// |type|, and |size| into the struct. Returns a pointer to the struct.
+// |type|, and |size| into the struct. Returns a pointer to the struct if
+// successful. Returns NULL if creation fails.
 struct AqvmMemory_Memory* AqvmMemory_CreateMemory(void* data, void* type,
                                                   size_t size);
 
@@ -323,89 +690,31 @@ void AqvmMemory_FreeMemory(struct AqvmMemory_Memory* memory_ptr);
 
 // Sets the type of the data at |index| bytes in |memory| to |type|. |type|
 // should be less than 4 bits.
-// Returns 0 if successful. Returns -1 if memory is NULL. Returns -2 if the
-// index is out of range. Returns -3 if the type is out of range.
+// Returns 0 if successful. Returns -1 if the memory pointer is NULL. Returns -2
+// if the type pointer is NULL. Returns -3 if the index is out of range. Returns
+// -4 if the type is out of range.
 int AqvmMemory_SetType(const struct AqvmMemory_Memory* memory, size_t index,
                        uint8_t type);
 
 // Gets the type of the data at |index| bytes in |memory|.
-// Returns the type that is less than 4 bits (0X0F) if successful. Returns 0x10
-// if the memory is NULL. Returns 0x20 if the index is out of memory range.
+// Returns the type that is less than 4 bits (0X0F) if successful. Returns 0x11
+// if the memory pointer is NULL. Returns 0x12 if the type pointer is NULL.
+// Returns 0x13 if the index is out of memory range.
 uint8_t AqvmMemory_GetType(struct AqvmMemory_Memory* memory, size_t index);
 
 // Writes the data that |data_ptr| points to of size |size| to the data of at
 // |index| bytes in |memory|.
-// Returns 0 if successful. Returns -1 if the memory is NULL. Returns -2 if the
-// index is out of memory range. Returns -3 if the data is NULL.
+// Returns 0 if successful. Returns -1 if the memory pointer is NULL. Returns -2
+// if the type pointer is NULL. Returns -3 if the index is out of range. Returns
+// -4 if the data pointer is NULL.
 int AqvmMemory_WriteData(struct AqvmMemory_Memory* memory, size_t index,
                          void* data_ptr, size_t size);
 
 #endif
 ```
 
-### AqvmMemory_Memory
-This structure stores information about the memory.  
-|type| is a pointer to an array that stores the type of each byte in the memory. Each byte uses 4 bits to store the type. So a uint8_t variable can store 2 types. Each uint8_t variable's first 4 bits are used for the even byte's type and the next 4 bits are used for the odd byte's type. The type list is in types.h.  
-|data| is a pointer of type void* to the memory that stores the data.  
-|size| is the size of the memory.  
-NOTICE: The struct AqvmMemory_Memory only stores information of the memory. The memory is allocated by the bytecode function when storing the bytecode. The memory of |memory| and |type| is part of the bytecode memory.  
-
-```C
-struct AqvmMemory_Memory {
-  uint8_t* type;
-  void* data;
-  size_t size;
-};
-```
-
-### AqvmMemory_CheckMemoryConditions
-Checks the memory conditions in the system.  
-Returns 0 if successful. Returns -1 if the length requirement for the int type does not conform to the type definition, -2 for long, -3 for float, -4 for double, -5 for char, and -6 for bool.  
-```C
-int AqvmMemory_CheckMemoryConditions();
-```
-
-### AqvmMemory_CreateMemory
-Creates the struct AqvmMemory_Memory with |data|, |type|, and |size|.  
-The function will allocate a struct AqvmMemory_Memory and copy |data|, |type|, and |size| into the struct. Returns a pointer to the struct.  
-
-```C
-struct AqvmMemory_Memory* AqvmMemory_CreateMemory(void* data, void* type, size_t size);
-```
-
-### AqvmMemory_FreeMemory
-Frees the memory of the |memory_ptr|. No return.  
-NOTICE: The function only frees the memory of the struct. The memory pointed to by pointers to data and type in struct is not freed. This memory is managed by bytecode related functions.  
-
-```C
-void AqvmMemory_FreeMemory(struct AqvmMemory_Memory* memory_ptr);
-```
-### AqvmMemory_SetType
-Sets the type of the data at |index| bytes in |memory| to |type|. |type| should be less than 4 bits.  
-Returns 0 if successful. Returns -1 if memory is NULL. Returns -2 if the index is out of range. Returns -3 if the type is out of range.  
-
-```C
-int AqvmMemory_SetType(const struct AqvmMemory_Memory* memory, size_t index, uint8_t type);
-```
-
-### AqvmMemory_GetType
-Gets the type of the data at |index| bytes in |memory|.  
-Returns the type that is less than 4 bits (0X0F) if successful. Returns 0x10 if the memory is NULL. Returns 0x20 if the index is out of memory range.  
-
-```C
-uint8_t AqvmMemory_GetType(struct AqvmMemory_Memory* memory, size_t index);
-```
-
-### AqvmMemory_WriteData
-Writes the data that |data_ptr| points to of size |size| to the data of at |index| bytes in |memory|.  
-Returns 0 if successful. Returns -1 if the memory is NULL. Returns -2 if the index is out of memory range. Returns -3 if the data is NULL.  
-
-```C
-int AqvmMemory_WriteData(struct AqvmMemory_Memory* memory, size_t index, void* data_ptr, size_t size);
-```
-
-## `memory.c`
-Below are the specific function implementations:
+## memory.c
+### `memory.c`Código completo:
 
 ```C
 // Copyright 2024 AQ author, All Rights Reserved.
@@ -415,73 +724,133 @@ Below are the specific function implementations:
 #include "aqvm/memory/memory.h"
 
 #include <stddef.h>
+#include <stdint.h>
 #include <stdlib.h>
 #include <string.h>
 
 #include "aqvm/memory/types.h"
+#include "aqvm/runtime/debugger/debugger.h"
 
 int AqvmMemory_CheckMemoryConditions() {
+  int warning_count = 0;
   if (sizeof(aqint) != 4) {
-    // TODO(WARNING): The length requirement for the int type does not conform
-    // to the type definition.
-    return -1;
+    AqvmRuntimeDebugger_OutputReport(
+        "\"WARNING\"", "\"AqvmMemory_CheckMemoryConditions_IntLengthWarning\"",
+        "\"The length requirement for the int type does not conform to the "
+        "type "
+        "definition.\"",
+        NULL);
+    ++warning_count;
   }
   if (sizeof(aqlong) != 8) {
-    // TODO(WARNING): The length requirement for the long type does not conform
-    // to the type definition.
-    return -2;
+    AqvmRuntimeDebugger_OutputReport(
+        "\"WARNING\"", "\"AqvmMemory_CheckMemoryConditions_LongLengthWarning\"",
+        "\"The length requirement for the long type does not conform to the "
+        "type "
+        "definition.\"",
+        NULL);
+    ++warning_count;
   }
   if (sizeof(aqfloat) != 4) {
-    // TODO(WARNING): The length requirement for the float type does not conform
-    // to the type definition.
-    return -3;
+    AqvmRuntimeDebugger_OutputReport(
+        "\"WARNING\"",
+        "\"AqvmMemory_CheckMemoryConditions_FloatLengthWarning\"",
+        "\"The length requirement for the float type does not conform to the "
+        "type definition.\"",
+        NULL);
+    ++warning_count;
   }
   if (sizeof(aqdouble) != 4) {
-    // TODO(WARNING): The length requirement for the double type does not
-    // conform to the type definition.
-    return -4;
+    AqvmRuntimeDebugger_OutputReport(
+        "\"WARNING\"",
+        "\"AqvmMemory_CheckMemoryConditions_DoubleLengthWarning\"",
+        "\"The length requirement for the double type does not conform to the "
+        "type definition.\"",
+        NULL);
+    ++warning_count;
   }
   if (sizeof(aqchar) != 1) {
-    // TODO(WARNING): The length requirement for the char type does not conform
-    // to the type definition.
-    return -5;
+    AqvmRuntimeDebugger_OutputReport(
+        "\"WARNING\"", "\"AqvmMemory_CheckMemoryConditions_CharLengthWarning\"",
+        "\"The length requirement for the char type does not conform to the "
+        "type "
+        "definition.\"",
+        NULL);
+    ++warning_count;
   }
   if (sizeof(aqbool) != 1) {
-    // TODO(WARNING): The length requirement for the bool type does not conform
-    // to the type definition.
-    return -6;
+    AqvmRuntimeDebugger_OutputReport(
+        "\"WARNING\"", "\"AqvmMemory_CheckMemoryConditions_BoolLengthWarning\"",
+        "The length requirement for the bool type does not conform to the type "
+        "definition.",
+        NULL);
+    ++warning_count;
   }
 
-  return 0;
-}
-
-void* AqvmMemory_AllocateMemory(size_t size) {
-  void* ptr = malloc(size);
-  if (ptr == NULL) {
-    // TODO(WARNING): Handle the warning of memory allocation.
+  if (warning_count == 0) {
+    AqvmRuntimeDebugger_OutputReport("\"INFO\"",
+                                     "\"AqvmMemory_CheckMemoryConditions_CheckNormal\"",
+                                     "\"No memory conditions warning.\"", NULL);
   }
-  return ptr;
+
+  return warning_count;
 }
 
-void AqvmMemory_FreeMemory(void* ptr) { free(ptr); }
+struct AqvmMemory_Memory* AqvmMemory_CreateMemory(void* data, void* type,
+                                                  size_t size) {
+  struct AqvmMemory_Memory* memory_ptr =
+      (struct AqvmMemory_Memory*)malloc(sizeof(struct AqvmMemory_Memory));
+  if (memory_ptr == NULL) {
+    AqvmRuntimeDebugger_OutputReport(
+        "\"ERROR\"", "\"AqvmMemory_CreateMemory_MemoryAllocationFailure\"",
+        "\"Failed to allocate memory.\"", NULL);
+    return NULL;
+  }
+
+  memory_ptr->data = data;
+  memory_ptr->type = type;
+  memory_ptr->size = size;
+
+  return memory_ptr;
+}
+
+void AqvmMemory_FreeMemory(struct AqvmMemory_Memory* memory_ptr) {
+  free(memory_ptr);
+}
 
 int AqvmMemory_SetType(const struct AqvmMemory_Memory* memory, size_t index,
                        uint8_t type) {
-  if (memory == NULL || memory->type == NULL) {
-    // TODO(ERROR): The memory is NULL.
+  if (memory == NULL) {
+    AqvmRuntimeDebugger_OutputReport("\"ERROR\"",
+                                     "\"AqvmMemory_SetType_NullMemoryPointer\"",
+                                     "\"The memory pointer is NULL.\"", NULL);
     return -1;
   }
-
-  if (index > memory->size) {
-    // TODO(ERROR): The index is out of memory range.
+  if (memory->type == NULL) {
+    AqvmRuntimeDebugger_OutputReport("\"ERROR\"",
+                                     "\"AqvmMemory_SetType_NullTypePointer\"",
+                                     "\"The type pointer is NULL.\"", NULL);
     return -2;
   }
-
-  if (type > 0x0F) {
-    // TODO(ERROR): The type is out of range.
+  if (index > memory->size) {
+    AqvmRuntimeDebugger_OutputReport(
+        "\"ERROR\"", "\"AqvmMemory_SetType_OutOfMemoryRange\"",
+        "\"The index is out of memory range.\"", NULL);
     return -3;
   }
+  if (type > 0x0F) {
+    AqvmRuntimeDebugger_OutputReport("\"ERROR\"",
+                                     "\"AqvmMemory_SetType_OutOfTypeRange\"",
+                                     "\"The type is out of range.\"", NULL);
+    return -4;
+  }
 
+  // Sets the type of the data at |index| bytes in memory.
+  // Since Aqvm stores type data occupying 4 bits and uint8_t occupying 8 bits,
+  // each uint8_t type location stores two type data. The storage locations
+  // (high 4 bits, low 4 bits) are set according to the parity of |index|. Even
+  // numbers are stored in the high bits of (|index| / 2) and odd numbers are
+  // stored in the low bits of (|index| / 2).
   if (index % 2 != 0) {
     memory->type[index / 2] = (memory->type[index / 2] & 0xF0) | type;
   } else {
@@ -492,16 +861,31 @@ int AqvmMemory_SetType(const struct AqvmMemory_Memory* memory, size_t index,
 }
 
 uint8_t AqvmMemory_GetType(struct AqvmMemory_Memory* memory, size_t index) {
-  if (memory == NULL || memory->type == NULL) {
-    // TODO(ERROR): The memory is NULL.
-    return 0x10;
+  if (memory == NULL) {
+    AqvmRuntimeDebugger_OutputReport("\"ERROR\"",
+                                     "\"AqvmMemory_GetType_NullMemoryPointer\"",
+                                     "\"The memory pointer is NULL.\"", NULL);
+    return 0x11;
   }
-
+  if (memory->type == NULL) {
+    AqvmRuntimeDebugger_OutputReport("\"ERROR\"",
+                                     "\"AqvmMemory_GetType_NullTypePointer\"",
+                                     "\"The type pointer is NULL.\"", NULL);
+    return 0x12;
+  }
   if (index > memory->size) {
-    // TODO(ERROR): The index is out of memory range.
-    return 0x20;
+    AqvmRuntimeDebugger_OutputReport(
+        "\"ERROR\"", "\"AqvmMemory_GetType_OutOfMemoryRange\"",
+        "\"The index is out of memory range.\"", NULL);
+    return 0x13;
   }
 
+  // Gets the type of the data at |index| bytes in memory.
+  // Since Aqvm stores type data occupying 4 bits and uint8_t occupying 8 bits,
+  // each uint8_t type location stores two type data. The storage locations
+  // (high 4 bits, low 4 bits) are set according to the parity of |index|. Even
+  // numbers are stored in the high bits of (|index| / 2) and odd numbers are
+  // stored in the low bits of (|index| / 2).
   if (index % 2 != 0) {
     return memory->type[index / 2] & 0x0F;
   } else {
@@ -511,26 +895,41 @@ uint8_t AqvmMemory_GetType(struct AqvmMemory_Memory* memory, size_t index) {
 
 int AqvmMemory_WriteData(struct AqvmMemory_Memory* memory, size_t index,
                          void* data_ptr, size_t size) {
-  if (memory == NULL || memory->data == NULL) {
-    // TODO(ERROR): The memory is NULL.
+  if (memory == NULL) {
+    AqvmRuntimeDebugger_OutputReport(
+        "\"ERROR\"", "\"AqvmMemory_WriteData_NullMemoryPointer\"",
+        "\"The memory pointer is NULL.\"", NULL);
     return -1;
   }
-  if (index + size > memory->size) {
-    // TODO(ERROR): The index is out of memory range.
+  if (memory->type == NULL) {
+    AqvmRuntimeDebugger_OutputReport("\"ERROR\"",
+                                     "\"AqvmMemory_WriteData_NullTypePointer\"",
+                                     "\"The type pointer is NULL.\"", NULL);
     return -2;
   }
-  if (data_ptr == NULL) {
-    // TODO(ERROR): The data is NULL.
+  if (index > memory->size) {
+    AqvmRuntimeDebugger_OutputReport(
+        "\"ERROR\"", "\"AqvmMemory_WriteData_OutOfMemoryRange\"",
+        "\"The index is out of memory range.\"", NULL);
     return -3;
   }
+  if (data_ptr == NULL) {
+    AqvmRuntimeDebugger_OutputReport("\"ERROR\"",
+                                     "\"AqvmMemory_WriteData_NullDataPointer\"",
+                                     "\"The data pointer is NULL.\"", NULL);
+    return -4;
+  }
 
-  memcpy(memory->data + index, data_ptr, size);
+  // Since void* does not have a specific size, pointer moves need to be
+  // converted before moving.
+  memcpy((void*)((uintptr_t)memory->data + index), data_ptr, size);
+
   return 0;
 }
 ```
 
-With the cooperation of these codes, a complete memory architecture of Aqvm is formed, effectively alleviating memory pressure while improving the operating efficiency of Aqvm.
+Mediante la cooperación de estos códigos, se forma una arquitectura de memoria Aqvm completa, que alivia efectivamente la presión de la memoria y mejora la eficiencia operativa de Aqvm.
 
-> We are working hard on developing the `AQ virtual machine`. We would appreciate it if you could give us a star on Github. If you want to learn more or participate in the development work, please follow our official website: https://www.axa6.com and GitHub: https://github.com/aq-org/AQ.  
+> Estamos trabajando más duro para desarrollar la "Máquina Virtual AQ". Si desea obtener más información o participar en el trabajo de desarrollo, siga nuestro sitio web oficial: https://www.axa6.com y Github: https://github.com/aq-org/AQ. </br>
 
-> This article is published under the AQ License: https://github.com/aq-org/AQ/blob/main/LICENSE. If needed, please adapt or reprint according to the AQ License.
+> Este artículo se publica según la licencia AQ: https://github.com/aq-org/AQ/blob/main/LICENSE Si es necesario, adáptelo o reimprima según la licencia AQ.

@@ -1,58 +1,58 @@
 ---
-publishDate: 2024-05-28T23:05:54+08:00
-title: How to write a programming language from scratch? - AQ
-excerpt: How to write a programming language from scratch? AQ is a fast, small, simple and safe interpreted programming language.
+publishDate: 2024-07-12T21:07:11+08:00
+title: كيف تكتب لغة برمجة من الصفر - AQ
+excerpt: كيفية كتابة لغة برمجة من الصفر AQ هي لغة برمجة مفسرة سريعة وصغيرة وبسيطة وآمنة.
 image: https://www.axa6.com/aq.png
 category: Blog
 tags:
   - AQ
   - Blog
 metadata:
-  canonical: https://www.axa6.com/how-to-write-a-programming-language-from-scratch
+  canonical: https://www.axa6.com/ar/how-to-write-a-programming-language-from-scratch
 ---
 
-# Introduction
-How to design a programming language from scratch? What parts should a new programming language include?</br>
-This article will detail the process of developing a programming language through the design of AQ, starting from scratch to designing, developing the compiler, and related infrastructure, eventually completing the construction of a programming language.</br>
+# مقدمة
+كيف تصمم لغة برمجة من الصفر؟ ما هي الأجزاء التي يجب أن تتضمنها لغة البرمجة الجديدة؟</br>
+ستتناول هذه المقالة بالتفصيل عملية تطوير لغة برمجة من خلال تصميم AQ، بدءًا من الصفر وحتى التصميم وتطوير المترجم والبنية التحتية ذات الصلة، وفي النهاية إكمال بناء لغة برمجة.</br>
 
-# Introduction to AQ
+# مقدمة إلى عبد القدير
 
-**AQ** is an `interpreted` **programming language**. It is `fast`, `small`, `simple`, and `secure`. Programs written in AQ can also be `compiled`. Additionally, the source code of `AQ` is available on `GitHub`, open source, and follows the `AQ License`.
+**AQ** هي لغة برمجة "مفسرة" وهي برامج "سريعة" و"صغيرة" و"بسيطة" و"آمنة". كود المصدر لـ "AQ" متاح على "GitHub"، مفتوح المصدر، ويتبع "ترخيص AQ".
 
-GitHub address: https://github.com/aq-org/AQ, where you can obtain the source code of `AQ`.
+عنوان GitHub: https://github.com/aq-org/AQ، حيث يمكنك الحصول على الكود المصدري لـ `AQ`.
 
-## Features
+## سمات
 
-- **Fast** (`source code` compilation and `run speed`)
-- **Small** (`source code` size)
-- **Simple** (easy to learn)
-- **Secure** (safe `memory management` and `code checks`)
-- **Cross-platform** (supports `Windows`, `Linux`, and `MacOS`, etc.)
-- C++-like syntax (quick to grasp)
-- Interpreted (optional `compilation`)
-- Free (follows `AQ License`)
-- Open source (based on `AQ License`)
+- **سريع** (تجميع `الكود المصدر` و`سرعة التشغيل`)
+- **صغير** (حجم `شفرة المصدر`)
+- **بسيط** (سهل التعلم)
+- **آمن** ('إدارة الذاكرة' و'التحقق من التعليمات البرمجية' بشكل آمن)
+- **الأنظمة الأساسية المشتركة** (يدعم أنظمة التشغيل Windows وLinux وMacOS وما إلى ذلك)
+- بناء جملة يشبه لغة C++ (سريع الفهم)
+- تفسير (اختياري `تجميع`)
+- مجاني (يتبع "ترخيص AQ")
+- مفتوح المصدر (استنادًا إلى "ترخيص AQ")
 
-# Design
-## Original Plan
-AQ initially began development in October 2023 and underwent restructuring on February 1, 2024, with multiple revisions forming the current framework.</br>
+#تصميم
+## الخطة الأصلية
+بدأ تطوير AQ مبدئيًا في أكتوبر 2023 وخضع لعملية إعادة الهيكلة في 1 فبراير 2024، مع مراجعات متعددة تشكل إطار العمل الحالي.</br>
 
-The original plan was to implement the compiler in C++ and then develop the virtual machine. However, since the compiler needed to translate to the virtual machine's bytecode and due to prolonged compiler development time, the original version was abandoned. The code has been entirely deleted but can be found in the commits.</br>
+كانت الخطة الأصلية هي تنفيذ المترجم في لغة C++ ثم تطوير الجهاز الظاهري، ومع ذلك، نظرًا لأن المترجم يحتاج إلى الترجمة إلى الرمز الثانوي للجهاز الظاهري وبسبب وقت تطوير المترجم المطول، فقد تم التخلي عن الإصدار الأصلي ولكن يمكن العثور عليها في الالتزامات.</br>
 
-## New Plan
-The new plan is to develop the `AQ virtual machine` first and then implement the compiler through other means. Since it's developed in C, the `AQ virtual machine` reduces performance overhead and gains broader support. The `AQ virtual machine` is currently divided into `interpreter`, `memory`, `runtime`, and `operating system library`.</br>
+## خطة جديدة
+تتمثل الخطة الجديدة في تطوير "جهاز AQ الظاهري" أولاً ثم تنفيذ المترجم من خلال وسائل أخرى، نظرًا لأنه تم تطويره في لغة C، فإن "جهاز AQ الظاهري" يقلل من حمل الأداء ويكتسب دعمًا أوسع حاليًا مقسمة إلى "مترجم"، و"ذاكرة"، و"وقت تشغيل"، و"مكتبة نظام التشغيل".</br>
 
-1. The `interpreter` is the execution engine of the `AQ virtual machine`. Bytecode instruction execution functions are currently being developed.</br>
-2. `Memory` is the storage of the `AQ virtual machine`. For efficiency reasons, the `AQ virtual machine` is based on a register architecture. A garbage collection mechanism will be added in the future.</br>
-3. The `runtime` is the dependent environment of the `AQ virtual machine`, including error handling, standard output, and other necessary components, providing a basic runtime environment for AQ.</br>
-4. The `operating system library` is the necessary component for the `AQ virtual machine` to interact with the operating system.</br>
+1. "المترجم الفوري" هو محرك تنفيذ "جهاز AQ الظاهري". ويجري حاليًا تطوير وظائف تنفيذ تعليمات Bytecode.</br>
+2. "الذاكرة" هي مخزن "جهاز AQ الظاهري". ولأسباب تتعلق بالكفاءة، يعتمد "جهاز AQ الظاهري" على بنية تسجيل ستتم إضافتها في المستقبل.</br>
+3. "وقت التشغيل" هو البيئة التابعة لـ "جهاز AQ الظاهري"، بما في ذلك معالجة الأخطاء والمخرجات القياسية والمكونات الضرورية الأخرى، مما يوفر بيئة تشغيل أساسية لـ AQ.</br>
+4. تعد "مكتبة نظام التشغيل" مكونًا ضروريًا لتفاعل "جهاز AQ الظاهري" مع نظام التشغيل.</br>
 
-These four parts of the design essentially include most of the components of an interpreted language's virtual machine. As the functionality of the programming language continues to expand in the future, upgrades can be implemented by adding components.</br>
+تشتمل هذه الأجزاء الأربعة من التصميم بشكل أساسي على معظم مكونات الجهاز الظاهري للغة المفسرة، ومع استمرار توسع وظائف لغة البرمجة في المستقبل، يمكن تنفيذ الترقيات عن طريق إضافة مكونات.</br>
 
 
-## Reasons and Advantages
-The AQ language is designed as an interpreted language for multi-platform compatibility. In the future, further compiler development work for different operating systems can make development more efficient. Based on the register architecture, it also reduces performance loss.</br>
+## الأسباب والمزايا
+تم تصميم لغة AQ كلغة مترجمة للتوافق مع الأنظمة الأساسية المتعددة. في المستقبل، يمكن أن يؤدي المزيد من أعمال تطوير المترجم لأنظمة تشغيل مختلفة إلى جعل التطوير أكثر كفاءة، استنادًا إلى بنية التسجيل، كما أنه يقلل من فقدان الأداء.</br>
 
-> We are working hard on developing the `AQ virtual machine`. If you want to learn more or participate in the development work, please follow our official website: https://www.axa6.com and GitHub: https://github.com/aq-org/AQ.</br>
+> نحن نعمل جاهدين على تطوير `AQ Virtual Machine` إذا كنت ترغب في معرفة المزيد أو المشاركة في أعمال التطوير، يرجى متابعة موقعنا الرسمي: https://www.axa6.com وGitHub: https://github. .com/aq-org/AQ.</br>
 
-> This article is published under the AQ License: https://github.com/aq-org/AQ/blob/main/LICENSE. If needed, please adapt or reprint according to the AQ License.
+> تم نشر هذه المقالة بموجب ترخيص AQ: https://github.com/aq-org/AQ/blob/main/LICENSE، إذا لزم الأمر، يرجى تعديلها أو إعادة طباعتها وفقًا لترخيص AQ.
