@@ -8,7 +8,7 @@ tags:
   - AQ
   - Blog
 metadata:
-  canonical: https://www.axa6.com/an-excellent-virtual-machine-memory-architecture
+  canonical: https://www.axa6.com/en/an-excellent-virtual-machine-memory-architecture
 ---
 
 # Introduction
