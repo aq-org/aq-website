@@ -94,6 +94,7 @@ struct AqvmMemoryRegister_Register {
 
 #endif
 ```
+
 从上述代码可以看出，即使仅保留了必要内容，但由于`enum`类型的`AqvmMemoryRegister_ValueType`占用`4`字节，`union`类型的`AqvmMemoryRegister_Value`占用`8`字节，`struct`类型本身就会占用`12`字节内存。</br>
 
 同时，由于`C`编译器的优化，`struct`类型的`AqvmMemoryRegister_Register`中`enum`类型的`type`为与`union`类型的`value`进行`内存对齐`，因此加入`4`字节的`填充内存`。使`struct`类型的`AqvmMemoryRegister_Register`占用`16`字节。</br>
@@ -649,6 +650,7 @@ int AqvmMemory_WriteData(struct AqvmMemory_Memory* memory, size_t index,
 ```
 
 ### `memory.h`完整代码：
+
 ```C
 // Copyright 2024 AQ author, All Rights Reserved.
 // This program is licensed under the AQ License. You can find the AQ license in
