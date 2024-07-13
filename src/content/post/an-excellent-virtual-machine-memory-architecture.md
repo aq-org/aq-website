@@ -1,5 +1,5 @@
 ---
-publishDate: 2024-07-12T18:41:14+08:00
+publishDate: 2024-07-13T11:35:14+08:00
 title: An Excellent Virtual Machine Memory Architecture - AQ
 excerpt: Virtual machine memory architecture directly affects the performance and occupancy of the virtual machine. Designing an excellent architecture can effectively improve performance and efficiency. In this article, we will introduce the memory architecture used by the AQ virtual machine.
 image: https://www.axa6.com/aq.png
@@ -22,25 +22,28 @@ By optimizing the memory architecture of the `virtual machine`, it is helpful to
 # Design ideas
 ## Memory architecture
 ### Basic memory architecture
-`AQ` adopts the basic memory architecture of `registers`, but it is different from the standard `register` architecture, and some improvements and optimizations have been made to the `register` architecture. </br>
+`AQ` adopts the basic memory architecture of `registers`, but it is different from the standard `register` architecture, and some improvements and optimizations have been made to the `register` architecture.  </br>
 > The `registers` here are not the `registers` in the `CPU`, but the `virtual registers` simulated in the `memory`. </br>
 
 ### Reasons for choosing registers
 Compared with the stack architecture adopted by mainstream language virtual machines such as `JAVA` and `Python`, `AQ` decided to adopt the `register` architecture because of performance optimization and easy understanding of `bytecode`. </br>
-Although the `stack` architecture is generally considered to be easier to port and write, there will be some losses in actual performance. Multiple accesses to `memory` will slow down its speed, which is inevitable and difficult to optimize thoroughly. Therefore, in order to solve the *performance loss* here, `AQ` adopts the `register` architecture. At the same time, from the perspective of `bytecode`, the bytecode of the `register` architecture is *easier to understand*, and its instructions are similar to the `parameter` method of `function`, rather than directly facing the many operations of `stack`. </br>
+Although the `stack` architecture is generally considered to be easier to port and write, there will be some losses in actual performance. Multiple accesses to `memory` will slow down its speed, which is inevitable and difficult to optimize thoroughly. Therefore, in order to solve the *performance loss* here, `AQ` adopts the `register` architecture. At the same time, from the perspective of `bytecode`, the bytecode of the `register` architecture is *easier to understand*, and its instructions are similar to the `parameter` method of `function`, rather than directly facing the many operations of `stack`.  </br>
 
 ### Differences between `register` architectures
 #### Standard register architecture
 In the standard register architecture, `register` contains:</br>
+
 1. `Data type` - the type of data that the register will store (such as int, float, double, etc.)
 2. `Data` - the value of the data that the register will store
 3. (Optional) Tag - the tag of the data that the register will store (such as variables, functions, classes, etc.)
 4. (Optional) Reference - the reference of the data that the register will store (such as the address of the object, etc.)
 
-Although the `virtual machine` architecture of different languages ​​may be different, it is generally in this form with only slight changes. </br>
+Although the `virtual machine` memory architecture of different languages ​​may be different, they all store this information. </br>
 
 This architecture was used during the development of `AQ`, but after testing, it has a large memory footprint. </br>
+
 The following is the `register.h` code that `AQ` used:</br>
+
 ```C
 // Copyright 2024 AQ authors, All Rights Reserved.
 // This program is licensed under the AQ License. You can find the AQ license in
@@ -90,16 +93,16 @@ struct AqvmMemoryRegister_Register {
 
 #endif
 ```
-As can be seen from the above code, even if no optional content is added, because the `AqvmMemoryRegister_ValueType` of the `enum` type occupies `4` bytes, the `AqvmMemoryRegister_Value` of the `union` type occupies `8` bytes, and the `struct` type It will occupy `12` bytes of memory. </br>
+As can be seen from the above code, even if only the necessary content is retained, since the `AqvmMemoryRegister_ValueType` of the `enum` type occupies `4` bytes, the `AqvmMemoryRegister_Value` of the `union` type occupies `8` bytes, and the `struct` type itself will occupy `12` bytes of memory. </br>
 
-Due to the optimization of the `C` compiler, the `type` of the `enum` type in the `AqvmMemoryRegister_Register` of the `struct` type is memory aligned with the `value` of the `union` type, so `4` bytes are added `fill memory`. Make `AqvmMemoryRegister_Register` of type `struct` occupy `16` bytes. </br>
+At the same time, due to the optimization of the `C` compiler, the `type` of the `enum` type in the `AqvmMemoryRegister_Register` of the `struct` type is `memory aligned` with the `value` of the `union` type, so `4` bytes of `padding memory` are added. Make the `AqvmMemoryRegister_Register` of the `struct` type occupy `16` bytes. </br>
 
-If you use `int` and other non-8` byte types, `4` bytes of `fill memory` will be wasted, resulting in memory loss. Therefore there will be `4`-`8` bytes of memory wasted in all registers. </br>
+If non-`8` byte types such as `int` are used, `4` bytes of `padding memory` will be wasted, resulting in memory loss. Therefore, there will be `4`-`8` bytes of memory waste in all registers.  </br>
 
-### Register structure of `AQ`
-In order to solve the occupancy problem of the traditional `register' architecture, `AQ` combines the `local variable table` features of the `stack frame` of `JVM` and optimizes the `memory`, significantly reducing the occupancy problem. </br>
+### `AQ` register architecture
+In order to solve the occupancy problem of the traditional `register` architecture, `AQ` combines the `local variable table` characteristics of the `stack frame` of the `JVM` and optimizes the `memory architecture`, which significantly reduces the occupancy problem. </br>
 
-`AQ`'s `memory` directly uses `void*` pointers to store data, and `size_t` stores the memory size occupied. Directly and effectively reduce the loss of `filling memory`. </br>
+The following are three alternative solutions:</br>
 
 ```C
 // plan 1:
@@ -123,11 +126,13 @@ struct AqvmMemoryRegister_Register {
 };
 ```
 
-Due to memory reasons, `plan 1` will also cause great memory loss. </br>
-In fact, when it is required to retain memory information, `plan 2` has the highest memory utilization, but it cannot preserve the `coherence` of different types of data in the same data structure, which may make some pointer operations invalid. Therefore, for `memory safety`, `plan 2` is not used. </br>
-In some cases, `plan 3` can also meet the needs of memory storage, but due to the need of reduced instruction sets, type information is not included in the instructions, so it cannot meet the needs of reduced instruction sets. </br>
+Since pointers occupy `4`-`8` bytes, the data itself occupies `1`-`8` bytes, plus the type `1` byte, `plan 1` occupies `6`-`17` bytes, and there may be `memory alignment`, so `plan 1` will also cause great memory loss. </br>
+In fact, when it is required to retain memory type information, `plan 2` has the highest memory utilization, but `plan 2` cannot preserve the `coherence` of different types of data in the same data structure (such as: structure), which may make some pointer operations invalid. Therefore, for `memory safety`, `plan 2` is not used. </br>
+In some cases (the virtual machine instruction set includes types), `plan 3` can also meet the needs of memory storage, but due to the need to reduce the instruction set, the type information is not included in the instructions, so it cannot meet the needs of virtual machine operation. </br>
 
-Therefore, we adopt the following design to ensure the `utilization` of `memory`, and at the same time greatly improve the memory usage problem. </br>
+Therefore, we adopt the following design to ensure the `utilization` of `memory` and greatly improve the memory occupation problem.  </br>
+
+`AQ`'s `memory` directly uses `void*` pointer to store data, `size_t` to store the occupied memory size, and `uint8_t` array to store the type. Since `uint8_t` occupies `8` bits, to reduce the occupancy, each byte uses `4` bits to store the type. Therefore, a `uint8_t` variable can store `2` types. The first `4` bits of each `uint8_t` variable are used for the type of the `even` bytes, and the last `4` bits are used for the type of the `odd` bytes. </br>
 
 ```C
 // The struct stores information about the memory.
