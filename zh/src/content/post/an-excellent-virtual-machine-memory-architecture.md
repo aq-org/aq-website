@@ -1,3 +1,4 @@
+
 ---
 publishDate: 2024-07-13T11:22:03+08:00
 title: 一种优秀的虚拟机内存架构 - AQ
@@ -42,6 +43,7 @@ metadata:
 尽管不同语言的`虚拟机`内存架构可能有所不同，但大致都存储了这些信息。</br>
 
 而在`AQ`开发过程中曾使用了该架构，但是经过测试，其存在较大的内存占用。</br>
+
 以下是`AQ`曾使用的`register.h`代码：</br>
 
 ```C
@@ -418,6 +420,7 @@ struct AqvmMemory_Memory {
 ### AqvmMemory_CheckMemoryConditions
 检查系统中的内存条件。</br>
 返回警告数量。</br>
+
 ```C
 int AqvmMemory_CheckMemoryConditions() {
   int warning_count = 0;
