@@ -401,8 +401,8 @@ int AqvmMemory_CheckMemoryConditions() {
  3. `memory.c`: implementación de funciones relacionadas con la memoria
  4. `types.h` - definición de tipos de memoria
 
- ## memoria.h
- ### AqvmMemory_Memoria
+ ## memory.h
+ ### AqvmMemory_Memory
  Esta estructura almacena información sobre la memoria.  </br>
  |tipo| es un puntero a una matriz que almacena el tipo de cada byte en la memoria.  Cada byte utiliza 4 bits para almacenar el tipo.  Por tanto, una variable uint8_t puede almacenar 2 tipos.  Los primeros 4 bits de cada variable uint8_t se utilizan para el tipo de bytes pares y los últimos 4 bits se utilizan para el tipo de bytes impares.  La lista de tipos está en tipos.h.  </br>
  |datos| es un puntero de tipo void* a la memoria donde se almacenan los datos.  </br>
