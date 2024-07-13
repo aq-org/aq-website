@@ -94,6 +94,7 @@ struct AqvmMemoryRegister_Register {
 
 #endif
 ```
+
 As can be seen from the above code, even if only the necessary content is retained, since the `AqvmMemoryRegister_ValueType` of the `enum` type occupies `4` bytes, the `AqvmMemoryRegister_Value` of the `union` type occupies `8` bytes, the `struct` type itself will occupy `12` bytes of memory.</br>
 
 At the same time, due to the optimization of the `C` compiler, the `type` of the `enum` type in the `struct` type `AqvmMemoryRegister_Register` is `memory aligned` with the `value` of the `union` type, so `4` bytes of `padding memory` are added. Make the `struct` type `AqvmMemoryRegister_Register` occupy `16` bytes. </br>
@@ -649,6 +650,7 @@ int AqvmMemory_WriteData(struct AqvmMemory_Memory* memory, size_t index,
 ```
 
 ### `memory.h` complete code:
+
 ```C
 // Copyright 2024 AQ author, All Rights Reserved.
 // This program is licensed under the AQ License. You can find the AQ license in
