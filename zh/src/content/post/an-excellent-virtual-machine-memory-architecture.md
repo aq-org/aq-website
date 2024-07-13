@@ -92,7 +92,7 @@ struct AqvmMemoryRegister_Register {
 ```
 从上述代码可以看出，即使仅保留了必要内容，但由于`enum`类型的`AqvmMemoryRegister_ValueType`占用`4`字节，`union`类型的`AqvmMemoryRegister_Value`占用`8`字节，`struct`类型本身就会占用`12`字节内存。</br>
 
-同时，又由于`C`编译器的优化，`struct`类型的`AqvmMemoryRegister_Register`中`enum`类型的`type`为与`union`类型的`value`进行`内存对齐`，因此加入`4`字节的`填充内存`。使`struct`类型的`AqvmMemoryRegister_Register`占用`16`字节。</br>
+同时，由于`C`编译器的优化，`struct`类型的`AqvmMemoryRegister_Register`中`enum`类型的`type`为与`union`类型的`value`进行`内存对齐`，因此加入`4`字节的`填充内存`。使`struct`类型的`AqvmMemoryRegister_Register`占用`16`字节。</br>
 
 其中如果使用`int`等非`8`字节类型，则会有`4`字节的`填充内存`被浪费，从而造成内存损耗。因此在全部的寄存器中会有`4`-`8`字节的内存浪费。</br>
 
