@@ -25,15 +25,15 @@ metadata:
 现行的`C`标准是`ISO/IEC 9899:2018 Information technology — Programming languages — C`。由于该标准版权归属`ISO/IEC 2018`，因此为避免版权纠纷，我们就其中的`类型`定义进行了归纳总结。
 
 1. `_Bool`
-2. `signed char`
-3. `(unsigned) char`
-4. `(signed) short int`
+2. `char`
+3. `signed char`
+4. `short int`
 5. `unsigned short int`
-6. `(signed) int`
+6. `int`
 7. `unsigned int`
-8. `(signed) long int`
+8. `long int`
 9. `unsigned long int`
-10. `(signed) long long int`
+10. `long long int`
 11. `unsigned long long int`
 12. `float`
 13. `double`
