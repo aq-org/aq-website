@@ -47,6 +47,7 @@ metadata:
 ## types.h
 对于类型同样有相关代码。以下是`types.h`的代码：</br>
 因此拥有具体定义的基本类型有`6`种：</br>
+
 0. NULL - 0 bits (0 bytes) 用于表示空值或未知类型
 1. int - 32 bits (4 bytes) 遵守 `C` 标准
 2. long - 64 bits (8 bytes) 遵守 `C` 标准
