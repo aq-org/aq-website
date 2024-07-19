@@ -25,7 +25,7 @@ metadata:
 现行的`C`标准是`ISO/IEC 9899:2018 Information technology — Programming languages — C`。由于该标准版权归属`ISO/IEC 2018`，因此为避免版权纠纷，我们就其中的`类型`定义进行了归纳总结。
 
 1. `_Bool` - 声明为`_Bool`类型的对象足够大以存储值`0`和`1`。
-2. `char` - 声明为类型`char`的对象足够大，可以存储基本执行字符集的任何成员。如果基本执行字符集的成员存储在`char`对象中，则其值保证为非负值。如果任何其他字符存储在一个字符对象中，则结果值为`implementation-defned`，但应在该类型中可以表示的值范围内。
+2. `char` - 标准无符号整数类型。声明为类型`char`的对象足够大，可以存储基本执行字符集的任何成员。如果基本执行字符集的成员存储在`char`对象中，则其值保证为非负值。如果任何其他字符存储在一个字符对象中，则结果值为`implementation-defned`，但应在该类型中可以表示的值范围内。
 3. `signed char` - 标准有符号整数类型。
 4. `short int` - 扩展有符号整数类型。
 5. `unsigned short int` - 扩展无符号整数类型。
@@ -35,9 +35,9 @@ metadata:
 9. `unsigned long int` - 扩展无符号整数类型。
 10. `long long int` - 扩展有符号整数类型。
 11. `unsigned long long int` - 扩展无符号整数类型。
-12. `float`
-13. `double`
-14. `long double`
+12. `float` - 浮点类型。`float` 类型的值集是`double`类型的一组值的子集。
+13. `double` - 浮点类型。`double` 类型的值集是`long double`类型的一组值的子集。
+14. `long double` - 浮点类型。
 15. `void`
 
 
