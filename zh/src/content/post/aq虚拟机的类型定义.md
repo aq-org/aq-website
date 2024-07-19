@@ -26,8 +26,15 @@ metadata:
 
 1. `_Bool`
 2. `char`
-3. `signed char`, `short int`, `int`, `long int`, and `long long int`
-4. 
+4. `short int`
+5. `int`
+6. `long int`
+7. `long long int`
+8. `float`
+9. `double`
+10. `long double`
+11. `void`
+
 
 
 # 详细设计
