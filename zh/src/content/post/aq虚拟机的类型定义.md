@@ -26,22 +26,19 @@ metadata:
 
 1. `_Bool`
 2. `signed char`
-3. `unsigned char`
-4. `signed short int`
+3. `(unsigned) char`
+4. `(signed) short int`
 5. `unsigned short int`
-6. `signed int`
+6. `(signed) int`
 7. `unsigned int`
-8. `signed long int`
+8. `(signed) long int`
 9. `unsigned long int`
-10. `signed long long int`
+10. `(signed) long long int`
 11. `unsigned long long int`
-12. `signed float`
-13. `unsigned float`
-14. `signed double`
-15. `unsigned double`
-16. `signed long double`
-17. `unsigned long double`
-18. `void`
+12. `float`
+13. `double`
+14. `long double`
+15. `void`
 
 
 
