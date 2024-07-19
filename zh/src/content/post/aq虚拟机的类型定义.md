@@ -24,6 +24,10 @@ metadata:
 ### C
 现行的`C`标准是`ISO/IEC 9899:2018 Information technology — Programming languages — C`。由于该标准版权归属`ISO/IEC 2018`，因此为避免版权纠纷，我们就其中的`类型`定义进行了归纳总结。
 
+1. `_Bool`
+2. `char`
+3. `signed char`, `short int`, `int`, `long int`, and `long long int`
+4. 
 
 
 # 详细设计
