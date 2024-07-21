@@ -8,7 +8,7 @@ tags:
   - AQ
   - Blog
 metadata:
-  canonical: https://www.axa6.com/一种优秀的虚拟机内存架构
+  canonical: https://www.axa6.com/aq虚拟机的类型定义
 ---
 
 # 简介
