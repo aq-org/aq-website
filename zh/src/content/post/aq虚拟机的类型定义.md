@@ -34,12 +34,7 @@ metadata:
 为了使`AQ`的`类型`更加广泛且易于被开发人员掌握，我们参考了现有的常见的`编程语言`的`类型`定义。</br>
 此处定义下文中的`基础类型`为整数、浮点数、空类型等一般的`数据`类型。其承担基本的数据存储工作或具有特殊的意义。</br>
 
-此处定义下文中的`基础类型`为整数、浮点数、空类型等一般的`数据`类型。其承担基本的数据存储工作或具有特殊的意义。</br>
-
 ### C
-现行的`C`标准是`ISO/IEC 9899:2018 Information technology — Programming languages — C`。由于该标准版权归属`ISO（国际标准化组织）`和`IEC（国际电工委员会）`，因此为避免版权纠纷，我们就其中的`类型`定义进行了归纳总结。下同。</br>
-
-官方网址：https://www.iso.org/standard/74528.html</br>
 现行的`C`标准是`ISO/IEC 9899:2018 Information technology — Programming languages — C`。由于该标准版权归属`ISO（国际标准化组织）`和`IEC（国际电工委员会）`，因此为避免版权纠纷，我们就其中的`类型`定义进行了归纳总结。下同。</br>
 
 官方网址：https://www.iso.org/standard/74528.html</br>
@@ -60,7 +55,6 @@ metadata:
 14. `long double` - 浮点类型。
 15. `void` - `void`类型包含一组空值；它是一个不完整的对象类型，无法实现。
 
-除此之外，`C`还有其它非`基础类型`，如`枚举`类型(`enum`类型)，指针类型等。在`虚拟机`的设计中不作讨论。</br>
 除此之外，`C`还有其它非`基础类型`，如`枚举`类型(`enum`类型)，指针类型等。在`虚拟机`的设计中不作讨论。</br>
 
 ### `C++` 及其它`C`变种
@@ -91,8 +85,7 @@ metadata:
 
 ### Java
 `JVM（Java虚拟机）`的`规范`是`The Java® Virtual Machine Specification`，最新版本是`Java SE 22 Edition`，发布日期为`2024-02-09`。相较与其它语言的`编译器`层面的`类型定义`，`JVM`的情况更符合`虚拟机`的设计。同时`JVM`的`类型`分为`基元类型`和`引用类型`，由于`虚拟机`开发需要，选择了`基元类型`进行讨论。</br>
-除此之外，`Java`还有一份`规范`是`The Java Language Specification, Java SE 22 Edition`，`HTML`链接：https://docs.oracle.com/javase/specs/jls/se22/html/index.html
- `PDF`链接：https://docs.oracle.com/javase/specs/jls/se22/jls22.pdf 。由于`虚拟机`开发的特殊需要，因此在本文选择研究`JVM`的`类型定义`而非`Java`语言的`类型定义`</br>
+除此之外，`Java`还有一份`规范`是`The Java Language Specification, Java SE 22 Edition`，`HTML`链接：https://docs.oracle.com/javase/specs/jls/se22/html/index.html `PDF`链接：https://docs.oracle.com/javase/specs/jls/se22/jls22.pdf 。由于`虚拟机`开发的特殊需要，因此在本文选择研究`JVM`的`类型定义`而非`Java`语言的`类型定义`</br>
 
 源链接（HTML）：https://docs.oracle.com/javase/specs/jvms/se22/html/jvms-2.html#jvms-2.3</br>
 源链接（PDF）：https://docs.oracle.com/javase/specs/jvms/se22/jvms22.pdf</br>
