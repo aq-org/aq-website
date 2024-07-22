@@ -1,5 +1,5 @@
 ---
-publishDate: 2024-07-13T18:35:03+08:00
+publishDate: 2024-07-22T16:50:00+08:00
 title: An excellent virtual machine memory architecture - AQ
 excerpt: The memory architecture of a virtual machine directly affects the performance and occupancy of the virtual machine. Designing an excellent architecture can effectively improve performance and efficiency. This article will introduce the memory architecture used by the AQ virtual machine.
 image: https://www.axa6.com/aq.png
@@ -296,7 +296,7 @@ However, this requires special function implementation, and it should be noted t
 // |type|, and |size| into the struct. Returns a pointer to the struct if
 // successful. Returns NULL if creation fails.
 struct AqvmMemory_Memory* AqvmMemory_CreateMemory(void* data, void* type,
-  ...
+                                                  size_t size) {
   struct AqvmMemory_Memory* memory_ptr =
       (struct AqvmMemory_Memory*)malloc(sizeof(struct AqvmMemory_Memory));
   if (memory_ptr == NULL) {
@@ -329,6 +329,15 @@ In addition, since some systems have different definitions of types from the AQ 
 // Returns the number of warnings.
 int AqvmMemory_CheckMemoryConditions() {
   int warning_count = 0;
+  if (sizeof(aqbyte) != 1) {
+    AqvmRuntimeDebugger_OutputReport(
+        "\"WARNING\"", "\"AqvmMemory_CheckMemoryConditions_ByteLengthWarning\"",
+        "\"The length requirement for the byte type does not conform to the "
+        "type "
+        "definition.\"",
+        NULL);
+    ++warning_count;
+  }
   if (sizeof(aqint) != 4) {
     AqvmRuntimeDebugger_OutputReport(
         "\"WARNING\"", "\"AqvmMemory_CheckMemoryConditions_IntLengthWarning\"",
@@ -356,7 +365,7 @@ int AqvmMemory_CheckMemoryConditions() {
         NULL);
     ++warning_count;
   }
-  if (sizeof(aqdouble) != 4) {
+  if (sizeof(aqdouble) != 8) {
     AqvmRuntimeDebugger_OutputReport(
         "\"WARNING\"",
         "\"AqvmMemory_CheckMemoryConditions_DoubleLengthWarning\"",
@@ -365,28 +374,11 @@ int AqvmMemory_CheckMemoryConditions() {
         NULL);
     ++warning_count;
   }
-  if (sizeof(aqchar) != 1) {
-    AqvmRuntimeDebugger_OutputReport(
-        "\"WARNING\"", "\"AqvmMemory_CheckMemoryConditions_CharLengthWarning\"",
-        "\"The length requirement for the char type does not conform to the "
-        "type "
-        "definition.\"",
-        NULL);
-    ++warning_count;
-  }
-  if (sizeof(aqbool) != 1) {
-    AqvmRuntimeDebugger_OutputReport(
-        "\"WARNING\"", "\"AqvmMemory_CheckMemoryConditions_BoolLengthWarning\"",
-        "The length requirement for the bool type does not conform to the type "
-        "definition.",
-        NULL);
-    ++warning_count;
-  }
 
   if (warning_count == 0) {
-    AqvmRuntimeDebugger_OutputReport("\"INFO\"",
-                                        "\"AqvmMemory_CheckMemoryConditions_CheckNormal\"",
-                                        "\"No memory conditions warning.\"", NULL);
+    AqvmRuntimeDebugger_OutputReport(
+        "\"INFO\"", "\"AqvmMemory_CheckMemoryConditions_CheckNormal\"",
+        "\"No memory conditions warning.\"", NULL);
   }
 
   return warning_count;
@@ -424,6 +416,15 @@ Returns the number of warnings.</br>
 ```C
 int AqvmMemory_CheckMemoryConditions() {
   int warning_count = 0;
+  if (sizeof(aqbyte) != 1) {
+    AqvmRuntimeDebugger_OutputReport(
+        "\"WARNING\"", "\"AqvmMemory_CheckMemoryConditions_ByteLengthWarning\"",
+        "\"The length requirement for the byte type does not conform to the "
+        "type "
+        "definition.\"",
+        NULL);
+    ++warning_count;
+  }
   if (sizeof(aqint) != 4) {
     AqvmRuntimeDebugger_OutputReport(
         "\"WARNING\"", "\"AqvmMemory_CheckMemoryConditions_IntLengthWarning\"",
@@ -451,7 +452,7 @@ int AqvmMemory_CheckMemoryConditions() {
         NULL);
     ++warning_count;
   }
-  if (sizeof(aqdouble) != 4) {
+  if (sizeof(aqdouble) != 8) {
     AqvmRuntimeDebugger_OutputReport(
         "\"WARNING\"",
         "\"AqvmMemory_CheckMemoryConditions_DoubleLengthWarning\"",
@@ -460,28 +461,11 @@ int AqvmMemory_CheckMemoryConditions() {
         NULL);
     ++warning_count;
   }
-  if (sizeof(aqchar) != 1) {
-    AqvmRuntimeDebugger_OutputReport(
-        "\"WARNING\"", "\"AqvmMemory_CheckMemoryConditions_CharLengthWarning\"",
-        "\"The length requirement for the char type does not conform to the "
-        "type "
-        "definition.\"",
-        NULL);
-    ++warning_count;
-  }
-  if (sizeof(aqbool) != 1) {
-    AqvmRuntimeDebugger_OutputReport(
-        "\"WARNING\"", "\"AqvmMemory_CheckMemoryConditions_BoolLengthWarning\"",
-        "The length requirement for the bool type does not conform to the type "
-        "definition.",
-        NULL);
-    ++warning_count;
-  }
 
   if (warning_count == 0) {
-    AqvmRuntimeDebugger_OutputReport("\"INFO\"",
-                                        "\"AqvmMemory_CheckMemoryConditions_CheckNormal\"",
-                                        "\"No memory conditions warning.\"", NULL);
+    AqvmRuntimeDebugger_OutputReport(
+        "\"INFO\"", "\"AqvmMemory_CheckMemoryConditions_CheckNormal\"",
+        "\"No memory conditions warning.\"", NULL);
   }
 
   return warning_count;
@@ -494,7 +478,7 @@ This function will allocate an AqvmMemory_Memory structure and copy |data|, |typ
 
 ```C
 struct AqvmMemory_Memory* AqvmMemory_CreateMemory(void* data, void* type,
-  ...
+                                                  size_t size) {
   struct AqvmMemory_Memory* memory_ptr =
       (struct AqvmMemory_Memory*)malloc(sizeof(struct AqvmMemory_Memory));
   if (memory_ptr == NULL) {
@@ -743,6 +727,15 @@ int AqvmMemory_WriteData(struct AqvmMemory_Memory* memory, size_t index,
 
 int AqvmMemory_CheckMemoryConditions() {
   int warning_count = 0;
+  if (sizeof(aqbyte) != 1) {
+    AqvmRuntimeDebugger_OutputReport(
+        "\"WARNING\"", "\"AqvmMemory_CheckMemoryConditions_ByteLengthWarning\"",
+        "\"The length requirement for the byte type does not conform to the "
+        "type "
+        "definition.\"",
+        NULL);
+    ++warning_count;
+  }
   if (sizeof(aqint) != 4) {
     AqvmRuntimeDebugger_OutputReport(
         "\"WARNING\"", "\"AqvmMemory_CheckMemoryConditions_IntLengthWarning\"",
@@ -770,7 +763,7 @@ int AqvmMemory_CheckMemoryConditions() {
         NULL);
     ++warning_count;
   }
-  if (sizeof(aqdouble) != 4) {
+  if (sizeof(aqdouble) != 8) {
     AqvmRuntimeDebugger_OutputReport(
         "\"WARNING\"",
         "\"AqvmMemory_CheckMemoryConditions_DoubleLengthWarning\"",
@@ -779,35 +772,18 @@ int AqvmMemory_CheckMemoryConditions() {
         NULL);
     ++warning_count;
   }
-  if (sizeof(aqchar) != 1) {
-    AqvmRuntimeDebugger_OutputReport(
-        "\"WARNING\"", "\"AqvmMemory_CheckMemoryConditions_CharLengthWarning\"",
-        "\"The length requirement for the char type does not conform to the "
-        "type "
-        "definition.\"",
-        NULL);
-    ++warning_count;
-  }
-  if (sizeof(aqbool) != 1) {
-    AqvmRuntimeDebugger_OutputReport(
-        "\"WARNING\"", "\"AqvmMemory_CheckMemoryConditions_BoolLengthWarning\"",
-        "The length requirement for the bool type does not conform to the type "
-        "definition.",
-        NULL);
-    ++warning_count;
-  }
 
   if (warning_count == 0) {
-    AqvmRuntimeDebugger_OutputReport("\"INFO\"",
-                                        "\"AqvmMemory_CheckMemoryConditions_CheckNormal\"",
-                                        "\"No memory conditions warning.\"", NULL);
+    AqvmRuntimeDebugger_OutputReport(
+        "\"INFO\"", "\"AqvmMemory_CheckMemoryConditions_CheckNormal\"",
+        "\"No memory conditions warning.\"", NULL);
   }
 
   return warning_count;
 }
 
 struct AqvmMemory_Memory* AqvmMemory_CreateMemory(void* data, void* type,
-  ...
+                                                  size_t size) {
   struct AqvmMemory_Memory* memory_ptr =
       (struct AqvmMemory_Memory*)malloc(sizeof(struct AqvmMemory_Memory));
   if (memory_ptr == NULL) {

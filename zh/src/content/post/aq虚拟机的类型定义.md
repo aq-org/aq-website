@@ -1,5 +1,5 @@
 ---
-publishDate: 2024-07-14T22:20:00+08:00
+publishDate: 2024-07-22T16:50:00+08:00
 title:  AQ虚拟机的类型定义 - AQ
 excerpt: 由于不同的系统、硬件等外部条件对于内存有不同的支持和定义，因此为了使AQ虚拟机满足跨平台运行的要求，设计统一的类型标准是必不可少的。本文对于AQ虚拟机的类型进行了定义和规范，以确保在不同系统上的AQ虚拟机均能正常运行。
 image: https://www.axa6.com/aq.png
@@ -21,14 +21,16 @@ metadata:
 
 其次，通过对于其它`编程语言`的`类型`的研究，总结了常见的`类型`，我们设计了以下几种`类型`，以便于在`虚拟机`的*性能*与*简洁*达到平衡。</br>
 
-0. null - 空类型
-1. byte - `1`字节有符号整数类型
-2. int - `4`字节有符号整数类型
-3. long - `8`字节有符号整数类型
-4. float - `4`字节单精度浮点类型
-5. double - `8`字节双精度浮点类型
+0. null - *空类型*
+1. byte - *`1`字节有符号整数类型*
+2. int - *`4`字节有符号整数类型*
+3. long - *`8`字节有符号整数类型*
+4. float - *`4`字节单精度浮点类型*
+5. double - *`8`字节双精度浮点类型*
 
 最后，我们为`类型`设计了详细的`标准`，以确保`AQ虚拟机`能够实现`跨平台`运行。</br>
+
+> 为了减少`虚拟机`的类型定义，`无符号类型`将在`编译器`层面被实现。
 
 ## 其它`编程语言`的`类型`定义
 为了使`AQ`的`类型`更加广泛且易于被开发人员掌握，我们参考了现有的常见的`编程语言`的`类型`定义。</br>
@@ -90,29 +92,115 @@ metadata:
 源链接（HTML）：https://docs.oracle.com/javase/specs/jvms/se22/html/jvms-2.html#jvms-2.3</br>
 源链接（PDF）：https://docs.oracle.com/javase/specs/jvms/se22/jvms22.pdf</br>
 
-1. `byte` - *整数类型* 其值是`8`位*有符号二进制补码整数*，其默认值为`零`。从`-128`至`127`（*-2<sup>7</sup>*至*2<sup>7</sup> - 1*），包括在内
-2. `short` - *整数类型* 其值为`16`位*有符号二进制补码整数*，其默认值为`零`。从`-32768`至`32767`（*-2<sup>15</sup>*至*2<sup>15</sup> - 1*），包括在内
-3. `int` - *整数类型* 其值为`32`位*有符号二进制补码整数*，其默认值为`零`。从`-2147483648`至`2147483647`（*-2<sup>31</sup>*至*2<sup>31</sup> - 1*），包括在内
-4. `long` - *整数类型* 其值为`64`位*有符号二进制补码整数*，其默认值为`零`。从 `-9223372036854775808`至`9223372036854775807`（*-2<sup>63</sup>*至*2<sup>63</sup> - 1*），包括在内
-5. `char` - *整数类型* 其值为`16`位*无符号整数*，表示基本多语言平面中的`Unicode`码位，编码为`UTF-16`，其默认值为`null`码位 (`\u0000`)。从 0 到 65535
+1. `byte` - *整数类型* 其值是`8`位*有符号二进制补码整数*，其默认值为`零`。从`-128`至`127`（*-2<sup>7</sup>*至*2<sup>7</sup> - 1*），包括在内。
+2. `short` - *整数类型* 其值为`16`位*有符号二进制补码整数*，其默认值为`零`。从`-32768`至`32767`（*-2<sup>15</sup>*至*2<sup>15</sup> - 1*），包括在内。
+3. `int` - *整数类型* 其值为`32`位*有符号二进制补码整数*，其默认值为`零`。从`-2147483648`至`2147483647`（*-2<sup>31</sup>*至*2<sup>31</sup> - 1*），包括在内。
+4. `long` - *整数类型* 其值为`64`位*有符号二进制补码整数*，其默认值为`零`。从 `-9223372036854775808`至`9223372036854775807`（*-2<sup>63</sup>*至*2<sup>63</sup> - 1*），包括在内。
+5. `char` - *整数类型* 其值为`16`位*无符号整数*，表示基本多语言平面中的`Unicode`码位，编码为`UTF-16`，其默认值为`null`码位 (`\u0000`)。从`0`到`65535`。
 6. `float` - *浮点类型* 其值完全符合`32`位*IEEE 754 binary32*格式，默认值为`正零`。
 7. `double` - *浮点类型* 其值与`64`位*IEEE 754 binary64*格式的值完全一致，默认值为`正零`。
 
-# 详细设计
-## types.h
-对于类型同样有相关代码。以下是`types.h`的代码：</br>
-因此拥有具体定义的基本类型有`6`种：</br>
+# 详细标准
+## 类型定义
+复杂的类型会有`编译器`处理以保证`虚拟机`的简洁和效率，对于简单的类型，则会被`虚拟机`直接支持。</br>
+以下是`AQ虚拟机`定义的`6`种基本类型有：</br>
 
-0. null - 空类型
-1. byte - `1`字节有符号整数类型
-2. int - `4`字节有符号整数类型
-3. long - `8`字节有符号整数类型
-4. float - `4`字节单精度浮点类型
-5. double - `8`字节双精度浮点类型
+> 未直接支持的类型包括`无符号整数`，`内存地址（指针）`，`字符串`等。这些类型将在`编译器`层面得到实现。对于`虚拟机`来说，这些类型被间接实现。
 
-### `types.h`完整代码：
+0. `null` - `0x00` - ***空类型***</br>
+空类型仅代表未知类型或无需使用的类型（例如：无返回）。没有长度。</br>
+
+1. `byte` - `0x01` - ***`1`字节（`8`位）有符号整数类型***</br>
+采用*二进制补码*存储。一般用于存储`bool`或`char`。从`-128`至`127`（*-2<sup>7</sup>*至*2<sup>7</sup> - 1*），包括在内。</br>
+
+2. `int` - `0x02` - ***`4`字节（`32`位）有符号整数类型***</br>
+采用*二进制补码*存储。从`-2147483648`至`2147483647`（*-2<sup>31</sup>*至*2<sup>31</sup> - 1*），包括在内。</br>
+
+3. `long` - `0x03` - ***`8`字节（`64`位）有符号整数类型***</br>
+采用*二进制补码*存储。`内存地址（指针）`也用此存储。其值为`64`位*有符号二进制补码整数*，其默认值为`零`。从 `-9223372036854775808`至`9223372036854775807`（*-2<sup>63</sup>*至*2<sup>63</sup> - 1*），包括在内。</br>
+
+4. `float` - `0x04` - ***`4`字节（`32`位）单精度浮点类型***</br>
+采用`ISO/IEC 60559 Information technology — Microprocessor Systems — Floating-Point arithmetic`标准。</br>
+
+5. `double` - `0x05` - ***`8`字节（`64`位）双精度浮点类型***</br>
+采用`ISO/IEC 60559 Information technology — Microprocessor Systems — Floating-Point arithmetic`标准。</br>
+
+### 补码
+#### 定义
+`补码`是*计算机中有符号数的表示方法*。</br>
+
+#### 方法
+`正数`和`0`的`补码`就是*该数字本身再补上最高比特0*。`负数`的`补码`则是*将其绝对值按位取反再加1*。</br>
+
+### 浮点数标准
+#### 定义
+`浮点数标准`采用`ISO/IEC 60559 Information technology — Microprocessor Systems — Floating-Point arithmetic`标准。该标准又称`IEEE二进制浮点数算术标准（IEEE 754）`</br>
+
+官方网址：https://www.iso.org/standard/80985.html</br>
+
+#### 方法
+`浮点数`的`实际值`，等于`符号位`乘以`指数偏移值`再乘以`分数值`。详细定义见`ISO/IEC 60559 Information technology — Microprocessor Systems — Floating-Point arithmetic`标准。</br>
+
+##### `32`位`浮点数`
+| 比特长度 | 名称 | 比特编号 |
+| ------ | ------ | ------ |
+| 1 | 符号位 | 31 |
+| 8 | 数字 | 30至23偏正值（实际的指数大小+127） |
+| 23 | 有效数字 | 22至0位编号（从右边开始为0） |
+
+##### `64`位`浮点数`
+| 比特长度 | 名称 | 比特编号 |
+| ------ | ------ | ------ |
+| 1 | 符号位 | 63 |
+| 11 | 数字 | 62至52偏正值（实际的指数大小+1023） |
+| 52 | 有效数字 | 51至0位编号（从右边开始为0）
+
+
+## `types.h`完整代码：
+对于`类型`同样有相关代码。以下是`types.h`的代码：</br>
 ```C
-// Waiting for development...
-```
+// Copyright 2024 AQ author, All Rights Reserved.
+// This program is licensed under the AQ License. You can find the AQ license in
+// the root directory.
 
-未完待续……</br>
+#ifndef AQ_AQVM_MEMORY_TYPES_H_
+#define AQ_AQVM_MEMORY_TYPES_H_
+
+#include <stdint.h>
+
+// null - 0x00 - null type
+// The null type simply represents an unknown type or a type that is not needed
+// (e.g., returns nothing). Has no length.
+typedef void aqnull;
+
+// byte - 0x01 - 1 byte (8-bit) signed integer type
+// Using two's complement storage. Generally used to store bool or char. From
+// -128 to 127 (-2^7 to 2^7 - 1), inclusive.
+typedef int8_t aqbyte;
+
+// int - 0x02 - 4-byte (32-bit) signed integer type
+// Stored in two's complement notation. From -2147483648 to 2147483647 (-2^31 to
+// 2^31 - 1), inclusive.
+typedef int aqint;
+
+// long - 0x03 - 8-byte (64-bit) signed integer type
+// Stored in two's complement notation. From -9223372036854775808 to
+// 9223372036854775807 (-2^63 to 2^63 - 1), inclusive.
+typedef int64_t aqlong;
+
+// float - 0x04 - 4-byte (32-bit) single-precision floating point type
+// Using ISO/IEC 60559 Information technology — Microprocessor Systems —
+// Floating-Point arithmetic standard.
+typedef float aqfloat;
+
+// double - 0x05 - 8-byte (64-bit) double-precision floating point type
+// Using ISO/IEC 60559 Information technology — Microprocessor Systems —
+// Floating-Point arithmetic standard.
+typedef double aqdouble;
+
+// The part beyond 0x05 and within 0x0F is currently designated as a reserved
+// type. The part beyond 0x0F cannot be used because it exceeds the 4-bit size
+// limit.
+
+#endif
+```
