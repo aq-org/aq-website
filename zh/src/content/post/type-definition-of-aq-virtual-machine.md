@@ -1,5 +1,5 @@
 ---
-publishDate: 2024-07-22T16:50:00+08:00
+publishDate: 2024-07-22T23:17:00+08:00
 title:  AQ虚拟机的类型定义 - AQ
 excerpt: 由于不同的系统、硬件等外部条件对于内存有不同的支持和定义，因此为了使AQ虚拟机满足跨平台运行的要求，设计统一的类型标准是必不可少的。本文对于AQ虚拟机的类型进行了定义和规范，以确保在不同系统上的AQ虚拟机均能正常运行。
 image: https://www.axa6.com/aq.png
@@ -8,7 +8,7 @@ tags:
   - AQ
   - Blog
 metadata:
-  canonical: https://www.axa6.com/aq虚拟机的类型定义
+  canonical: https://www.axa6.com/type-definition-of-aq-virtual-machine
 ---
 
 # 简介
@@ -204,3 +204,7 @@ typedef double aqdouble;
 
 #endif
 ```
+
+> 我们正在更加努力地开发`AQ虚拟机`。如果您想了解更多信息或参与开发工作，请关注我们的官网：https://www.axa6.com 和 Github：https://github.com/aq-org/AQ。</br>
+
+> 本文章基于AQ License：https://github.com/aq-org/AQ/blob/main/LICENSE 发布，如有需要，请根据AQ License进行改编或转载。
