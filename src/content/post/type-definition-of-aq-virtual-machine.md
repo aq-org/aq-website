@@ -153,7 +153,7 @@ The `actual value` of a `floating-point number` is equal to the `sign bit` multi
 | ------ | ------ | ------ |
 | 1 | Sign | 63 |
 | 11 | Number | 62 to 52 positive value (actual exponent size + 1023) |
-| 52 | Significant digit | 51 to 0 bit number (starting from the right with 0)
+| 52 | Significant digit | 51 to 0 bit number (starting from the right with 0) |
 
 ## `types.h` complete code:
 For `types` there is also relevant code. The following is the code for `types.h`:</br>
