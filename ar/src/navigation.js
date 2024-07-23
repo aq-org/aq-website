@@ -24,6 +24,7 @@ export const headerData = {
         { text: 'وظائف', href: 'https://github.com/aq-org/AQ' },
         { text: 'اتصل بنا', href: getPermalink('/contact') },
         { text: 'X', href: 'https://x.com/aq_organization' },
+{ text: 'Facebook', href: 'https://www.facebook.com/aq.organization' },
         { text: 'جيت هاب', href: 'https://github.com/aq-org/AQ' },
       ],
     },
@@ -45,6 +46,7 @@ export const headerData = {
           href: getBlogPermalink(),
         },
         { text: 'X', href: 'https://x.com/aq_organization' },
+{ text: 'Facebook', href: 'https://www.facebook.com/aq.organization' },
         {
           text: 'RSS',
           href: getAsset('/rss.xml'),
@@ -81,6 +83,7 @@ export const footerData = {
         { text: 'وظائف', href: 'https://github.com/aq-org/AQ' },
         { text: 'اتصل بنا', href: getPermalink('/contact') },
         { text: 'X', href: 'https://x.com/aq_organization' },
+{ text: 'Facebook', href: 'https://www.facebook.com/aq.organization' },
         { text: 'جيت هاب', href: 'https://github.com/aq-org/AQ' },
       ],
     },
@@ -102,6 +105,7 @@ export const footerData = {
           href: getBlogPermalink(),
         },
         { text: 'X', href: 'https://x.com/aq_organization' },
+{ text: 'Facebook', href: 'https://www.facebook.com/aq.organization' },
         {
           text: 'RSS',
           href: getAsset('/rss.xml'),
