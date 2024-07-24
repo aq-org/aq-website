@@ -291,12 +291,12 @@ int AqvmMemory_WriteData(struct AqvmMemory_Memory* memory, size_t index,
  Однако требуется реализация специальной функции, и следует отметить, что выделением и освобождением данных и типов памяти в памяти управляют соответствующие функции байт-кода.  </br>
 
 ```C
-// Creates the struct AqvmMemory_Memory with |data|, |type|, and |size|.
-// The function will allocate a struct AqvmMemory_Memory and copy |data|,
-// |type|, and |size| into the struct. Returns a pointer to the struct if
-// successful. Returns NULL if creation fails.
-struct AqvmMemory_Memory* AqvmMemory_CreateMemory(void* data, void* type,
-                                                  size_t size) {
+// Creates and initializes the struct AqvmMemory_Memory with |data|, |type|, and
+// |size|. The function will allocate a struct AqvmMemory_Memory and copy
+// |data|, |type|, and |size| into the struct. Returns a pointer to the struct
+// if successful. Returns NULL if creation fails.
+struct AqvmMemory_Memory* AqvmMemory_InitializeMemory(void* data, void* type,
+                                                      size_t size) {
   struct AqvmMemory_Memory* memory_ptr =
       (struct AqvmMemory_Memory*)malloc(sizeof(struct AqvmMemory_Memory));
   if (memory_ptr == NULL) {
@@ -477,8 +477,8 @@ int AqvmMemory_CheckMemoryConditions() {
  Эта функция выделяет структуру AqvmMemory_Memory и копирует в нее |data|, |type| и |size|.  Возвращает указатель на эту структуру.  Возвращает NULL, если создание не удалось.  </br>
 
 ```C
-struct AqvmMemory_Memory* AqvmMemory_CreateMemory(void* data, void* type,
-                                                  size_t size) {
+struct AqvmMemory_Memory* AqvmMemory_InitializeMemory(void* data, void* type,
+                                                      size_t size) {
   struct AqvmMemory_Memory* memory_ptr =
       (struct AqvmMemory_Memory*)malloc(sizeof(struct AqvmMemory_Memory));
   if (memory_ptr == NULL) {
@@ -669,12 +669,12 @@ struct AqvmMemory_Memory {
 // Returns the number of warnings.
 int AqvmMemory_CheckMemoryConditions();
 
-// Creates the struct AqvmMemory_Memory with |data|, |type|, and |size|.
-// The function will allocate a struct AqvmMemory_Memory and copy |data|,
-// |type|, and |size| into the struct. Returns a pointer to the struct if
-// successful. Returns NULL if creation fails.
-struct AqvmMemory_Memory* AqvmMemory_CreateMemory(void* data, void* type,
-                                                  size_t size);
+// Creates and initializes the struct AqvmMemory_Memory with |data|, |type|, and
+// |size|. The function will allocate a struct AqvmMemory_Memory and copy
+// |data|, |type|, and |size| into the struct. Returns a pointer to the struct
+// if successful. Returns NULL if creation fails.
+struct AqvmMemory_Memory* AqvmMemory_InitializeMemory(void* data, void* type,
+                                                      size_t size);
 
 // Free the memory of the |memory_ptr|. No return.
 // NOTICE: The function only free the memory of the struct. The memory pointed
@@ -782,8 +782,8 @@ int AqvmMemory_CheckMemoryConditions() {
   return warning_count;
 }
 
-struct AqvmMemory_Memory* AqvmMemory_CreateMemory(void* data, void* type,
-                                                  size_t size) {
+struct AqvmMemory_Memory* AqvmMemory_InitializeMemory(void* data, void* type,
+                                                      size_t size) {
   struct AqvmMemory_Memory* memory_ptr =
       (struct AqvmMemory_Memory*)malloc(sizeof(struct AqvmMemory_Memory));
   if (memory_ptr == NULL) {
