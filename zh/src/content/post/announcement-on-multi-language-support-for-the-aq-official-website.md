@@ -1,12 +1,12 @@
 ---
-publishDate: 2024-07-23T23:47:00+08:00
+publishDate: 2024-07-24T15:36:00+08:00
 title: 关于AQ官方网站多语言支持的公告 - AQ
 excerpt: 由于AQ的开发工作日益增加，缺少专业翻译人员以及对于翻译效果不理想等原因，即日起，AQ官方网站多语言版本将暂停实时维护。仅保留英语和中文两种语言支持。
 image: https://www.axa6.com/aq.png
-category: Blog
+category: Announcement
 tags:
 - AQ
-- Blog
+- Announcement
 metadata:
 canonical: https://www.axa6.com/zh/announcement-on-multi-language-support-for-the-aq-official-website
 ---
