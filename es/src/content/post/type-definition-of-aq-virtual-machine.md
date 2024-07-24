@@ -159,50 +159,50 @@ El `valor real` de un `número de coma flotante` es igual al `bit de signo` mult
 ## `types.h` código completo:
 También hay códigos relacionados para `tipo`. El siguiente es el código de `types.h`:</br>
 ```C
-// Copyright 2024 AQ autor, Todos los derechos reservados.
-// Este programa tiene la licencia AQ. Puede encontrar la licencia AQ en.
-// el directorio raíz.
+// Copyright 2024 AQ author, All Rights Reserved.
+// This program is licensed under the AQ License. You can find the AQ license in
+// the root directory.
 
 #ifndef AQ_AQVM_MEMORY_TYPES_H_
-#definir AQ_AQVM_MEMORY_TYPES_H_
+#define AQ_AQVM_MEMORY_TYPES_H_
 
-#incluir <stdint.h>
+#include <stdint.h>
 
-// nulo - 0x00 - tipo nulo
-// El tipo nulo simplemente representa un tipo desconocido o un tipo que no es necesario
-// (por ejemplo, no devuelve nada).
-typedef nulo aqnull;
+// null - 0x00 - null type
+// The null type simply represents an unknown type or a type that is not needed
+// (e.g., returns nothing). Has no length.
+typedef void aqnull;
 
-// byte - 0x01 - 1 byte (8 bits) tipo entero con signo
-// Usando almacenamiento en complemento a dos Generalmente se usa para almacenar bool o char.
-// -128 a 127 (-2^7 a 2^7 - 1), inclusive.
+// byte - 0x01 - 1 byte (8-bit) signed integer type
+// Using two's complement storage. Generally used to store bool or char. From
+// -128 to 127 (-2^7 to 2^7 - 1), inclusive.
 typedef int8_t aqbyte;
 
-// int - 0x02 - tipo entero con signo de 4 bytes (32 bits)
-// Almacenado en notación en complemento a dos. De -2147483648 a 2147483647 (-2^31 a.
+// int - 0x02 - 4-byte (32-bit) signed integer type
+// Stored in two's complement notation. From -2147483648 to 2147483647 (-2^31 to
 // 2^31 - 1), inclusive.
 typedef int aqint;
 
-// largo - 0x03 - tipo entero con signo de 8 bytes (64 bits)
-// Almacenado en notación en complemento a dos. De -9223372036854775808 a.
-// 9223372036854775807 (-2^63 a 2^63 - 1), inclusive.
+// long - 0x03 - 8-byte (64-bit) signed integer type
+// Stored in two's complement notation. From -9223372036854775808 to
+// 9223372036854775807 (-2^63 to 2^63 - 1), inclusive.
 typedef int64_t aqlong;
 
-// float - 0x04 - tipo de punto flotante de precisión simple de 4 bytes (32 bits)
-// Uso de tecnología de la información ISO/IEC 60559 — Sistemas de microprocesadores —
-// Estándar aritmético de coma flotante.
-typedef flotador aqfloat;
+// float - 0x04 - 4-byte (32-bit) single-precision floating point type
+// Using ISO/IEC 60559 Information technology — Microprocessor Systems —
+// Floating-Point arithmetic standard.
+typedef float aqfloat;
 
-// doble - 0x05 - tipo de coma flotante de doble precisión de 8 bytes (64 bits)
-// Uso de tecnología de la información ISO/IEC 60559 — Sistemas de microprocesadores —
-// Estándar aritmético de punto flotante.
-typedef doble aqdoble;
+// double - 0x05 - 8-byte (64-bit) double-precision floating point type
+// Using ISO/IEC 60559 Information technology — Microprocessor Systems —
+// Floating-Point arithmetic standard.
+typedef double aqdouble;
 
-// La parte más allá de 0x05 y dentro de 0x0F está actualmente designada como reservada
-// tipo. La parte más allá de 0x0F no se puede utilizar porque excede el tamaño de 4 bits.
-// límite.
+// The part beyond 0x05 and within 0x0F is currently designated as a reserved
+// type. The part beyond 0x0F cannot be used because it exceeds the 4-bit size
+// limit.
 
-#terminara si
+#endif
 ```
 
 > Estamos trabajando más duro para desarrollar la `Máquina Virtual AQ`. Si desea obtener más información o participar en el trabajo de desarrollo, siga nuestro sitio web oficial: https://www.axa6.com y Github: https://github.com/aq-org/AQ. </br>
