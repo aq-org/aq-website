@@ -8,7 +8,7 @@ tags:
   - AQ
   - Blog
 metadata:
-  canonical: https://www.axa6.com/zh/type-definition-of-aq-virtual-machine
+  canonical: https://www.axa6.com/es/type-definition-of-aq-virtual-machine
 ---
 
 # Introducción
