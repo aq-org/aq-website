@@ -297,6 +297,10 @@ En plus de réduire l’utilisation de la mémoire, il est tout aussi important 
 // if successful. Returns NULL if creation fails.
 struct AqvmMemory_Memory* AqvmMemory_InitializeMemory(void* data, void* type,
                                                       size_t size) {
+  AqvmRuntimeDebugger_OutputReport("\"INFO\"",
+                                   "\"AqvmMemory_InitializeMemory_Start\"",
+                                   "\"Memory initialization started.\"", NULL);
+
   struct AqvmMemory_Memory* memory_ptr =
       (struct AqvmMemory_Memory*)malloc(sizeof(struct AqvmMemory_Memory));
   if (memory_ptr == NULL) {
@@ -318,6 +322,10 @@ struct AqvmMemory_Memory* AqvmMemory_InitializeMemory(void* data, void* type,
 // to by pointers to data and type in struct is not freed. This memory is
 // managed by bytecode related functions.
 void AqvmMemory_FreeMemory(struct AqvmMemory_Memory* memory_ptr) {
+  AqvmRuntimeDebugger_OutputReport("\"INFO\"",
+                                   "\"AqvmMemory_FreeMemory_Start\"",
+                                   "\"Memory deallocation started.\"", NULL);
+
   free(memory_ptr);
 }
 ```
@@ -479,6 +487,10 @@ Crée une structure AqvmMemory_Memory contenant |data|, |type| et |size|.  </br>
 ```C
 struct AqvmMemory_Memory* AqvmMemory_InitializeMemory(void* data, void* type,
                                                       size_t size) {
+  AqvmRuntimeDebugger_OutputReport("\"INFO\"",
+                                   "\"AqvmMemory_InitializeMemory_Start\"",
+                                   "\"Memory initialization started.\"", NULL);
+
   struct AqvmMemory_Memory* memory_ptr =
       (struct AqvmMemory_Memory*)malloc(sizeof(struct AqvmMemory_Memory));
   if (memory_ptr == NULL) {
@@ -502,6 +514,10 @@ Libérez la mémoire de |memory_ptr|.  Aucune valeur de retour.  </br>
 
 ```C
 void AqvmMemory_FreeMemory(struct AqvmMemory_Memory* memory_ptr) {
+  AqvmRuntimeDebugger_OutputReport("\"INFO\"",
+                                   "\"AqvmMemory_FreeMemory_Start\"",
+                                   "\"Memory deallocation started.\"", NULL);
+
   free(memory_ptr);
 }
 ```
@@ -784,6 +800,10 @@ int AqvmMemory_CheckMemoryConditions() {
 
 struct AqvmMemory_Memory* AqvmMemory_InitializeMemory(void* data, void* type,
                                                       size_t size) {
+  AqvmRuntimeDebugger_OutputReport("\"INFO\"",
+                                   "\"AqvmMemory_InitializeMemory_Start\"",
+                                   "\"Memory initialization started.\"", NULL);
+
   struct AqvmMemory_Memory* memory_ptr =
       (struct AqvmMemory_Memory*)malloc(sizeof(struct AqvmMemory_Memory));
   if (memory_ptr == NULL) {
@@ -801,6 +821,10 @@ struct AqvmMemory_Memory* AqvmMemory_InitializeMemory(void* data, void* type,
 }
 
 void AqvmMemory_FreeMemory(struct AqvmMemory_Memory* memory_ptr) {
+  AqvmRuntimeDebugger_OutputReport("\"INFO\"",
+                                   "\"AqvmMemory_FreeMemory_Start\"",
+                                   "\"Memory deallocation started.\"", NULL);
+
   free(memory_ptr);
 }
 
