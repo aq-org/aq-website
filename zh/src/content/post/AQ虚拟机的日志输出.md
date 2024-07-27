@@ -22,17 +22,17 @@ AQ虚拟机的日志输出函数的设计参考了常见的日志格式。为保
 同时，在正式的生产环境中，要对这个日志输出函数进行修改，以帮助用户更好地了解错误和相关信息。
 
 详细标准
-目前的日志输出函数在/aqvm/runtime/debugger中。
+目前的日志输出函数在/aqvm/base中。
 
-debugger.h
+logging.h
 
-AqvmRuntimeDebugger_OutputLog
+AqvmBase_OutputLog
 输出包含 |type|、|code|、|message|、|other_info|、time、errno 等信息的日志，打印到控制台或其他设备，并写入日志文件。无返回值。
-|type|、|code|和|message|是必需的，一般不应该设置为空。但如果不需要，|other_info| 可以设置为 NULL。一般来说，|type| 应为 "ERROR"、"WARNING"或 "INFO"。|code| 应该是一个完整的函数名加上简明的错误描述，用下划线分隔（例如，AqvmRuntimeDebugger_OutputLog_TestInfo）。|message| 应该是详细准确的描述。另一方面，|other_info| 应该是当前日志的附加信息（如系统信息）。
-注意：如果需要使用该函数，请使用 json 格式。输出为 json 格式。例如，AqvmRuntimeDebugger_OutputLog("\"type\"", "\"code\"", "\"message\"", "\"other_info\"")；
+|type|、|code|和|message|是必需的，一般不应该设置为空。但如果不需要，|other_info| 可以设置为 NULL。一般来说，|type| 应为 "ERROR"、"WARNING"或 "INFO"。|code| 应该是一个完整的函数名加上简明的错误描述，用下划线分隔（例如，AqvmBase_OutputLog_TestInfo）。|message| 应该是详细准确的描述。另一方面，|other_info| 应该是当前日志的附加信息（如系统信息）。
+注意：如果需要使用该函数，请使用 json 格式。输出为 json 格式。例如，AqvmBase_OutputLog("\"type\"", "\"code\"", "\"message\"", "\"other_info\"")；
 
 ```C
-void AqvmRuntimeDebugger_OutputLog(const char* type, const char* code,
+void AqvmBase_OutputLog(const char* type, const char* code,
                                    const char* message,
                                    const char* other_info) {
   if (type == NULL) {
@@ -63,7 +63,7 @@ void AqvmRuntimeDebugger_OutputLog(const char* type, const char* code,
         stderr,
         "{\"Time\":%s,\"Type\":%s,\"Code\":%s,\"Message\":%s,\"ErrnoInfo\":{"
         "\"Errno\":%d,\"Message\":\"%s\"},\"OtherInfo\":%s}\n",
-        time_str, "ERROR", "AqvmRuntimeDebugger_OutputLog_OutputToFileError",
+        time_str, "ERROR", "AqvmBase_OutputLog_OutputToFileError",
         "Failed to open log file", errno, strerror(errno), "NULL");
     return;
   }
@@ -94,20 +94,20 @@ void AqvmRuntimeDebugger_OutputLog(const char* type, const char* code,
 // common. But |other_info| can be set to NULL if it is not needed. In general,
 // |type| should be "ERROR", "WARNING" or "INFO". |code| should be a full
 // function name plus a concise description of the error, separated by
-// underscores (e.g., AqvmRuntimeDebugger_OutputLog_TestInfo). |message|
+// underscores (e.g., AqvmBase_OutputLog_TestInfo). |message|
 // should be a detailed and accurate description. |other_info| on the other hand
 // should be an additional information to the current log (e.g. system
 // information).
 // NOTICE: If you need to use the function, please use json format. The output
-// is json format. For example, AqvmRuntimeDebugger_OutputLog("\"type\"",
+// is json format. For example, AqvmBase_OutputLog("\"type\"",
 // "\"code\"", "\"message\"", "\"other_info\"");
-void AqvmRuntimeDebugger_OutputLog(const char* type, const char* code,
+void AqvmBase_OutputLog(const char* type, const char* code,
                                    const char* message, const char* other_info);
 
 #endif
 ```
 
-debugger.c
+logging.c
 完整代码
 
 ```C
@@ -115,7 +115,7 @@ debugger.c
 // This program is licensed under the AQ License. You can find the AQ license in
 // the root directory.
 
-#include "aqvm/runtime/debugger/debugger.h"
+#include "aqvm/base/logging.h"
 
 #include <errno.h>
 #include <stdint.h>
@@ -123,7 +123,7 @@ debugger.c
 #include <string.h>
 #include <time.h>
 
-void AqvmRuntimeDebugger_OutputLog(const char* type, const char* code,
+void AqvmBase_OutputLog(const char* type, const char* code,
                                    const char* message,
                                    const char* other_info) {
   if (type == NULL) {
@@ -154,7 +154,7 @@ void AqvmRuntimeDebugger_OutputLog(const char* type, const char* code,
         stderr,
         "{\"Time\":%s,\"Type\":%s,\"Code\":%s,\"Message\":%s,\"ErrnoInfo\":{"
         "\"Errno\":%d,\"Message\":\"%s\"},\"OtherInfo\":%s}\n",
-        time_str, "ERROR", "AqvmRuntimeDebugger_OutputLog_OutputToFileError",
+        time_str, "ERROR", "AqvmBase_OutputLog_OutputToFileError",
         "Failed to open log file", errno, strerror(errno), "NULL");
     return;
   }
