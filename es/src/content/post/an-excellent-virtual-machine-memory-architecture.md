@@ -209,23 +209,21 @@ int AqvmMemory_SetType(const struct AqvmMemory_Memory* memory, size_t index,
 // Returns the type that is less than 4 bits (0X0F) if successful. Returns 0x11
 // if the memory pointer is NULL. Returns 0x12 if the type pointer is NULL.
 // Returns 0x13 if the index is out of memory range.
-uint8_t AqvmMemory_GetType(struct AqvmMemory_Memory* memory, size_t index) {
+uint8_t AqvmMemory_GetType(const struct AqvmMemory_Memory* memory,
+                           size_t index) {
   if (memory == NULL) {
-    AqvmBaseLogging_OutputLog("\"ERROR\"",
-                              "\"AqvmMemory_GetType_NullMemoryPointer\"",
-                              "\"The memory pointer is NULL.\"", NULL);
+    AqvmBaseLogging_OutputLog("ERROR", "AqvmMemory_GetType_NullMemoryPointer",
+                              "The memory pointer is NULL.", NULL);
     return 0x11;
   }
   if (memory->type == NULL) {
-    AqvmBaseLogging_OutputLog("\"ERROR\"",
-                              "\"AqvmMemory_GetType_NullTypePointer\"",
-                              "\"The type pointer is NULL.\"", NULL);
+    AqvmBaseLogging_OutputLog("ERROR", "AqvmMemory_GetType_NullTypePointer",
+                              "The type pointer is NULL.", NULL);
     return 0x12;
   }
   if (index > memory->size) {
-    AqvmBaseLogging_OutputLog("\"ERROR\"",
-                              "\"AqvmMemory_GetType_OutOfMemoryRange\"",
-                              "\"The index is out of memory range.\"", NULL);
+    AqvmBaseLogging_OutputLog("ERROR", "AqvmMemory_GetType_OutOfMemoryRange",
+                              "The index is out of memory range.", NULL);
     return 0x13;
   }
 
@@ -571,23 +569,21 @@ Obtiene el tipo de datos en |índice| bytes en |memoria|.  </br>
  Devuelve un tipo de menos de 4 bits (0X0F) en caso de éxito.  Si el puntero de memoria es NULL, se devuelve 0x11.  Si el puntero de índice es NULL, se devuelve 0x12.  Si el índice no tiene memoria, se devuelve 0x13.  </br>
 
 ```C
-uint8_t AqvmMemory_GetType(struct AqvmMemory_Memory* memory, size_t index) {
+uint8_t AqvmMemory_GetType(const struct AqvmMemory_Memory* memory,
+                           size_t index) {
   if (memory == NULL) {
-    AqvmBaseLogging_OutputLog("\"ERROR\"",
-                              "\"AqvmMemory_GetType_NullMemoryPointer\"",
-                              "\"The memory pointer is NULL.\"", NULL);
+    AqvmBaseLogging_OutputLog("ERROR", "AqvmMemory_GetType_NullMemoryPointer",
+                              "The memory pointer is NULL.", NULL);
     return 0x11;
   }
   if (memory->type == NULL) {
-    AqvmBaseLogging_OutputLog("\"ERROR\"",
-                              "\"AqvmMemory_GetType_NullTypePointer\"",
-                              "\"The type pointer is NULL.\"", NULL);
+    AqvmBaseLogging_OutputLog("ERROR", "AqvmMemory_GetType_NullTypePointer",
+                              "The type pointer is NULL.", NULL);
     return 0x12;
   }
   if (index > memory->size) {
-    AqvmBaseLogging_OutputLog("\"ERROR\"",
-                              "\"AqvmMemory_GetType_OutOfMemoryRange\"",
-                              "\"The index is out of memory range.\"", NULL);
+    AqvmBaseLogging_OutputLog("ERROR", "AqvmMemory_GetType_OutOfMemoryRange",
+                              "The index is out of memory range.", NULL);
     return 0x13;
   }
 
@@ -706,7 +702,8 @@ int AqvmMemory_SetType(const struct AqvmMemory_Memory* memory, size_t index,
 // Returns the type that is less than 4 bits (0X0F) if successful. Returns 0x11
 // if the memory pointer is NULL. Returns 0x12 if the type pointer is NULL.
 // Returns 0x13 if the index is out of memory range.
-uint8_t AqvmMemory_GetType(struct AqvmMemory_Memory* memory, size_t index);
+uint8_t AqvmMemory_GetType(const struct AqvmMemory_Memory* memory,
+                           size_t index);
 
 // Writes the data that |data_ptr| points to of size |size| to the data of at
 // |index| bytes in |memory|.
@@ -864,23 +861,21 @@ int AqvmMemory_SetType(const struct AqvmMemory_Memory* memory, size_t index,
   return 0;
 }
 
-uint8_t AqvmMemory_GetType(struct AqvmMemory_Memory* memory, size_t index) {
+uint8_t AqvmMemory_GetType(const struct AqvmMemory_Memory* memory,
+                           size_t index) {
   if (memory == NULL) {
-    AqvmBaseLogging_OutputLog("\"ERROR\"",
-                              "\"AqvmMemory_GetType_NullMemoryPointer\"",
-                              "\"The memory pointer is NULL.\"", NULL);
+    AqvmBaseLogging_OutputLog("ERROR", "AqvmMemory_GetType_NullMemoryPointer",
+                              "The memory pointer is NULL.", NULL);
     return 0x11;
   }
   if (memory->type == NULL) {
-    AqvmBaseLogging_OutputLog("\"ERROR\"",
-                              "\"AqvmMemory_GetType_NullTypePointer\"",
-                              "\"The type pointer is NULL.\"", NULL);
+    AqvmBaseLogging_OutputLog("ERROR", "AqvmMemory_GetType_NullTypePointer",
+                              "The type pointer is NULL.", NULL);
     return 0x12;
   }
   if (index > memory->size) {
-    AqvmBaseLogging_OutputLog("\"ERROR\"",
-                              "\"AqvmMemory_GetType_OutOfMemoryRange\"",
-                              "\"The index is out of memory range.\"", NULL);
+    AqvmBaseLogging_OutputLog("ERROR", "AqvmMemory_GetType_OutOfMemoryRange",
+                              "The index is out of memory range.", NULL);
     return 0x13;
   }
 
