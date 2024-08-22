@@ -8,7 +8,7 @@ export const headerData = {
     },{
       text: '资源 Resources',
       links: [
-        { text: '文档', href: getPermalink('/docs') },
+        { text: '文档', href: 'https://docs.axa6.com' },
         { text: '博客', href: getBlogPermalink() },
         { text: '下载', href: 'https://github.com/aq-org/AQ' },
         { text: '合作伙伴', href: getPermalink('/partners') },
@@ -33,7 +33,7 @@ export const headerData = {
       links: [
         { text: '社区论坛', href: getPermalink('/community') },
         { text: '常见问题', href: 'https://github.com/aq-org/AQ/issues' },
-        { text: '文档', href: getPermalink('/docs') },
+        { text: '文档', href: 'https://docs.axa6.com' },
         { text: 'Discord', href: 'https://discord.gg/JCKzxavG' },
         { text: '邮件', href: 'mailto:admin@axa6.com' },
       ],
@@ -67,7 +67,7 @@ export const footerData = {
     {
       title: '资源',
       links: [
-        { text: '文档', href: getPermalink('/docs') },
+        { text: '文档', href: 'https://docs.axa6.com' },
         { text: '博客', href: getBlogPermalink() },
         { text: '下载', href: 'https://github.com/aq-org/AQ' },
         { text: '合作伙伴', href: getPermalink('/partners') },
@@ -92,7 +92,7 @@ export const footerData = {
       links: [
         { text: '社区论坛', href: getPermalink('/community') },
         { text: '常见问题', href: 'https://github.com/aq-org/AQ/issues' },
-        { text: '文档', href: getPermalink('/docs') },
+        { text: '文档', href: 'https://docs.axa6.com' },
         { text: 'Discord', href: 'https://discord.gg/JCKzxavG' },
         { text: '邮件', href: 'mailto:admin@axa6.com' },
       ],

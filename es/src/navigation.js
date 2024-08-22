@@ -8,7 +8,7 @@ export const headerData = {
     },{
       text: 'Recursos',
       links: [
-        { text: 'Documentos', href: getPermalink('/docs') },
+        { text: 'Documentos', href: 'https://docs.axa6.com' },
         { text: 'Blog', href: getBlogPermalink() },
         { text: 'Descargar', href: 'https://github.com/aq-org/AQ' },
         { text: 'Colaboradores', href: getPermalink('/partners') },
@@ -33,7 +33,7 @@ export const headerData = {
       links: [
         { text: 'Foro Comunitario', href: getPermalink('/community') },
         { text: 'Preguntas Frecuentes', href: 'https://github.com/aq-org/AQ/issues' },
-        { text: 'Documentos', href: getPermalink('/docs') },
+        { text: 'Documentos', href: 'https://docs.axa6.com' },
         { text: 'Discord', href: 'https://discord.gg/JCKzxavG' },
         { text: 'Correo', href: 'mailto:admin@axa6.com' },
       ],
@@ -67,7 +67,7 @@ export const footerData = {
     {
       title: 'Recursos',
       links: [
-        { text: 'Documentos', href: getPermalink('/docs') },
+        { text: 'Documentos', href: 'https://docs.axa6.com' },
         { text: 'Blog', href: getBlogPermalink() },
         { text: 'Descargar', href: 'https://github.com/aq-org/AQ' },
         { text: 'Colaboradores', href: getPermalink('/partners') },
@@ -92,7 +92,7 @@ export const footerData = {
       links: [
         { text: 'Foro Comunitario', href: getPermalink('/community') },
         { text: 'Preguntas Frecuentes', href: 'https://github.com/aq-org/AQ/issues' },
-        { text: 'Documentos', href: getPermalink('/docs') },
+        { text: 'Documentos', href: 'https://docs.axa6.com' },
         { text: 'Discord', href: 'https://discord.gg/JCKzxavG' },
         { text: 'Correo', href: 'mailto:admin@axa6.com' },
       ],
