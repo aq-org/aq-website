@@ -5,10 +5,10 @@ excerpt: Debido al creciente trabajo de desarrollo de AQ, la falta de traductore
 image: https://www.axa6.com/aq.png
 category: Announcement
 tags:
-- AQ
-- Announcement
+  - AQ
+  - Announcement
 metadata:
-canonical: https://www.axa6.com/es/announcement-on-multi-language-support-for-the-aq-official-website
+  canonical: https://www.axa6.com/es/announcement-on-multi-language-support-for-the-aq-official-website
 ---
 
 # Anuncio

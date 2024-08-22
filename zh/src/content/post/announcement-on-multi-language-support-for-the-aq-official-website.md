@@ -5,10 +5,10 @@ excerpt: 由于AQ的开发工作日益增加，缺少专业翻译人员以及对
 image: https://www.axa6.com/aq.png
 category: Announcement
 tags:
-- AQ
-- Announcement
+  - AQ
+  - Announcement
 metadata:
-canonical: https://www.axa6.com/zh/announcement-on-multi-language-support-for-the-aq-official-website
+  canonical: https://www.axa6.com/zh/announcement-on-multi-language-support-for-the-aq-official-website
 ---
 
 # 公告
