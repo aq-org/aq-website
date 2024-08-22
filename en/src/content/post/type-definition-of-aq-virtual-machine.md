@@ -5,10 +5,10 @@ excerpt: Since different systems, hardware and other external conditions have di
 image: https://www.axa6.com/aq.png
 category: Blog
 tags:
-- AQ
-- Blog
+  - AQ
+  - Blog
 metadata:
-canonical: https://www.axa6.com/en/type-definition-of-aq-virtual-machine
+  canonical: https://www.axa6.com/en/type-definition-of-aq-virtual-machine
 ---
 
 # Introduction
