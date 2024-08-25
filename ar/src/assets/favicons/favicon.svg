@@ -1,14 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg id="Aquisk" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 79.15 74">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="a" data-name="aq" viewBox="0 0 100 100">
   <defs>
     <style>
-      .cls-1 {
+      .c {
         fill: none;
-        stroke: #000;
-        stroke-miterlimit: 10;
-        stroke-width: 10px;
+        stroke: url(#b);
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 13px;
       }
     </style>
+    <linearGradient id="b" x1="8.19" y1="50" x2="91.81" y2="50" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#09f"/>
+      <stop offset=".25" stop-color="#4080ff"/>
+      <stop offset=".5" stop-color="#007fff"/>
+      <stop offset=".75" stop-color="#4080ff"/>
+      <stop offset="1" stop-color="#0064ff"/>
+    </linearGradient>
   </defs>
-  <path class="cls-1" d="m10.15,65c0-17.67,14.33-32,32-32s32,14.33,32,32c0,1.36-.09,2.69-.26,4m-63.74-4c1.91.98,4.59,2.15,7.95,2.98,0,0,4.06,1.02,8.05,1.02,17.67,0,32-14.33,32-32S43.82,5,26.15,5c-4.77,0-9.52,1.44-9.52,1.44-6.6,2.06-10.95,5.79-13.11,7.93"/>
+  <path class="c" d="m21.31,78c0-17.67,14.33-32,32-32s32,14.33,32,32c0,1.36-.09,2.69-.26,4m-63.74-4c1.91.98,4.59,2.15,7.95,2.98,0,0,4.06,1.02,8.05,1.02,17.67,0,32-14.33,32-32s-14.33-32-32-32c-4.77,0-9.52,1.44-9.52,1.44-6.6,2.06-10.95,5.79-13.11,7.93"/>
 </svg>
