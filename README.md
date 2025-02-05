@@ -3,16 +3,7 @@
   <h2 align="center">AQ</h2>
   <p align="center">AQ is a fast, small, simple and safe interpreted programming language. It may be a great work. </p>
 </p>
-<p align="center">
-<img src="https://sourceforge.net/cdn/syndication/badge_img/3836278/oss-users-love-us-white?&r=https://sourceforge.net/p/aq-lang/admin/files-sf/badges" height="100"/>
-<img src="https://sonarcloud.io/api/project_badges/quality_gate?project=aq-org_AQ" height="100"/>
-</p>
-<p align="center">
-<a href="https://www.producthunt.com/posts/aq-2?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-aq&#0045;2" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=704776&theme=light" alt="AQ - AQ&#0032;is&#0032;a&#0032;fast&#0044;&#0032;small&#0044;&#0032;simple&#0032;and&#0032;safe&#0032;programming&#0032;language&#0046; | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
-<a href="https://sourceforge.net/p/aq-lang/"><img alt="Download AQ" src="https://sourceforge.net/sflogo.php?type=17&amp;group_id=3836278" width=200></a>
-<a herf="https://sonarcloud.io/project/overview?id=aq-org_AQ"><img src="https://sonarcloud.io/images/project_badges/sonarcloud-light.svg" /></a>
-<a href="https://sourceforge.net/projects/aq-lang/files/latest/download"><img alt="Download AQ" src="https://a.fsdn.com/con/app/sf-download-button" width=276 height=48 srcset="https://a.fsdn.com/con/app/sf-download-button?button_size=2x 2x"></a>
-</p>
+
    <p align="center">
      <a href="https://github.com/aq-org/AQ/blob/main/LICENSE">
        <img alt="License" src="https://img.shields.io/badge/license-AQ-dark" />
@@ -21,7 +12,6 @@
        <img alt="Commits" src="https://img.shields.io/github/commit-activity/t/aq-org/AQ" />
      </a>
 <a href="https://app.fossa.com/projects/git%2Bgithub.com%2Faq-org%2FAQ?ref=badge_shield" alt="FOSSA Status"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2Faq-org%2FAQ.svg?type=shield"/></a>
-     <a herf="https://sonarcloud.io/project/overview?id=aq-org_AQ"><img src="https://sonarcloud.io/api/project_badges/measure?project=aq-org_AQ&metric=alert_status" /></a>
      <a href="https://github.com/aq-org/AQ/pulse">
        <img alt="Created At" src="https://img.shields.io/github/created-at/aq-org/AQ" />
      </a>
@@ -301,13 +291,9 @@ Click to view development progress
 </tr>
 </table>
 
-<a href="https://star-history.com/#aq-org/AQ&Date">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=aq-org/AQ&type=Date&theme=dark" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=aq-org/AQ&type=Date" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=aq-org/AQ&type=Date" />
- </picture>
-</a>
+
+
+<!-- Made with [OSS Insight](https://ossinsight.io/) -->
 
 ## Quick Start
 ### Install
@@ -355,19 +341,6 @@ You can find information in <a href="/docs/standard.md">Language standards</a>.
 ## Contributors
 
 AQ is an open source project and everyone is welcome to contribute to it! Whether it's filing a bug report, participating in code development, improving documentation, or providing suggestions, any kind of contribution is highly appreciated.
-
-### Our Developers
-<a href="https://github.com/aq-org/AQ/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=aq-org/AQ" />
-</a>
-
-
-### Our Sponsors
-<div align="center">
-<a href="https://opencollective.com/body-count" align="center"><img src="./docs/heymanbug.png"></img></a><br/>
-<a href="https://opencollective.com/body-count" align="center"><b>heymanbug</b></a>
-<b align="center">$200</b>
-</div>
 
 ## License
 
